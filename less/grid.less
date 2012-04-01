@@ -1,0 +1,76 @@
+@gutter: (100-(@colWidth*@numCols))/(@numCols - 1);  /*-- Automatically calculated gutter width --*/
+
+/*-- Columns are wrapped in rows --*/
+.row {
+	width: 100%;
+	max-width: @maxWidthPx;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/*-------------------------------------------------------------*\
+|   The width of a column 'x' is equal to the width of a 		|
+|   single column times 'x' plus the width of the gutter 		|
+|   times the quantity x minus 1. The "minus 1" at the 			|
+|   end is because the right-most column doesn't have a gutter.	|
+\*--------------------------------------------------------------*/ 
+
+.column(@numCol) {
+	float: left;
+	margin-right: @gutter;
+	width: (@colWidth * @numCol) + (@gutter * (@numCol - 1))-.1%; // hack at end to fix border problem
+}
+
+.span1 { .column(1); }
+.span2 { .column(2); }
+.span3 { .column(3); }
+.span4 { .column(4); }
+.span5 { .column(5); }
+.span6 { .column(6); }
+.span7 { .column(7); }
+.span8 { .column(8); }
+.span9 { .column(9); }
+.span10 { .column(10); }
+.span11 { .column(11); }
+.span12 { .column(12); }
+.span13 { .column(13); }
+.span14 { .column(14); }
+.span15 { .column(15); }
+.span16 { .column(16); }
+.span17 { .column(17); }
+.span18 { .column(18); }
+.span19 { .column(19); }
+.span20	{ .column(20); }
+.span21 { .column(21); }
+.span22 { .column(22); }
+.span23 { .column(23); }
+.span24 { .column(24); }
+
+/*-- If adjusting the number of columns, be sure to ------*/
+/*-- add or remove to the number of '.spanXX' selectors --*/
+
+
+/*-- Column Styles --*/
+
+// Left Border
+#about #rightcol, .date #rightcol {
+	border-left: @thinborder;
+}
+
+// Right Border
+.home #leftcol, .category #leftcol, .page article {
+	border-right: @thinborder;
+}
+
+// Padding
+.home #leftcol section, .single-post article, .page article, #about #leftcol section, #about #rightcol section, .category #rightcol section, .author section#profile, .author h2#name, .author #posts, .home .sports .section-label, .home .sports article.feature, .home .release, .home .opinion, #footer-logo img, .search section, .search #rightcol section, .category #leftcol section, .category #article-list, .error404 h2, .error404 #post, .error404 p, #comments #disqus_thread, .date section, #feature-concert {
+	padding: 0 @colPaddingLR;
+}
+
+/*-- The last column in a row needs to have the last class --*/
+.last { margin-right: 0px; }
+
+/*-- Ensures that images, objects, and embeds resize --*/
+img, object, embed {
+	max-width: 100%;
+}

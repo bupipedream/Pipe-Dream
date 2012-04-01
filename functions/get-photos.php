@@ -1,0 +1,206 @@
+<?php
+
+/*
+	Plugin Name: Pipe Dream Photos
+	Contributors: Daniel O'Connor
+	Tags: images, image, media, photos
+	Requires at least: 3.3.1
+	Tested up to: 3.3.1
+	Version: 0.1
+*/
+
+/*-----------------------*/
+/*---- Get Functions ----*/
+/*-----------------------*/
+
+function get_caption($image) {
+	return $image->post_excerpt;
+}
+
+function get_credit($image) {
+	return get_post_meta($image->ID, '_credit', 'single');
+}
+
+function get_priority($image) {
+	return $image->menu_order;
+}
+
+function get_width($image) {
+	return $image->attachment_metadata['width'];
+}
+
+function get_height($image) {
+	return $image->attachment_metadata['height'];
+}
+
+function get_src($image, $size) {
+	$upload_url = wp_upload_dir();
+	$upload_url = $upload_url['baseurl'];
+	$src = wp_get_attachment_image_src($image->ID, $size);	
+	return $src[0];
+}
+
+// TEMPORARY HACK
+function get_image($str) {
+	return get_archive_image($str);
+}
+
+function get_archive_image($str, $sizes = NULL, $ret = NULL) {
+	$str = $str[0];
+	$str = explode(':', $str);
+
+	// a temporary fix for a dumb college publisher issue - FEB 6, 2012
+	if($str[1] == "1050472890.jpg") {
+		$file_name = 'legacy/'.$str[2];	
+	} elseif(empty($str[0])) {
+		$file_name = 'legacy/'.$str[1];	
+	} else { $file_name = $str[1]; }
+
+	// replicates the array in get-photos
+	$image['caption'] = trim($str[0]); // CAUSING ISSUES BECAUSE CAPTION IS BEING SET TO CP_ID
+	
+	$upload_url = wp_upload_dir();
+	$upload_url = $upload_url['baseurl'];
+	
+	if($sizes) {		
+		foreach($sizes as $size) {
+			$image['src'][$size] = $upload_url."/archive/".trim($file_name);
+		} 
+	} else {
+		$image['src']['single-inline'] = $upload_url."/archive/".trim($file_name);
+		$image['src']['large'] = $upload_url."/archive/".trim($file_name);
+		$image['src']['medium'] = $upload_url."/archive/".trim($file_name);		
+		$image['src']['thumbnail'] = $upload_url."/archive/".trim($file_name);		
+		$image['src']['alt-thumbnail'] = $upload_url."/archive/".trim($file_name);
+	}
+	
+	$image['slug'] = trim($str[2]);
+	$image['caption'] = trim($str[3]);
+	$image['credit'] = trim($str[4]);
+	
+	return $image;
+}
+
+/*-----------------------*/
+/*-- Boolean Functions --*/
+/*-----------------------*/
+
+function is_landscape($image) {
+	if(get_width($image) > get_height($image)) return true;
+	return false;
+}
+
+/*-----------------------*/
+/*---- Main Function ----*/
+/*-----------------------*/
+
+/*
+	Returns photos for articles. Supports 
+	archived posts as well.
+
+	@param int $post_id: Post ID (REQUIRED)
+	@param int $num: Number of photos to return.
+		Defaults to all photos.
+	@param array $sizes: Photo sizes to return.
+		Sizes include thumbnai, alt-thumbnail,
+		single-inline, medium, and large.
+	@param array $ret: Photo attributes to return.
+		Attributes include src, width, height, credit,
+		amd caption. Returns all by default.
+*/
+
+function get_photos($post_id, $num, $sizes = null, $ret = null) {
+	// save the image with the highest priority
+	// to use when returing only one image
+	$top_priority['priority'] = 9999;
+	
+	// check if there are attachments
+	if ( $images = get_children(array(
+		'post_parent' => $post_id,
+		'post_type' => 'attachment',
+		'order' => 'ASC',
+		'orderby' => 'menu_order',
+		'post_mime_type' => 'image')))
+	{
+		// loop through each image
+		foreach($images as $image) {
+			$image->attachment_metadata = wp_get_attachment_metadata($image->ID);
+			if(isset($photo['photos'])) $i = count($photo['photos']); // counter
+			else $i = 0;
+			
+			// store image information
+			$photo['photos'][$i]['caption'] = get_caption($image);
+			$photo['photos'][$i]['credit'] = get_credit($image);
+			$photo['photos'][$i]['priority'] = get_priority($image);
+			$photo['photos'][$i]['width'] = get_width($image);
+			$photo['photos'][$i]['height'] = get_height($image);
+			
+			// return requested sizes
+			if($sizes) {
+				foreach($sizes as $size) {
+					$photo['photos'][$i]['src'][$size] = get_src($image, $size);
+				}
+			} else { // return all sizes when none are specified
+				$photo['photos'][$i]['src']['large'] = get_src($image, 'large');
+				$photo['photos'][$i]['src']['thumbnail'] = get_src($image, 'thumbnail');					
+				$photo['photos'][$i]['src']['medium'] = get_src($image, 'medium');					
+				$photo['photos'][$i]['src']['single-inline'] = get_src($image, 'single-inline');					
+				$photo['photos'][$i]['src']['alt-thumbnail'] = get_src($image, 'alt-thumbnail');					
+			}
+			
+			// store the photo with the highest priority in wordpress.
+			// photos with high priorities are given low numbers.
+			if($num === '1' && $photo['photos'][$i]['priority'] < $top_priority['priority']) {
+				$top_priority = $photo['photos'][$i];
+			}
+
+			// determine image position based on priority
+			if(!isset($photo['display']['feature']) && get_priority($image) === 1 && is_landscape($image)) {
+			
+				// feature photo - below headline
+				$photo['display']['feature'] = $i;
+				$photo['photos'][$i]['src']['single-feature'] = get_src($image, 'single-feature');
+			
+			} elseif(!isset($photo['display']['inline']) && get_priority($image) === 2) {
+			
+				// inline photo - thumbnail w/in post
+				$photo['display']['inline'] = $i;
+				$photo['photos'][$i]['src']['single-inline'] = get_src($image, 'single-inline');
+			
+			} else {
+				if(!isset($photo['display']['inline'])) { // inline photo has not been set
+			
+					$photo['display']['inline'] = $i;
+					$photo['photos'][$i]['src']['single-inline'] = get_src($image, 'single-inline');
+			
+				} else {
+			
+					// gallery photo - appears in post photo gallery
+					if(isset($photo['display']['gallery']))
+						$photo['display']['gallery'][count($photo['display']['gallery'])] = $i;
+					else
+						$photo['display']['gallery'][0] = $i;
+			
+				}
+			}
+		}
+
+		// returns top photo when one is requested
+		if($num === '1') return $top_priority;
+		
+		// return all of the requested photos
+		return $photo;
+	} else {
+		// check if the image is from the archives
+		$meta = get_post_custom($post_id);
+		if($meta) {
+			if(isset($meta['_image1'])) {
+				$meta['_image1'] = get_image($meta['_image1']);
+			}
+		}
+		if(isset($meta['_image1'])) return $meta['_image1'];
+	}
+	
+	// no images were found
+	return false;
+}
