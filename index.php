@@ -15,7 +15,6 @@
 
 	<div class="row" id="content">		
 		<div class="span17">
-
 			<?php if($layout == "concert" && $sections['feature']['concert']): ?>
 				<section id="feature-concert" class="darkdoublehrule">
 					<!-- Concert Feature -->
@@ -148,6 +147,24 @@
 						
 					</section>
 				</div>
+			</div>
+			<!-- Take down May 2, 2012 -->
+			<div class="halfbanner thickhrule">
+				<!-- begin ad tag -->
+				<script type="text/javascript">
+					//<![CDATA[
+					ord=Math.random()*10000000000000000;
+					document.write('<iframe src="http://ad.doubleclick.net/adi/sunybinghamton.afc/;kw=campbaruchmarchapr2012;sz=468x60;ord=' + ord + '?" width="468" height="60" marginwidth="0" marginheight="0" frameborder="0" scrolling="no">');
+
+					if (navigator.userAgent.indexOf("Gecko")==-1)
+					{
+						document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/sunybinghamton.afc/;kw=campbaruchmarchapr2012;sz=468x60;abr=!ie;ord=' + ord + '?"><\/script>');
+					}
+					document.write('</iframe>');
+					//]]>
+				</script>
+				<noscript><a href="http://ad.doubleclick.net/jump/sunybinghamton.afc/;kw=campbaruchmarchapr2012;sz=468x60;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/sunybinghamton.afc/;kw=campbaruchmarchapr2012;sz=468x60;ord=123456789?" border="0" alt="" /></a></noscript>
+				<!-- end ad tag -->
 			</div>
 			<div class="row">
 				<section class="sports clearfix">
