@@ -71,6 +71,8 @@ function debug($var) {
 # Support RSS Feeds
 add_theme_support('automatic-feed-links');
 
+# Small security fix
+remove_action ('wp_head', 'wp_generator');
 
 require_once('functions/image-sizes.php'); // set custom image sizes
 require_once('functions/user-fields.php'); // set custom user profile fields
