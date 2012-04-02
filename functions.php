@@ -46,27 +46,30 @@ function debug($var) {
 	-tested on cnnbrk (CNN Breaking)-
 	
 */
-function twitterApiCall()
-{
-	//date_default_timezone_set('UTC'); //api call needs UTC time
-	$sixHoursAgo = time()-(6*60*60);
-	$today_formatted = date('Y-m-d:H', $sixHoursAgo);
-	$search = "Paterno since:".$today_formatted." from:cnnbrk";
-	$url = "http://search.twitter.com/search.json?q=" . urlencode($search);
-	
-	$curl = curl_init();
-	curl_setopt( $curl, CURLOPT_URL, $url );
-	curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
-	$JSON_result = curl_exec( $curl );
-	curl_close( $curl );
-	$decoded  = json_decode( $JSON_result, true );
-	$text =$decoded['results']['0']['text'];
-	debug($decoded);
-	if (isset($text))
-	{
-		echo $text;
-	}	
-}
+// function twitterApiCall()
+// {
+// 	//date_default_timezone_set('UTC'); //api call needs UTC time
+// 	$sixHoursAgo = time()-(6*60*60);
+// 	$today_formatted = date('Y-m-d:H', $sixHoursAgo);
+// 	$search = "Paterno since:".$today_formatted." from:cnnbrk";
+// 	$url = "http://search.twitter.com/search.json?q=" . urlencode($search);
+// 	
+// 	$curl = curl_init();
+// 	curl_setopt( $curl, CURLOPT_URL, $url );
+// 	curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+// 	$JSON_result = curl_exec( $curl );
+// 	curl_close( $curl );
+// 	$decoded  = json_decode( $JSON_result, true );
+// 	$text =$decoded['results']['0']['text'];
+// 	debug($decoded);
+// 	if (isset($text))
+// 	{
+// 		echo $text;
+// 	}	
+// }
+
+# Support RSS Feeds
+add_theme_support('automatic-feed-links');
 
 
 require_once('functions/image-sizes.php'); // set custom image sizes
