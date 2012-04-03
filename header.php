@@ -19,10 +19,12 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
+	<!-- Begin LESS -->
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less">
 	<script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js" type="text/javascript"></script>
+	<!-- End LESS -->
 
-	<!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css " type="text/css" media="screen" /> -->
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css " type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
