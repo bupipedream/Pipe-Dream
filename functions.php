@@ -74,6 +74,19 @@ add_theme_support('automatic-feed-links');
 # Small security fix
 remove_action ('wp_head', 'wp_generator');
 
+# Enqueue jQuery from Google's servers
+$url = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'; // the URL to check against
+$test_url = @fopen($url,'r'); // test parameters
+if($test_url !== false) { // test if the URL exists
+    function load_external_jQuery() { // load external file
+        wp_deregister_script('jquery'); // deregisters the default WordPress jQuery
+        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'); // register the external file
+        wp_enqueue_script('jquery'); // enqueue the external file
+    }
+	add_action('wp_enqueue_scripts', 'load_external_jQuery'); // initiate the function
+}
+
+
 require_once('functions/image-sizes.php'); // set custom image sizes
 require_once('functions/user-fields.php'); // set custom user profile fields
 require_once('functions/attachment-fields.php'); // add custom meta-fields to file uploads
