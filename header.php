@@ -64,13 +64,6 @@
 	<?php wp_head(); ?>
 
 	<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-	<!-- All JavaScript at the bottom, except this Modernizr build.
-	     Modernizr enables HTML5 elements & feature detects for optimal performance.
-	     Create your own custom Modernizr build: www.modernizr.com/download/ -->
-	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/modernizr-2.5.2.min.js"></script>
-
-	<!-- Grab all of the photos associated with article. -->
 	
 	<script type="text/javascript">
 
