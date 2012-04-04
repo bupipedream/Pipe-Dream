@@ -5,7 +5,7 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 	<meta charset="utf-8">
 
 	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
@@ -30,8 +30,8 @@
 
 	<!-- Facebook Open Graph -->
 	<meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
-	<meta property="fb:page_id" content="56173492419" />
-	<meta property="fb:app_id" content="225391740871493" />
+	<!-- <meta property="fb:app_id" content="225391740871493" /> -->
+	<meta property="fb:app_id" content="<?php echo FB_APP_ID; ?>" />	
 	<meta property="fb:admins" content="1352160452" />
 	
 	<?php if(is_single()): ?>
@@ -44,10 +44,10 @@
 			if(!$description) $description = get_custom_excerpt($post->post_content, '25');
 		?>
 		
-		<meta property="og:description" content="<?php echo $description;  ?>" />
+		<meta property="og:description" content="<?php echo $description; ?>" />
 
 		<?php $photos = get_photos(get_the_ID(), '1'); if($photos): ?>
-			<meta property="og:image" content="<?php echo $photos['src']['thumbnail']; ?>" />
+			<meta property="og:image" content="<?php echo $photos['src']['medium']; ?>" />
 		<?php else: ?>
 			<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/og-image.png" />
 		<?php endif; ?>
@@ -81,7 +81,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-	
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -90,14 +89,51 @@
 	<script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
-	      appId      : '225391740871493', // App ID
+	      appId      : '<?php echo FB_APP_ID; ?>', // App ID
 	      channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
 	      status     : true, // check login status
 	      cookie     : true, // enable cookies to allow the server to access the session
 	      xfbml      : true  // parse XFBML
 	    });
 
-	    // Additional initialization code here
+
+		FB.getLoginStatus(function(response) {
+		  if (response.status === 'connected') {
+		    // the user is logged in and has authenticated your
+		    // app, and response.authResponse supplies
+		    // the user's ID, a valid access token, a signed
+		    // request, and the time the access token 
+		    // and signed request each expire
+		    var uid = response.authResponse.userID;
+		    var accessToken = response.authResponse.accessToken;
+
+			// FB.api('/me', function(response) {
+			//   alert('Your name is ' + response.name);
+			// });
+		
+			<?php if(is_single()): ?>
+		
+			FB.api(
+				'/me/pddeveloper:read', 
+				'post', 
+				{ 
+					article : '<?php echo get_permalink(); ?>'
+				},
+				function(response) {
+				  log('Facebook API:', response);
+			  	}
+			);
+			
+			<?php endif; ?>
+		
+		  } else if (response.status === 'not_authorized') {
+		    // the user is logged in to Facebook, 
+		    // but has not authenticated your app
+		  } else {
+		    // the user isn't logged in to Facebook.
+		  }
+		  log('Facebook API:', response);
+		 });
 	  };
 
 	  // Load the SDK Asynchronously
@@ -172,4 +208,3 @@
 			</p>
 		</div>
 	</nav>
-	
