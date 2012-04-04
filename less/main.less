@@ -20,16 +20,6 @@ audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
-/* =============================================================================
-   Base
-   ========================================================================== */
-
-/*
- * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
- * 2. Force vertical scrollbar in non-IE
- * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
- */
-
 
 /* =============================================================================
    Base
@@ -230,12 +220,12 @@ td { vertical-align: top; }
    ========================================================================== */
 
 .doublehrule { // two horizontal lines for separating content
-	background: url('@{baseurl}/img/doublehrule.png') repeat-x scroll bottom left;
+	background: ~"url(@{baseurl}/img/doublehrule.png) repeat-x scroll bottom left";
 	padding-bottom: 10px !important;
 }
 
 .darkdoublehrule { // two darker horizontal lines for separating content
-	background: url('@{baseurl}/img/darkdoublehrule.png') repeat-x scroll bottom left;
+	background: ~"url(@{baseurl}/img/darkdoublehrule.png) repeat-x scroll bottom left";
 	padding-bottom: 10px !important;
 }
 
@@ -531,7 +521,7 @@ nav#nav-container {
 		a { color: @lighttext; }
 		li { list-style: none; }
 		.comments-label {
-			background: url("@{baseurl}/img/comment.png") no-repeat scroll center left;
+			background: ~"url(@{baseurl}/img/comment.png) no-repeat scroll center left";
 			padding-left: 17px;
 		}
 	}
