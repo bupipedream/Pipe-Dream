@@ -25,7 +25,6 @@
 	<!-- End LESS -->
 
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css " type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
