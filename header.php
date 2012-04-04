@@ -114,7 +114,7 @@
 			<?php if(is_single()): ?>
 		
 			FB.api(
-				'/me/pddeveloper:read', 
+				'/me/<?php echo FB_APP_NAMESPACE; ?>:read', 
 				'post', 
 				{ 
 					article : '<?php echo get_permalink(); ?>'
