@@ -139,7 +139,7 @@
 			
 			<section id="socialbar">
 				<div class="twitter">
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.bupipedream.com/news/9130/passion-pit-to-headline-spring-fling/" data-text="Page Title" data-via="bupipedream" data-related="bupipedream">Tweet</a>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo get_permalink(); ?>" data-text="<?php single_post_title(''); ?>" data-via="bupipedream" data-related="bupipedream">Tweet</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
 				
