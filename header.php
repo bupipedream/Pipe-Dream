@@ -133,62 +133,72 @@
 
 	<div id="fb-root"></div>
 	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '<?php echo FB_APP_ID; ?>', // App ID
-	      channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
-	      status     : true, // check login status
-	      cookie     : true, // enable cookies to allow the server to access the session
-	      xfbml      : true  // parse XFBML
-	    });
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '<?php echo FB_APP_ID; ?>', // App ID
+				channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+				status     : true, // check login status
+				cookie     : true, // enable cookies to allow the server to access the session
+				xfbml      : true  // parse XFBML
+			});
 
+			FB.getLoginStatus(function(response) {
+				if (response.status === 'connected') {
+					// the user is logged in and has authenticated your
+					// app, and response.authResponse supplies
+					// the user's ID, a valid access token, a signed
+					// request, and the time the access token 
+					// and signed request each expire
+					var uid = response.authResponse.userID;
+					var accessToken = response.authResponse.accessToken;
 
-		FB.getLoginStatus(function(response) {
-		  if (response.status === 'connected') {
-		    // the user is logged in and has authenticated your
-		    // app, and response.authResponse supplies
-		    // the user's ID, a valid access token, a signed
-		    // request, and the time the access token 
-		    // and signed request each expire
-		    var uid = response.authResponse.userID;
-		    var accessToken = response.authResponse.accessToken;
+					// FB.api('/me', function(response) {
+					//   alert('Your name is ' + response.name);
+					// });
 
-			// FB.api('/me', function(response) {
-			//   alert('Your name is ' + response.name);
-			// });
+					<?php if(is_single()): ?>
+
+						FB.api(
+							'/me/news.reads', 
+							'post', 
+						{ 
+							article : '<?php echo get_permalink(); ?>'
+						},
+						function(response) {
+							log('Facebook API:', response);
+						});
+
+					<?php endif; ?>
+
+				} else if (response.status === 'not_authorized') {
+					// the user is logged in to Facebook, 
+					// but has not authenticated your app
+				} else {
+					// the user isn't logged in to Facebook.
+				}
+				log('Facebook API:', response);
+			});
+		};
+
+		FB.Event.subscribe('edge.create', function(targetUrl) {
+			_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
+		});
 		
-			<?php if(is_single()): ?>
+		FB.Event.subscribe('edge.remove', function(targetUrl) {
+		  _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
+		});
 		
-			FB.api(
-				'/me/news.reads', 
-				'post', 
-				{ 
-					article : '<?php echo get_permalink(); ?>'
-				},
-				function(response) {
-				  log('Facebook API:', response);
-			  	}
-			);
-			
-			<?php endif; ?>
-		
-		  } else if (response.status === 'not_authorized') {
-		    // the user is logged in to Facebook, 
-		    // but has not authenticated your app
-		  } else {
-		    // the user isn't logged in to Facebook.
-		  }
-		  log('Facebook API:', response);
-		 });
-	  };
+		FB.Event.subscribe('message.send', function(targetUrl) {
+		  _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
+		});
 
-	  // Load the SDK Asynchronously
-	  (function(d){
-	     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-	     js = d.createElement('script'); js.id = id; js.async = true;
-	     js.src = "//connect.facebook.net/en_US/all.js";
-	     d.getElementsByTagName('head')[0].appendChild(js);
-	   }(document));
+		// Load the SDK Asynchronously
+		(function(d){
+			var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+			js = d.createElement('script'); js.id = id; js.async = true;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			d.getElementsByTagName('head')[0].appendChild(js);
+		}(document));
 	</script>
 			
 <div id="container">
