@@ -24,7 +24,7 @@
 	<script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js" type="text/javascript"></script>
 	<!-- End LESS -->
 
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css " type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -49,13 +49,13 @@
 		<?php $photos = get_photos(get_the_ID(), '1'); if($photos): ?>
 			<meta property="og:image" content="<?php echo $photos['src']['thumbnail']; ?>" />
 		<?php else: ?>
-			<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/og-image.png" />
+			<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
 		<?php endif; ?>
 
 	<?php else: ?>
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content="<?php bloginfo('description'); ?>" />  
-		<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/og-image.png" />
+		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
 	<?php endif; ?>
 
 	
@@ -126,11 +126,11 @@
 		</div>
 		<div id="logo">
 			<!-- Pipe Dream Logo -->
-			<h1><a href="<?php echo home_url(); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/bupipedream.png" alt="<?php bloginfo('name'); ?>" /></a></h1>
+			<h1><a href="<?php bloginfo('url'); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_url'); ?>/img/bupipedream.png" alt="<?php bloginfo('name'); ?>" /></a></h1>
 		</div>
 		<div id="search-form">
 			<!-- Search Form -->
-			<form role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>" >
+			<form role="search" method="get" id="searchform" action="<?php bloginfo('wpurl'); ?>/" >
 				<input type="search" autocomplete="on" value="<?php get_search_query(); ?>" name="s" id="s" placeholder="Search the Site..." />
 				<input type="submit" id="searchsubmit" value="<?php echo esc_attr('Search') ?>" />
 			</form>			
@@ -140,18 +140,18 @@
 		<div id="nav-links" class="span19">
 			<!-- Navigation Links -->
 			<ul>
-				<li><a href="<?php echo home_url(); ?>/news/" <?php if(is_category('1')) echo 'class="active"'; ?>>News</a></li>
-				<li><a href="<?php echo home_url(); ?>/sports/" <?php if(is_category('3')) echo 'class="active"'; ?>>Sports</a></li>
-				<li><a href="<?php echo home_url(); ?>/opinion/" <?php if(is_category('4')) echo 'class="active"'; ?>>Opinion</a></li>
-				<li><a href="<?php echo home_url(); ?>/release/" <?php if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
-				<li class="first light"><a href="<?php echo home_url(); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
-				<li class="light"><a href="<?php echo home_url(); ?>/about/" title="Learn more about Pipe Dream">About</a></li>
-				<!-- <li class="light"><a href="<?php echo home_url(); ?>/contribute/" title="Join Pipe Dream">Contribute</a></li> -->
+				<li><a href="<?php bloginfo('wpurl'); ?>/news/" <?php if(is_category('1')) echo 'class="active"'; ?>>News</a></li>
+				<li><a href="<?php bloginfo('wpurl'); ?>/sports/" <?php if(is_category('3')) echo 'class="active"'; ?>>Sports</a></li>
+				<li><a href="<?php bloginfo('wpurl'); ?>/opinion/" <?php if(is_category('4')) echo 'class="active"'; ?>>Opinion</a></li>
+				<li><a href="<?php bloginfo('wpurl'); ?>/release/" <?php if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
+				<li class="first light"><a href="<?php bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
+				<li class="light"><a href="<?php bloginfo('wpurl'); ?>/about/" title="Learn more about Pipe Dream">About</a></li>
+				<!-- <li class="light"><a href="<?php bloginfo('wpurl'); ?>/contribute/" title="Join Pipe Dream">Contribute</a></li> -->
 			</ul>
 		</div>
-		<div id="last-site-update" class="span5 last">			
-			<!-- Last Updated Timestamp -->			
-			<p>Last Update: 
+		<div id="last-site-update" class="span5 last">
+			<!-- Last Updated Timestamp -->
+			<p>Last Update:
 				<?php 
 					$args = array(
 						'numberposts' => 1,
@@ -172,4 +172,3 @@
 			</p>
 		</div>
 	</nav>
-	
