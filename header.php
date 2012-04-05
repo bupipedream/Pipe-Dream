@@ -83,7 +83,7 @@
 	<?php elseif(is_author()): ?>
 		<meta property="og:type" content="profile">
 		<meta property="og:title" content="<?php the_author_meta('display_name', $author); ?> | <?php bloginfo('name'); ?>">
-		<meta property="og:description" content="Profile page for <?php the_author_meta('position', $author); ?> <?php the_author_meta('display_name', $author); ?>.">
+		<meta property="og:description" content="Profile page for <?php the_author_meta('display_name', $author); ?>, <?php the_author_meta('position', $author); ?> at <?php bloginfo('name'); ?>.">
 		<meta property="og:url" content="<?php echo get_author_posts_url($author); ?>">
 
 		<?php
