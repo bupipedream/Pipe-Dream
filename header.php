@@ -5,7 +5,16 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<!-- Special head tags for open graph data -->
+<?php if(is_single()): ?>
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<?php elseif(is_author()): ?>
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
+<?php else: ?>
+	<head>
+<?php endif; ?>
+
 	<meta charset="utf-8">
 
 	<!-- Use the .htaccess and remove these lines to avoid edge case issues.
@@ -51,10 +60,45 @@
 		<?php else: ?>
 			<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/og-image.png" />
 		<?php endif; ?>
+		
+		<!-- List the post authors -->		
+		<?php
+			$authors = get_coauthors();
+			foreach($authors as $author) {
+				echo "<meta property=\"article:author\" content=\"".get_author_posts_url($author->ID)."\">\n";
+			}
+		?>
+		
+		<!-- Article publish and expiration dates -->
+		<meta property="article:published_time" content="<?php echo get_the_time("Y-m-d"); ?>"> 
+		<meta property="article:expiration_time" content="<?php echo  date('Y-m-d', strtotime(date("Y-m-d", strtotime(get_the_time("Y-m-d"))) . " +4 day")); ?>">
+     	
+		<?php
+			// Display the post's category
+     		$category = get_the_category(); 
+			$category = $category[0]->cat_name;
+			if($category != 'Archives')
+				echo "<meta property=\"article:section\" content=\"$category\">"
+     	?>
+	<?php elseif(is_author()): ?>
+		<meta property="og:type" content="profile">
+		<meta property="og:url" content="<?php echo get_author_posts_url($author); ?>">
+
+		<?php
+			// Get the author's Gravatar
+			$headers = get_headers('http://www.gravatar.com/avatar/'.md5(strtolower(trim(get_the_author_meta('user_email', $author)))).'?s=200&d=404');
+			if(strpos($headers[0], '200') !== false) {
+				echo "<meta property=\"og:image\" content=\"http://www.gravatar.com/avatar/".md5(strtolower(trim(get_the_author_meta('user_email', $author))))."?s=200&d=404\">";
+			}
+		?>
+
+		<meta property="profile:first_name" content="<?php the_author_meta('first_name', $author); ?>">
+		<meta property="profile:last_name" content="<?php the_author_meta('last_name', $author); ?>">
+		<meta property="profile:username" content="<?php the_author_meta('user_nicename', $author); ?>">
 
 	<?php else: ?>
 		<meta property="og:type" content="website" />
-		<meta property="og:description" content="<?php bloginfo('description'); ?>" />  
+		<meta property="og:description" content="Pipe Dream is the student-run newspaper serving the Binghamton University community since 1946." />  
 		<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/og-image.png" />
 	<?php endif; ?>
 
@@ -114,7 +158,7 @@
 			<?php if(is_single()): ?>
 		
 			FB.api(
-				'/me/<?php echo FB_APP_NAMESPACE; ?>:read', 
+				'/me/news.reads', 
 				'post', 
 				{ 
 					article : '<?php echo get_permalink(); ?>'
