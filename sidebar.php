@@ -53,7 +53,9 @@
 	<?php if(is_single()): ?>
 		
 		<?php if(is_user_logged_in()): ?>
-			<section id="fb-og"><div class="fb-add-to-timeline" data-show-faces="true"></div></section>
+			<section id="fb-og">
+				<div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="1" scope="publish_actions"></div>
+			</section>
 		<?php endif; ?>
 		
 		<section id="latest-news">
