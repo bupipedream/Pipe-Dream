@@ -178,19 +178,20 @@
 				}
 				log('Facebook API:', response);
 			});
-		};
 
-		FB.Event.subscribe('edge.create', function(targetUrl) {
-			_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
-		});
-		
-		FB.Event.subscribe('edge.remove', function(targetUrl) {
-		  _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
-		});
-		
-		FB.Event.subscribe('message.send', function(targetUrl) {
-		  _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
-		});
+			FB.Event.subscribe('edge.create', function(targetUrl) {
+				_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
+			});
+
+			FB.Event.subscribe('edge.remove', function(targetUrl) {
+			  _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
+			});
+
+			FB.Event.subscribe('message.send', function(targetUrl) {
+			  _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
+			});
+
+		};
 
 		// Load the SDK Asynchronously
 		(function(d){
