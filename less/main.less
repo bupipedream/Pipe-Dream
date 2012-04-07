@@ -799,6 +799,7 @@ footer {
 #fb-signup {
 	background: #fafbfb;
 	border: 1px solid #e8e3e3;
+	display: none;
 	font-family: @sans;
 	padding: 15px 20px;
 	margin: 0 @colPaddingLR;
@@ -869,6 +870,44 @@ footer {
 				content: "f";
 				border-right: 1px solid #4e6293;
 				box-shadow: 1px 0 0 rgba(255,255,255,.1);
+			}
+		}
+	}
+}
+
+#fb-settings {
+	font-family: @sans;
+	display: none;
+	margin-bottom: 12px;
+ 	padding-bottom: 12px !important;
+	p { margin: 0; }
+	#fb-profile-img {
+		float: left;
+	}
+	#fb-profile-details {
+		margin-left: 58px;
+		#fb-name {
+			font-weight: bold;
+		}
+		#fb-login-status {
+			color: #7a7a7a;
+			font-size: 88%;
+			margin: -3px 0 2px 0;
+		}
+		ul {
+			font-size: 85%;
+			margin: 0;
+			padding: 0;
+			li {
+				border-right: @thinborder;
+				a { color: #494646; }
+				display: inline;
+				font-weight: bold;
+				margin-right: 7px;
+				padding-right: 7px;
+				&:last-child {
+					border: none !important;
+				}
 			}
 		}
 	}

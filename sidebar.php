@@ -1,6 +1,21 @@
 <div id="rightcol" class="span7 last">
 	<!-- Right Column -->
 	
+	<?php if(is_single()): ?>
+		<section id="fb-settings" class="doublehrule">
+			<img id="fb-profile-img" />
+			<div id="fb-profile-details" class="clearfix">
+				<p id="fb-name"></p>
+				<p id="fb-login-status">Logged into Pipe Dream and Facebook</p>
+				<ul>
+					<li><a href="">Activity</a></li>
+					<li><a href="">Sharing</a></li>
+					<li><a href="">Settings</a></li>
+				</ul>
+			</div>
+		</section>
+	<?php endif; ?>
+	
 	<section class="ad">
 		<!--/* OpenX Javascript Tag v2.8.7 */-->
 

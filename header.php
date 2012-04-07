@@ -142,42 +142,40 @@
 				xfbml      : true  // parse XFBML
 			});
 
-			FB.getLoginStatus(function(response) {
-				if (response.status === 'connected') {
-					// the user is logged in and has authenticated your
-					// app, and response.authResponse supplies
-					// the user's ID, a valid access token, a signed
-					// request, and the time the access token 
-					// and signed request each expire
-					var uid = response.authResponse.userID;
-					var accessToken = response.authResponse.accessToken;
-
-					// FB.api('/me', function(response) {
-					//   alert('Your name is ' + response.name);
-					// });
-
+	        // listen for and handle auth.statusChange events
+	        FB.Event.subscribe('auth.statusChange', function(response) {
+	          if (response.authResponse) {
+	            // user has auth'd your app and is logged into Facebook
+	            FB.api('/me', function(me){
+	              if (me.name) {
+					console.log(me);
+					document.getElementById('fb-profile-img').setAttribute('src', 'http://graph.facebook.com/'+me.id+'/picture');
+	                document.getElementById('fb-name').innerHTML = me.name;
+		            document.getElementById('fb-signup').style.display = 'none';
+		            document.getElementById('fb-settings').style.display = 'block';
+		
 					<?php if(is_single()): ?>
-
 						FB.api(
-							'/me/news.reads', 
-							'post', 
-						{ 
-							article : '<?php echo get_permalink(); ?>'
-						},
-						function(response) {
-							log('Facebook API:', response);
+							'/me/news.reads', 'post', { article : '<?php echo get_permalink(); ?>' },
+							function(response) { log('Facebook API:', response); 
 						});
-
 					<?php endif; ?>
+	              }
+	            })
+	          } else {
+	            // user has not auth'd your app, or is not logged into Facebook
+	            document.getElementById('fb-signup').style.display = 'block';
+	            // document.getElementById('auth-loggedin').style.display = 'none';
+	          }
+	        });
 
-				} else if (response.status === 'not_authorized') {
-					// the user is logged in to Facebook, 
-					// but has not authenticated your app
-				} else {
-					// the user isn't logged in to Facebook.
-				}
-				log('Facebook API:', response);
-			});
+	        // respond to clicks on the login and logout links
+	        document.getElementById('fb-login-link').addEventListener('click', function(){
+				FB.login(function(response) {}, {scope: 'publish_actions'});
+	        });
+	        document.getElementById('fb-logout-link').addEventListener('click', function(){
+				FB.logout();
+	        });
 
 			FB.Event.subscribe('edge.create', function(targetUrl) {
 				_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
@@ -192,20 +190,6 @@
 			});
 
 		};
-
-		function fb_login(){
-			FB.login(function(response) {
-			  if (response.authResponse) {
-			    console.log('Welcome!  Fetching your information.... ');
-			    FB.api('/me', function(response) {
-			      console.log('Good to see you, ' + response.name + '.');
-			    });
-			  } else {
-			    console.log('User cancelled login or did not fully authorize.');
-			  }
-			}, {scope: 'publish_actions'});
-		}
-
 
 		// Load the SDK Asynchronously
 		(function(d){
