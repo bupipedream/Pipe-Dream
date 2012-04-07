@@ -154,11 +154,27 @@
 		            document.getElementById('fb-signup').style.display = 'none';
 		            document.getElementById('fb-settings').style.display = 'block';
 		
+					if($.cookie('fb-share')) $('#fb-state span').html("ON");
+					else $('#fb-state span').html("OFF");
+		
 					<?php if(is_single()): ?>
-						FB.api(
-							'/me/news.reads', 'post', { article : '<?php echo get_permalink(); ?>' },
-							function(response) { log('Facebook API:', response); 
+						if($.cookie('fb-share')) {
+							FB.api(
+								'/me/news.reads', 'post', { article : '<?php echo get_permalink(); ?>' },
+								function(response) { log('Facebook API:', response); 
+							});
+						}
+						
+						$('#fb-state').bind('click', function(){
+							if($('#fb-state span').html() == "ON") { // turn off sharing
+								$('#fb-state span').html("OFF");
+								$.cookie('fb-share', null);
+							} else { // turn on sharing
+								$('#fb-state span').html("ON");
+								$.cookie('fb-share', 'true');
+							}
 						});
+						
 					<?php endif; ?>
 					
 					FB.api('/me/news.reads', function(response) {
@@ -176,18 +192,17 @@
 							
 							FB.api(postId, 'delete', function(response) {
 							  if (!response || response.error) {
-							    alert('Error occured - '+postId);
+								$(this).parent().fadeOut();
 							  } else {
-							    alert('Post was deleted');
+							  	log("Error Deleting: ", response);
 							  }
 							});
 							
-							$(this).parent().fadeOut();
 							return false;
 						});
 					});
 	              }
-	            })
+	            });
 	          } else {
 	            // user has not auth'd your app, or is not logged into Facebook
 	            document.getElementById('fb-signup').style.display = 'block';
@@ -197,7 +212,11 @@
 
 	        // respond to clicks on the login and logout links
 	        document.getElementById('fb-login-link').addEventListener('click', function(){
-				FB.login(function(response) {}, {scope: 'publish_actions'});
+				FB.login(function(response) {
+					if(response.authResponse && $.cookie('fb-share') == null) {
+						$.cookie('fb-share', 'true');
+					}
+				}, {scope: 'publish_actions'});
 	        });
 	        document.getElementById('fb-logout-link').addEventListener('click', function(){
 				FB.logout();
