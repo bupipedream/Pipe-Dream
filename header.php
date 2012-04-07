@@ -141,97 +141,100 @@
 				cookie     : true, // enable cookies to allow the server to access the session
 				xfbml      : true  // parse XFBML
 			});
-
+			
+			// check if user has turned facebook sharing off
+			var sharing = $.cookie('fb-share');
+			
 	        // listen for and handle auth.statusChange events
-	        FB.Event.subscribe('auth.statusChange', function(response) {
-	          if (response.authResponse) {
-	            // user has auth'd your app and is logged into Facebook
-	            FB.api('/me', function(me){
-	              if (me.name) {
-					console.log(me);
-					document.getElementById('fb-profile-img').setAttribute('src', 'http://graph.facebook.com/'+me.id+'/picture');
-	                document.getElementById('fb-name').innerHTML = me.name;
-		            document.getElementById('fb-signup').style.display = 'none';
-		            document.getElementById('fb-settings').style.display = 'block';
-		
-					if($.cookie('fb-share')) $('#fb-state span').html("ON");
-					else $('#fb-state span').html("OFF");
-		
+			FB.Event.subscribe('auth.statusChange', function(response) {
+				if (response.authResponse) {
+					// user has auth'd your app and is logged into Facebook
 					<?php if(is_single()): ?>
-						if($.cookie('fb-share')) {
-							FB.api(
-								'/me/news.reads', 'post', { article : '<?php echo get_permalink(); ?>' },
-								function(response) { log('Facebook API:', response); 
-							});
-						}
-						
-						$('#fb-state').bind('click', function(){
-							if($('#fb-state span').html() == "ON") { // turn off sharing
-								$('#fb-state span').html("OFF");
-								$.cookie('fb-share', null);
-							} else { // turn on sharing
-								$('#fb-state span').html("ON");
-								$.cookie('fb-share', 'true');
-							}
-						});
-						
-					<?php endif; ?>
-					
-					FB.api('/me/news.reads', function(response) {
-						log('Read:', response);
-						for(var x in response.data) {
-							var article = response.data[x].data.article;
+					FB.api('/me', function(me) {
+						if (me.name) {
 							
-							$('#fb-recent-activity ul').append('<li id="'+response.data[x].id+'">'+article.title+'<a href="#" class="fb-remove" title="Remove this article"><img src="<?php bloginfo('template_url'); ?>/img/close.png" /></a></li>');
+							// show facebook info, hide and show other divs
+							document.getElementById('fb-profile-img').setAttribute('src', 'http://graph.facebook.com/'+me.id+'/picture');
+							document.getElementById('fb-name').innerHTML = me.name;
+							document.getElementById('fb-signup').style.display = 'none';
+							document.getElementById('fb-settings').style.display = 'block';
 							
-							log('Article:', article);
-						}
-						
-						$('.fb-remove').bind('click', function(){							
-							var postId = $(this).parent().attr('id');
-							
-							FB.api(postId, 'delete', function(response) {
-							  if (!response || response.error) {
-							  	log("Error Deleting: ", response);
-							  } else {
-								$(this).parent().fadeOut();
-							  }
-							});
-							
-							return false;
-						});
-					});
-	              }
-	            });
-	          } else {
-	            // user has not auth'd your app, or is not logged into Facebook
-	            document.getElementById('fb-signup').style.display = 'block';
-	            // document.getElementById('auth-loggedin').style.display = 'none';
-	          }
-	        });
+							// show sharing status
+							if(sharing == 'on') $('#fb-state span').html("ON");
+							else $('#fb-state span').html("OFF");
 
-	        // respond to clicks on the login and logout links
-	        document.getElementById('fb-login-link').addEventListener('click', function(){
+							// share when enabled
+							if(sharing == 'on') {
+								FB.api( '/me/news.reads', 'post', { article : '<?php echo get_permalink(); ?>' }, function(response) { 
+									log('Facebook API:', response);
+								});
+							}
+
+							// change sharing status
+							$('#fb-state').bind('click', function(){
+								if($('#fb-state span').html() == "ON") { // turn off sharing
+									$('#fb-state span').html("OFF");
+									$.cookie('fb-share', 'off');
+								} else { // turn on sharing
+									$('#fb-state span').html("ON");
+									$.cookie('fb-share', 'on');
+								}
+							});
+
+							// get the read stories
+							FB.api('/me/news.reads', function(response) {
+								
+								// display read articles
+								for(var x in response.data) {
+									var article = response.data[x].data.article;
+									$('#fb-recent-activity ul').append('<li id="'+response.data[x].id+'">'+article.title+'<a href="#" class="fb-remove" title="Remove this article"><img src="<?php bloginfo('template_url'); ?>/img/close.png" /></a></li>');
+									log('Article:', article);
+								}
+								
+								// delete an article from your activity
+								$('.fb-remove').bind('click', function(e){							
+									var postId = $(this).parent().attr('id');
+									FB.api(postId, 'delete', function(response) {
+										if (response) {
+											$(this).parent().fadeOut();
+										}
+									});
+									e.preventDefault();
+								});
+
+							});
+						}
+					});
+					<?php endif; ?>
+				} else {
+					// user has not auth'd your app, or is not logged into Facebook
+					document.getElementById('fb-signup').style.display = 'block';
+				}
+			});
+
+			// respond to clicks on the login and logout links
+			document.getElementById('fb-login-link').addEventListener('click', function(){
 				FB.login(function(response) {
 					if(response.authResponse && $.cookie('fb-share') == null) {
-						$.cookie('fb-share', 'true');
+						$.cookie('fb-share', 'on');
 					}
 				}, {scope: 'publish_actions'});
-	        });
-	        document.getElementById('fb-logout-link').addEventListener('click', function(){
+			});
+
+			document.getElementById('fb-logout-link').addEventListener('click', function(){
 				FB.logout();
-	        });
+			});
 
 			FB.Event.subscribe('edge.create', function(targetUrl) {
 				_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
 			});
 
 			FB.Event.subscribe('edge.remove', function(targetUrl) {
-			  _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
+				_gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
 			});
 
 			FB.Event.subscribe('message.send', function(targetUrl) {
-			  _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
+				_gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
 			});
 
 		};
@@ -243,7 +246,8 @@
 			js.src = "//connect.facebook.net/en_US/all.js";
 			d.getElementsByTagName('head')[0].appendChild(js);
 		}(document));
-	</script>
+
+</script>
 			
 <div id="container">
 	<header class="row">
