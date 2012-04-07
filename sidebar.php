@@ -9,7 +9,7 @@
 				<p id="fb-login-status">Logged into Pipe Dream and Facebook</p>
 				<ul>
 					<li><a href="">Activity</a></li>
-					<li><a href="">Sharing</a></li>
+					<li><a href="">Sharing <span id="fb-state"></span></a></li>
 					<li><a href="">Settings</a></li>
 				</ul>
 			</div>

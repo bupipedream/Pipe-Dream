@@ -163,13 +163,28 @@
 					
 					FB.api('/me/news.reads', function(response) {
 						log('Read:', response);
-						var x;
-						for(x in response.data) {
+						for(var x in response.data) {
 							var article = response.data[x].data.article;
-							$('#fb-recent-activity ul').append('<li>'+article.title+'</li>');
+							
+							$('#fb-recent-activity ul').append('<li id="'+response.data[x].id+'">'+article.title+'<a href="#" class="fb-remove" title="Remove this article"><img src="<?php bloginfo('template_url'); ?>/img/close.png" /></a></li>');
 							
 							log('Article:', article);
 						}
+						
+						$('.fb-remove').bind('click', function(){							
+							var postId = $(this).parent().attr('id');
+							
+							FB.api(postId, 'delete', function(response) {
+							  if (!response || response.error) {
+							    alert('Error occured - '+postId);
+							  } else {
+							    alert('Post was deleted');
+							  }
+							});
+							
+							$(this).parent().fadeOut();
+							return false;
+						});
 					});
 	              }
 	            })
