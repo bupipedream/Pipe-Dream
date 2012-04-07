@@ -192,9 +192,9 @@
 							
 							FB.api(postId, 'delete', function(response) {
 							  if (!response || response.error) {
-								$(this).parent().fadeOut();
-							  } else {
 							  	log("Error Deleting: ", response);
+							  } else {
+								$(this).parent().fadeOut();
 							  }
 							});
 							
