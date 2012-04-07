@@ -913,6 +913,7 @@ footer {
 	}
 	#fb-recent-activity {
 		border-top: @thinborder;
+		display: none;
 		margin: 5px -@colPaddingLR 0 -@colPaddingLR;
 		padding: 9px @colPaddingLR 0 @colPaddingLR;
 		ul { margin: 0; padding: 0; }
@@ -930,6 +931,27 @@ footer {
 			}
 		}
 	}
+	#fb-settings-list {
+		border-top: @thinborder;
+		display: none;
+		margin: 5px -@colPaddingLR 0 -@colPaddingLR;
+		padding: 9px @colPaddingLR 0 @colPaddingLR;
+		ul { margin: 0; padding: 0; }
+		li {
+			color: #666;
+			font-size: 93%;
+			list-style: none;
+			margin: 0 0 5px 0;
+			.fb-remove {
+				font-size: 80%;
+				font-weight: bold;
+				img {
+					margin: -3px 0 0 5px;
+				}
+			}
+		}
+	}
+	
 }
 
 
