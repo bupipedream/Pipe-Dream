@@ -203,8 +203,8 @@
 			  } else {
 			    console.log('User cancelled login or did not fully authorize.');
 			  }
-			});
-		}, {scope: 'publish_actions'});
+			}, {scope: 'publish_actions'});
+		}
 
 
 		// Load the SDK Asynchronously
