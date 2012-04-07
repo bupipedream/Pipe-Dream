@@ -13,6 +13,12 @@
 					<li><a href="">Settings</a></li>
 				</ul>
 			</div>
+			<div id="fb-recent-activity">
+				<h2 class="section-label">Recently Read</h2>
+				<ul>
+				</ul>
+			</div>
+			
 		</section>
 	<?php endif; ?>
 	

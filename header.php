@@ -160,6 +160,17 @@
 							function(response) { log('Facebook API:', response); 
 						});
 					<?php endif; ?>
+					
+					FB.api('/me/news.reads', function(response) {
+						log('Read:', response);
+						var x;
+						for(x in response.data) {
+							var article = response.data[x].data.article;
+							$('#fb-recent-activity ul').append('<li>'+article.title+'</li>');
+							
+							log('Article:', article);
+						}
+					});
 	              }
 	            })
 	          } else {
