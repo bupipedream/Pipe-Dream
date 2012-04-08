@@ -227,6 +227,7 @@
 									FB.api(postId, 'delete', function(response) {
 										log('Delete Response:', response);
 										if (response) {
+											alert("Article removed from history");
 											li.fadeOut();
 										}
 									});
