@@ -155,12 +155,17 @@
 
 			// check if user has turned facebook sharing off
 			var sharing = $.cookie('fb-share');
+			
+			// turn on sharing when session does not exist
+			if(!sharing) {
+				setSharing('on');
+			}
 
 			// listen for and handle auth.statusChange events
 			FB.Event.subscribe('auth.statusChange', function(response) {				
+				<?php if(is_single()): ?>
 				if (response.authResponse) {
 					// user has auth'd your app and is logged into Facebook
-					<?php if(is_single()): ?>
 					FB.api('/me', function(me) {
 						if (me.name) {
 							
@@ -196,10 +201,10 @@
 							$('#fb-state').bind('click', function(e){
 								if($('#fb-state span').html() == "ON") { // turn off sharing
 									$('#fb-state span').html("OFF");
-									$.cookie('fb-share', 'off');
+									setSharing('off');
 								} else { // turn on sharing
 									$('#fb-state span').html("ON");
-									$.cookie('fb-share', 'on');
+									setSharing('on');
 								}
 								e.preventDefault();
 							});
@@ -242,19 +247,19 @@
 							});
 						}				      
 					});
-					<?php endif; ?>
 				} else {
 					// user has not auth'd your app, or is not logged into Facebook
 					showLogin(true);
 					showProfile(false);
 				}
+				<?php endif; ?>
 			});
 			
 			// respond to clicks on the login and logout links
 			document.getElementById('fb-login-link').addEventListener('click', function(){
 				FB.login(function(response) {
 					if(response.authResponse && $.cookie('fb-share') == null) {
-						$.cookie('fb-share', 'on');
+						setSharing('on');
 					}
 				}, {scope: 'publish_actions'});
 			});
@@ -301,6 +306,10 @@
 				});
 			}
 			return false;
+		}
+		
+		function setSharing(state) {
+			$.cookie('fb-share', state);
 		}
 
 		function showLogin(val) {
