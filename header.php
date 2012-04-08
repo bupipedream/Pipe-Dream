@@ -222,11 +222,12 @@
 								
 								// delete an article from your activity
 								$('.fb-remove').live('click', function(e){
-									var postId = $(this).parent().attr('id');
+									var li = $(this).parent();
+									var postId = li.attr('id');
 									FB.api(postId, 'delete', function(response) {
 										log('Delete Response:', response);
 										if (response) {
-											$(this).parent().fadeOut();
+											li.fadeOut();
 										}
 									});
 									e.preventDefault();
