@@ -157,7 +157,7 @@
 			var sharing = $.cookie('fb-share');
 
 			// listen for and handle auth.statusChange events
-			FB.Event.subscribe('auth.statusChange', function(response) {
+			FB.Event.subscribe('auth.statusChange', function(response) {				
 				if (response.authResponse) {
 					// user has auth'd your app and is logged into Facebook
 					<?php if(is_single()): ?>
@@ -165,10 +165,16 @@
 						if (me.name) {
 							
 							// show facebook info, hide and show other divs
-							document.getElementById('fb-profile-img').setAttribute('src', 'http://graph.facebook.com/'+me.id+'/picture');
-							document.getElementById('fb-name').innerHTML = me.name;
-							document.getElementById('fb-signup').style.display = 'none';
-							document.getElementById('fb-settings').style.display = 'block';
+							showLogin(false);
+							showProfile(true, me);
+							
+							FB.api('/me/permissions', 'get', function(response) {
+								var canPublish = response.data[0].publish_actions;
+								if(!canPublish) {
+									showLogin(true);
+									showProfile(false);
+								}
+							});
 							
 							// show sharing status
 							if(sharing == 'on') $('#fb-state span').html("ON");
@@ -227,7 +233,6 @@
 									FB.api(postId, 'delete', function(response) {
 										log('Delete Response:', response);
 										if (response) {
-											alert("Article removed from history");
 											li.fadeOut();
 										}
 									});
@@ -240,8 +245,8 @@
 					<?php endif; ?>
 				} else {
 					// user has not auth'd your app, or is not logged into Facebook
-					document.getElementById('fb-signup').style.display = 'block';
-					document.getElementById('fb-settings').style.display = 'none';
+					showLogin(true);
+					showProfile(false);
 				}
 			});
 			
@@ -278,19 +283,42 @@
 					title: '<?php the_title(); ?>',
 					link: '<?php echo get_permalink(); ?>',
 					to: 'itsdanieloconnor'
-				});	
+				});
 				e.preventDefault();
 			});
 		};
 
 		// user is removing publish_streams permission
 		function revokePermission() {
-			FB.api('/me/permissions/publish_actions', 'delete', function(response) {
-				if (response) {
-					alert("You have permanently disabled social sharing.")
-				}
-			});
+			var val = confirm("Are you sure you wish to permanently disable social sharing?");
+			if(val) {
+				FB.api('/me/permissions/publish_actions', 'delete', function(response) {
+					if (response) {
+						// alert("You have permanently disabled social sharing.")
+						showLogin(true);
+						showProfile(false);
+					}
+				});
+			}
 			return false;
+		}
+
+		function showLogin(val) {
+			if(val) {
+				document.getElementById('fb-signup').style.display = 'block';
+			} else {
+				document.getElementById('fb-signup').style.display = 'none';
+			}
+		}
+		
+		function showProfile(val, data) {
+			if(val) {
+				document.getElementById('fb-profile-img').setAttribute('src', 'http://graph.facebook.com/'+data.id+'/picture');
+				document.getElementById('fb-name').innerHTML = data.name;
+				document.getElementById('fb-settings').style.display = 'block';
+			} else {
+				document.getElementById('fb-settings').style.display = 'none';
+			}
 		}
 		
 		// Load the SDK Asynchronously
