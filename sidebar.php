@@ -9,7 +9,7 @@
 				<p id="fb-login-status">Logged into Pipe Dream and Facebook</p>
 				<ul>
 					<li id="fb-show-activity"><a href="">Activity</a></li>
-					<li id="fb-state"><a href="#">Sharing <span></span></a></li>
+					<li id="fb-state"><a href="#" onclick="toggleSharing();">Sharing <span></span></a></li>
 					<li id="fb-show-settings"><a href="">Settings</a></li>
 				</ul>
 			</div>
@@ -21,9 +21,8 @@
 			<div id="fb-settings-list">
 				<h2 class="section-label">Social Settings</h2>
 				<ul>
-					<li><a href="#" onclick="messageDanOConnor();">Send feedback to developer</li>
+					<li><a href="#" id="fb-message-developer">Send feedback to developer</li>
 					<li><a href="#" id="fb-logout-link">Sign out of Facebook</a></li>
-					<li><a href="#">Turn off social sharing</a></li>
 					<li><a href="#" onclick="revokePermission();">Remove social sharing</a></li>
 				</ul>
 			</div>

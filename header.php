@@ -141,11 +141,22 @@
 				cookie     : true, // enable cookies to allow the server to access the session
 				xfbml      : true  // parse XFBML
 			});
-			
+
+			/*!
+			 * jQuery Cookie Plugin
+			 * https://github.com/carhartl/jquery-cookie
+			 *
+			 * Copyright 2011, Klaus Hartl
+			 * Dual licensed under the MIT or GPL Version 2 licenses.
+			 * http://www.opensource.org/licenses/mit-license.php
+			 * http://www.opensource.org/licenses/GPL-2.0
+			 */
+			(function(a){a.cookie=function(b,c,d){if(arguments.length>1&&(!/Object/.test(Object.prototype.toString.call(c))||c===null||c===undefined)){d=a.extend({},d);if(c===null||c===undefined){d.expires=-1}if(typeof d.expires==="number"){var e=d.expires,f=d.expires=new Date;f.setDate(f.getDate()+e)}c=String(c);return document.cookie=[encodeURIComponent(b),"=",d.raw?c:encodeURIComponent(c),d.expires?"; expires="+d.expires.toUTCString():"",d.path?"; path="+d.path:"",d.domain?"; domain="+d.domain:"",d.secure?"; secure":""].join("")}d=c||{};var g=d.raw?function(a){return a}:decodeURIComponent;var h=document.cookie.split("; ");for(var i=0,j;j=h[i]&&h[i].split("=");i++){if(g(j[0])===b)return g(j[1]||"")}return null}})(jQuery)
+
 			// check if user has turned facebook sharing off
-			var sharing = $.cookie('fb-share');	      			
-			
-	        // listen for and handle auth.statusChange events
+			var sharing = $.cookie('fb-share');
+
+			// listen for and handle auth.statusChange events
 			FB.Event.subscribe('auth.statusChange', function(response) {
 				if (response.authResponse) {
 					// user has auth'd your app and is logged into Facebook
@@ -213,6 +224,7 @@
 								$('.fb-remove').live('click', function(e){
 									var postId = $(this).parent().attr('id');
 									FB.api(postId, 'delete', function(response) {
+										log('Delete Response:', response);
 										if (response) {
 											$(this).parent().fadeOut();
 										}
@@ -256,17 +268,18 @@
 			FB.Event.subscribe('message.send', function(targetUrl) {
 				_gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
 			});
-
+			
+			document.getElementById('fb-message-developer').addEventListener('click', function(e){
+				FB.ui({
+					method: 'send',
+					display: 'popup',
+					title: '<?php the_title(); ?>',
+					link: '<?php echo get_permalink(); ?>',
+					to: 'itsdanieloconnor'
+				});	
+				e.preventDefault();
+			});
 		};
-		
-		function messageDanOConnor() {
-			FB.ui({
-				method: 'send',
-				title: '<?php the_title(); ?>',
-				link: '<?php echo get_permalink(); ?>',
-				to: 'itsdanieloconnor'
-			});			
-		}
 
 		// user is removing publish_streams permission
 		function revokePermission() {
@@ -277,7 +290,7 @@
 			});
 			return false;
 		}
-
+		
 		// Load the SDK Asynchronously
 		(function(d){
 			var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
