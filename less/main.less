@@ -661,8 +661,12 @@ nav#nav-container {
 				h3 a { color: @link; }
 			}
 		}
+		&#fb-og {
+			margin: 0 -10px 0 -5px;
+			padding-bottom: 0px !important;
+		}
 	}
-	.ad, #fb-like-box { text-align: center; } // center align
+	.ad, #fb-like-box, #fb-og { text-align: center; } // center align
 }
 
 
@@ -802,6 +806,168 @@ footer {
 	
 	#comments {
 		margin: 20px 7% 0 0;
+	}
+	
+}
+
+/*------------------------*/
+/*--- Facebook Connect ---*/
+/*------------------------*/
+
+#fb-signup {
+	background: #fafbfb;
+	border: 1px solid #e8e3e3;
+	display: none;
+	font-family: @sans;
+	padding: 15px 20px;
+	margin: 0 @colPaddingLR;
+    -webkit-font-smoothing: antialiased;
+	-webkit-box-shadow: 1px 2px 0px rgba(245, 245, 245, 1);
+	-moz-box-shadow:    1px 2px 0px rgba(245, 245, 245, 1);
+	box-shadow:         1px 2px 0px rgba(245, 245, 245, 1);
+	.border-radius(0 0 3px 3px);
+	p {
+		color: #666666;
+		font-size: 90%;
+		margin: 3px 0 0 0;
+		width: 400px;
+	}
+	h3 {
+		color: #181819;
+		margin: 0;
+	}
+	#login-button {		
+		background: ~"url(@{baseurl}/img/fblogin.png) no-repeat";
+		float: right;
+		padding: 21px 90px 29px 8px;
+		.connect {
+			font-family: Lucida Grande, Helvetica Neue, Helvetica, Arial, sans-serif;
+		    display: inline-block;
+		    font-size: 11px;
+		    padding: 6px 8px;
+		    background: -webkit-linear-gradient(#7488b0, #5e719d);
+		    background: -moz-linear-gradient(#7488b0, #5e719d);
+		    background: -o-linear-gradient(#7488b0, #5e719d);
+		    background: -ms-linear-gradient(#7488b0, #5e719d);
+		    background: linear-gradient(#7488b0, #5e719d);
+		    color: #fff;
+		    text-shadow: 0 -1px 0 rgba(0,0,20,.4);
+		    font-weight: bold;
+		    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 0 0 1px rgba(255,255,255,.2), 0 0 0 1px #2e4464;
+		    text-decoration: none;
+		    border-radius: 3px;
+		    line-height: 1;
+		    position: relative;
+			&:hover {
+				background: -webkit-linear-gradient(#8699bf, #6c7fab);
+			    background: -moz-linear-gradient(#8699bf, #6c7fab);
+			    background: -o-linear-gradient(#8699bf, #6c7fab);
+			    background: -ms-linear-gradient(#8699bf, #6c7fab);
+			    background: linear-gradient(#8699bf, #6c7fab);
+			}
+			&:active {
+				background: -webkit-linear-gradient(#6c7fab, #8699bf);
+			    background: -moz-linear-gradient(#6c7fab, #8699bf);
+			    background: -o-linear-gradient(#6c7fab, #8699bf);
+			    background: -ms-linear-gradient(#6c7fab, #8699bf);
+			    background: linear-gradient(#6c7fab, #8699bf);
+			}
+			&:before {
+				display: inline-block;
+				position: relative;
+				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAATCAYAAACp65zuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJ1JREFUeNpi1PcuYEACikA8GYi9GdAACzJHRU5iUX6in42tqSYDXoWlaUFW5gaqDNgAEzLHSEeJiQEHQDGRlYUZzv71+0+ZWWBpN1YTkQEbK8tEdKv5gfg/FMOBgU/hTyTxDwxzVuyW/U8AfP3+4w9Oq5HB+w9fvjECNfCDjcYPtrIA3fIRyGAE8S5s6f+P5EZGnOGID4wqxAsAAgwAZJZIKuTDCsgAAAAASUVORK5CYII=);
+				height: 23px;
+				background-repeat: no-repeat;
+				background-position: 0px 3px;
+				text-indent: -9999px;
+				text-align: center;
+				width: 7px;
+				line-height: 23px;
+				margin: -8px 7px -7px 0;
+				padding: 0 7px 0 0;
+				content: "f";
+				border-right: 1px solid #4e6293;
+				box-shadow: 1px 0 0 rgba(255,255,255,.1);
+			}
+		}
+	}
+}
+
+#fb-settings {
+	font-family: @sans;
+	display: none;
+	margin-bottom: 12px;
+ 	padding-bottom: 12px !important;
+	p { margin: 0; }
+	#fb-profile-img {
+		float: left;
+	}
+	#fb-profile-details {
+		margin-left: 58px;
+		#fb-name {
+			font-weight: bold;
+		}
+		#fb-login-status {
+			color: #7a7a7a;
+			font-size: 88%;
+			margin: -3px 0 2px 0;
+		}
+		ul {
+			font-size: 85%;
+			margin: 0;
+			padding: 0;
+			li {
+				border-right: @thinborder;
+				a { color: #494646; }
+				display: inline;
+				font-weight: bold;
+				margin-right: 7px;
+				padding-right: 7px;
+				&:last-child {
+					border: none !important;
+				}
+			}
+		}
+	}
+	#fb-recent-activity {
+		border-top: @thinborder;
+		display: none;
+		margin: 5px -@colPaddingLR 0 -@colPaddingLR;
+		padding: 9px @colPaddingLR 0 @colPaddingLR;
+		ul { margin: 0; padding: 0; }
+		li {
+			color: #666;
+			font-size: 93%;
+			list-style: none;
+			margin: 0 0 5px 0;
+			.fb-remove {
+				font-size: 80%;
+				font-weight: bold;
+				img {
+					margin: -3px 0 0 5px;
+				}
+			}
+		}
+	}
+	#fb-settings-list {
+		border-top: @thinborder;
+		display: none;
+		margin: 5px -@colPaddingLR 0 -@colPaddingLR;
+		padding: 9px @colPaddingLR 0 @colPaddingLR;
+		ul { margin: 0; padding: 0; }
+		li {
+			color: #666;
+			font-size: 93%;
+			list-style: none;
+			margin: 0 0 5px 0;
+			.fb-remove {
+				font-size: 80%;
+				font-weight: bold;
+				img {
+					margin: -3px 0 0 5px;
+				}
+			}
+		}
 	}
 	
 }
