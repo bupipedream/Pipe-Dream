@@ -87,19 +87,19 @@ if($test_url !== false) { // test if the URL exists
 }
 
 require_once('functions/image-sizes.php'); // set custom image sizes
-require_once('functions/user-fields.php'); // set custom user profile fields
-require_once('functions/attachment-fields.php'); // add custom meta-fields to file uploads
-require_once('functions/options.php'); // add custom meta-fields to file uploads
 require_once('functions/get-photos.php'); // retreive photos for a post
 // require_once('functions/performance.php'); // display site performance
 require_once('functions/is-archived.php'); // get custom fields
 require_once('functions/time-since.php'); // display the time since something
 require_once('functions/get-sections.php'); // arrange the home page
 require_once('functions/get-category-posts.php'); // get the top posts for category pages
-require_once('functions/extend-search.php'); // extend the search bar
 require_once('functions/custom-excerpt.php'); // get excerpt of custom length
+require_once('functions/options.php'); // add custom theme options	
+require_once('functions/extend-search.php'); // extend the search bar
 
 if(is_admin()) {
 	require_once('functions/add-deck.php'); // support article decks
-	require_once('functions/theme-options.php'); // support article decks	
-}
+	require_once('functions/theme-options.php'); // support article decks
+	require_once('functions/user-fields.php'); // set custom user profile fields
+	require_once('functions/attachment-fields.php'); // add custom meta-fields to file uploads
+} 
