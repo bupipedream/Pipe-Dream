@@ -103,7 +103,9 @@
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
 		<meta property="og:description" content="Pipe Dream is the student-run newspaper serving the Binghamton University community since 1946." />  
 	<?php endif; ?>
-
+	
+	<!-- Readability verification -->
+	<meta name="readability-verification" content="pdSFf3zCH7DUgHt5A9cu6d9urVcAz8UX7WCR5WBE"/>
 	
 	<!-- Used by WP Plugins -->
 	<?php wp_head(); ?>
