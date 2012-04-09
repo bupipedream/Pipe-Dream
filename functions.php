@@ -100,5 +100,6 @@ require_once('functions/extend-search.php'); // extend the search bar
 require_once('functions/custom-excerpt.php'); // get excerpt of custom length
 
 if(is_admin()) {
-	require_once('functions/add-deck.php'); // support article decks	
+	require_once('functions/add-deck.php'); // support article decks
+	require_once('functions/theme-options.php'); // support article decks	
 }

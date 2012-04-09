@@ -19,7 +19,15 @@
 				<li><a href="<?php bloginfo('wpurl'); ?>/staff/">Staff</a></li> -->
 			</ul>
 		</nav>
-		<div id="stabalizing" class="span4">&nbsp;<!-- <p>#stabilizing: <?php echo $stabalizing; ?><br />#destabilizing: <?php echo $destabilizing; ?></p> --></div>
+		<div id="stabalizing" class="span4">
+			<!-- the most important part of the new website -->
+			<?php
+				$options = get_option('pd_theme_options');
+				$stabilizing = $options['stabilizing'];
+				$destabilizing = $options['destabilizing'];
+			?>
+			<p>#stabilizing: <?php echo $stabilizing; ?><br />#destabilizing: <?php echo $destabilizing; ?></p>
+		</div>
 		<div id="wordpress" class="span2 last">
 			<!-- Powered by WordPress -->
 			<a href="http://wordpress.org/">

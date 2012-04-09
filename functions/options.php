@@ -1,7 +1,7 @@
 <?php
 
-$stabalizing = "Test";
-$destabalizing = "LOLLOL";
+// $stabalizing = "Test";
+// $destabalizing = "LOLLOL";
 
 $alert = FALSE;
 $time = "8:46 PM ET";
