@@ -105,7 +105,7 @@
 	<?php endif; ?>
 	
 	<!-- Readability verification -->
-	<meta name="readability-verification" content="pdSFf3zCH7DUgHt5A9cu6d9urVcAz8UX7WCR5WBE"/>
+	<meta name="readability-verification" content="ZK8FNVN9ncwELK4cKGxYV88ADLRBpnnubZAdKyE2"/>
 	
 	<!-- Used by WP Plugins -->
 	<?php wp_head(); ?>
