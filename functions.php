@@ -86,7 +86,6 @@ if($test_url !== false) { // test if the URL exists
 	add_action('wp_enqueue_scripts', 'load_external_jQuery'); // initiate the function
 }
 
-
 require_once('functions/image-sizes.php'); // set custom image sizes
 require_once('functions/user-fields.php'); // set custom user profile fields
 require_once('functions/attachment-fields.php'); // add custom meta-fields to file uploads
@@ -99,3 +98,7 @@ require_once('functions/get-sections.php'); // arrange the home page
 require_once('functions/get-category-posts.php'); // get the top posts for category pages
 require_once('functions/extend-search.php'); // extend the search bar
 require_once('functions/custom-excerpt.php'); // get excerpt of custom length
+
+if(is_admin()) {
+	require_once('functions/add-deck.php'); // support article decks	
+}

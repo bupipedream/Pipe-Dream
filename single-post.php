@@ -27,6 +27,8 @@
 				
 				<h2><?php the_title(); ?></h2>
 				
+				<p id="deck"><?php echo get_post_meta(get_the_ID(), '_pd_article_deck_text', true); ?></p>
+				
 				<div id="meta">
 					<div id="social">
 						<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
