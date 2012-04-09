@@ -78,7 +78,7 @@
      		$category = get_the_category(); 
 			$category = $category[0]->cat_name;
 			if($category != 'Archives')
-				echo "<meta property=\"article:section\" content=\"$category\">"
+				echo "<meta property=\"article:section\" content=\"$category\">";
      	?>
 	<?php elseif(is_author()): ?>
 		<meta property="og:type" content="profile">

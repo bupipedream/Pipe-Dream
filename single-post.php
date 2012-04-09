@@ -17,42 +17,57 @@
 				</section>
 			<?php endif; ?>
 			
-			<article id="post-<?php the_ID(); ?>">
+			<article id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/Article">
 				
 				<p class="published">
-					<time datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="Published on <?php the_time('F j, Y \a\t g:i A T'); ?>">
+					<time itemprop="dateCreated" datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="Published on <?php the_time('F j, Y \a\t g:i A T'); ?>">
 						<?php the_time('F j, Y'); ?>
 					</time>
 				</p>
 				
-				<h2><?php the_title(); ?></h2>
+				<h2 itemprop="headline"><?php the_title(); ?></h2>
 				
 				<p id="deck"><?php echo get_post_meta(get_the_ID(), '_pd_article_deck_text', true); ?></p>
 				
+				<!-- Schema.org markup -->
+				<meta itemprop="wordCount" content="<?php echo str_word_count(get_the_content()); ?>" />
+				<meta itemprop="discussionUrl" content="<?php echo get_permalink(); ?>#comments" />
+				<meta itemprop="copyrightYear" content="<?php the_time('Y'); ?>" />
+				<meta itemprop="inLanguage" content="en-US" />
+				<?php
+					// Display the post's category
+		     		$category = get_the_category(); 
+					$category = $category[0]->cat_name;
+					if($category != 'Archives') {
+						echo '<meta itemprop="articleSection" content="'.$category.'" />';
+					}
+		     	?>
+
 				<div id="meta">
 					<div id="social">
 						<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 					</div>
 					<?php if(function_exists('coauthors_posts_links')): ?>
 						<?php if(is_coauthor_for_post('Staff Reports')): ?>
-							<p class="byline">Staff Reports</p>
+							<p class="byline" itemprop="author">Staff Reports</p>
 						<?php elseif(is_coauthor_for_post('editorial')): ?>
-							<p class="byline">The Editorial Board</p>
+							<p class="byline" itemprop="author">The Editorial Board</p>
 						<?php elseif(is_coauthor_for_post('archives')): ?>
-							<p class="byline"><?php echo $archive['_author']; ?></p>
+							<p class="byline" itemprop="author"><?php echo $archive['_author']; ?></p>
 						<?php else: ?>
-							<p class="byline"><?php coauthors_posts_links(); //coauthors(); ?></p>
+							<p class="byline" itemprop="author"><?php coauthors_posts_links(); //coauthors(); ?></p>
 						<?php endif;?>
 					<?php endif;?>
 						
 				</div>
 				
-				<section> <!-- article text and images -->
+				<section itemprop="articleBody"> <!-- article text and images -->
 				
 					<!-- Grab all of the photos associated with article. -->
 					<?php $attachments = get_photos(get_the_ID(), '-1'); ?>
 					
-					
+					<meta itemprop="thumbnailUrl" content="<?php echo $attachments['photos'][0]['src']['medium']; ?>" />
+
 					<?php // echo "<pre>"; print_r($attachments); echo "</pre>"; ?>
 						
 					<!-- 
