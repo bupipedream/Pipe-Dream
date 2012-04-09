@@ -61,7 +61,7 @@
 						
 				</div>
 				
-				<section itemprop="articleBody"> <!-- article text and images -->
+				<section> <!-- article text and images -->
 				
 					<!-- Grab all of the photos associated with article. -->
 					<?php $attachments = get_photos(get_the_ID(), '-1'); ?>
@@ -108,6 +108,7 @@
 							}
 						?>
 
+						<div itemprop="articleBody">
 						<?php
 							if(!isset($paragraphAfter)) $paragraphAfter = 1; 
 							$content = apply_filters('the_content', get_the_content());
@@ -147,17 +148,20 @@
 							<?php }
 							echo $content[$i] . "</p>";
 						} ?>
-						<!-- Display the extra images in a slideshow  -->
+						</div>
 						
+						<!-- Display the extra images in a slideshow  -->						
 						<?php if(isset($attachments['display']['gallery'])): ?>
 						<?php foreach($attachments['display']['gallery'] as $image): ?>
 							<a href="<?php echo $attachments['photos'][$image]['src']['large']; ?>" title="<?php echo $attachments['photos'][$image]['caption']; ?> (<?php echo $attachments['photos'][$image]['credit']; ?>)" class="gallery" rel="gallery"><img src="<?php echo $attachments['photos'][$image]['src']['single-inline']; ?>" style="display:none;" /></a>
 						<?php endforeach; ?>
-						<?php endif; ?>					
-					
+						<?php endif; ?>
+
 					<?php else: ?> <!-- There is a feature photo, but no inline photo -->
 
+						<div itemprop="articleBody">
 						<?php the_content(); ?>
+						</div>
 
 					<?php endif; ?>
 
