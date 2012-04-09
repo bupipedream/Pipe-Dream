@@ -1,11 +1,10 @@
 <?php
 /*
-Plugin Name: Meta Box Example
-Plugin URI: http://wp.tutsplus.com/
-Description: Adds an example meta box to wordpress.
-Version: None
-Author: Christopher Davis
-Author URI: http://wp.tutsplus.com/
+Plugin Name: Article Deck
+Plugin URI: http://www.bupipedream.com/
+Description: Add a deck to an article published in WordPress. Code modified from a Tuts+ tutorial: http://bit.ly/oHVeaT.
+Version: 1.0
+Author: Modified by Daniel O'Connor, original by Christopher Davis of wp.tutsplus.com.
 License: Public Domain
 */
 
@@ -26,6 +25,7 @@ function pd_article_deck( $post )
 	<p>
 		<textarea rows="3" cols="40" name="pd_article_deck_text" id="pd_article_deck_text" tabindex="12" style="width: 100% !important;"><?php echo $text; ?></textarea>
 	</p>
+	<!-- Description from Wikipedia -->
 	<p>A deck is a phrase, sentence or several sentences near the title of an article or story, a quick blurb or article teaser.</p>
 	<?php	
 }
