@@ -7,17 +7,15 @@
 			<!-- Check if the article is part of the archives -->
 			<?php $archive = pd_is_archived(get_the_ID(), null); // print_r($archive); ?>		    
 			
-			<?php if(is_user_logged_in()): ?>
-				<section id="fb-signup">
-					<div id="login-button">
-						<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
-						_gaq.push(['_trackEvent', 'Open Graph', 'Read', '<?php echo get_the_title(); ?>']);
-						
-					</div>
-					<h3>Discover Pipe Dream With Your Friends</h3>
-					<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
-				</section>
-			<?php endif; ?>
+			<section id="fb-signup">
+				<div id="login-button">
+					<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
+					_gaq.push(['_trackEvent', 'Open Graph', 'Read', '<?php echo get_the_title(); ?>']);
+					
+				</div>
+				<h3>Discover Pipe Dream With Your Friends</h3>
+				<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
+			</section>
 			
 			<article id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/Article">
 				
