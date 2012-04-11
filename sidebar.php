@@ -8,9 +8,9 @@
 				<p id="fb-name"></p>
 				<p id="fb-login-status">Logged into Pipe Dream and Facebook</p>
 				<ul>
-					<li id="fb-show-activity"><a href="">Activity</a></li>
+					<li id="fb-show-activity"><a href="#">Activity</a></li>
 					<li id="fb-state"><a href="#">Sharing <span></span></a></li>
-					<li id="fb-show-settings"><a href="">Settings</a></li>
+					<li id="fb-show-settings"><a href="#">Settings</a></li>
 				</ul>
 			</div>
 			<div id="fb-recent-activity">
@@ -21,9 +21,9 @@
 			<div id="fb-settings-list">
 				<h2 class="section-label">Social Settings</h2>
 				<ul>
-					<li><a href="#" id="fb-message-developer">Send feedback to developer</li>
-					<li><a href="#" id="fb-logout-link">Sign out of Facebook</a></li>
-					<li><a href="#" onclick="revokePermission(); return false;">Remove social sharing</a></li>
+					<li><a href="#" id="fb-message-developer" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Message Developer']);">Send feedback to developer</li>
+					<li><a href="#" id="fb-logout-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Facebook Logout']);">Sign out of Facebook</a></li>
+					<li><a href="#" onclick="revokePermission(); onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Revoke Permission']);"; return false;">Remove social sharing</a></li>
 				</ul>
 			</div>
 		</section>

@@ -118,6 +118,11 @@
 	  _gaq.push(['_setAccount', 'UA-29084495-1']);
 	  _gaq.push(['_setDomainName', 'bupipedream.com']);
 	  _gaq.push(['_trackPageview']);
+	
+	  if (document.location.href.search("fb_action_types=news.reads") != -1) {
+		// Track traffic from Facebook Like & Send as Campaign traffic 
+		_gaq.push(['_trackEvent', 'Open Graph', 'Read', '<?php echo get_the_title(); ?>']);
+	  }
 
 	  (function() {
 	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -241,13 +246,14 @@
 										log('Delete Response:', response);
 										if (response) {
 											li.fadeOut();
+											_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Remove Article']);
 										}
 									});
 									e.preventDefault();
 								});
 
 							});
-						}				      
+						}
 					});
 				} else {
 					// user has not auth'd your app, or is not logged into Facebook

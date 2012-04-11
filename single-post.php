@@ -10,7 +10,9 @@
 			<?php if(is_user_logged_in()): ?>
 				<section id="fb-signup">
 					<div id="login-button">
-						<a href="#" id="fb-login-link" class="connect">Connect with Facebook</a>
+						<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
+						_gaq.push(['_trackEvent', 'Open Graph', 'Read', '<?php echo get_the_title(); ?>']);
+						
 					</div>
 					<h3>Discover Pipe Dream With Your Friends</h3>
 					<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
