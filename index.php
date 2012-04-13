@@ -125,7 +125,7 @@
 								
 								<figure class="center">
 									<a href="<?php echo get_permalink($article['ID']) ?>">
-										<img src="<?php echo $article['photo']['src']['large']; ?>" />
+										<img src="<?php echo $article['photo']['src']['medium']; ?>" />
 									</a>
 									<figcaption><p><?php echo $article['photo']['credit']; ?></p></figcaption>
 								</figure>
