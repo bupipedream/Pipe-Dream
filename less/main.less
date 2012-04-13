@@ -258,19 +258,6 @@ td { vertical-align: top; }
 	padding: 0 5px;
 }
 
-// message alert bar
-#message-bar {
-	background: #f5f5f5;
-	border-bottom: 2px solid #aeaeae;
-	color: #444444;
-	font-family: @sans;
-	/*font-size: 90%;*/
-	margin: 0;
-	padding: 10px;
-	/*text-align: center;*/
-	a { font-weight: bold; }
-}
-
 // twitter breaking news
 .breaking {
 	background: #fff;
@@ -280,8 +267,30 @@ td { vertical-align: top; }
 	font-weight: bold;
 	p { font-size: 95% !important; margin: 0 !important; padding: 10px; }
 	time { font-weight: normal; margin-right: 20px; }
-	a { font-weight: bold; }
+	a {
+		font-weight: bold;
+		&:hover { text-decoration: underline; }
+	}
 	span { color: #BB3838; /*font-size: 100%;*/ font-weight: bold; text-transform: uppercase; font-family: @sans; }
+}
+
+.message {	
+	background: #fefef5;
+	border-top: 1px solid #b9b9b9 !important;
+	border-bottom: 2px solid #aeaeae !important;
+	color: #333;
+	font-family: @sans;
+	p { font-size: 95% !important; margin: 0 !important; padding: 10px; }
+	time { font-weight: normal; }
+	a {
+		font-weight: bold;
+		&:hover { text-decoration: underline; }
+	}
+	span { /*font-size: 100%;*/ margin-right: 10px; font-weight: bold; text-transform: uppercase; font-family: @sans; }
+	.fb-like {
+		float: right;
+		margin-top: 8px;
+	}
 }
 
 // used for thumbnails within articles
@@ -324,26 +333,6 @@ h2 small {
 	-moz-transition: @arguments; /* Firefox 4 */
 	-webkit-transition: @arguments; /* Safari and Chrome */
 	-o-transition: @arguments; /* Opera */
-}
-
-.alert {
-	background-color: #feffcc;
-	font-family: @sans;
-	padding: 2px 15px;
-	text-align: center;
-	a {
-		color: #4b6301;
-		font-weight: bold;
-		&:hover {
-			color: #324201;
-			text-decoration: underline;
-		}
-	}
-	.heading {
-		font-weight: bold;
-		text-transform: uppercase;
-		margin-right: 4px;
-	}
 }
 
 .label {

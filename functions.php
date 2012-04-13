@@ -94,7 +94,6 @@ require_once('functions/time-since.php'); // display the time since something
 require_once('functions/get-sections.php'); // arrange the home page
 require_once('functions/get-category-posts.php'); // get the top posts for category pages
 require_once('functions/custom-excerpt.php'); // get excerpt of custom length
-require_once('functions/options.php'); // add custom theme options	
 require_once('functions/extend-search.php'); // extend the search bar
 
 if(is_admin()) {

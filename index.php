@@ -3,21 +3,33 @@
 	<!-- Get all of content on the homepage -->
 	<?php $sections = get_sections(); ?>
 
+	<?php
+		$options = get_option('pd_theme_options');
+		$stabilizing = $options['stabilizing'];
+		$destabilizing = $options['destabilizing'];
+		$message = $options['message'];
+		$time = $options['time'];
+		$theme = $options['theme'];
+		$label = $options['label'];
+		$notice_status = $options['radioinput'];
+	?>
 
-	<?php if($alert): ?>
-		<div class="row breaking"> 
-			<!-- id="message-bar" -->
+	<?php if($notice_status): ?>
+		<div class="row <?php echo $theme; ?>"> 
 			<?php // twitterApiCall(); ?>
-			<p><span>Breaking News <time><?php echo $time; ?></time></span> <?php echo $message; ?></p>
+			<?php if($theme === 'message'): ?>
+				<div class="fb-like" data-href="http://facebook.com/bupipedream" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>
+			<?php endif; ?>
+			<p><span><?php echo $label; ?> <?php if($time): ?><time><?php echo $time; ?></time><?php endif; ?></span> <?php echo $message; ?></p>
 		</div>
 	<?php endif; ?>
 
 
 	<div class="row" id="content">		
 		<div class="span17">
-			<?php if($layout == "concert" && $sections['feature']['concert']): ?>
+			<!-- <?php //if($layout == "concert" && $sections['feature']['concert']): ?>
 				<section id="feature-concert" class="darkdoublehrule">
-					<!-- Concert Feature -->
+					Concert Feature
 
 					<?php foreach($sections['feature']['concert'] as $article): ?>
 
@@ -40,8 +52,8 @@
 						</article>
 
 					<?php endforeach; ?>			
-				</section>
-			<?php endif; ?>
+				</section> -->
+			<?php //endif; ?> 
 			
 			<!-- Left and Middle Columns -->
 			<div class="row thickhrule">
