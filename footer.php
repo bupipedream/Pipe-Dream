@@ -46,21 +46,6 @@
   
 	<!-- Used by WP plugins -->
 	<?php wp_footer(); ?>
-
-	<script type="text/javascript" charset="utf-8">
-	  var is_ssl = ("https:" == document.location.protocol);
-	  var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
-	  document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-
-	<script type="text/javascript">
-	  var uvOptions = {};
-	  (function() {
-	    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
-	    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/iSDTPAOAnF0OSUjtrpDiA.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
-	  })();
-	</script>
 		
 </body>
 </html>
