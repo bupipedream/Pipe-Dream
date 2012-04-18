@@ -316,7 +316,7 @@
 		}
 		
 		function setSharing(state) {
-			$.cookie('fb-share', state);
+			$.cookie('fb-share', state, { expires: 30, path: '/', domain: '<?php echo substr(site_url(), '7'); ?>' });
 		}
 
 		function showLogin(val) {
@@ -346,7 +346,7 @@
 		}(document));
 
 </script>
-			
+
 <div id="container">
 	<header class="row">
 		<div id="date-weather">
