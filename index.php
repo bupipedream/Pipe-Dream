@@ -24,37 +24,8 @@
 		</div>
 	<?php endif; ?>
 
-
 	<div class="row" id="content">		
-		<div class="span17">
-			<!-- <?php //if($layout == "concert" && $sections['feature']['concert']): ?>
-				<section id="feature-concert" class="darkdoublehrule">
-					Concert Feature
-
-					<?php foreach($sections['feature']['concert'] as $article): ?>
-
-						<article class="feature clearfix">
-					
-							<div class="likebox">
-								<div class="fb-like" data-href="<?php echo get_permalink($article['ID']) ?>" data-send="false" data-layout="box_count" data-width="50" data-show-faces="true"></div>
-							</div>
-					
-							<h2><a href="<?php echo get_permalink($article['ID']) ?>"><?php echo $article['post_title']; ?></a></h2>
-							<p class="deck">Tickets for the May 5 Events Center show start at $10. Pre-sale begins Wednesday at 10 a.m.</p>
-						
-							<figure class="center">
-								<a href="<?php echo get_permalink($article['ID']) ?>">
-									<img src="<?php echo $article['photo']['src']['large']; ?>" />
-								</a>
-								<figcaption><p><?php echo $article['photo']['credit']; ?></p></figcaption>
-							</figure>
-
-						</article>
-
-					<?php endforeach; ?>			
-				</section> -->
-			<?php //endif; ?> 
-			
+		<div class="span17">			
 			<!-- Left and Middle Columns -->
 			<div class="row thickhrule">
 				<!-- Left Column / News & Editorial -->
