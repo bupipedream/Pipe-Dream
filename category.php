@@ -25,7 +25,7 @@
 							
 							<figure class="center">
 								<a href="<?php echo get_permalink( $article['ID'] ); ?>">
-									<img src="<?php echo $photos['src']['medium']; ?>" />
+									<img src="<?php echo $photos['src']['custom-495']; ?>" />
 								</a>
 								<figcaption><p><?php echo $photos['credit']; ?></p></figcaption>
 							</figure>
@@ -81,7 +81,7 @@
 									<?php if($photos): ?>
 										<figure class="float-right">
 											<a href="<?php echo get_permalink($article['ID']) ?>">
-												<img src="<?php echo $photos['src']['thumbnail']; ?>" width="75px" height="75px" />
+												<img src="<?php echo $photos['src']['custom-75x75-crop']; ?>" width="75px" height="75px" />
 											</a>
 										</figure>
 	

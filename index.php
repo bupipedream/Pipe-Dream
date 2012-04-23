@@ -44,7 +44,7 @@
 							<?php if($article['photo']): ?>
 								<figure class="float-left">
 									<a href="<?php echo get_permalink($article['ID']) ?>">
-										<img src="<?php echo $article['photo']['src']['thumbnail']; ?>" width="75px" height="75px" />
+										<img src="<?php echo $article['photo']['src']['custom-75x75-crop']; ?>" />
 									</a>
 								</figure>
 							<?php endif; ?>
@@ -96,7 +96,7 @@
 								
 								<figure class="center">
 									<a href="<?php echo get_permalink($article['ID']) ?>">
-										<img src="<?php echo $article['photo']['src']['medium']; ?>" />
+										<img src="<?php echo $article['photo']['src']['custom-495']; ?>" />
 									</a>
 									<figcaption><p><?php echo $article['photo']['credit']; ?></p></figcaption>
 								</figure>
@@ -165,7 +165,7 @@
 								
 								<figure class="float-left">
 									<a href="<?php echo get_permalink($article['ID']) ?>">
-										<img src="<?php echo $article['photo']['src']['single-inline']; ?>" width="165px" />
+										<img src="<?php echo $article['photo']['src']['custom-165']; ?>" />
 									</a>
 								</figure>
 								
@@ -216,7 +216,7 @@
 								
 								<figure class="center">
 									<a href="<?php echo get_permalink($article['ID']) ?>">
-										<img src="<?php echo $article['photo']['src']['single-inline']; ?>" />
+										<img src="<?php echo $article['photo']['src']['custom-260']; ?>" />
 									</a>
 									<figcaption><p><?php echo $article['photo']['credit']; ?></p></figcaption>
 								</figure>
