@@ -23,7 +23,7 @@ function pd_article_deck( $post )
 
 	?>
 	<p>
-		<textarea rows="3" cols="40" name="pd_article_deck_text" id="pd_article_deck_text" tabindex="12" style="width: 100% !important;"><?php echo $text; ?></textarea>
+		<textarea rows="3" cols="40" name="pd_article_deck_text" id="pd_article_deck_text" tabindex="12" style="width: 100% !important;"><?php echo $values['_pd_article_deck_text'][0]; ?></textarea>
 	</p>
 	<!-- Description from Wikipedia -->
 	<p>A deck is a phrase, sentence or several sentences near the title of an article or story, a quick blurb or article teaser.</p>
