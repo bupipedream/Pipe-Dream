@@ -60,8 +60,7 @@
 				<div id="middlecol" class="span8 last">
 					<section>
 						<?php foreach($featured['secondary'] as $post_id): ?>
-							
-							
+
 							<?php 
 								// Some of the zones on the homepage display
 								// more than two posts so this will make sure
