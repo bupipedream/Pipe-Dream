@@ -132,7 +132,7 @@
 				</div>
 			</div>
 			<!-- Take down May 2, 2012 -->
-			<div class="halfbanner thickhrule">
+			<!-- <div class="halfbanner thickhrule"> -->
 				<!-- begin ad tag -->
 				<!--/* OpenX Javascript Tag v2.8.8 */-->
 				<script type='text/javascript'><!--//<![CDATA[
@@ -151,7 +151,7 @@
 				   document.write ("'><\/scr"+"ipt>");
 				//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=aeefcf47&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=3&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aeefcf47' border='0' alt='' /></a></noscript>
 
-			</div>
+			<!-- </div> -->
 			<div class="row">
 				<section class="sports clearfix">
 					<!-- Two column row of sports -->

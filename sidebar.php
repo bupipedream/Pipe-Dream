@@ -29,7 +29,7 @@
 		</section>
 	<?php endif; ?>
 	
-	<section class="ad">
+	<!-- <section class="ad"> -->
 		<!--/* OpenX Javascript Tag v2.8.8 */-->
 
 		<script type='text/javascript'><!--//<![CDATA[
@@ -48,7 +48,7 @@
 		   document.write ("'><\/scr"+"ipt>");
 		//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=ad9e85cc&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=1&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ad9e85cc' border='0' alt='' /></a></noscript>
 
-	</section>
+	<!-- </section> -->
 	
 	<?php if(is_home() || is_category()): ?>
 		
@@ -60,7 +60,7 @@
 			<a href="https://twitter.com/bupipedream" class="twitter-follow-button" data-show-count="true">Follow @bupipedream</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</section>
-		<section class="ad" style="margin-top: 13px;">
+		<!-- <section class="ad" style="margin-top: 13px;"> -->
 			<!--/* OpenX Javascript Tag v2.8.8 */-->
 
 			<script type='text/javascript'><!--//<![CDATA[
@@ -78,7 +78,7 @@
 			   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
 			   document.write ("'><\/scr"+"ipt>");
 			//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=a0bcea6a&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=2&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a0bcea6a' border='0' alt='' /></a></noscript>
-		</section>
+		<!-- </section> -->
 
 		<section id="most-read">
 			<h2 class="section-label">Most Read</h2>
