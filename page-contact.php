@@ -3,42 +3,51 @@
 			
 			<div class="span16">
 						
+
 				<article id="post-<?php the_ID(); ?>">
-								
-					<h2>Contact</h2>
-								
-					<section>
-						<form action=" " method="post"  autocomplete="on">
-							<p>
-								<label for="type">Message type:</label>
-								<select name="message_type" id="id_message_type">
-									<option value="news">News Tip</option>
-									<option value="letter">Letter to the Editor</option>
-									<option value="business">Business Inquiry</option>
-									<option value="website">Website Question</option>
-									<option value="correction">Correction</option>
-									<option value="other">Other</option>
-								</select>
-							</p>
-							<p>
-								<label for="username">Name:</label>
-								<input type="text" name="username" id="username" required="required" />
-							</p>
 
-							<p>
-								<label for="email">Email:</label>
-								<input type="email" name="email" id="email" required="required" />
-							</p>
+					<h2><?php the_title(); ?></h2>
 
-							<p>
-								<label for="message">Message:</label>
-								<textarea required="required"></textarea>
-							</p>
-
-							<input type="submit" value="Submit" />
-						</form>
+					<section> <!-- article text and images -->
+						<?php the_content(); ?>
 					</section>
 				</article>
+
+				<!-- <h2>Contact</h2>
+							
+				
+							
+				<section>
+					<form action=" " method="post"  autocomplete="on">
+						<p>
+							<label for="type">Message type:</label>
+							<select name="message_type" id="id_message_type">
+								<option value="news">News Tip</option>
+								<option value="letter">Letter to the Editor</option>
+								<option value="business">Business Inquiry</option>
+								<option value="website">Website Question</option>
+								<option value="correction">Correction</option>
+								<option value="other">Other</option>
+							</select>
+						</p>
+						<p>
+							<label for="username">Name:</label>
+							<input type="text" name="username" id="username" required="required" />
+						</p>
+
+						<p>
+							<label for="email">Email:</label>
+							<input type="email" name="email" id="email" required="required" />
+						</p>
+
+						<p>
+							<label for="message">Message:</label>
+							<textarea required="required"></textarea>
+						</p>
+
+						<input type="submit" value="Submit" />
+					</form>
+				</section> -->
 						
 			</div>
 			<div class="span8 last">
