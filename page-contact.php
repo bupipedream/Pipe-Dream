@@ -3,6 +3,7 @@
 			
 			<div class="span16">
 						
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>">
 
@@ -12,6 +13,11 @@
 						<?php the_content(); ?>
 					</section>
 				</article>
+				<?php endwhile; ?>				
+					
+				<?php else : ?>
+
+				<?php endif; ?>
 
 				<!-- <h2>Contact</h2>
 							

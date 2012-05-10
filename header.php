@@ -384,6 +384,7 @@
 				<li><a href="<?php bloginfo('wpurl'); ?>/release/" <?php if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
 				<li class="first light"><a href="<?php bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
 				<li class="light"><a href="<?php bloginfo('wpurl'); ?>/about/" title="Learn more about Pipe Dream">About</a></li>
+				<li class="light"><a href="<?php bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 				<!-- <li class="light"><a href="<?php bloginfo('wpurl'); ?>/contribute/" title="Join Pipe Dream">Contribute</a></li> -->
 			</ul>
 		</div>
