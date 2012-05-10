@@ -100,6 +100,10 @@
 
 	<?php if(is_single()): ?>
 		
+		<section id="fb-like-box">
+			<div class="fb-like-box" data-href="http://www.facebook.com/bupipedream" data-width="292" data-height="185" data-show-faces="true" data-border-color="#cccccc" data-stream="false" data-header="false"></div>
+		</section>
+
 		<section id="latest-news">
 			<h2 class="section-label"><a href="<?php echo home_url(); ?>/news/">Latest News &raquo;</a></h2>
 				
