@@ -97,11 +97,11 @@
 		<meta property="profile:first_name" content="<?php the_author_meta('first_name', $author); ?>">
 		<meta property="profile:last_name" content="<?php the_author_meta('last_name', $author); ?>">
 		<meta property="profile:username" content="<?php the_author_meta('user_nicename', $author); ?>">
-
+	<?php elseif(is_home()): ?>
+		<meta property="og:description" content="Pipe Dream is the student-run newspaper serving the Binghamton University community since 1946." />
 	<?php else: ?>
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
-		<meta property="og:description" content="Pipe Dream is the student-run newspaper serving the Binghamton University community since 1946." />  
 	<?php endif; ?>
 	
 	<!-- Readability verification -->
