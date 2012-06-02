@@ -15,7 +15,7 @@
 	?>
 
 	<?php if($notice_status): ?>
-		<div class="row <?php echo $theme; ?>"> 
+		<div class="row <?php echo $theme; ?>">
 			<?php // twitterApiCall(); ?>
 			<?php if($theme === 'message'): ?>
 				<div class="fb-like" data-href="http://facebook.com/bupipedream" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false"></div>

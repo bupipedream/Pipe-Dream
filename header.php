@@ -30,7 +30,7 @@
 
 	<!-- Begin LESS -->
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less">
-	<script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js" type="text/javascript"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/libs/less-1.1.5.min.js" type="text/javascript"></script>
 	<!-- End LESS -->
 
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />

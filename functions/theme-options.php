@@ -20,17 +20,13 @@ function theme_options_add_page() {
 }
 
 $radio_options = array(
-	'alert' => array(
-		'value' => 'alert',
-		'label' => __( 'Alert', 'pdtheme' )
-	),
-	'message' => array(
-		'value' => 'message',
-		'label' => __( 'Message', 'pdtheme' )
+	'on' => array(
+		'value' => 'on',
+		'label' => __( 'Enabled', 'pdtheme' )
 	),
 	'off' => array(
 		'value' => 0,
-		'label' => __( 'None', 'pdtheme' )
+		'label' => __( 'Disabled', 'pdtheme' )
 	)
 );
 
@@ -94,7 +90,7 @@ function theme_options_do_page() {
 				</fieldset>
 				<br />
 				
-				<label class="description" for="pd_theme_options[theme]"><?php _e( 'Theme: &nbsp;&nbsp;', 'pdtheme' ); ?></label><br />
+				<label class="description" for="pd_theme_options[theme]"><?php _e( 'Theme (Breaking, Message): &nbsp;&nbsp;', 'pdtheme' ); ?></label><br />
 				
 				<input id="pd_theme_options[theme]" class="regular-text" type="text" name="pd_theme_options[theme]" value="<?php esc_attr_e( $options['theme'] ); ?>" /><br /><br />
 
@@ -128,10 +124,12 @@ function theme_options_validate( $input ) {
 	$input['theme'] = wp_filter_nohtml_kses( $input['theme'] );
 
 	// Our radio option must actually be in our array of radio options
-	if ( ! isset( $input['radioinput'] ) )
+	if ( ! isset( $input['radioinput'] ) ) {
 		$input['radioinput'] = null;
-	if ( ! array_key_exists( $input['radioinput'], $radio_options ) )
+	}
+	if ( ! array_key_exists( $input['radioinput'], $radio_options ) ) {
 		$input['radioinput'] = null;
+	}
 
 	return $input;
 }
