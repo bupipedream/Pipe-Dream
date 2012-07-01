@@ -37,50 +37,50 @@
 						<li>
 							<span class="board">Editor-in-Chief</span>
 							<ul>
-								<li>Nate Fleming '12</li>
+								<li>Daniel Weintraub '13</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Managing Editor</span>
 							<ul>
-								<li>Diana Glogau '12</li>
+								<li>Jules Forrest '14</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Business</span>
 							<ul>
-								<li>Henry James '12</li>
+								<li>Zachary Kirschner '13, <em>Business Manager</em></li>
+								<li>Zachary Hindin '14, <em>Advertising Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">News</span>
 							<ul>
-								<li>Emily Melas '13, <em>News Editor</em></li>
-								<li>Anthony Fiore '12, <em>Assistant News Editor</em></li>
-								<li>Sophia Rosenbaum '12, <em>Assistant News Editor</em></li>
-								<li>Meghan Perri '13, <em>Assistant News Editor</em></li>
+								<li>James Galloway '13, <em>News Editor</em></li>
+								<li>Suzie Lamb '13, <em>Assistant News Editor</em></li>
+								<li>Geoff Wilson '13, <em>Assistant News Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Sports</span>
 							<ul>
-								<li>Adam Rosenbloom '12, <em>Sports Editor</em></li>
-								<li>Aaron Gottlieb '12, <em>Assistant Sports Editor</em></li>
-								<li>Megan Brockett '13, <em>Assistant Sports Editor</em></li>
+								<li>Megan Brockett '13, <em>Sports Editor</em></li>
+								<li>Ari Kramer '14, <em>Assistant Sports Editor</em></li>
+								<li>Erik Bacharach '14, <em>Assistant Sports Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Photo</span>
 							<ul>
-								<li>Jules Forrest '14, <em>Photo Editor</em></li>
-								<li>Janel FitzSimmonds '13, <em>Assistant Photo Editor</em></li>
+								<li>Jonathan Heisler '13, <em>Photo Editor</em></li>
 								<li>Eric King '13, <em>Assistant Photo Editor</em></li>
+								<li>Nia Pellone '14, <em>Assistant Photo Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Opinion</span>
 							<ul>
-								<li>Jordan Rabinowitz '12, <em>Opinion Editor</em></li>
+								<li>Ezra Shapiro '14, <em>Opinion Editor</em></li>
 							</ul>
 						</li>
 						<li>
@@ -95,13 +95,14 @@
 							<ul>
 								<li>Paige Nazinitsky '14, <em>Design Manager</em></li>
 								<li>Zack Feldman '15, <em>Assistant Design Manager</em></li>
+								<li>Janel FitzSimmonds '13, <em>Assistant Design Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Copy Desk</span>
 							<ul>
-								<li>Kristin Lee '12, <em>Copy Desk Chief</em></li>
-								<li>Kaitlin Busser '13, <em>Assistant Copy Desk Chief</em></li>
+								<li>Kaitlin Busser '13, <em>Copy Desk Chief</em></li>
+								<li>Tina Ritter '13, <em>Assistant Copy Desk Chief</em></li>
 							</ul>
 						</li>
 						<li>
@@ -114,13 +115,12 @@
 							<span class="board">Web</span>
 							<ul>
 								<li>Daniel O'Connor '14, <em>Lead Web Developer</em></li>
-								<li>Daniel Weintraub '13, <em>Social Media Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Technology</span>
 							<ul>
-								<li>Phil Schaffer '12, <em>Newsroom Tech Manager</em></li>
+								<li>Derek Parry '13, <em>Newsroom Tech Manager</em></li>
 							</ul>
 						</li>
 					</ul>
