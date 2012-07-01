@@ -58,7 +58,7 @@
 							<ul>
 								<li>James Galloway '13, <em>News Editor</em></li>
 								<li>Suzie Lamb '13, <em>Assistant News Editor</em></li>
-								<li>Geoff Wilson '13, <em>Assistant News Editor</em></li>
+								<li>Geoff Wilson '14, <em>Assistant News Editor</em></li>
 							</ul>
 						</li>
 						<li>
