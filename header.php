@@ -47,14 +47,14 @@
 		<meta property="og:url" content="<?php echo get_permalink(); ?>" />
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="<?php single_post_title(''); ?>" />
-
+		
 		<?php
 			$description = strip_tags(get_the_excerpt());
 			if(!$description) $description = get_custom_excerpt($post->post_content, '25');
 		?>
 		
 		<meta property="og:description" content="<?php echo $description; ?>" />
-
+		
 		<?php $photos = get_photos(get_the_ID(), '1'); if($photos): ?>
 			<meta property="og:image" content="<?php echo $photos['src']['medium']; ?>" />
 		<?php else: ?>
@@ -85,7 +85,7 @@
 		<meta property="og:title" content="<?php the_author_meta('display_name', $author); ?>">
 		<meta property="og:description" content="Profile page for <?php the_author_meta('display_name', $author); ?>, <?php the_author_meta('position', $author); ?> at <?php bloginfo('name'); ?>.">
 		<meta property="og:url" content="<?php echo get_author_posts_url($author); ?>">
-
+		
 		<?php
 			// Get the author's Gravatar
 			$headers = get_headers('http://www.gravatar.com/avatar/'.md5(strtolower(trim(get_the_author_meta('user_email', $author)))).'?s=200&d=404');
@@ -93,7 +93,7 @@
 				echo "<meta property=\"og:image\" content=\"http://www.gravatar.com/avatar/".md5(strtolower(trim(get_the_author_meta('user_email', $author))))."?s=200&d=404\">";
 			}
 		?>
-
+		
 		<meta property="profile:first_name" content="<?php the_author_meta('first_name', $author); ?>">
 		<meta property="profile:last_name" content="<?php the_author_meta('last_name', $author); ?>">
 		<meta property="profile:username" content="<?php the_author_meta('user_nicename', $author); ?>">
@@ -354,15 +354,7 @@
 		<div id="date-weather">
 			<!-- Date and Weather -->
 			<span class="date"><?php echo date('l, M j, Y'); ?></span>
-			<span class="weather">
-				<?php
-					$weather = simplexml_load_file('http://www.google.com/ig/api?weather=13902');
-					$city = $weather->weather->forecast_information->city['data'];
-					$degrees = $weather->weather->current_conditions->temp_f['data'];
-					if($degrees) echo $degrees."&deg; - ".$city;
-					else echo "Binghamton, NY"
-				?>
-			</span>
+			<span class="weather">Binghamton, NY</span>
 		</div>
 		<div id="logo">
 			<!-- Pipe Dream Logo -->
