@@ -191,19 +191,21 @@
 							// show sharing status
 							if(sharing == 'on') $('#fb-state span').html("ON");
 							else $('#fb-state span').html("OFF");
-
+							
 							// share when enabled
 							if(sharing == 'on') {
-								FB.api( '/me/news.reads', 'post', { article : '<?php echo get_permalink(); ?>' }, function(response) {
-									log('Facebook API:', response);
-									if(response.id) {
-										$('#fb-recent-activity ul').prepend('<li id="'+response.id+'"><?php the_title(); ?><a href="#" class="fb-remove" title="Remove this article"><img src="<?php bloginfo('template_url'); ?>/img/close.png" /></a></li>');
-										$('#'+response.id).effect("highlight", {}, 5000); 
-										$('#fb-show-activity a').effect("highlight", {}, 3000); 
-									}
-								});
+								setTimeout(function(){
+									FB.api( '/me/news.reads', 'post', { article : '<?php echo get_permalink(); ?>' }, function(response) {
+										log('Facebook API:', response);
+										if(response.id) {
+											$('#fb-recent-activity ul').prepend('<li id="'+response.id+'"><?php the_title(); ?><a href="#" class="fb-remove" title="Remove this article"><img src="<?php bloginfo('template_url'); ?>/img/close.png" /></a></li>');
+											$('#'+response.id).effect("highlight", {}, 5000); 
+											$('#fb-show-activity a').effect("highlight", {}, 3000); 
+										}
+									});
+							    }, 10000);
 							}
-
+							
 							// change sharing status
 							$('#fb-state').bind('click', function(e){
 								if($('#fb-state span').html() == "ON") { // turn off sharing
