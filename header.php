@@ -353,7 +353,12 @@
 	<header class="row">
 		<div id="date-weather">
 			<!-- Date and Weather -->
-			<span class="date"><?php echo date('l, M j, Y'); ?></span>
+			<span class="date">
+				<?php
+					date_default_timezone_set('America/New_York');
+					echo date('l, M j, Y');
+				?>
+			</span>
 			<span class="weather">Binghamton, NY</span>
 		</div>
 		<div id="logo">
