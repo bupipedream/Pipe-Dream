@@ -2,15 +2,11 @@
 
 function get_time_since($time) {
 	
-	// debug($time);
-	
 	$date = new \DateTime();
-	// $date->setTimezone(new DateTimeZone('America'));
 	$date->setTimestamp(strtotime($time));
-	$date->setTimezone(new DateTimeZone('America/New_York'));
-
+	
 	$interval = $date->diff(new \DateTime('now'));
-				
+	
 	if(!$interval->i && !$interval->h && !$interval->d && !$interval->m && !$interval->y) {
 		if($interval->s != "1") {
 			$plural = "s";
@@ -30,7 +26,7 @@ function get_time_since($time) {
 			$plural = "s";
 			return $interval->format('%h hour'.$plural.' ago');
 		} else {
-			return $interval->format('%h hour ago');			
+			return $interval->format('%h hour ago');
 		}
 	} else if(!$interval->m && !$interval->y) {
 		if($interval->d != "1") {
@@ -44,10 +40,9 @@ function get_time_since($time) {
 			$plural = "s";	
 			return $interval->format('%m month'.$plural.' ago');
 		} else {
-			return $interval->format('%m month ago');			
+			return $interval->format('%m month ago');
 		}
 	}
 	
 	return false;
-	
 }

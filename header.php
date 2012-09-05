@@ -398,10 +398,8 @@
 						'post_status' => 'publish',
 					);
 					$post = wp_get_recent_posts($args);
-					$time = get_time_since($post['0']['post_modified_gmt']);
+					$time = get_time_since($post['0']['post_date']);
 				?>
-				
-				<?php date_default_timezone_set('EST'); ?>
 				
 				<time title="<?php echo date('F j, Y \a\t g:i A T', strtotime($post['0']['post_modified'])); ?>">
 					<?php echo $time; ?>
