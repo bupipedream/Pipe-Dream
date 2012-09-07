@@ -60,20 +60,20 @@ function get_authors($article) {
 function set_sections() {
 	
 	// grab all of the articles
-	$sections['news']['feature'] = objectToArray(z_get_posts_in_zone('news-feature'));
-	$sections['news']['secondary'] = objectToArray(z_get_posts_in_zone('news-secondary'));
-	$sections['news']['article-list'] = objectToArray(z_get_posts_in_zone('news-list'));
-
-	$sections['sports']['feature'] = objectToArray(z_get_posts_in_zone('sports-feature'));
-	$sections['sports']['article-list'] = objectToArray(z_get_posts_in_zone('sports-list'));
-
-	$sections['release']['feature'] = objectToArray(z_get_posts_in_zone('release-feature'));
-	$sections['release']['article-list'] = objectToArray(z_get_posts_in_zone('release-list'));
-
-	$sections['editorial']['feature'] = wp_get_recent_posts(array('numberposts' => 1, 'category' => 10));
-	$sections['opinion']['article-list'] = objectToArray(z_get_posts_in_zone('opinion-list'));		
+	$sections['news']['feature'] = objectToArray(z_get_posts_in_zone('zone-news-feature'));
+	$sections['news']['secondary'] = objectToArray(z_get_posts_in_zone('zone-news-secondary'));
+	$sections['news']['article-list'] = objectToArray(z_get_posts_in_zone('zone-news-list'));
 	
-	$sections['feature']['concert'] = objectToArray(z_get_posts_in_zone('feature-concert'));
+	$sections['sports']['feature'] = objectToArray(z_get_posts_in_zone('zone-sports-feature'));
+	$sections['sports']['article-list'] = objectToArray(z_get_posts_in_zone('zone-sports-list'));
+	
+	$sections['release']['feature'] = objectToArray(z_get_posts_in_zone('zone-release-feature'));
+	$sections['release']['article-list'] = objectToArray(z_get_posts_in_zone('release-list'));
+	
+	$sections['editorial']['feature'] = wp_get_recent_posts(array('numberposts' => 1, 'category' => 10));
+	$sections['opinion']['article-list'] = objectToArray(z_get_posts_in_zone('zone-opinion-list'));
+	
+	$sections['feature']['concert'] = objectToArray(z_get_posts_in_zone('zone-feature-concert'));
 	
 	return $sections;
 }

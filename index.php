@@ -2,7 +2,6 @@
 
 	<!-- Get all of content on the homepage -->
 	<?php $sections = get_sections(); ?>
-
 	<?php
 		$options = get_option('pd_theme_options');
 		$stabilizing = $options['stabilizing'];
@@ -24,8 +23,8 @@
 		</div>
 	<?php endif; ?>
 
-	<div class="row" id="content">		
-		<div class="span17">			
+	<div class="row" id="content">
+		<div class="span17">
 			<!-- Left and Middle Columns -->
 			<div class="row thickhrule">
 				<!-- Left Column / News & Editorial -->
@@ -35,7 +34,7 @@
 						<h2 class="section-label"><a href="<?php echo home_url(); ?>/news/">News &raquo;</a></h2>
 						
 						<?php foreach($sections['news']['secondary'] as $key => $article): ?>
-												
+						
 						<article class="<?php if($key === 1) echo 'doublehrule' ?> clearfix">
 							
 							<h2><a href="<?php echo get_permalink($article['ID']) ?>"><?php echo $article['post_title']; ?></a></h2>
