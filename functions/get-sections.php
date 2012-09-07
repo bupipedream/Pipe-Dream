@@ -68,7 +68,7 @@ function set_sections() {
 	$sections['sports']['article-list'] = objectToArray(z_get_posts_in_zone('zone-sports-list'));
 	
 	$sections['release']['feature'] = objectToArray(z_get_posts_in_zone('zone-release-feature'));
-	$sections['release']['article-list'] = objectToArray(z_get_posts_in_zone('release-list'));
+	$sections['release']['article-list'] = objectToArray(z_get_posts_in_zone('zone-release-list'));
 	
 	$sections['editorial']['feature'] = wp_get_recent_posts(array('numberposts' => 1, 'category' => 10));
 	$sections['opinion']['article-list'] = objectToArray(z_get_posts_in_zone('zone-opinion-list'));
