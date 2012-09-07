@@ -11,27 +11,27 @@
 
 function pd_get_featured_post_ids($category_id) {
 	if(get_category_by_slug('news')->term_id === $category_id) { // news
-		$featured = objectToArray(z_get_posts_in_zone('news-feature'));
-		$secondary = objectToArray(z_get_posts_in_zone('news-secondary'));
-		$list = objectToArray(z_get_posts_in_zone('news-list'));
+		$featured = objectToArray(z_get_posts_in_zone('zone-news-feature'));
+		$secondary = objectToArray(z_get_posts_in_zone('zone-news-secondary'));
+		$list = objectToArray(z_get_posts_in_zone('zone-news-list'));
 	}
 
 	if(get_category_by_slug('sports')->term_id === $category_id) { // sports
-		$featured = objectToArray(z_get_posts_in_zone('sports-feature'));
-		$secondary = objectToArray(z_get_posts_in_zone('sports-list'));
+		$featured = objectToArray(z_get_posts_in_zone('zone-sports-feature'));
+		$secondary = objectToArray(z_get_posts_in_zone('zone-sports-list'));
 
 		unset($secondary[2]);
 	}
 
 	if(get_category_by_slug('opinion')->term_id === $category_id) { // opinion
 		$featured = wp_get_recent_posts(array('numberposts' => 1, 'category' => 10));
-		$secondary = objectToArray(z_get_posts_in_zone('opinion-list'));
+		$secondary = objectToArray(z_get_posts_in_zone('zone-opinion-list'));
 		unset($secondary[2]);
 	}
 
 	if(get_category_by_slug('release')->term_id === $category_id) { // opinion
-		$featured = objectToArray(z_get_posts_in_zone('release-feature'));
-		$secondary = objectToArray(z_get_posts_in_zone('release-list'));
+		$featured = objectToArray(z_get_posts_in_zone('zone-release-feature'));
+		$secondary = objectToArray(z_get_posts_in_zone('zone-release-list'));
 		// unset($secondary[2]);
 		// unset($secondary[3]);
 	}
