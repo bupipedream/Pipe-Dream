@@ -104,9 +104,6 @@
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
 	<?php endif; ?>
 	
-	<!-- Readability verification -->
-	<meta name="readability-verification" content="ZK8FNVN9ncwELK4cKGxYV88ADLRBpnnubZAdKyE2"/>
-	
 	<!-- Used by WP Plugins -->
 	<?php wp_head(); ?>
 
