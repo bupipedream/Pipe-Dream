@@ -98,7 +98,7 @@
 		<meta property="profile:last_name" content="<?php the_author_meta('last_name', $author); ?>">
 		<meta property="profile:username" content="<?php the_author_meta('user_nicename', $author); ?>">
 	<?php elseif(is_home()): ?>
-		<meta property="og:description" content="Pipe Dream is the student-run newspaper serving the Binghamton University community since 1946." />
+		<meta property="og:description" content="Pipe Dream is Binghamton University's oldest and largest student-run newspaper." />
 	<?php else: ?>
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
