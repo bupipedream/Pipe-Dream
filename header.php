@@ -49,8 +49,8 @@
 		<meta property="og:title" content="<?php single_post_title(''); ?>" />
 		
 		<?php
-			$description = strip_tags(get_the_excerpt());
-			if(!$description) $description = get_custom_excerpt($post->post_content, '25');
+			$description = htmlentities(strip_tags(get_the_excerpt()));
+			if(!$description) $description = htmlentities(get_custom_excerpt($post->post_content, '25'));
 		?>
 		
 		<meta property="og:description" content="<?php echo $description; ?>" />
