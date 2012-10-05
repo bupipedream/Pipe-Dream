@@ -270,15 +270,16 @@
 						<?php foreach($sections['opinion']['article-list'] as $article): ?>
 							
 							<article class="clearfix">
-								<h2><a href="<?php echo get_permalink($article['ID']) ?>"><?php echo $article['post_title']; ?></a></h2>
-								
-								<?php if(isset($article['photo']['src'])): ?>
+							
+							<?php if(isset($article['photo']['src'])): ?>
 								<figure class="float-right thin-border">
 									<a href="<?php echo get_permalink($article['ID']) ?>">
 										<img src="<?php echo $article['photo']['src']['thumbnail']; ?>" title="<?php echo $article['post_author']['name']; ?>"width="75px" />
 									</a>
 								</figure>
 								<?php endif; ?>
+								
+								<h2><a href="<?php echo get_permalink($article['ID']) ?>"><?php echo $article['post_title']; ?></a></h2>
 								
 								<p><?php if($article['post_excerpt']) echo $article['post_excerpt']; else echo get_custom_excerpt($article['post_content'], '50'); ?></p>
 								
