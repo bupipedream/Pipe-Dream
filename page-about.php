@@ -117,7 +117,7 @@
 						<li>
 							<span class="board">Web</span>
 							<ul>
-								<li>Daniel O'Connor '14, <em>Lead Web Developer</em></li>
+								<li>Daniel O'Connor '14, <em>Web Editor &amp; Developer</em></li>
 							</ul>
 						</li>
 						<li>
