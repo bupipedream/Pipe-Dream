@@ -180,13 +180,13 @@
 							
 							<!-- Featured sports article -->
 							<article id="sports-feature" class="feature">
-								
-								<figure class="float-left">
-									<a href="<?php echo get_permalink($article['ID']) ?>">
-										<img src="<?php echo $article['photo']['src']['custom-165']; ?>" />
-									</a>
-								</figure>
-								
+								<?php if(isset($article['photo']['src']['custom-165'])):?>
+									<figure class="float-left">
+										<a href="<?php echo get_permalink($article['ID']) ?>">
+											<img src="<?php echo $article['photo']['src']['custom-165']; ?>" />
+										</a>
+									</figure>
+								<? endif; ?>
 								<!-- TODO: Use custom fields to display the score -->
 								
 								<!-- <span class="score"></span> -->
@@ -200,6 +200,7 @@
 							</article>
 							
 						<?php endforeach; ?>
+
 						
 					</div>
 					<div class="span11 last">
