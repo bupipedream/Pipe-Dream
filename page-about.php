@@ -51,6 +51,7 @@
 							<ul>
 								<li>Zachary Kirschner '13, <em>Business Manager</em></li>
 								<li>Zachary Hindin '14, <em>Advertising Manager</em></li>
+								<li>Kimberly Bower '13, <em>Advertising Assistant</em></li>
 							</ul>
 						</li>
 						<li>
@@ -59,6 +60,7 @@
 								<li>James Galloway '13, <em>News Editor</em></li>
 								<li>Suzie Lamb '13, <em>Assistant News Editor</em></li>
 								<li>Geoff Wilson '14, <em>Assistant News Editor</em></li>
+								<li>Christina Pullano '14, <em>News Assistant</em></li>
 							</ul>
 						</li>
 						<li>
@@ -86,8 +88,8 @@
 						<li>
 							<span class="board">Release</span>
 							<ul>
-								<li>Kathleen Rubino '13, <em>Release Editor</em></li>
-								<li>Darian Lusk '14, <em>Assistant Release Editor</em></li>
+								<li>Darian Lusk '14, <em>Release Editor</em></li>
+								<li>Jacob Shamsian '14 <em>Assistant Release Editor</em><li>
 							</ul>
 						</li>
 						<li>
@@ -96,6 +98,7 @@
 								<li>Paige Nazinitsky '14, <em>Design Manager</em></li>
 								<li>Zack Feldman '15, <em>Assistant Design Manager</em></li>
 								<li>Janel FitzSimmonds '13, <em>Assistant Design Manager</em></li>
+								<li>Rebecca Forney '15, <em>Design Assistant</em></li>
 							</ul>
 						</li>
 						<li>
