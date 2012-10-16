@@ -9,7 +9,7 @@
 			
 			<section id="fb-signup">
 				<div id="login-button">
-					<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>					
+					<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
 				</div>
 				<h3>Discover Pipe Dream With Your Friends</h3>
 				<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
@@ -23,6 +23,9 @@
 					</time>
 				</p>
 				
+				<?if(in_category('opinion') && !in_category('editorial')):?>
+					<span class="opinion-label" title="Views expressed in this column represent the opinion of the columnist.">Opinion</span>
+				<?endif?>
 				<h2 itemprop="headline"><?php the_title(); ?></h2>
 				
 				<p id="deck"><?php echo get_post_meta(get_the_ID(), '_pd_article_deck_text', true); ?></p>
@@ -40,7 +43,7 @@
 						echo '<meta itemprop="articleSection" content="'.$category.'" />';
 					}
 		     	?>
-
+				
 				<div id="meta">
 					<div id="social">
 						<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
@@ -93,13 +96,13 @@
 						// display the inline photo a little further down.
 						-->
 						<?php $paragraphAfter = 3; ?>
-
+						
 					<?php endif; ?>
-
-
+					
+					
 					<!-- Check if an inline photo exists. -->
 					<?php if(isset($attachments['display']['inline']) || isset($archive['_image1'])): ?>
-
+						
 						<?php
 							if(isset($attachments['display']['inline'])) {
 								$photo = $attachments['photos'][$attachments['display']['inline']];
@@ -107,7 +110,7 @@
 								$photo = $archive['_image1'];
 							}
 						?>
-
+						
 						<div itemprop="articleBody">
 						<?php
 							if(!isset($paragraphAfter)) $paragraphAfter = 1; 
@@ -115,7 +118,7 @@
 							$content = explode("</p>", $content);
 							for ($i = 0; $i < count($content); $i++ ) {
 							if ($i == $paragraphAfter) { ?>
-
+								
 								<?php // ensures that vertical photos 
 									$subject = $photo['src']['single-inline'];
 									$pattern = '/\d{3}x\d{3}/';
@@ -123,7 +126,7 @@
 									if(isset($matches[0][0]) && $matches[0][0]) $max_width = substr($matches[0][0], 0, 3)."px";
 									else $max_width = "425px";
 								?>
-
+								
 								<!-- Display the inline photo -->
 								<figure id="single-inline" class="thumb-right" style="max-width: <?php if($max_width) echo $max_width; ?>;">
 									<?php if(in_category('opinion')): ?>
@@ -144,27 +147,27 @@
 										<p><?php echo $photo['caption']; ?></p>
 									</figcaption>
 								</figure>
-
+								
 							<?php }
 							echo $content[$i] . "</p>";
 						} ?>
 						</div>
 						
-						<!-- Display the extra images in a slideshow  -->						
+						<!-- Display the extra images in a slideshow  -->
 						<?php if(isset($attachments['display']['gallery'])): ?>
 						<?php foreach($attachments['display']['gallery'] as $image): ?>
 							<a href="<?php echo $attachments['photos'][$image]['src']['large']; ?>" title="<?php echo $attachments['photos'][$image]['caption']; ?> (<?php echo $attachments['photos'][$image]['credit']; ?>)" class="gallery" rel="gallery"><img src="<?php echo $attachments['photos'][$image]['src']['single-inline']; ?>" style="display:none;" /></a>
 						<?php endforeach; ?>
 						<?php endif; ?>
-
+						
 					<?php else: ?> <!-- There is a feature photo, but no inline photo -->
-
+						
 						<div itemprop="articleBody">
 						<?php the_content(); ?>
 						</div>
-
+						
 					<?php endif; ?>
-
+					
 				</section>
 			</article>
 			
@@ -174,7 +177,7 @@
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
 				
-				<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="true" data-width="500" data-show-faces="true"></div>
+				<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="true" data-width="600" data-show-faces="true"></div>
 			</section>
 			
 			<section id="comments">
@@ -191,26 +194,26 @@
 				    })();
 				</script>
 				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-			</section>			
-
+			</section>
+			
 			<?php endwhile; ?>
-
-		
+			
+			
 			<?php else : ?>
-
+			
 			<article id="post-not-found">
-			    <header>
-			    	<h1>Not Found</h1>
-			    </header>
-			    <section class="post_content">
-			    	<p>Sorry, but the requested resource was not found on this site.</p>
-			    </section>
-			    <footer>
-			    </footer>
+				<header>
+					<h1>Not Found</h1>
+				</header>
+				<section class="post_content">
+					<p>Sorry, but the requested resource was not found on this site.</p>
+				</section>
+				<footer>
+				</footer>
 			</article>
 			
 			<?php endif; ?>
-
+			
 		</div>
 		<?php get_sidebar(); ?>
 	</div>

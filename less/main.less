@@ -726,14 +726,6 @@ footer {
 			font-size: 116%;
 			line-height: 26px;
 			margin-right: 13%;
-			time { 
-				background: #f5ffea;
-				color: lighten(@text, 20%);
-				font-family: @sans;
-				font-size: 70%;
-				padding: 7px 10px;
-				text-transform: uppercase;
-			}
 		}
 		#meta {
 			border-top: @lightborder;
@@ -742,6 +734,28 @@ footer {
 			padding: 7px 10px;
 			.byline { margin: 0; }
 			#social { float: right; margin-top: 2px; }
+		}
+		time { 
+			background: #f5ffea;
+			color: lighten(@text, 20%);
+			font-family: @sans;
+			font-size: 70%;
+			padding: 7px 10px;
+			text-transform: uppercase;
+		}
+		.opinion-label {
+			background: #e3f0f8;
+			border: 1px solid #d7e7f1;
+			color: lighten(@text, 20%);
+			float: right;
+			font-family: @sans;
+			font-size: 80%;
+			font-weight: bold;
+			margin: 5px 0 0 0;
+			padding: 9px 12px;
+			text-transform: uppercase;
+			.border-radius(3px);
+			&:hover { cursor:help; }
 		}
 		figure#single-feature {
 			margin-top: 10px;
