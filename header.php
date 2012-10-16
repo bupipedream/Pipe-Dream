@@ -70,7 +70,7 @@
 		?>
 		
 		<!-- Article publish and expiration dates -->
-		<meta property="article:published_time" content="<?php echo get_the_time("Y-m-d"); ?>"> 
+		<meta property="article:published_time" content="<?php echo get_the_time("Y-m-d\TH:i:sT"); ?>"> 
 		<meta property="article:expiration_time" content="<?php echo  date('Y-m-d', strtotime(date("Y-m-d", strtotime(get_the_time("Y-m-d"))) . " +4 day")); ?>">
      	
 		<?php
@@ -145,7 +145,7 @@
 				cookie     : true, // enable cookies to allow the server to access the session
 				xfbml      : true  // parse XFBML
 			});
-
+			
 			/*!
 			 * jQuery Cookie Plugin
 			 * https://github.com/carhartl/jquery-cookie
@@ -156,7 +156,7 @@
 			 * http://www.opensource.org/licenses/GPL-2.0
 			 */
 			(function(a){a.cookie=function(b,c,d){if(arguments.length>1&&(!/Object/.test(Object.prototype.toString.call(c))||c===null||c===undefined)){d=a.extend({},d);if(c===null||c===undefined){d.expires=-1}if(typeof d.expires==="number"){var e=d.expires,f=d.expires=new Date;f.setDate(f.getDate()+e)}c=String(c);return document.cookie=[encodeURIComponent(b),"=",d.raw?c:encodeURIComponent(c),d.expires?"; expires="+d.expires.toUTCString():"",d.path?"; path="+d.path:"",d.domain?"; domain="+d.domain:"",d.secure?"; secure":""].join("")}d=c||{};var g=d.raw?function(a){return a}:decodeURIComponent;var h=document.cookie.split("; ");for(var i=0,j;j=h[i]&&h[i].split("=");i++){if(g(j[0])===b)return g(j[1]||"")}return null}})(jQuery)
-
+			
 			// check if user has turned facebook sharing off
 			var sharing = $.cookie('fb-share');
 			
@@ -166,7 +166,7 @@
 			}
 
 			// listen for and handle auth.statusChange events
-			FB.Event.subscribe('auth.statusChange', function(response) {				
+			FB.Event.subscribe('auth.statusChange', function(response) {
 				<?php if(is_single()): ?>
 				if (response.authResponse) {
 					// user has auth'd your app and is logged into Facebook
