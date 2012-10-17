@@ -89,7 +89,7 @@
 						<span class="board">Release</span>
 						<ul>
 							<li>Darian Lusk '14, <em>Release Editor</em></li>
-							<li>Jacob Shamsian '14 <em>Assistant Release Editor</em><li>
+							<li>Jacob Shamsian '15 <em>Assistant Release Editor</em><li>
 						</ul>
 					</li>
 					<li>
