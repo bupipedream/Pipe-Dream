@@ -7,13 +7,15 @@
 			<!-- Check if the article is part of the archives -->
 			<?php $archive = pd_is_archived(get_the_ID(), null); // print_r($archive); ?>		    
 			
-			<section id="fb-signup">
-				<div id="login-button">
-					<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
-				</div>
-				<h3>Discover Pipe Dream With Your Friends</h3>
-				<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
-			</section>
+			<?if(false):?>
+				<section id="fb-signup">
+					<div id="login-button">
+						<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
+					</div>
+					<h3>Discover Pipe Dream With Your Friends</h3>
+					<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
+				</section>
+			<?endif?>
 			
 			<article id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/Article">
 				
@@ -82,7 +84,7 @@
 					<?php if(isset($attachments['display']['feature'])): ?>
 						
 						<?php $photo = $attachments['photos'][$attachments['display']['feature']]; ?>
-																										
+						
 						<figure id="single-feature">
 							<a href="<?php echo $photo['src']['large']; ?>" title="<?php echo $photo['caption']; ?> (<?php echo $photo['credit']; ?>)" class="gallery" rel="gallery"><img src="<?php echo $photo['src']['medium']; ?>" /></a>
 							<figcaption>
