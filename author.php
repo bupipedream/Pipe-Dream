@@ -26,10 +26,6 @@
 					</li>
 				</ul>
 			</section>
-			
-			<div class="alert">
-				<p><span class="heading">Notice:</span> Author pages are a work in progress. If articles are missing, please email <a href="mailto:developer@bupipedream.com">developer@bupipedream.com</a></p>
-			</div>
 						
 			<section id="posts">
 				<h2 class="section-label"><?php echo $post_count.' Article'.($post_count != 1 ? 's' : ''); ?></h2>
