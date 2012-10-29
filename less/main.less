@@ -274,6 +274,30 @@ td { vertical-align: top; }
 	span { color: #BB3838; /*font-size: 100%;*/ font-weight: bold; text-transform: uppercase; font-family: @sans; }
 }
 
+// emergency message
+#emergency {
+	background: #fff;
+	border-top: 1px solid #BB3838 !important;
+	border-bottom: 3px solid #BB3838 !important;
+	color: #444444;
+	font-family: @sans;
+	padding: 13px 0;
+	p { margin: 0; }
+	h2 {
+		a {
+			color: #444444;
+		}
+		margin: 5px 0 3px 0;
+	}
+	img { float: left; margin: 0 30px 0 15px; }
+	&:hover {
+		cursor: pointer;
+		a {
+			color: #BB3838;
+		}
+	}
+}
+
 .message {	
 	background: #fefef5;
 	border-top: 1px solid #b9b9b9 !important;

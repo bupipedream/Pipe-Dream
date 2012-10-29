@@ -13,6 +13,12 @@
 		$notice_status = $options['radioinput'];
 	?>
 	
+	<div id="emergency" class="row">
+		<img src="<?php bloginfo('template_url'); ?>/img/icons/hurricane.png" width="31" height="53" alt="Hurricane" />
+		<h2><a href="<?php bloginfo('url'); ?>/live/storm/">Hurricane Sandy Live Coverage</a></h2>
+		<p>Follow Pipe Dream as we monitor Hurricane Sandy and its effects on Binghamton University.</p>
+	</div>
+	
 	<?php if($notice_status): ?>
 		<div class="row <?php echo $theme; ?>">
 			<?php // twitterApiCall(); ?>
