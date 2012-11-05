@@ -61,7 +61,7 @@
 			<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
 		<?php endif; ?>
 		
-		<!-- List the post authors -->		
+		<!-- List the post authors -->
 		<?php
 			$authors = get_coauthors();
 			foreach($authors as $author) {
@@ -70,8 +70,8 @@
 		?>
 		
 		<!-- Article publish and expiration dates -->
-		<meta property="article:published_time" content="<?php echo get_the_time("Y-m-d\TH:i:sT"); ?>"> 
-		<meta property="article:expiration_time" content="<?php echo  date('Y-m-d', strtotime(date("Y-m-d", strtotime(get_the_time("Y-m-d"))) . " +4 day")); ?>">
+		<meta property="article:published_time" content="<?=get_the_time("Y-m-d\TH:i:sT"); ?>"> 
+		<meta property="article:expiration_time" content="<?=date('Y-m-d', strtotime(date("Y-m-d", strtotime(get_the_time("Y-m-d"))) . " +4 day")); ?>">
      	
 		<?php
 			// Display the post's category
@@ -98,7 +98,10 @@
 		<meta property="profile:last_name" content="<?php the_author_meta('last_name', $author); ?>">
 		<meta property="profile:username" content="<?php the_author_meta('user_nicename', $author); ?>">
 	<?php elseif(is_home()): ?>
+		<meta property="og:url" content="http://www.bupipedream.com/" />
 		<meta property="og:description" content="Pipe Dream is Binghamton University's oldest and largest student-run newspaper." />
+		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
+		<meta property="og:type" content="website" />
 	<?php else: ?>
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
