@@ -88,7 +88,6 @@ function get_sections() {
 				$sections[$category_key][$section_key][$article_key]['post_author'] = get_authors($article);
 				
 				$sections[$category_key][$section_key][$article_key]['photo'] = get_photos($sections[$category_key][$section_key][$article_key]['ID'], '1');
-				debug($sections[$category_key][$section_key][$article_key]['photo']);
 			}
 		}
 	}
