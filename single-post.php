@@ -72,10 +72,10 @@
 					<?php if(isset($attachments['photos'][0]['src']['medium'])): ?>
 					<meta itemprop="thumbnailUrl" content="<?php echo $attachments['photos'][0]['src']['medium']; ?>" />
 					<?php endif; ?>
-
+					
 					<?php // echo "<pre>"; print_r($attachments); echo "</pre>"; ?>
-						
-					<!-- 
+					
+					<!--
 					// Check if a feature photo exists. If there is a feature photo,
 					// display it and set $paragraphAfter to display any inline photo
 					// after the third paragraph. This ensures that there is enough 
@@ -103,14 +103,14 @@
 					
 					
 					<!-- Check if an inline photo exists. -->
-					<?php if(isset($attachments['display']['inline']) || isset($archive['_image1'])): ?>
-						
+					<?php if((isset($attachments['display']['inline']) || isset($archive['_image1'])) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1): ?>
 						<?php
 							if(isset($attachments['display']['inline'])) {
 								$photo = $attachments['photos'][$attachments['display']['inline']];
 							} else {
 								$photo = $archive['_image1'];
 							}
+							debug();
 						?>
 						
 						<div itemprop="articleBody">
@@ -133,7 +133,7 @@
 								<figure id="single-inline" class="thumb-right" style="max-width: <?php if($max_width) echo $max_width; ?>;">
 									<?php if(in_category('opinion')): ?>
 										<img src="<?php echo $photo['src']['single-inline']; ?>" class="headshot" />
-									<?php else: ?>										
+									<?php else: ?>
 										<a href="<?php echo $photo['src']['large']; ?>" <?php if($photo['credit']): ?>title="<?php echo $photo['caption']; ?> <?php echo "(".$photo['credit'].")"; ?>" <?php endif; ?> class="gallery" rel="gallery">
 											<img src="<?php echo $photo['src']['single-inline']; ?>" />
 											<?php if(isset($attachments['photos']) && count($attachments['photos']) > '2'): ?>
