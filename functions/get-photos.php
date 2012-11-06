@@ -154,7 +154,8 @@ function get_photos($post_id, $num, $sizes = null, $ret = null) {
 			
 			// store the photo with the highest priority in wordpress.
 			// photos with high priorities are given low numbers.
-			if($num === '1' && $photo['photos'][$i]['priority'] != '0' && $photo['photos'][$i]['priority'] < $top_priority['priority']) {
+			// photos with priority of -1 are ignored.
+			if($num === '1' && $photo['photos'][$i]['priority'] != '0' && $photo['photos'][$i]['priority'] < $top_priority['priority'] && $photo['photos'][$i]['priority'] >= 0) {
 				$top_priority = $photo['photos'][$i];
 			}
 			
@@ -186,12 +187,11 @@ function get_photos($post_id, $num, $sizes = null, $ret = null) {
 						$photo['display']['gallery'][0] = $i;
 			
 				}
-			}	
-
+			}
+			
 			// return first photo when one is requested and there is only one
 			if($num === '1' && count($images) == 1) return $photo['photos'][$i];
 		}
-
 		// returns top photo when one is requested
 		if($num === '1') return $top_priority;
 		

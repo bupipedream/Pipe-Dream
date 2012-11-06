@@ -27,8 +27,8 @@
 		<div class="span17">
 			
 			<?if(isset($sections['feature']['concert'][0])):?>
-			<?$article = $sections['feature']['concert'][0];?>
-			
+				
+				<?$article = $sections['feature']['concert'][0];?>
 				<div id="feature-concert" class="doublehrule">
 					<div id="concert-like" class="fb-like" data-href="<?=get_permalink($article['ID']) ?>" data-send="false" data-layout="box_count" data-width="200" data-show-faces="true"></div>
 					<h2><a href="<?=get_permalink($article['ID']) ?>"><?=$article['post_title']?></a></h2>
@@ -109,7 +109,6 @@
 						<!-- Above-the-Fold Article -->
 						
 						<?php foreach($sections['news']['feature'] as $article): ?>
-							
 							<article class="feature clearfix">
 								
 								<figure class="center">

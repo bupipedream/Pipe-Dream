@@ -74,7 +74,6 @@ function set_sections() {
 	$sections['opinion']['article-list'] = objectToArray(z_get_posts_in_zone('zone-opinion-list'));
 	
 	$sections['feature']['concert'] = objectToArray(z_get_posts_in_zone('zone-feature-concert'));
-	
 	return $sections;
 }
 
@@ -87,11 +86,11 @@ function get_sections() {
 			foreach($section as $article_key => $article) {
 				$sections[$category_key][$section_key][$article_key]['archive'] = is_from_archive($article);
 				$sections[$category_key][$section_key][$article_key]['post_author'] = get_authors($article);
-								
+				
 				$sections[$category_key][$section_key][$article_key]['photo'] = get_photos($sections[$category_key][$section_key][$article_key]['ID'], '1');
+				debug($sections[$category_key][$section_key][$article_key]['photo']);
 			}
 		}
 	}
-		
 	return $sections;
 }
