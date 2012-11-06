@@ -142,14 +142,14 @@ function get_photos($post_id, $num, $sizes = null, $ret = null) {
 				}
 			} else { // return all sizes when none are specified
 				$photo['photos'][$i]['src']['large'] = get_src($image, 'large');
-				$photo['photos'][$i]['src']['thumbnail'] = get_src($image, 'thumbnail');					
-				$photo['photos'][$i]['src']['medium'] = get_src($image, 'medium');					
-				$photo['photos'][$i]['src']['single-inline'] = get_src($image, 'single-inline');					
-				$photo['photos'][$i]['src']['alt-thumbnail'] = get_src($image, 'alt-thumbnail');					
-				$photo['photos'][$i]['src']['custom-495'] = get_src($image, 'custom-495');					
-				$photo['photos'][$i]['src']['custom-165'] = get_src($image, 'custom-165');					
-				$photo['photos'][$i]['src']['custom-260'] = get_src($image, 'custom-260');					
-				$photo['photos'][$i]['src']['custom-75x75-crop'] = get_src($image, 'custom-75x75-crop');					
+				$photo['photos'][$i]['src']['thumbnail'] = get_src($image, 'thumbnail');
+				$photo['photos'][$i]['src']['medium'] = get_src($image, 'medium');
+				$photo['photos'][$i]['src']['single-inline'] = get_src($image, 'single-inline');
+				$photo['photos'][$i]['src']['alt-thumbnail'] = get_src($image, 'alt-thumbnail');
+				$photo['photos'][$i]['src']['custom-495'] = get_src($image, 'custom-495');
+				$photo['photos'][$i]['src']['custom-165'] = get_src($image, 'custom-165');
+				$photo['photos'][$i]['src']['custom-260'] = get_src($image, 'custom-260');
+				$photo['photos'][$i]['src']['custom-75x75-crop'] = get_src($image, 'custom-75x75-crop');
 			}
 			
 			// store the photo with the highest priority in wordpress.
