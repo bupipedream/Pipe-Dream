@@ -122,10 +122,23 @@
 	
 	<?php if(is_home()): ?>
 		
-		<section id="current-issue">
-			<h2 class="section-label"><a href="http://issuu.com/pipedream/docs/fall2012issue16?mode=window&backgroundColor=%23222222">Current Issue &raquo;</a></h2>
-			<div><object style="width:420px;height:271px"><param name="movie" value="http://static.issuu.com/webembed/viewers/style1/v2/IssuuReader.swf?mode=mini&amp;embedBackground=%23ffffff&amp;backgroundColor=%23222222&amp;documentId=121107163308-eb8583fa5be84347a666ffaf77356186" /><param name="allowfullscreen" value="true"/><param name="menu" value="false"/><param name="wmode" value="transparent"/><embed src="http://static.issuu.com/webembed/viewers/style1/v2/IssuuReader.swf" type="application/x-shockwave-flash" allowfullscreen="true" menu="false" wmode="transparent" style="width:420px;height:271px" flashvars="mode=mini&amp;embedBackground=%23000000&amp;backgroundColor=%23222222&amp;documentId=121107163308-eb8583fa5be84347a666ffaf77356186" /></object>
-		</section>
+		<?
+			$issuu = get_option('pd_theme_options');
+			$issuu_link = $issuu['issuu_link'];
+			$issuu_id = $issuu['issuu_id'];
+		?>
+		<?if($issuu_link && $issuu_id):?>
+			<section id="current-issue">
+				<h2 class="section-label"><a href="<?=$issuu_link?>">Current Issue &raquo;</a></h2>
+				<div>
+					<object style="width:420px;height:271px">
+						<param name="movie" value="http://static.issuu.com/webembed/viewers/style1/v2/IssuuReader.swf?mode=mini&amp;embedBackground=%23ffffff&amp;backgroundColor=%23222222&amp;documentId=<?=$issuu_id?>" /><param name="allowfullscreen" value="true"/>
+						<param name="menu" value="false"/><param name="wmode" value="transparent"/>
+						<embed src="http://static.issuu.com/webembed/viewers/style1/v2/IssuuReader.swf" type="application/x-shockwave-flash" allowfullscreen="true" menu="false" wmode="transparent" style="width:420px;height:271px" flashvars="mode=mini&amp;embedBackground=%23000000&amp;backgroundColor=%23222222&amp;documentId=<?=$issuu_id?>" />
+					</object>
+				</div>
+			</section>
+		<?endif?>
 		
 	<?php endif; ?>
 	

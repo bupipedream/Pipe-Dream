@@ -63,7 +63,16 @@ function theme_options_do_page() {
 				
 				<label class="description" for="pd_theme_options[destabilizing]"><?php _e( 'Destabilizing:', 'pdtheme' ); ?></label>
 				<input id="pd_theme_options[destabilizing]" class="regular-text" type="text" name="pd_theme_options[destabilizing]" value="<?php esc_attr_e( $options['destabilizing'] ); ?>" /><br /><br />
-
+				
+				<h3>Issuu Embed</h3>
+				
+				<label class="description" for="pd_theme_options[issuu_link]"><?php _e( 'Issuu Link:&nbsp;&nbsp;&nbsp;&nbsp;', 'pdtheme' ); ?></label>
+				<input id="pd_theme_options[issuu_link]" class="regular-text" type="text" name="pd_theme_options[issuu_link]" value="<?php esc_attr_e( $options['issuu_link'] ); ?>" /><br /><br />
+				
+				<label class="description" for="pd_theme_options[issuu_id]"><?php _e( 'Issuu ID:', 'pdtheme' ); ?></label><br />
+				<textarea id="pd_theme_options[issuu_id]" class="regular-text" type="text" style="width: 300px;" name="pd_theme_options[issuu_id]"><?php esc_attr_e( $options['issuu_id'] ); ?></textarea><br />
+				
+				
 				<h3>Notice</h3>
 				<label class="description" for="pd_theme_options[notice-status]"><?php _e( 'Display: &nbsp;&nbsp;', 'pdtheme' ); ?></label><br />
 				<fieldset>
@@ -74,7 +83,7 @@ function theme_options_do_page() {
 							$radio_setting = $options['radioinput'];
 
 							if ( '' != $radio_setting ) {
-								if ( $options['radioinput'] === $option['value'] ) {									
+								if ( $options['radioinput'] === $option['value'] ) {
 									$checked = "checked=\"checked\"";
 								} else {
 									$checked = '';
