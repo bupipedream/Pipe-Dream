@@ -102,6 +102,7 @@
 		<meta property="og:description" content="Pipe Dream is Binghamton University's oldest and largest student-run newspaper." />
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
 		<meta property="og:type" content="website" />
+		<meta property="og:title" content="<?=bloginfo('name');?> - <?=bloginfo('description');?>" />
 	<?php else: ?>
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
