@@ -9,6 +9,7 @@
 			);
 			query_posts($args);
 		?>
+		
 		<div class="span17">
 			<?php if(!get_query_var('paged') || get_query_var('paged') == '1'): ?>
 			<div class="row">
@@ -21,7 +22,7 @@
 							<?php 
 								$article = get_post( $featured['feature'], 'ARRAY_A' ); 
 								$photos = get_photos($article['ID'], '1');
-							?>							
+							?>
 							
 							<figure class="center">
 								<a href="<?php echo get_permalink( $article['ID'] ); ?>">
@@ -29,7 +30,7 @@
 								</a>
 								<figcaption><p><?php echo $photos['credit']; ?></p></figcaption>
 							</figure>
-
+							
 							<h2><a href="<?php echo get_permalink( $article['ID'] ); ?>"><?php echo $article['post_title']; ?></a></h2>
 							
 							<p class="byline below"><p class="byline below">

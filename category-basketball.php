@@ -24,17 +24,16 @@
 						<article class="clearfix">
 							
 							<!-- Grab all of the photos associated with article. -->
-							<?php $photos = get_photos(get_the_ID(), '1', array('alt-thumbnail')); // print_r($photos); ?>
+							<?php $photos = get_photos(get_the_ID(), '1'); ?>
 							
 							<?php if($photos): ?>
 								<figure>
 									<a href="<?php the_permalink() ?>">
-										<img src="<?php if($photos['src']['alt-thumbnail']) echo $photos['src']['alt-thumbnail']; else echo $photos['src']['single-inline']; ?>" />
+										<img src="<?php if($photos['src']['custom-165']) echo $photos['src']['custom-165']; else echo $photos['src']['single-inline']; ?>" />
 									</a>
 								</figure>
 							<?php endif; ?>
 							
-							<?php if(has_tag('blog')): ?><span class="label blog">Blog</span><?php endif; ?>
 							<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 							
 							<p class="byline below">By 
