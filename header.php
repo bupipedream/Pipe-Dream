@@ -348,7 +348,6 @@
 		}(document));
 
 </script>
-
 <div id="container">
 	<header class="row">
 		<div id="date-weather">
@@ -370,7 +369,7 @@
 			<form role="search" method="get" id="searchform" action="<?php bloginfo('wpurl'); ?>/" >
 				<input type="search" autocomplete="on" value="<?php get_search_query(); ?>" name="s" id="s" placeholder="Search the Site..." />
 				<input type="submit" id="searchsubmit" value="<?php echo esc_attr('Search') ?>" />
-			</form>			
+			</form>		
 		</div>
 	</header>
 	<nav id="nav-container" class="row">
