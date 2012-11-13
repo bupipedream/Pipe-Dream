@@ -51,7 +51,7 @@
 						<ul>
 							<li>Zachary Kirschner '13, <em>Business Manager</em></li>
 							<li>Zachary Hindin '14, <em>Advertising Manager</em></li>
-							<li>Kimberly Bower '13, <em>Advertising Assistant</em></li>
+							<li>Kimberly Bower '13, <em>Advertising Manager</em></li>
 						</ul>
 					</li>
 					<li>
@@ -60,7 +60,7 @@
 							<li>James Galloway '13, <em>News Editor</em></li>
 							<li>Suzie Lamb '13, <em>Assistant News Editor</em></li>
 							<li>Geoff Wilson '14, <em>Assistant News Editor</em></li>
-							<li>Christina Pullano '14, <em>News Assistant</em></li>
+							<li>Christina Pullano '14, <em>Assistant News Editor</em></li>
 						</ul>
 					</li>
 					<li>
