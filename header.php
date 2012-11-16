@@ -55,7 +55,7 @@
 		
 		<meta property="og:description" content="<?=$description;?>" />
 		
-		<?php $photos = get_photos(get_the_ID()); if($photos): ?><?debug($photos);?>
+		<?php $photos = get_photos(get_the_ID()); if($photos): ?>
 			<? foreach($photos['photos'] as $photo): ?>	
 				<meta property="og:image" content="<?=$photo['src']['medium'];?>" />
 			<?endforeach;?>
