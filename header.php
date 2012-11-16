@@ -48,12 +48,12 @@
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="<?php single_post_title(''); ?>" />
 		
-		<?php
-			$description = htmlentities(strip_tags(get_the_excerpt()));
-			if(!$description) $description = htmlentities(get_custom_excerpt($post->post_content, '25'));
+		<?
+			$description = htmlspecialchars(strip_tags(get_the_excerpt()));
+			if(!$description) $description = htmlspecialchars(get_custom_excerpt($post->post_content, '25'));
 		?>
 		
-		<meta property="og:description" content="<?php echo $description; ?>" />
+		<meta property="og:description" content="<?=$description;?>" />
 		
 		<?php $photos = get_photos(get_the_ID(), '1'); if($photos): ?>
 			<meta property="og:image" content="<?php echo $photos['src']['medium']; ?>" />
