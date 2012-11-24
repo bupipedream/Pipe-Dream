@@ -200,12 +200,17 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 	} else {
 		// check if the image is from the archives
 		$meta = get_post_custom($post_id);
-		if($meta) {
-			if(isset($meta['_image1'])) {
-				$meta['_image1'] = get_image($meta['_image1']);
-			}
+		if($meta && isset($meta['_image1'])) {
+			$meta['_image1'] = get_image($meta['_image1']);
+			
+			// needed to make legacy photo output look like current photos
+			$photo['photos'][0] = $meta['_image1'];
+			$photo['photos'][0]['priority'] = 0;
+			$photo['display']['inline'] = 0;
+			
+			if($num === 1) return $photo['photos'][0];
+			return $photo;
 		}
-		if(isset($meta['_image1'])) return $meta['_image1'];
 	}
 	
 	// no images were found

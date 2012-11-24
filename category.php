@@ -61,7 +61,7 @@
 				<div id="middlecol" class="span8 last">
 					<section>
 						<?php foreach($featured['secondary'] as $post_id): ?>
-
+							
 							<?php 
 								// Some of the zones on the homepage display
 								// more than two posts so this will make sure
@@ -75,19 +75,19 @@
 								?>
 							
 								<article class="clearfix">
-	
+									
 									<h2><a href="<?php echo get_permalink( $article['ID'] ); ?>"><?php echo $article['post_title']; ?></a></h2>
-	
+									
 									<?php if($photos): ?>
 										<figure class="float-right">
 											<a href="<?php echo get_permalink($article['ID']) ?>">
 												<img src="<?php echo $photos['src']['custom-75x75-crop']; ?>" width="75px" height="75px" />
 											</a>
 										</figure>
-	
+									
 									<?php endif; ?>
-	
-									<p class="byline below"><p class="byline below">									
+									
+									<p class="byline below"><p class="byline below">
 										<?php if($article['post_author'] === '2'): ?>
 											<span><?php echo is_archived($article['ID'], '_author') ?></span>
 										<?php else: ?>
@@ -101,15 +101,14 @@
 											if($article['post_excerpt']) echo $article['post_excerpt']; 
 											else echo get_custom_excerpt($article['post_content'], '25'); 
 										?>
-									</p>								
-
+									</p>
 								</article>
 							
 							<?php endif; ?>
 						
 						<?php endforeach; ?>
 						
-					</section>				
+					</section>
 				</div>
 			</div>
 			
@@ -124,12 +123,12 @@
 				
 				<section id="article-list">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+						
 						<article class="clearfix">
-
+							
 							<!-- Grab all of the photos associated with article. -->
-							<?php $photos = get_photos(get_the_ID(), '1', array('alt-thumbnail')); // print_r($photos); ?>
-
+							<?php $photos = get_photos(get_the_ID(), 1, array('alt-thumbnail')); ?>
+							
 							<?php if($photos): ?>
 								<figure>
 									<a href="<?php the_permalink() ?>">
@@ -137,9 +136,9 @@
 									</a>
 								</figure>
 							<?php endif; ?>
-
+							
 							<?php if(has_tag('blog')): ?><span class="label blog">Blog</span><?php endif; ?>
-							<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>							
+							<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 							
 							<p class="byline below">By 
 								<?php if(function_exists('coauthors_posts_links')): ?>
@@ -169,7 +168,7 @@
 							global $wp_query;
 
 							$big = 999999999; // need an unlikely integer
-							$url = str_replace( $big, '%#%', get_pagenum_link( $big ));						
+							$url = str_replace( $big, '%#%', get_pagenum_link( $big ));
 							$pos = strlen(site_url());
 
 							if(strpos(curPageURL(), 'browse') === false) {
@@ -188,23 +187,21 @@
 							) );
 						?>
 					</div>
-
-
-					<?php else : ?>
-
-					<article id="post-not-found">
-					    <header>
-					    	<h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
-					    </header>
-					    <section class="post_content">
-					    	<p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
-					    </section>
-					    <footer>
-					    </footer>
-					</article>
-
-					<?php endif; ?>
 					
+					<?php else : ?>
+					
+					<article id="post-not-found">
+						<header>
+							<h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
+						</header>
+						<section class="post_content">
+							<p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
+						</section>
+						<footer>
+						</footer>
+					</article>
+					
+					<?php endif; ?>
 				</section>
 			</div>
 		</div>

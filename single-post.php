@@ -59,7 +59,6 @@
 							<p class="byline" itemprop="author"><?php coauthors_posts_links(); //coauthors(); ?></p>
 						<?php endif;?>
 					<?php endif;?>
-						
 				</div>
 				
 				<section> <!-- article text and images -->
