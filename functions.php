@@ -33,7 +33,7 @@ function objectToArray($d) {
 	}
 }
 
-function debug($var) {
+function debug($var = null) {
 	echo "<pre>";
 		print_r($var);
 	echo "</pre>";
