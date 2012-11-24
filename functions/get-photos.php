@@ -109,7 +109,7 @@ function is_landscape($image) {
 		amd caption. Returns all by default.
 */
 
-function get_photos($post_id, $num, $sizes = null, $ret = null) {
+function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 	// save the image with the highest priority
 	// to use when returing only one image
 	$top_priority['priority'] = 9999;
