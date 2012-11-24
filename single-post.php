@@ -108,7 +108,6 @@
 							} else {
 								$photo = $archive['_image1'];
 							}
-							debug();
 						?>
 						
 						<div itemprop="articleBody">
