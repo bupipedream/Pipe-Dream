@@ -87,7 +87,7 @@ function get_sections() {
 				$sections[$category_key][$section_key][$article_key]['archive'] = is_from_archive($article);
 				$sections[$category_key][$section_key][$article_key]['post_author'] = get_authors($article);
 				
-				$sections[$category_key][$section_key][$article_key]['photo'] = get_photos($sections[$category_key][$section_key][$article_key]['ID'], '1');
+				$sections[$category_key][$section_key][$article_key]['photo'] = get_photos($sections[$category_key][$section_key][$article_key]['ID'], 1);
 			}
 		}
 	}

@@ -36,10 +36,10 @@
 					?>
 					
 					<article class="clearfix">
-
+						
 						<!-- Grab all of the photos associated with article. -->
 						<?php 
-							$photos = get_photos(get_the_ID(), '1'); 
+							$photos = get_photos(get_the_ID(), 1);
 							//if(!$photos) $photos = $archive['_image1'];
 						?>
 						

@@ -24,7 +24,7 @@
 						<article class="clearfix">
 							
 							<!-- Grab all of the photos associated with article. -->
-							<?php $photos = get_photos(get_the_ID(), '1'); ?>
+							<?php $photos = get_photos(get_the_ID(), 1); ?>
 							
 							<?php if($photos): ?>
 								<figure>

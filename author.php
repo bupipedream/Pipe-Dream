@@ -31,11 +31,11 @@
 				<h2 class="section-label"><?php echo $post_count.' Article'.($post_count != 1 ? 's' : ''); ?></h2>
 				
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-														
+					
 					<article class="clearfix">
-
+						
 						<!-- Grab all of the photos associated with article. -->
-						<?php $photo = get_photos(get_the_ID(), '1', array('thumbnail')); ?>
+						<?php $photo = get_photos(get_the_ID(), 1, array('thumbnail')); ?>
 						
 						<?php if($photo): ?>
 							<figure><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><img src="<?php echo $photo['src']['thumbnail']; ?>" /></a></figure>

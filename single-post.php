@@ -64,7 +64,7 @@
 				<section> <!-- article text and images -->
 				
 					<!-- Grab all of the photos associated with article. -->
-					<?php $attachments = get_photos(get_the_ID(), '-1'); ?>
+					<?php $attachments = get_photos(get_the_ID(), -1); ?>
 					
 					<?php if(isset($attachments['photos'][0]['src']['medium'])): ?>
 					<meta itemprop="thumbnailUrl" content="<?php echo $attachments['photos'][0]['src']['medium']; ?>" />

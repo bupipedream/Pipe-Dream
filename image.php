@@ -21,13 +21,11 @@
 					<p class="byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
 						<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" itemprop="url">More photos by <span itemprop="name"><?php the_author(); ?></span></a>
 					</p>
-										
 				</div>
 				<section itemprop="articleBody">
 				
 					<?php // grab all of the photos to display in the right place.
-						$photos = get_photos(get_the_ID(), '1');
-						// echo "<pre>"; print_r($post); echo "</pre>";
+						$photos = get_photos(get_the_ID(), 1);
 					?>
 					
 					<?php 

@@ -20,8 +20,8 @@
 						<article class="feature clearfix thinhrule">
 							
 							<?php 
-								$article = get_post( $featured['feature'], 'ARRAY_A' ); 
-								$photos = get_photos($article['ID'], '1');
+								$article = get_post($featured['feature'], 'ARRAY_A');
+								$photos = get_photos($article['ID'], 1);
 							?>
 							
 							<figure class="center">
@@ -71,9 +71,9 @@
 							
 								<?php
 									$article = get_post( $post_id, 'ARRAY_A' );
-									$photos = get_photos($article['ID'], '1');
+									$photos = get_photos($article['ID'], 1);
 								?>
-							
+								
 								<article class="clearfix">
 									
 									<h2><a href="<?php echo get_permalink( $article['ID'] ); ?>"><?php echo $article['post_title']; ?></a></h2>
