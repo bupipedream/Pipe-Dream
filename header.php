@@ -38,9 +38,8 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 	<!-- Facebook Open Graph -->
-	<meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
-	<!-- <meta property="fb:app_id" content="225391740871493" /> -->
-	<meta property="fb:app_id" content="<?php echo FB_APP_ID; ?>" />	
+	<meta property="og:site_name" content="<?=bloginfo('name');?>" />
+	<meta property="fb:app_id" content="<?=FB_APP_ID; ?>" />
 	<meta property="fb:admins" content="1352160452" />
 	
 	<?php if(is_single()): ?>
@@ -145,7 +144,7 @@
 	<script>
 		window.fbAsyncInit = function() {
 			FB.init({
-				appId      : '<?php echo FB_APP_ID; ?>', // App ID
+				appId      : '<?=FB_APP_ID;?>', // App ID
 				channelUrl : '//www.bupipedream.com/channel.html', // Channel File
 				status     : true, // check login status
 				cookie     : true, // enable cookies to allow the server to access the session
