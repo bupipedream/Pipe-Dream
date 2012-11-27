@@ -364,7 +364,7 @@
 		</div>
 		<div id="logo">
 			<!-- Pipe Dream Logo -->
-			<h1><a href="<?php bloginfo('url'); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_url'); ?>/img/bupipedream.png" alt="<?php bloginfo('name'); ?>" /></a></h1>
+			<h1><a href="<?php bloginfo('url'); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_url'); ?>/img/bupipedream.png" alt="<?php bloginfo('name'); ?> - Student-run newspaper at Binghamton University" /></a></h1>
 		</div>
 		<div id="search-form">
 			<!-- Search Form -->

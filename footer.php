@@ -32,7 +32,7 @@
 			<!-- Powered by WordPress -->
 			<a href="http://wordpress.org/">
 				<img src="<?php bloginfo('template_url'); ?>/img/wordpress.png" alt="WordPress" title="Proudly Powered by WordPress" />
-			</a>			
+			</a>
 		</div>
 	</footer>
 </div>
