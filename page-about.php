@@ -97,7 +97,7 @@
 						<ul>
 							<li>Paige Nazinitsky '14, <em>Design Manager</em></li>
 							<li>Zack Feldman '15, <em>Design Assistant</em></li>
-							<li>Rebecca Forney '15, <em>Design Assistant</em></li>
+							<li>Rebecca Forney '14, <em>Design Assistant</em></li>
 						</ul>
 					</li>
 					<li>
