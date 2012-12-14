@@ -49,14 +49,14 @@
 						<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 					</div>
 					<?php if(function_exists('coauthors_posts_links')): ?>
-						<?php if(is_coauthor_for_post('Staff Reports')): ?>
+						<? if(coauthors(null, null, null, null, false) === "Staff Reports"): ?>
 							<p class="byline" itemprop="author">Staff Reports</p>
-						<?php elseif(is_coauthor_for_post('editorial')): ?>
+						<? elseif(coauthors(null, null, null, null, false) === "The Editorial Board"): ?>
 							<p class="byline" itemprop="author">The Editorial Board</p>
-						<?php elseif(is_coauthor_for_post('archives')): ?>
-							<p class="byline" itemprop="author"><?php echo $archive['_author']; ?></p>
+						<?php elseif(coauthors(null, null, null, null, false) === "archives"): ?>
+							<p class="byline" itemprop="author"><?=$archive['_author'];?></p>
 						<?php else: ?>
-							<p class="byline" itemprop="author"><?php coauthors_posts_links(); //coauthors(); ?></p>
+							<p class="byline" itemprop="author"><?php coauthors_posts_links(); ?></p>
 						<?php endif;?>
 					<?php endif;?>
 				</div>
