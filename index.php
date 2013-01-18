@@ -178,17 +178,12 @@
 							</article>
 							
 						<?php endforeach; ?>
-
-						
 					</div>
 					<div class="span11 last">
-						
 						<!-- List of sports articles -->
 						<ul id="sports-list" class="article-list">
 							<?php foreach($sections['sports']['article-list'] as $article): ?>
-							
-								<li><h2><a href="<?php echo get_permalink($article['ID']) ?>"><?php echo $article['post_title']; ?></a></h2></li>
-							
+								<article><li><h2><a href="<?=get_permalink($article['ID']) ?>"><?php echo $article['post_title']; ?></a></h2></li></article>						
 							<?php endforeach; ?>
 						</ul>
 					</div>
