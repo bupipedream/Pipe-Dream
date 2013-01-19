@@ -1,113 +1,36 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
 
-<!-- Special head tags for open graph data -->
-<?php if(is_single()): ?>
+<?php if( is_single() ): ?>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-<?php elseif(is_author()): ?>
+<?php elseif( is_author() ): ?>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
 <?php else: ?>
 <head>
 <?php endif; ?>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title><?php wp_title(''); ?></title>
+	<title><?wp_title(''); ?></title>
 
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
 	<meta name="viewport" content="width=device-width">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
 	<!-- Begin LESS -->
-	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less">
-	<script src="<?php bloginfo('template_url'); ?>/js/vendor/less-1.1.5.min.js" type="text/javascript"></script>
+	<link rel="stylesheet/less" type="text/css" href="<? bloginfo('template_url'); ?>/less/style.less">
+	<script src="<? bloginfo('template_url'); ?>/js/vendor/less-1.1.5.min.js" type="text/javascript"></script>
 	<!-- End LESS -->
 
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<? bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
 
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	<link rel="pingback" href="<? bloginfo('pingback_url'); ?>">
+	
+	<!-- Open Graph Meta  -->
+	<? get_template_part("open-graph"); ?>
 
-	<!-- Facebook Open Graph -->
-	<meta property="og:site_name" content="<?=bloginfo('name');?>" />
-	<meta property="fb:app_id" content="<?=FB_APP_ID; ?>" />
-	<meta property="fb:admins" content="1352160452" />
-	
-	<?php if(is_single()): ?>
-		<meta property="og:url" content="<?php echo get_permalink(); ?>" />
-		<meta property="og:type" content="article" />
-		<meta property="og:title" content="<?php single_post_title(''); ?>" />
-		
-		<?
-			$description = htmlspecialchars(strip_tags(get_the_excerpt()));
-			if(!$description) $description = htmlspecialchars(get_custom_excerpt($post->post_content, '25'));
-		?>
-		
-		<meta property="og:description" content="<?=$description;?>" />
-		
-		<?php $photos = get_photos(get_the_ID()); if($photos): ?>
-			<?foreach($photos['photos'] as $photo): ?>
-				<meta property="og:image" content="<?=$photo['src']['medium'];?>" />
-			<?endforeach;?>
-		<?php else: ?>
-			<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
-		<?php endif; ?>
-		
-		<!-- List the post authors -->
-		<?php
-			$authors = get_coauthors();
-			foreach($authors as $author) {
-				echo "<meta property=\"article:author\" content=\"".get_author_posts_url($author->ID)."\">\n";
-			}
-		?>
-		
-		<!-- Article publish and expiration dates -->
-		<meta property="article:published_time" content="<?=get_the_time("Y-m-d\TH:i:sT"); ?>"> 
-		<meta property="article:expiration_time" content="<?=date('Y-m-d', strtotime(date("Y-m-d", strtotime(get_the_time("Y-m-d"))) . " +4 day")); ?>">
-     	
-		<?php
-			// Display the post's category
-     		$category = get_the_category(); 
-			$category = $category[0]->cat_name;
-			if($category != 'Archives')
-				echo "<meta property=\"article:section\" content=\"$category\">";
-     	?>
-	<?php elseif(is_author()): ?>
-		<meta property="og:type" content="profile">
-		<meta property="og:title" content="<?php the_author_meta('display_name', $author); ?>">
-		<meta property="og:description" content="Profile page for <?php the_author_meta('display_name', $author); ?>, <?php the_author_meta('position', $author); ?> at <?php bloginfo('name'); ?>.">
-		<meta property="og:url" content="<?php echo get_author_posts_url($author); ?>">
-		
-		<?php
-			// Get the author's Gravatar
-			$headers = get_headers('http://www.gravatar.com/avatar/'.md5(strtolower(trim(get_the_author_meta('user_email', $author)))).'?s=200&d=404');
-			if(strpos($headers[0], '200') !== false) {
-				echo "<meta property=\"og:image\" content=\"http://www.gravatar.com/avatar/".md5(strtolower(trim(get_the_author_meta('user_email', $author))))."?s=200&d=404\">";
-			}
-		?>
-		
-		<meta property="profile:first_name" content="<?php the_author_meta('first_name', $author); ?>">
-		<meta property="profile:last_name" content="<?php the_author_meta('last_name', $author); ?>">
-		<meta property="profile:username" content="<?php the_author_meta('user_nicename', $author); ?>">
-	<?php elseif(is_home()): ?>
-		<meta property="og:url" content="http://www.bupipedream.com/" />
-		<meta property="og:description" content="Pipe Dream is Binghamton University's oldest and largest student-run newspaper." />
-		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="<?=bloginfo('name');?> - <?=bloginfo('description');?>" />
-	<?php else: ?>
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/og-image.png" />
-	<?php endif; ?>
-	
 	<!-- Used by WP Plugins -->
 	<?php wp_head(); ?>
 
-	<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-	
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -117,7 +40,7 @@
 	
 	  if (document.location.href.search("fb_action_types=news.reads") != -1) {
 		// Track traffic from Facebook Like & Send as Campaign traffic 
-		_gaq.push(['_trackEvent', 'Open Graph', 'Read', '<?php echo get_the_title(); ?>']);
+		_gaq.push(['_trackEvent', 'Open Graph', 'Read', '<?= get_the_title(); ?>']);
 	  }
 
 	  (function() {
@@ -129,7 +52,7 @@
 	</script>
 </head>
 
-<body <?php body_class(); ?>>
+<body <? body_class(); ?>>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -138,7 +61,7 @@
 	<script>
 		window.fbAsyncInit = function() {
 			FB.init({
-				appId      : '<?=FB_APP_ID;?>', // App ID
+				appId      : '<?= FB_APP_ID; ?>', // App ID
 				channelUrl : '//www.bupipedream.com/channel.html', // Channel File
 				status     : true, // check login status
 				cookie     : true, // enable cookies to allow the server to access the session
@@ -290,8 +213,8 @@
 				FB.ui({
 					method: 'send',
 					display: 'popup',
-					title: '<?php the_title(); ?>',
-					link: '<?php echo get_permalink(); ?>',
+					title: '<? the_title(); ?>',
+					link: '<?= get_permalink(); ?>',
 					to: 'itsdanieloconnor'
 				});
 				e.preventDefault();
@@ -314,7 +237,7 @@
 		}
 		
 		function setSharing(state) {
-			$.cookie('fb-share', state, { expires: 30, path: '/', domain: '<?php echo substr(site_url(), '7'); ?>' });
+			$.cookie('fb-share', state, { expires: 30, path: '/', domain: '<?= substr( site_url(), '7' ); ?>' });
 		}
 
 		function showLogin(val) {
@@ -358,13 +281,13 @@
 		</div>
 		<div id="logo">
 			<!-- Pipe Dream Logo -->
-			<h1><a href="<?php bloginfo('url'); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_url'); ?>/img/bupipedream.png" alt="<?php bloginfo('name'); ?> - Student-run newspaper at Binghamton University" /></a></h1>
+			<h1><a href="<? bloginfo('url'); ?>/" title="<? bloginfo('name'); ?>"><img src="<? bloginfo('template_url'); ?>/img/bupipedream.png" alt="<? bloginfo('name'); ?> - Student-run newspaper at Binghamton University" /></a></h1>
 		</div>
 		<div id="search-form">
 			<!-- Search Form -->
-			<form role="search" method="get" id="searchform" action="<?php bloginfo('wpurl'); ?>/" >
-				<input type="search" autocomplete="on" value="<?php get_search_query(); ?>" name="s" id="s" placeholder="Search the Site..." />
-				<input type="submit" id="searchsubmit" value="<?php echo esc_attr('Search') ?>" />
+			<form role="search" method="get" id="searchform" action="<? bloginfo('wpurl'); ?>/" >
+				<input type="search" autocomplete="on" value="<? get_search_query(); ?>" name="s" id="s" placeholder="Search the Site..." />
+				<input type="submit" id="searchsubmit" value="<?= esc_attr('Search') ?>" />
 			</form>		
 		</div>
 	</header>
@@ -372,10 +295,10 @@
 		<div id="nav-links" class="span19">
 			<!-- Navigation Links -->
 			<ul>
-				<li><a href="<?php bloginfo('wpurl'); ?>/news/" <?php if(is_category('1')) echo 'class="active"'; ?>>News</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/sports/" <?php if(is_category('3')) echo 'class="active"'; ?>>Sports</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/opinion/" <?php if(is_category('4')) echo 'class="active"'; ?>>Opinion</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/release/" <?php if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
+				<li><a href="<? bloginfo('wpurl'); ?>/news/" <? if(is_category('1')) echo 'class="active"'; ?>>News</a></li>
+				<li><a href="<? bloginfo('wpurl'); ?>/sports/" <? if(is_category('3')) echo 'class="active"'; ?>>Sports</a></li>
+				<li><a href="<? bloginfo('wpurl'); ?>/opinion/" <? if(is_category('4')) echo 'class="active"'; ?>>Opinion</a></li>
+				<li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
 				<li class="first light"><a href="<?php bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
 				<li class="light"><a href="<?php bloginfo('wpurl'); ?>/about/" title="Learn more about Pipe Dream">About</a></li>
 				<!-- <li class="light"><a href="<?php bloginfo('wpurl'); ?>/contribute/" title="Join Pipe Dream">Contribute</a></li> -->
@@ -396,8 +319,8 @@
 					$time = get_time_since($post['0']['post_date']);
 				?>
 				
-				<time title="<?php echo date('F j, Y \a\t g:i A T', strtotime($post['0']['post_modified'])); ?>">
-					<?php echo $time; ?>
+				<time title="<?= date('F j, Y \a\t g:i A T', strtotime($post['0']['post_modified'])); ?>">
+					<?= $time; ?>
 				</time>
 			</p>
 		</div>
