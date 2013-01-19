@@ -53,9 +53,9 @@
 </head>
 
 <body <? body_class(); ?>>
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+	<![endif]-->
 
 	<div id="fb-root"></div>
 	<script>
@@ -268,29 +268,37 @@
 
 </script>
 <div id="container">
-	<header role="banner" class="row">
-		<div id="date-weather">
-			<!-- Date and Weather -->
-			<span class="date">
-				<?php
-					date_default_timezone_set('America/New_York');
-					echo date('l, M j, Y');
+		
+	<header class="row" role="banner">
+		<section id="date-weather" class="span6">
+			<div class="date">
+				<?
+					date_default_timezone_set( 'America/New_York' );
+					echo date( 'l, M. j, Y' );
 				?>
-			</span>
-			<span class="weather">Binghamton, NY</span>
-		</div>
-		<div id="logo">
-			<!-- Pipe Dream Logo -->
-			<h1><a href="<? bloginfo('url'); ?>/" title="<? bloginfo('name'); ?>"><img src="<? bloginfo('template_url'); ?>/img/bupipedream.png" alt="<? bloginfo('name'); ?> - Student-run newspaper at Binghamton University" /></a></h1>
-		</div>
-		<div id="search-form">
-			<!-- Search Form -->
-			<form role="search" method="get" id="searchform" action="<? bloginfo('wpurl'); ?>/" >
-				<input type="search" autocomplete="on" value="<? get_search_query(); ?>" name="s" id="s" placeholder="Search the Site..." />
-				<input type="submit" id="searchsubmit" value="<?= esc_attr('Search') ?>" />
-			</form>		
-		</div>
+			</div>
+			<div class="weather">
+				<img src="<? bloginfo('template_url'); ?>/img/weather/partly-sunny.png" alt="Party Sunny" />
+				32&deg;
+			</div>
+		</section>
+		<h1 class="span12">
+			<a href="<? bloginfo( 'url' ); ?>/" title="<? bloginfo('name'); ?>">
+				<img src="<? bloginfo('template_url'); ?>/img/bupipedream.png" alt="<? bloginfo( 'name' ); ?> - <? bloginfo( 'description' ); ?>" />
+			</a>
+		</h1>
+		<section id="search-social" class="span6 last">
+			<div class="social">
+				<a href="https://www.facebook.com/BUPipeDream" title="Follow Pipe Dream on Facebook"><img src="<? bloginfo( 'template_url' ); ?>/img/social/facebook.png" alt="Facebook Page" /> Facebook</a>
+				<a href="https://twitter.com/bupipedream" title="Follow Pipe Dream on Twitter"><img src="<? bloginfo( 'template_url' ); ?>/img/social/twitter.png" alt="Twitter Account" /> Twitter</a>
+			</div>
+			<form id="search" role="search" method="get" id="searchform" action="<? bloginfo( 'wpurl' ); ?>/">
+				<input type="search" autocomplete="on" placeholder="Search..." value="<? get_search_query(); ?>" />
+				<input type="submit" value="Search" />
+			</form>
+		</section>
 	</header>
+
 	<nav id="nav-container" class="row">
 		<div id="nav-links" class="span19">
 			<!-- Navigation Links -->

@@ -108,58 +108,47 @@ a:focus { outline: thin dotted; }
 /*-----------------------*/
 
 header[role="banner"] {
-	padding: 0 0 33px 0;
-
+	color: @text;
+	font-size: .75em;
+	font-family: @sans;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0 auto;
 	#date-weather {
-		float: left;
-		margin-left: 16px;
+		margin-top: 70px;
 		.date {
-			color: @link;
-			display: block;
-			font-family: @sans;
-			font-size: .9em;
-			font-weight: bold;
-			margin-top: 35px;
+			display: inline-block;
+			padding: 0 10px 0 0;
 		}
 		.weather {
-			font-size: .8em;
+			border-left: @lightborder;
+			display: inline-block;
+			padding: 3px 0 5px 10px;
+			img { margin: -4px 3px 0 0; }
 		}
 	}
-
-	#logo {
-		float: none;
-		max-width: 319px;
-		margin: 0 auto -6em;
-		// position: relative;
-		text-align: center;
-		h1 { margin: 0; }
-	}
-
-	form {
-		margin: 40px 10px 0 0;
+	#search-social {
 		text-align: right;
-		font-size: .75em;
-		input { border: 1px solid #dddddd; display: inline; }
-		input[name="s"] {
-			background: #fcfcfc;
-			font-family: @sans;
-			padding: 0 5px;
-			width: 200px;
-			height: 25px;
-			float: none;
-			outline: none;
+		margin-top: 45px;
+		.social {
+			display: block;
+			img { margin: 0 2px; }
 		}
-		input[type="submit"] {
-			background: #f7f6f6;
-			color: #676767;
-			font-family: @sans;
-			height: 27px;
-			float: right;
-			margin-left: -1px;
-			//.border-radius(0 3px 3px 0);
+		form {
+			display: inline-block;
+			input {
+				border: 1px solid #cecece;
+				padding: 6px 8px;
+				.border-radius(2px);
+				&:focus {
+					outline: none;
+					.box-shadow(0 0 5px #dddddd);
+				}
+			}
 		}
 	}
 }
+
 
 /*-----------------------*/
 /*--- Navigation Menu ---*/
