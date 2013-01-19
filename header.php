@@ -299,37 +299,37 @@
 		</section>
 	</header>
 
-	<nav id="nav-container" class="row">
-		<div id="nav-links" class="span19">
-			<!-- Navigation Links -->
-			<ul>
-				<li><a href="<? bloginfo('wpurl'); ?>/news/" <? if(is_category('1')) echo 'class="active"'; ?>>News</a></li>
-				<li><a href="<? bloginfo('wpurl'); ?>/sports/" <? if(is_category('3')) echo 'class="active"'; ?>>Sports</a></li>
-				<li><a href="<? bloginfo('wpurl'); ?>/opinion/" <? if(is_category('4')) echo 'class="active"'; ?>>Opinion</a></li>
-				<li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
-				<li class="first light"><a href="<?php bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
-				<li class="light"><a href="<?php bloginfo('wpurl'); ?>/about/" title="Learn more about Pipe Dream">About</a></li>
-				<!-- <li class="light"><a href="<?php bloginfo('wpurl'); ?>/contribute/" title="Join Pipe Dream">Contribute</a></li> -->
-			</ul>
-		</div>
-		<div id="last-site-update" class="span5 last">
-			<!-- Last Updated Timestamp -->
-			<p>Last Update:
-				<?php 
-					$args = array(
-						'numberposts' => 1,
-						'orderby' => 'post_date',
-						'order' => 'DESC',
-						'post_type' => 'post',
-						'post_status' => 'publish',
-					);
-					$post = wp_get_recent_posts($args);
-					$time = get_time_since($post['0']['post_date']);
-				?>
-				
-				<time title="<?= date('F j, Y \a\t g:i A T', strtotime($post['0']['post_modified'])); ?>">
-					<?= $time; ?>
-				</time>
-			</p>
-		</div>
+	<nav class="row" role="navigation">
+		<ul class="primary">
+			<li><a href="<? bloginfo('wpurl'); ?>/news/" <? if( is_category('1') ) echo 'class="active"'; ?>>News</a>
+				<ul>
+					<li><a href="">Administration</a></li>
+					<li><a href="">Student Groups</a></li>
+					<li><a href="">Student Association</a></li>
+					<li><a href="">Police Watch</a></li>
+				</ul>
+			</li><li><a href="<? bloginfo('wpurl'); ?>/sports/" <? if(is_category('3')) echo 'class="active"'; ?>>Sports</a>
+					<ul>
+					<li><a href="">Men's Basketball</a></li>
+					<li><a href="">Women's Basketball</a></li>
+					<li><a href="">Men's Soccer</a></li>
+					<li><a href="">Women's Soccer</a></li>
+					<li><a href="">Baseball</a></li>
+					<li><a href="">Softball</a></li>
+					<li><a href="">Wrestling</a></li>
+					<li><a href="">Track &amp; Field</a></li>
+					<li><a href="">Men's Lacrosse</a></li>
+					<li><a href="">Women's Lacrosse</a></li>
+					<li><a href="">Golf</a></li>
+					<li><a href="">Swimming &amp; Diving</a></li>
+					<li><a href="">Tennis</a></li>
+				</ul>
+			</li><li><a href="<? bloginfo('wpurl'); ?>/opinion/" <? if(is_category('4')) echo 'class="active"'; ?>>Opinion</a>
+			</li><li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
+		</ul>
+		<ul class="secondary">
+			<li><a href="">About</a></li>
+			<li><a href="">Advertise</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
 	</nav>
