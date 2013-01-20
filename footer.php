@@ -1,7 +1,9 @@
-	<footer class="row">
+	<footer class="row" role="contentinfo">
 		<div id="footer-logo" class="span6">
 			<!-- Pipe Dream -->
-			<a href="<?php bloginfo('wpurl'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/footerlogo.png" alt="<?php bloginfo('name'); ?>" /></a>
+			<a href="<? bloginfo( 'wpurl' ); ?>" title="<?php bloginfo( 'name' ); ?>">
+				<img src="<? bloginfo( 'template_url' ); ?>/img/footerlogo.png" alt="<?php bloginfo( 'name' ); ?>" />
+			</a>
 		</div>
 
 		<nav id="footer-links" class="span12">
@@ -20,18 +22,18 @@
 			</ul>
 		</nav>
 		<div id="stabalizing" class="span4">
-			<!-- the most important part of the new website -->
+			<!-- with love -->
 			<?php
-				$options = get_option('pd_theme_options');
+				$options = get_option( 'pd_theme_options' );
 				$stabilizing = $options['stabilizing'];
 				$destabilizing = $options['destabilizing'];
 			?>
-			<p>#stabilizing: <?php echo $stabilizing; ?><br />#destabilizing: <?php echo $destabilizing; ?></p>
+			<p>#stabilizing: <?= $stabilizing; ?><br />#destabilizing: <?= $destabilizing; ?></p>
 		</div>
 		<div id="wordpress" class="span2 last">
 			<!-- Powered by WordPress -->
 			<a href="http://wordpress.org/">
-				<img src="<?php bloginfo('template_url'); ?>/img/wordpress.png" alt="WordPress" title="Proudly Powered by WordPress" />
+				<img src="<?php bloginfo( 'template_url' ); ?>/img/wordpress.png" alt="WordPress" title="Proudly Powered by WordPress" />
 			</a>
 		</div>
 	</footer>
