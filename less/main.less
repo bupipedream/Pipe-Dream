@@ -129,21 +129,38 @@ header[role="banner"] {
 	}
 	#search-social {
 		text-align: right;
-		margin-top: 45px;
+		margin-top: 40px;
 		.social {
 			display: block;
-			img { margin: 0 2px; }
+			margin-bottom: 6px;
+			opacity: .7;
+			img { margin: -3px 2px 0 8px; }
+			a { color: @text; }
 		}
 		form {
 			display: inline-block;
-			input {
+			input[type="search"] {
+				background: #fcfcfc;
 				border: 1px solid #cecece;
+				float: left;
+				font-family: @sans !important;
 				padding: 6px 8px;
 				.border-radius(2px);
 				&:focus {
 					outline: none;
-					.box-shadow(0 0 5px #dddddd);
+					.box-shadow (0, 0, 5px, rgba(221, 221, 221, 1));
+					+ input { .box-shadow (0, 0, 5px, rgba(221, 221, 221, 1)); }
 				}
+			}
+			input[type="submit"] {
+				background: #f7f6f6;
+				border: 1px solid #cecece;
+				color: #676767;
+				font-family: @sans;
+				height: 28px;
+				float: right;
+				margin-left: -1px;
+				.border-radius(0 3px 3px 0);
 			}
 		}
 	}
@@ -237,17 +254,19 @@ nav[role="navigation"] {
 			}
 		}
 	}
-	.search-link {
-		float: right;
-		margin: 6px 15px 0 0;
-		opacity: .5;
-		.transition(opacity .300s);
-		&:hover {
-			opacity: .8;	
-			.transition(opacity .300s);
-		}
-	}
+	// .search-link {
+	// 	float: right;
+	// 	margin: 6px 15px 0 0;
+	// 	opacity: .5;
+	// 	.transition(opacity .300s);
+	// 	&:hover {
+	// 		opacity: .8;	
+	// 		.transition(opacity .300s);
+	// 	}
+	// }
 }
+
+
 
 
 /*-----------------------*/
@@ -753,7 +772,7 @@ footer {
 	font-family: @sans;
 	padding: 15px 20px;
 	margin: 0 @colPaddingLR;
-    -webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 	-webkit-box-shadow: 1px 2px 0px rgba(245, 245, 245, 1);
 	-moz-box-shadow:    1px 2px 0px rgba(245, 245, 245, 1);
 	box-shadow:         1px 2px 0px rgba(245, 245, 245, 1);
@@ -774,36 +793,36 @@ footer {
 		padding: 21px 90px 29px 8px;
 		.connect {
 			font-family: Lucida Grande, Helvetica Neue, Helvetica, Arial, sans-serif;
-		    display: inline-block;
-		    font-size: 11px;
-		    padding: 6px 8px;
-		    background: -webkit-linear-gradient(#7488b0, #5e719d);
-		    background: -moz-linear-gradient(#7488b0, #5e719d);
-		    background: -o-linear-gradient(#7488b0, #5e719d);
-		    background: -ms-linear-gradient(#7488b0, #5e719d);
-		    background: linear-gradient(#7488b0, #5e719d);
+			display: inline-block;
+			font-size: 11px;
+			padding: 6px 8px;
+			background: -webkit-linear-gradient(#7488b0, #5e719d);
+			background: -moz-linear-gradient(#7488b0, #5e719d);
+			background: -o-linear-gradient(#7488b0, #5e719d);
+			background: -ms-linear-gradient(#7488b0, #5e719d);
+			background: linear-gradient(#7488b0, #5e719d);
 			background-color: #5e719d;
-		    color: #fff;
-		    text-shadow: 0 -1px 0 rgba(0,0,20,.4);
-		    font-weight: bold;
-		    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 0 0 1px rgba(255,255,255,.2), 0 0 0 1px #2e4464;
-		    text-decoration: none;
-		    border-radius: 3px;
-		    line-height: 1;
-		    position: relative;
+			color: #fff;
+			text-shadow: 0 -1px 0 rgba(0,0,20,.4);
+			font-weight: bold;
+			box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 0 0 1px rgba(255,255,255,.2), 0 0 0 1px #2e4464;
+			text-decoration: none;
+			border-radius: 3px;
+			line-height: 1;
+			position: relative;
 			&:hover {
 				background: -webkit-linear-gradient(#8699bf, #6c7fab);
-			    background: -moz-linear-gradient(#8699bf, #6c7fab);
-			    background: -o-linear-gradient(#8699bf, #6c7fab);
-			    background: -ms-linear-gradient(#8699bf, #6c7fab);
-			    background: linear-gradient(#8699bf, #6c7fab);
+				background: -moz-linear-gradient(#8699bf, #6c7fab);
+				background: -o-linear-gradient(#8699bf, #6c7fab);
+				background: -ms-linear-gradient(#8699bf, #6c7fab);
+				background: linear-gradient(#8699bf, #6c7fab);
 			}
 			&:active {
 				background: -webkit-linear-gradient(#6c7fab, #8699bf);
-			    background: -moz-linear-gradient(#6c7fab, #8699bf);
-			    background: -o-linear-gradient(#6c7fab, #8699bf);
-			    background: -ms-linear-gradient(#6c7fab, #8699bf);
-			    background: linear-gradient(#6c7fab, #8699bf);
+				background: -moz-linear-gradient(#6c7fab, #8699bf);
+				background: -o-linear-gradient(#6c7fab, #8699bf);
+				background: -ms-linear-gradient(#6c7fab, #8699bf);
+				background: linear-gradient(#6c7fab, #8699bf);
 			}
 			&:before {
 				display: inline-block;
@@ -830,7 +849,7 @@ footer {
 	font-family: @sans;
 	display: none;
 	margin-bottom: 12px;
- 	padding-bottom: 12px !important;
+	padding-bottom: 12px !important;
 	p { margin: 0; }
 	#fb-profile-img {
 		float: left;
@@ -1657,18 +1676,18 @@ h2 small {
  */
 
 .ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
 }
 
 .ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
+	content: "";
+	display: block;
+	width: 0;
+	height: 150%;
 }
 
 /*
@@ -1676,8 +1695,8 @@ h2 small {
  */
 
 .hidden {
-    display: none !important;
-    visibility: hidden;
+	display: none !important;
+	visibility: hidden;
 }
 
 /*
@@ -1685,14 +1704,14 @@ h2 small {
  */
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
 
 /*
@@ -1702,12 +1721,12 @@ h2 small {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
 }
 
 /*
@@ -1715,7 +1734,7 @@ h2 small {
  */
 
 .invisible {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 /*
@@ -1732,12 +1751,12 @@ h2 small {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
 
 /*
@@ -1746,7 +1765,7 @@ h2 small {
  */
 
 .clearfix {
-    *zoom: 1;
+	*zoom: 1;
 }
 
 /* ==========================================================================
@@ -1755,68 +1774,68 @@ h2 small {
    ========================================================================== */
 
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+	* {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster: h5bp.com/s */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
 
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+	/*
+	 * Don't show links for images, or javascript/internal links
+	 */
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
 
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
+	thead {
+		display: table-header-group; /* h5bp.com/t */
+	}
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
 
-    img {
-        max-width: 100% !important;
-    }
+	img {
+		max-width: 100% !important;
+	}
 
-    @page {
-        margin: 0.5cm;
-    }
+	@page {
+		margin: 0.5cm;
+	}
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
 }

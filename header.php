@@ -292,8 +292,8 @@
 				<a href="https://www.facebook.com/BUPipeDream" title="Follow Pipe Dream on Facebook"><img src="<? bloginfo( 'template_url' ); ?>/img/social/facebook.png" alt="Facebook Page" /> Facebook</a>
 				<a href="https://twitter.com/bupipedream" title="Follow Pipe Dream on Twitter"><img src="<? bloginfo( 'template_url' ); ?>/img/social/twitter.png" alt="Twitter Account" /> Twitter</a>
 			</div>
-			<form id="search" role="search" method="get" id="searchform" action="<? bloginfo( 'wpurl' ); ?>/">
-				<input type="search" autocomplete="on" placeholder="Search..." value="<? get_search_query(); ?>" />
+			<form id="search" role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
+				<input type="search" name="s" autocomplete="on" placeholder="Search Pipe Dream" value="<? get_search_query(); ?>" />
 				<input type="submit" value="Search" />
 			</form>
 		</section>
