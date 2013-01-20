@@ -114,8 +114,9 @@ header[role="banner"] {
 	text-align: center;
 	text-transform: uppercase;
 	margin: 0 auto;
+	h1 { margin: 0; } // logo
 	#date-weather {
-		margin-top: 70px;
+		margin-top: 55px;
 		.date {
 			display: inline-block;
 			padding: 0 10px 0 0;
@@ -129,7 +130,7 @@ header[role="banner"] {
 	}
 	#search-social {
 		text-align: right;
-		margin-top: 40px;
+		margin-top: 25px;
 		.social {
 			display: block;
 			margin-bottom: 6px;
@@ -145,6 +146,7 @@ header[role="banner"] {
 				float: left;
 				font-family: @sans !important;
 				padding: 6px 8px;
+				width: 150px;
 				.border-radius(2px);
 				&:focus {
 					outline: none;
@@ -200,7 +202,15 @@ nav[role="navigation"] {
 				padding: 9px 13px;
 			}
 			&:hover {
-				&:before{ content:''; display: block; width:100%; height:3px; background: @green; }
+				&:before{
+					//border-left: 1px solid @light-border;
+					//border-right: 1px solid @light-border;
+					background: @green;
+					content:'';
+					display: block;
+					height:3px;
+					width:100%;
+				}
 				border-top: 0;
 				border-bottom: 0;
 				//> ul { display: block; }
