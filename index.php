@@ -138,16 +138,16 @@
 						<!-- List of sports articles -->
 						<ul>
 							<?php foreach( $sections['sports']['article-list'] as $article ): ?>
-								<article>
-									<li>
+								<li>
+									<article>
 										<h2 class="headline">
 											<a href="<?= get_permalink($article['ID']) ?>"><?= $article['post_title']; ?></a>
 										</h2>
-									</li>
-								</article>						
+									</article>
+								</li>
 							<?php endforeach; ?>
 						</ul>
-
+						
 					</div>
 				</section>
 			</div>
@@ -192,12 +192,14 @@
 							<?php foreach( $sections['release']['article-list'] as $article ): ?>
 							
 							<li>
-								<h2>
-									<a href="<?= get_permalink( $article['ID'] ) ?>">
-										<?= $article['post_title']; ?>
-									</a>
-								</h2>
-								<time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time>
+								<article>
+									<h2 class="headline">
+										<a href="<?= get_permalink( $article['ID'] ) ?>">
+											<?= $article['post_title']; ?>
+										</a>
+									</h2>
+									<time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time>
+								</article>
 							</li>
 							
 							<?php endforeach; ?>
@@ -237,7 +239,7 @@
 								<footer>
 									<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 								</footer>
-															
+								
 							</article>
 							
 						<?php endforeach; ?>
