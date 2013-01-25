@@ -8,7 +8,7 @@
 
 			<!-- Left and Middle Columns -->
 			<div class="row">
-				<h1 class="visuallyhidden">Top Stories</h1>
+				<h1 class="section-heading visuallyhidden">Top Stories</h1>
 				
 				<!-- Left Column / News & Editorial -->
 				<div class="span9">
@@ -78,19 +78,31 @@
 				</div>
 			</div>
 			<div class="row">
-				<section>
-					<!-- Three News Articles -->
-					<h1><a href="<?= home_url(); ?>/news/">News</a></h1>
+				<section class="span9">
+
+					<h1 class="section-heading"><a href="">Daily Photo</a></h1>
+					<figure>
+						<img src="https://sphotos-a.xx.fbcdn.net/hphotos-ash4/485851_10150795823137420_908715566_n.jpg">
+						<time>Jan. 20, 2012</time>
+						<figcredit>Daniel O'Connor</figcredit>
+					</figure>
+
+				</section>
+				<section class="span15 last">
 					
-					<?php foreach( $sections['news']['article-list'] as $article ): ?>
+					<!-- Four News Articles -->
+					<h1 class="section-heading"><a href="<?= home_url(); ?>/news/">News</a></h1>
+					
+					<?php foreach( $sections['news']['article-list'] as $index => $article ): ?>
 						
 						<article>
-							
-							<div class="meta"><span class="author"><?= $article['post_author']['name']; ?></span></div>
-							<h2 class="headline">
-								<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
-							</h2>
-							<p><?= $article['post_excerpt']; ?></p>
+
+								<h2 class="headline <?= ($index === 0) ? 'faded' : '' ?>">
+									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
+								</h2>
+								<? if($index === 0): ?>
+									<p><?= $article['post_excerpt']; ?></p>
+								<? endif; ?>
 							
 						</article>
 						
@@ -102,117 +114,88 @@
 			<div class="row">
 				<section>
 					<!-- Two column row of sports -->
-					<h1><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
+					<h1 class="section-heading"><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
 					
-					<div class="span13">
+					<div class="span9">
 						
 						<?php foreach( $sections['sports']['feature'] as $article ): ?>
 							
 							<!-- Featured sports article -->
 							<article>
-								<?php if( isset( $article['photo']['src']['custom-165'] ) ): ?>
-									<figure>
-										<a href="<?= get_permalink($article['ID']) ?>">
-											<img src="<?= $article['photo']['src']['custom-165']; ?>" />
-										</a>
-									</figure>
-								<? endif; ?>
 								
 								<h2 class="headline">
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
 
 								<p><?= $article['post_excerpt']; ?></p>
-								<time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time>
-								
-								<footer>
-									<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
-								</footer>
+
 							</article>
 							
 						<?php endforeach; ?>
 					</div>
 					
-					<div class="span11 last">
-						
+					<div class="span15 last">
+
 						<!-- List of sports articles -->
-						<ul>
-							<?php foreach( $sections['sports']['article-list'] as $article ): ?>
-								<li>
-									<article>
-										<h2 class="headline">
-											<a href="<?= get_permalink($article['ID']) ?>"><?= $article['post_title']; ?></a>
-										</h2>
-									</article>
-								</li>
-							<?php endforeach; ?>
-						</ul>
-						
+						<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
+							
+							<article>
+
+									<h2 class="headline <?= ($index === 0) ? 'faded' : '' ?>">
+										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
+									</h2>
+									<? if($index === 0): ?>
+										<p><?= $article['post_excerpt']; ?></p>
+									<? endif; ?>
+								
+							</article>
+							
+						<?php endforeach; ?>
+
 					</div>
 				</section>
 			</div>
+
 			<div class="row">
-				
-				<!-- Row of Release and Opinion columns -->
-				<div class="span9">
+				<!-- Opinion -->
+				<h1 class="section-heading"><a href="<?= home_url(); ?>/opinion/">Opinion</a></h1>
 					
-					<!-- Release -->
-					<section>
-						<h1><a href="<?= home_url(); ?>/release/">Release</a></h1>
+					<!-- Editorial -->
+					<section class="span9">
+					
+						<h2 class="section-heading"><a href="<?= home_url(); ?>/opinion/editorial/">Editorial</a></h2>
+
+						<?php foreach($sections['editorial']['feature'] as $article): ?>
 						
-						<?php foreach( $sections['release']['feature'] as $article ): ?>
-							
 							<article>
+								
+								<?php if( $article['photo'] ): ?>
+									<figure>
+										<a href="<?= get_permalink( $article['ID'] ); ?>">
+											<img src="<?= $article['photo']['src']['single-inline']; ?>" />
+										</a>
+										<figcaption><?= $article['photo']['credit']; ?></figcaption>
+									</figure>
+								<?php endif; ?>
 								
 								<h2 class="headline">
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
-								
-								<div class="meta">By <span class="author"><?= $article['post_author']['name']; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time></div>
 
-								<figure>
-									<a href="<?= get_permalink( $article['ID'] ) ?>">
-										<img src="<?= $article['photo']['src']['custom-260']; ?>" />
-									</a>
-									<figcaption><?= $article['photo']['credit']; ?></figcaption>
-								</figure>
-								
 								<p><?= $article['post_excerpt']; ?></p>
-								
+
 								<footer>
 									<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 								</footer>
-								
+								 	
 							</article>
 							
 						<?php endforeach; ?>
-						
-						<ul>
-							
-							<?php foreach( $sections['release']['article-list'] as $article ): ?>
-							
-							<li>
-								<article>
-									<h2 class="headline">
-										<a href="<?= get_permalink( $article['ID'] ) ?>">
-											<?= $article['post_title']; ?>
-										</a>
-									</h2>
-									<time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time>
-								</article>
-							</li>
-							
-							<?php endforeach; ?>
-							
-						</ul>
 					</section>
-				</div>
-				<div class="span15 last">
-					
-					<!-- Opinion -->
-					<section>
-						
-						<h1><a href="<?= home_url(); ?>/opinion/">Opinion</a></h2>
+
+					<!-- Columns -->
+					<section class="span15 last">
+						<h2 class="section-heading"><a href="<?= home_url(); ?>/opinion/">Columns</a></h2>
 						
 						<?php foreach( $sections['opinion']['article-list'] as $article ): ?>
 							
@@ -239,14 +222,63 @@
 								<footer>
 									<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 								</footer>
+
+							</article>
+							
+						<?php endforeach; ?>
+					</section>
+			</div>
+
+			<div class="row">
+				<section>
+					<!-- Two column row of release -->
+					<h1 class="section-heading"><a href="<?= home_url(); ?>/release/">Release</a></h2>
+					
+					<div class="span9">
+						
+						<?php foreach( $sections['release']['feature'] as $article ): ?>
+
+							<!-- Featured release article -->
+							<article>
+								<?php if( isset( $article['photo']['src'] ) ): ?>
+									<figure>
+										<a href="<?= get_permalink( $article['ID'] ); ?>">
+											<img src="<?= $article['photo']['src']['single-inline']; ?>" title="<?= $article['post_author']['name']; ?>" />
+										</a>
+									</figure>
+								<?php endif; ?>
+								
+								<h2 class="headline">
+									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
+								</h2>
+
+								<p><?= $article['post_excerpt']; ?></p>
+
+							</article>
+							
+						<?php endforeach; ?>
+					</div>
+					
+					<div class="span15 last">
+
+						<!-- List of release articles -->
+						<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>
+							
+							<article>
+
+								<h2 class="headline">
+									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
+								</h2>
+								<p><?= $article['post_excerpt']; ?></p>
 								
 							</article>
 							
 						<?php endforeach; ?>
-						
-					</section>
-				</div>
+
+					</div>
+				</section>
 			</div>
+
 		</div>
 		<?php get_sidebar(); ?>
 	</div>

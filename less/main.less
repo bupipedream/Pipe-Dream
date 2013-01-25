@@ -264,205 +264,156 @@ nav[role="navigation"] {
 			}
 		}
 	}
-	// .search-link {
-	// 	float: right;
-	// 	margin: 6px 15px 0 0;
-	// 	opacity: .5;
-	// 	.transition(opacity .300s);
-	// 	&:hover {
-	// 		opacity: .8;	
-	// 		.transition(opacity .300s);
-	// 	}
-	// }
 }
-
-
 
 
 /*-----------------------*/
 /*------ Main Page ------*/
 /*-----------------------*/
 
-p { font-size: .8em; }
-
-.doublehrule { // two horizontal lines for separating content
-	background: ~"url(@{baseurl}/img/doublehrule.png) repeat-x scroll bottom left";
-	padding-bottom: 10px !important;
-}
-
-.darkdoublehrule { // two darker horizontal lines for separating content
-	background: ~"url(@{baseurl}/img/darkdoublehrule.png) repeat-x scroll bottom left";
-	padding-bottom: 10px !important;
-}
-
-.thickhrule { // thick horizontal lines to separate content
-	border-bottom: @thickborder !important;
-	padding-bottom: 10px !important;
-}
-
 // labels used to indicate a block of content
-.section-label {
+.section-heading {
 	font-family: @sans;
 	font-size: .7em;
 	text-transform: uppercase;
 	margin: 0 0 5px 0;
 	a { color: @graylink; }
-	.sub-label { // used for editorial
-		color: lighten(@graylink, 10%);
-		display: block;
-		font-family: @serif;
-		font-style: italic;
-		font-weight: normal;
-		margin-top: 3px;
-		text-transform: none;
-	}
-}
-h2 small {
-	color: lighten(@lighttext, 25);
-	font-family: @sans;
-	font-size: 1em;
-	font-style: italic;
-	margin-left: 7px;
 }
 
-article h2 {
+.headline {
 	font-weight: normal;
 	margin: 0;
 	line-height: 1.2;
-	font-size: 1.3em;
+	font-size: 1.5em;
 }
 
-// used for thumbnails within articles
-figure.float-left { float: left; }
-figure.float-right { float: right; }
-figure.center { text-align: center; }
-figure.thin-border { border: @thinborder; padding: 1px; }
+article {}
 
-.home article, .category article { // all layouts on main page and category
-	margin-bottom: 16px;
-	.byline { // author and date, or just author
-		color: @lighttext;
-		font-size: .7em;
-		font-family: @sans;
-		&.above { // byline above headline
-			margin: 0;
-			text-transform: uppercase;
-			a { color: @lighttext; }
-		}
-		&.below { // byline below headline
-			margin: 0 0 3px 0;
-			a, span {
-				text-transform: uppercase;
-			}
-		}
-	}
-	p { margin-top: 4px; } // article description
-	time { color: @timestamp; }
-	figcaption { // photo credit
-		color: @lighttext;
-		font-family: @sans;
-		font-size: .7em;
-		text-align: right;
-		padding: 0 3px 0 0;
-		p { margin: 3px 0 0 0; }
-	}
-	.article-links {
-		margin: 0 0 0 2px;
-		padding: 0;
-		font-family: @sans;
-		font-size: .7em;
-		a { color: @lighttext; }
-		li { list-style: none; }
-		.comments-label {
-			background: ~"url(@{baseurl}/img/comment.png) no-repeat scroll center left";
-			padding-left: 17px;
-		}
-	}
-}
+// .home article, .category article { // all layouts on main page and category
+// 	margin-bottom: 16px;
+// 	.byline { // author and date, or just author
+// 		color: @lighttext;
+// 		font-size: .7em;
+// 		font-family: @sans;
+// 		&.above { // byline above headline
+// 			margin: 0;
+// 			text-transform: uppercase;
+// 			a { color: @lighttext; }
+// 		}
+// 		&.below { // byline below headline
+// 			margin: 0 0 3px 0;
+// 			a, span {
+// 				text-transform: uppercase;
+// 			}
+// 		}
+// 	}
+// 	p { margin-top: 4px; } // article description
+// 	time { color: @timestamp; }
+// 	figcaption { // photo credit
+// 		color: @lighttext;
+// 		font-family: @sans;
+// 		font-size: .7em;
+// 		text-align: right;
+// 		padding: 0 3px 0 0;
+// 		p { margin: 3px 0 0 0; }
+// 	}
+// 	.article-links {
+// 		margin: 0 0 0 2px;
+// 		padding: 0;
+// 		font-family: @sans;
+// 		font-size: .7em;
+// 		a { color: @lighttext; }
+// 		li { list-style: none; }
+// 		.comments-label {
+// 			background: ~"url(@{baseurl}/img/comment.png) no-repeat scroll center left";
+// 			padding-left: 17px;
+// 		}
+// 	}
+// }
 
-.home {
-	.news {
-		&#news-feature { // above the fold
-			h2 { font-size: 1.4em; }
-			border-bottom: @thinborder;
-			padding: 0 0 6px 0;
-			margin-bottom: 17px;
-		}
-		&#news-secondary { article h2 { font-size: 1.3em; } }
-		&#news-list { article h2 { font-size: 1.1em; } }
-		.float-left { margin: 6px 10px 0 0; }
-		.float-right { margin: 6px 0 0 10px; }
-	}
-	.editorial {
-		.byline { // timestamp
-			float: right;
-			margin: -5px 0 0 0;		
-		}
-		figure { margin: 15px 0 10px 0; }
-	}
-	.sports {
-		border-bottom: @thinborder;
-		padding: 17px 0 10px 0;
-		#sports-feature { // featured article
-			border-right: @thinborder;
-			figure img { margin: 3px 12px 6px 0; }
-		}
-		#sports-list {
-			margin: 0 8px 0 0;
-			li {
-				border-bottom: @thinborder;
-				padding: 7px 6px;
-				&:last-child { border: none; }
-			}
-		}
-	}
-	.release, .opinion { margin-top: 17px; }
-	.release {
-		#release-list {
-			margin: 0;
-			li {
-				padding: 7px 3px;
-				time {
-					color: @timestamp;
-					margin-left: 4px;
-				}
-			}
-		}
-		.byline { margin: 1px 0 5px 0; }
-		#release-feature {
-			border-bottom: @thinborder;
-			margin-bottom: 10px;
-			padding-bottom: 13px;
-			img {
-				margin-top: 3px;
-			}
-		}
-	}
-	.opinion {
-		border-left: @thinborder;
-		article {
-			border-bottom: @thinborder;
-			padding: 0 0 20px 0;
-			&:last-child { border-bottom: none; }
-		}
-		figure.float-right { // author headshots
-			margin: 5px 0 0 14px;
-		}
-	}
-	.article-list { // list of headlines
-		list-style: none;
-		padding: 0;
-		h2 {
-			font-size: 1em;
-			font-weight: normal;
-			margin: 0;
-		}
-	}
-	.halfbanner {
-		text-align: center;
-		padding: 10px 0;
-	}
-}
+// .home {
+// 	.news {
+// 		&#news-feature { // above the fold
+// 			h2 { font-size: 1.4em; }
+// 			border-bottom: @thinborder;
+// 			padding: 0 0 6px 0;
+// 			margin-bottom: 17px;
+// 		}
+// 		&#news-secondary { article h2 { font-size: 1.3em; } }
+// 		&#news-list { article h2 { font-size: 1.1em; } }
+// 		.float-left { margin: 6px 10px 0 0; }
+// 		.float-right { margin: 6px 0 0 10px; }
+// 	}
+// 	.editorial {
+// 		.byline { // timestamp
+// 			float: right;
+// 			margin: -5px 0 0 0;		
+// 		}
+// 		figure { margin: 15px 0 10px 0; }
+// 	}
+// 	.sports {
+// 		border-bottom: @thinborder;
+// 		padding: 17px 0 10px 0;
+// 		#sports-feature { // featured article
+// 			border-right: @thinborder;
+// 			figure img { margin: 3px 12px 6px 0; }
+// 		}
+// 		#sports-list {
+// 			margin: 0 8px 0 0;
+// 			li {
+// 				border-bottom: @thinborder;
+// 				padding: 7px 6px;
+// 				&:last-child { border: none; }
+// 			}
+// 		}
+// 	}
+// 	.release, .opinion { margin-top: 17px; }
+// 	.release {
+// 		#release-list {
+// 			margin: 0;
+// 			li {
+// 				padding: 7px 3px;
+// 				time {
+// 					color: @timestamp;
+// 					margin-left: 4px;
+// 				}
+// 			}
+// 		}
+// 		.byline { margin: 1px 0 5px 0; }
+// 		#release-feature {
+// 			border-bottom: @thinborder;
+// 			margin-bottom: 10px;
+// 			padding-bottom: 13px;
+// 			img {
+// 				margin-top: 3px;
+// 			}
+// 		}
+// 	}
+// 	.opinion {
+// 		border-left: @thinborder;
+// 		article {
+// 			border-bottom: @thinborder;
+// 			padding: 0 0 20px 0;
+// 			&:last-child { border-bottom: none; }
+// 		}
+// 		figure.float-right { // author headshots
+// 			margin: 5px 0 0 14px;
+// 		}
+// 	}
+// 	.article-list { // list of headlines
+// 		list-style: none;
+// 		padding: 0;
+// 		h2 {
+// 			font-size: 1em;
+// 			font-weight: normal;
+// 			margin: 0;
+// 		}
+// 	}
+// 	.halfbanner {
+// 		text-align: center;
+// 		padding: 10px 0;
+// 	}
+// }
 
 
 
