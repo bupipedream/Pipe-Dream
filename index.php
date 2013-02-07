@@ -172,7 +172,7 @@
 				
 					<h2 class="section-heading pad-left"><a href="<?= home_url(); ?>/opinion/editorial/">Editorial</a></h2>
 
-					<?php foreach($sections['editorial']['feature'] as $article): ?>
+					<?php foreach( $sections['editorial']['feature'] as $article ): ?>
 					
 						<article class="pad-left">
 							
@@ -206,10 +206,10 @@
 					
 					<?php foreach( $sections['opinion']['article-list'] as $article ): ?>
 						
-						<article>
+						<article class="clearfix">
 						
 							<?php if( isset( $article['photo']['src'] ) ): ?>
-								<figure>
+								<figure class="figure-left">
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['thumbnail']; ?>" title="<?= $article['post_author']['name']; ?>" />
 									</a>
