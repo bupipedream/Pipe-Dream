@@ -7,7 +7,7 @@
 		<div class="span17">
 
 			<!-- Left and Middle Columns -->
-			<div class="row">
+			<div class="row grid-row">
 				<h1 class="section-heading visuallyhidden">Top Stories</h1>
 				
 				<!-- Left Column -->
@@ -81,7 +81,7 @@
 				</div>
 
 			</div>
-			<div class="row">
+			<div class="row grid-row">
 				<div class="left-column span9">
 					<section id="daily-photo" class="pad-left">
 
@@ -134,7 +134,7 @@
 					</section>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row grid-row">
 				<section>
 					<!-- Two column row of sports -->
 					<h1 class="section-heading pad-left"><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
@@ -191,7 +191,7 @@
 				</section>
 			</div>
 
-			<div class="row">
+			<div class="row grid-row">
 				<!-- Opinion -->
 				<h1 class="visuallyhidden"><a href="<?= home_url(); ?>/opinion/">Opinion</a></h1>
 					
@@ -205,7 +205,7 @@
 						<article class="pad-left">
 							
 							<?php if( $article['photo'] ): ?>
-								<figure>
+								<figure class="clearfix">
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['single-inline']; ?>" />
 									</a>
@@ -276,7 +276,7 @@
 						<?php foreach( $sections['release']['feature'] as $article ): ?>
 
 							<!-- Featured release article -->
-							<article class="pad-left">
+							<article class="pad-left text-teaser">
 								<?php if( isset( $article['photo']['src'] ) ): ?>
 									<figure>
 										<a href="<?= get_permalink( $article['ID'] ); ?>">
