@@ -18,7 +18,7 @@
 						
 						<?php foreach( $sections['news']['secondary'] as $key => $article ): ?>
 						
-						<article>
+						<article class="clearfix">
 							
 							<header>
 								<h2 class="headline">
@@ -36,10 +36,6 @@
 							<?php endif; ?>
 							
 							<p><?= $article['post_excerpt']; ?></p>
-
-							<footer class="article-links clearfix" >
-								<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
-							</footer>
 						
 						</article>
 
@@ -55,18 +51,20 @@
 						<?php foreach( $sections['news']['feature'] as $article ): ?>
 							<article>
 								
-								<figure>
+								<figure class="clearfix">
 									<a href="<?= get_permalink( $article['ID'] ) ?>">
 										<img src="<?= $article['photo']['src']['custom-495']; ?>" />
 									</a>
-									<figcaption><?= $article['photo']['credit']; ?></figcaption>
+									<figcaption class="meta"><span class="photo-credit"><?= $article['photo']['credit']; ?></span></figcaption>
 								</figure>
 								
 								<h2 class="headline">
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
 
-								<div class="meta"><span class="author"><?= $article['post_author']['name']; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time></div>
+								<div class="meta">
+									<span class="author"><?= $article['post_author']['name']; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time>
+								</div>
 								
 								<p><?= $article['post_excerpt']; ?></p>
 								
@@ -83,14 +81,16 @@
 			</div>
 			<div class="row">
 				<div class="left-column span9">
-					<section class="pad-left">
+					<section id="daily-photo" class="pad-left">
 
 						<h1 class="section-heading"><a href="">Daily Photo</a></h1>
 						<article>
 							<figure>
 								<img src="https://sphotos-a.xx.fbcdn.net/hphotos-ash4/485851_10150795823137420_908715566_n.jpg">
-								<time>Jan. 20, 2012</time>
-								<figcredit>Daniel O'Connor</figcredit>
+								<figcaption class="meta">
+									<time>Jan. 20, 2012</time>
+									<span class="photo-credit">Daniel O'Connor</span>
+								</figcaption>
 							</figure>
 						</article>
 
@@ -205,7 +205,7 @@
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['single-inline']; ?>" />
 									</a>
-									<figcaption><?= $article['photo']['credit']; ?></figcaption>
+									<figcaption class="meta"><span class="photo-credit"><?= $article['photo']['credit']; ?></span></figcaption>
 								</figure>
 							<?php endif; ?>
 							

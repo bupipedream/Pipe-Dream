@@ -125,6 +125,18 @@ a:focus { outline: thin dotted; }
 	padding: 1px;
 }
 
+.meta {
+	color: @light-gray;
+	font-family: @sans;
+	font-size: .7em;
+	margin-bottom: .2em;
+	.author { text-transform: uppercase; }
+}
+
+.photo-credit {
+	float: right;
+}
+
 /*-----------------------*/
 /*------- Header --------*/
 /*-----------------------*/
@@ -306,18 +318,10 @@ nav[role="navigation"] {
 	}
 }
 
-.meta {
-	color: @light-gray;
-	font-family: @sans;
-	font-size: .7em;
-	margin-bottom: .2em;
-	.author { text-transform: uppercase; }
-}
-
 .middle-column {}
 
 article {
-	
+	margin-bottom: 1em;	
 	p {
 		font-size: .90em;
 		line-height: 1.2em;
@@ -327,7 +331,6 @@ article {
 	.article-links {
 		font-family: @sans;
 		font-size: .7em;
-		// margin: 1em 0;
 		a { color: @light-gray; }
 	}
 
