@@ -103,6 +103,16 @@
 							
 							<article>
 
+									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+
+										<figure class="figure-right">
+											<a href="<?= get_permalink( $article['ID'] ); ?>">
+												<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
+											</a>
+										</figure>
+									
+									<?php endif; ?>
+
 									<h2 class="headline <?= ($index === 0) ? 'faded' : '' ?>">
 										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 									</h2>
@@ -146,8 +156,18 @@
 						<!-- List of sports articles -->
 						<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
 							
-							<article>
+							<article class="clearfix">
 
+									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+
+										<figure class="figure-right">
+											<a href="<?= get_permalink( $article['ID'] ); ?>">
+												<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
+											</a>
+										</figure>
+									
+									<?php endif; ?>
+									
 									<h2 class="headline <?= ($index === 0) ? 'faded' : '' ?>">
 										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 									</h2>
@@ -271,6 +291,16 @@
 						<!-- List of release articles -->
 						<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>
 							
+							<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+
+								<figure class="figure-right">
+									<a href="<?= get_permalink( $article['ID'] ); ?>">
+										<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
+									</a>
+								</figure>
+							
+							<?php endif; ?>
+
 							<article>
 
 								<h2 class="headline">
