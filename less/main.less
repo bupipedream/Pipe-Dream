@@ -104,10 +104,10 @@ a:focus { outline: thin dotted; }
 #content { margin: 18px auto 25px auto; }
 
 .headline {
-	font-weight: normal;
-	margin: 0;
-	line-height: 1.1;
 	font-size: 1.4em;
+	font-weight: normal;
+	line-height: 1.1;
+	margin: 0 0 .13em 0;
 }
 
 .figure-right {
@@ -307,12 +307,11 @@ nav[role="navigation"] {
 }
 
 .meta {
+	color: @light-gray;
 	font-family: @sans;
 	font-size: .7em;
-	color: @light-gray;
-	.author {
-		text-transform: uppercase;
-	}
+	margin-bottom: .2em;
+	.author { text-transform: uppercase; }
 }
 
 .middle-column {
