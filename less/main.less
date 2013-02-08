@@ -107,11 +107,23 @@ a:focus { outline: thin dotted; }
 	font-weight: normal;
 	margin: 0;
 	line-height: 1.1;
-	font-size: 1.3em;
+	font-size: 1.4em;
 }
 
-.figure-right { float: right; }
-.figure-left { float: left; }
+.figure-right {
+	float: right;
+	margin: 0 0 5px 10px;
+}
+
+.figure-left {
+	float: left;
+	margin: 0 10px 5px 0;
+}
+
+.figure-border {
+	border:	1px solid @light-border;
+	padding: 1px;
+}
 
 /*-----------------------*/
 /*------- Header --------*/
@@ -297,7 +309,7 @@ nav[role="navigation"] {
 .meta {
 	font-family: @sans;
 	font-size: .7em;
-	color: #666666;
+	color: @light-gray;
 	.author {
 		text-transform: uppercase;
 	}

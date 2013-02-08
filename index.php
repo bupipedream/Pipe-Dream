@@ -19,24 +19,28 @@
 						<?php foreach( $sections['news']['secondary'] as $key => $article ): ?>
 						
 						<article class"clearfix">
+							
 							<header>
 								<h2 class="headline">
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
 								<div class="meta">By <span class="author"><?= $article['post_author']['name']; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time></div>
 							</header>
+
 							<? if( $article['photo'] ): ?>
-								<figure class="figure-right">
+								<figure class="figure-left figure-border">
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
 									</a>
 								</figure>
 							<?php endif; ?>
+							
 							<p><?= $article['post_excerpt']; ?></p>
 
 							<footer>
 								<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 							</footer>
+						
 						</article>
 
 						<?php endforeach; ?>
@@ -105,7 +109,7 @@
 
 									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
 
-										<figure class="figure-right">
+										<figure class="figure-right figure-border">
 											<a href="<?= get_permalink( $article['ID'] ); ?>">
 												<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
 											</a>
@@ -160,7 +164,7 @@
 
 									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
 
-										<figure class="figure-right">
+										<figure class="figure-right figure-border">
 											<a href="<?= get_permalink( $article['ID'] ); ?>">
 												<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
 											</a>
@@ -229,7 +233,7 @@
 						<article class="clearfix">
 						
 							<?php if( isset( $article['photo']['src'] ) ): ?>
-								<figure class="figure-left">
+								<figure class="figure-left  figure-border">
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['thumbnail']; ?>" title="<?= $article['post_author']['name']; ?>" />
 									</a>
