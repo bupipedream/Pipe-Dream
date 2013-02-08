@@ -55,7 +55,9 @@
 									<a href="<?= get_permalink( $article['ID'] ) ?>">
 										<img src="<?= $article['photo']['src']['custom-495']; ?>" />
 									</a>
-									<figcaption class="meta"><span class="photo-credit"><?= $article['photo']['credit']; ?></span></figcaption>
+									<figcaption class="meta">
+										<span class="photo-credit"><?= $article['photo']['credit']; ?></span>
+									</figcaption>
 								</figure>
 								
 								<h2 class="headline">
@@ -117,9 +119,10 @@
 									
 									<?php endif; ?>
 
-									<h2 class="headline <?= ($index === 0) ? 'faded' : '' ?>">
+									<h2 class="headline <?= ($index !== 0) ? 'faded' : '' ?>">
 										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 									</h2>
+
 									<? if($index === 0): ?>
 										<p><?= $article['post_excerpt']; ?></p>
 									<? endif; ?>
@@ -172,9 +175,10 @@
 									
 									<?php endif; ?>
 									
-									<h2 class="headline <?= ($index === 0) ? 'faded' : '' ?>">
+									<h2 class="headline <?= ($index !== 0) ? 'faded' : '' ?>">
 										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 									</h2>
+
 									<? if($index === 0): ?>
 										<p><?= $article['post_excerpt']; ?></p>
 									<? endif; ?>
@@ -205,7 +209,9 @@
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['single-inline']; ?>" />
 									</a>
-									<figcaption class="meta"><span class="photo-credit"><?= $article['photo']['credit']; ?></span></figcaption>
+									<figcaption class="meta">
+										<span class="photo-credit"><?= $article['photo']['credit']; ?></span>
+									</figcaption>
 								</figure>
 							<?php endif; ?>
 							

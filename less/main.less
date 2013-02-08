@@ -108,6 +108,10 @@ a:focus { outline: thin dotted; }
 	font-weight: normal;
 	line-height: 1.1;
 	margin: 0 0 .13em 0;
+	&.faded {
+		font-size: 1em;
+		a { color: #888888; }
+	}
 }
 
 .figure-right {
@@ -124,6 +128,10 @@ a:focus { outline: thin dotted; }
 	border:	1px solid @light-border;
 	padding: 1px;
 }
+
+figcaption .meta {
+	margin-top: 5px;
+} 
 
 .meta {
 	color: @light-gray;
@@ -321,7 +329,6 @@ nav[role="navigation"] {
 .middle-column {}
 
 article {
-	margin-bottom: 1em;	
 	p {
 		font-size: .90em;
 		line-height: 1.2em;
