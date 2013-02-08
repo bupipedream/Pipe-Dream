@@ -18,7 +18,7 @@
 						
 						<?php foreach( $sections['news']['secondary'] as $key => $article ): ?>
 						
-						<article class"clearfix">
+						<article>
 							
 							<header>
 								<h2 class="headline">
@@ -37,7 +37,7 @@
 							
 							<p><?= $article['post_excerpt']; ?></p>
 
-							<footer>
+							<footer class="article-links clearfix" >
 								<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 							</footer>
 						
@@ -70,8 +70,8 @@
 								
 								<p><?= $article['post_excerpt']; ?></p>
 								
-								<footer>
-									<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
+								<footer class="article-links">
+									<a href="<?= get_permalink( $article['ID'] ); ?>#comments" class="icon icon-comment"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 								</footer>
 								
 							</article>
@@ -189,7 +189,7 @@
 
 			<div class="row">
 				<!-- Opinion -->
-				<h1 class="section-heading pad-left"><a href="<?= home_url(); ?>/opinion/">Opinion</a></h1>
+				<h1 class="visuallyhidden"><a href="<?= home_url(); ?>/opinion/">Opinion</a></h1>
 					
 				<!-- Editorial -->
 				<section class="left-column span9">
@@ -215,7 +215,7 @@
 
 							<p><?= $article['post_excerpt']; ?></p>
 
-							<footer>
+							<footer class="article-links">
 								<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 							</footer>
 							 	
@@ -235,7 +235,7 @@
 							<?php if( isset( $article['photo']['src'] ) ): ?>
 								<figure class="figure-left  figure-border">
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
-										<img src="<?= $article['photo']['src']['thumbnail']; ?>" title="<?= $article['post_author']['name']; ?>" />
+										<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" title="<?= $article['post_author']['name']; ?>" />
 									</a>
 								</figure>
 							<?php endif; ?>
@@ -250,7 +250,7 @@
 								<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], '50' ); ?>
 							</p>
 							
-							<footer>
+							<footer class="article-links">
 								<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
 							</footer>
 
