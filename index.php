@@ -12,7 +12,7 @@
 				
 				<!-- Left Column -->
 				<div class="left-column span9">
-					<section class="pad-left">
+					<section class="pad-left article-list">
 						
 						<!-- Two Articles -->
 						
@@ -100,14 +100,14 @@
 
 				</div>
 				<div class="middle-column span15 last">
-					<section>
+					<section class="article-list">
 						
 						<!-- Four News Articles -->
 						<h1 class="section-heading"><a href="<?= home_url(); ?>/news/">News</a></h1>
 						
 						<?php foreach( $sections['news']['article-list'] as $index => $article ): ?>
 							
-							<article>
+							<article class="<?= ($index !== 0) ? 'faded' : '' ?>">
 
 									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
 
@@ -119,7 +119,7 @@
 									
 									<?php endif; ?>
 
-									<h2 class="headline <?= ($index !== 0) ? 'faded' : '' ?>">
+									<h2 class="headline">
 										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 									</h2>
 
@@ -158,12 +158,12 @@
 
 					</div>
 					
-					<div class="middle-column span15 last">
+					<div class="middle-column span15 article-list last">
 
 						<!-- List of sports articles -->
 						<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
 							
-							<article class="clearfix">
+							<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
 
 									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
 
@@ -175,7 +175,7 @@
 									
 									<?php endif; ?>
 									
-									<h2 class="headline <?= ($index !== 0) ? 'faded' : '' ?>">
+									<h2 class="headline">
 										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 									</h2>
 
@@ -231,7 +231,7 @@
 				</section>
 
 				<!-- Columns -->
-				<section class="middle-column span15 last">
+				<section class="article-list middle-column span15 last">
 					<h2 class="section-heading"><a href="<?= home_url(); ?>/opinion/">Columns</a></h2>
 					
 					<?php foreach( $sections['opinion']['article-list'] as $article ): ?>
@@ -296,7 +296,7 @@
 						<?php endforeach; ?>
 					</div>
 					
-					<div class="middle-column span15 last">
+					<div class="article-list middle-column span15 last">
 
 						<!-- List of release articles -->
 						<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>
