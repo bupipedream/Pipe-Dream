@@ -145,6 +145,19 @@ figcaption .meta {
 	float: right;
 }
 
+.text-teaser { // tease to an article with no image
+	.headline {
+		display: inline;
+		font-size: 1.5em;
+	}
+	p {
+		color: lighten(@text, 40);
+		display: inline;
+		font-size: 1em;
+	}
+}
+
+
 /*-----------------------*/
 /*------- Header --------*/
 /*-----------------------*/
@@ -335,13 +348,11 @@ article {
 		line-height: 1.2em;
 		margin: 0 0 .4em 0;
 	}
-
 	.article-links {
 		font-family: @sans;
 		font-size: .7em;
 		a { color: @light-gray; }
 	}
-
 }
 
 /*----------------------*/

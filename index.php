@@ -144,7 +144,7 @@
 						<?php foreach( $sections['sports']['feature'] as $article ): ?>
 							
 							<!-- Featured sports article -->
-							<article class="pad-left">
+							<article class="pad-left text-teaser">
 								
 								<h2 class="headline">
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
