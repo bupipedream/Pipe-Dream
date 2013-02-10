@@ -27,7 +27,7 @@
 								<div class="meta">By <span class="author"><?= $article['post_author']['name']; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time></div>
 							</header>
 
-							<? if( $article['photo'] ): ?>
+							<? if( isset( $article['photo']['src'] ) ): ?>
 								<figure class="figure-left figure-border">
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
@@ -109,7 +109,7 @@
 							
 							<article class="<?= ($index !== 0) ? 'faded' : '' ?>">
 
-									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+									<?php if( $index === 0 && isset( $article['photo']['src'] ) ): ?>
 
 										<figure class="figure-right figure-border">
 											<a href="<?= get_permalink( $article['ID'] ); ?>">
@@ -303,7 +303,7 @@
 							
 							<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
 
-									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+									<?php if( $index === 0 && $article['photo']['src'] ): ?>
 
 										<figure class="figure-right figure-border">
 											<a href="<?= get_permalink( $article['ID'] ); ?>">
