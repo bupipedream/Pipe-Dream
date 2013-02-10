@@ -1,4 +1,4 @@
-<div class="span7 last">
+<div id="sidebar" class="span7 last">
 	<!-- Right Column -->
 	
 	<?php if( is_single() ): ?>
@@ -30,18 +30,20 @@
 	<?php endif; ?>
 		
 	<?php if( is_home() || is_category() ): ?>
-		
-		<section>
+<!-- 		
+		<section class="sidebar-block">
 			<div class="fb-like-box" data-href="http://www.facebook.com/bupipedream" data-width="292" data-height="185" data-show-faces="true" data-border-color="#cccccc" data-stream="false" data-header="false"></div>
 		</section>
-		
+-->
+ <!-- 		
 		<section>
 			<a href="https://twitter.com/bupipedream" class="twitter-follow-button" data-show-count="true">Follow @bupipedream</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</section>
 		
-		<section>
-			<h1>Most Read</h1>
+ -->		
+ 		<section class="sidebar-block sidebar-article-list">
+			<h1 class="section-heading">Most Read</h1>
 			<ol>
 				<?php
 					$posts = wmp_get_popular( array( 'limit' => 5, 'post_type' => 'post', 'range' => 'weekly' ) );
@@ -50,11 +52,13 @@
 						setup_postdata( $post );
 				?>
 					<li>
-						<h2 class="headline">
-							<a href="<? the_permalink() ?>" title="<?= esc_attr( get_the_title() ? get_the_title() : get_the_ID() ); ?>">
-								<?php if ( get_the_title() ) the_title(); else the_ID(); ?>
-							</a>
-						</h2>
+						<article>
+							<h2 class="headline">
+								<a href="<? the_permalink() ?>" title="<?= esc_attr( get_the_title() ? get_the_title() : get_the_ID() ); ?>">
+									<?php if ( get_the_title() ) the_title(); else the_ID(); ?>
+								</a>
+							</h2>
+						</article>
 					</li>
 				<?php endforeach; endif; ?>
 			</ol>
@@ -64,7 +68,7 @@
 
 	<?php if( is_single() ): ?>
 		
-		<section>
+		<section class="sidebar-block">
 			<h1><a href="<?= home_url(); ?>/news/">Latest News</a></h1>
 				
 			<ol>
@@ -94,8 +98,8 @@
 			$issuu_id = $issuu['issuu_id'];
 		?>
 		<? if( $issuu_link && $issuu_id ): ?>
-			<section>
-				<h1>
+			<section class="sidebar-block">
+				<h1 class="section-heading">
 					<a href="<?= $issuu_link; ?>">Current Issue</a>
 				</h1>
 				<object style="width: 420px; height: 271px; ">
