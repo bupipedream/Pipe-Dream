@@ -301,22 +301,25 @@
 						<!-- List of release articles -->
 						<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>
 							
-							<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+							<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
 
-								<figure class="figure-right">
-									<a href="<?= get_permalink( $article['ID'] ); ?>">
-										<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
-									</a>
-								</figure>
-							
-							<?php endif; ?>
+									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
 
-							<article>
+										<figure class="figure-right figure-border">
+											<a href="<?= get_permalink( $article['ID'] ); ?>">
+												<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
+											</a>
+										</figure>
+									
+									<?php endif; ?>
+									
+									<h2 class="headline">
+										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
+									</h2>
 
-								<h2 class="headline">
-									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
-								</h2>
-								<p><?= $article['post_excerpt']; ?></p>
+									<? if($index === 0): ?>
+										<p><?= $article['post_excerpt']; ?></p>
+									<? endif; ?>
 								
 							</article>
 							
