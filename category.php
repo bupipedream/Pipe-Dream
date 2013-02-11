@@ -35,7 +35,7 @@
 							
 							<p class="byline below"><p class="byline below">
 								<?php if($article['post_author'] === '2'): ?>
-									<span><?php echo is_archived($article['ID'], '_author') ?></span>
+									<span><?php echo pd_is_archived($article['ID'], '_author') ?></span>
 								<?php else: ?>
 									<span><?php $author = get_userdata($article['post_author']); echo $author->display_name; ?></span>
 								<?php endif;?>
@@ -89,7 +89,8 @@
 									
 									<p class="byline below"><p class="byline below">
 										<?php if($article['post_author'] === '2'): ?>
-											<span><?php echo is_archived($article['ID'], '_author') ?></span>
+											<!-- If user is Archives -->
+											<span><?php echo pd_is_archived($article['ID'], '_author') ?></span>
 										<?php else: ?>
 											<span><?php $author = get_userdata($article['post_author']); echo $author->display_name; ?></span>
 										<?php endif;?>
@@ -145,7 +146,7 @@
 									<?php if(is_coauthor_for_post('Staff Reports')): ?>
 										<span>Staff Reports</a></span>
 									<?php elseif(is_coauthor_for_post('archives')): ?>
-										<span><?php echo pd_is_archived(get_the_ID(), '_author') ?></a></span>
+										<span><?php echo pd_pd_is_archived(get_the_ID(), '_author') ?></a></span>
 									<?php else: ?>
 										<span><?php coauthors(); ?></span>
 									<?php endif;?>
