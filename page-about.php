@@ -58,7 +58,6 @@
 						<span class="board">News</span>
 						<ul>
 							<li>James Galloway '13, <em>News Editor</em></li>
-							<li>Suzie Lamb '13, <em>Assistant News Editor</em></li>
 							<li>Geoff Wilson '14, <em>Assistant News Editor</em></li>
 							<li>Christina Pullano '14, <em>Assistant News Editor</em></li>
 						</ul>
@@ -75,8 +74,7 @@
 						<span class="board">Photo</span>
 						<ul>
 							<li>Jonathan Heisler '13, <em>Photo Editor</em></li>
-							<li>Eric King '13, <em>Assistant Photo Editor</em></li>
-							<li>Nia Pellone '14, <em>Assistant Photo Editor</em></li>
+							<li>Kendall Loh '14, <em>Assistant Photo Editor</em></li>
 						</ul>
 					</li>
 					<li>
