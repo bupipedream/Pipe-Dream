@@ -146,7 +146,7 @@
 									<?php if(is_coauthor_for_post('Staff Reports')): ?>
 										<span>Staff Reports</a></span>
 									<?php elseif(is_coauthor_for_post('archives')): ?>
-										<span><?php echo pd_pd_is_archived(get_the_ID(), '_author') ?></a></span>
+										<span><?php echo pd_is_archived(get_the_ID(), '_author') ?></a></span>
 									<?php else: ?>
 										<span><?php coauthors(); ?></span>
 									<?php endif;?>
