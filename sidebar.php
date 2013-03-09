@@ -42,7 +42,7 @@
 		</section>
 		
  -->		
- 		<section class="sidebar-block sidebar-article-list">
+ 		<section class="sidebar-block sidebar-article-list sidebar-article-list-small">
 			<h1 class="section-heading">Most Read</h1>
 			<ol>
 				<?php
@@ -68,15 +68,15 @@
 
 	<?php if( is_single() ): ?>
 		
-		<section class="sidebar-block">
-			<h1><a href="<?= home_url(); ?>/news/">Latest News</a></h1>
-				
+		<section class="sidebar-block sidebar-article-list sidebar-article-list-large">
+			<h1 class="section-heading"><a href="<?= home_url(); ?>/news/">Latest News</a></h1>
+			
 			<ol>
 				<?php
 					global $post; // prob not safe?
 					$args = array( 'numberposts' => 5, 'category' => 1 ); // news
 					$myposts = get_posts( $args );
-					foreach( $myposts as $post ) : setup_postdata($post);
+					foreach( $myposts as $post ) : setup_postdata( $post );
 				?>
 					<li>
 						<h2 class="headline">

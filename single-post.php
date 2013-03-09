@@ -1,12 +1,12 @@
 <?php get_header(); ?>
-	<div class="row" id="content">
+	<div class="row">
 		<div class="span17">
-			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!-- Check if the article is part of the archives -->
-			<?php $archive = pd_is_archived(get_the_ID(), null); // print_r($archive); ?>
-			
+			<?php $archive = pd_is_archived(get_the_ID(), null); ?>
+
+<!-- 
 			<section id="fb-signup">
 				<div id="login-button">
 					<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
@@ -14,21 +14,18 @@
 				<h3>Discover Pipe Dream With Your Friends</h3>
 				<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
 			</section>
-			
-			<article id="post-<?php the_ID(); ?>" itemscope itemtype="http://schema.org/Article">
+ -->
+			<article id="post-<?php the_ID(); ?>" class="pad-left" itemscope itemtype="http://schema.org/Article">
 				
-				<p class="published">
+				<div class="single-label single-date">
 					<time itemprop="dateCreated" datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="Published on <?php the_time('F j, Y \a\t g:i A T'); ?>">
 						<?php the_time('F j, Y'); ?>
 					</time>
-				</p>
+				</div>
 				
-				<?if(in_category('opinion') && !in_category('editorial')):?>
-					<span class="opinion-label" title="Views expressed in this column represent the opinion of the columnist.">Opinion</span>
-				<?endif?>
-				<h2 itemprop="headline"><?php the_title(); ?></h2>
+				<h2 class="headline" itemprop="headline"><?php the_title(); ?></h2>
 				
-				<p id="deck"><?php echo get_post_meta(get_the_ID(), '_pd_article_deck_text', true); ?></p>
+				<p><?= get_post_meta( get_the_ID(), '_pd_article_deck_text', true ); ?></p>
 				
 				<!-- Schema.org markup -->
 				<meta itemprop="wordCount" content="<?php echo str_word_count(get_the_content()); ?>" />
@@ -40,21 +37,21 @@
 		     		$category = get_the_category(); 
 					$category = $category[0]->cat_name;
 					if($category != 'Archives') {
-						echo '<meta itemprop="articleSection" content="'.$category.'" />';
+						echo '<meta itemprop="articleSection" content="' . $category . '" />';
 					}
 		     	?>
 				
 				<div id="meta">
 					<div id="social">
-						<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+						<div class="fb-like" data-href="<?= get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 					</div>
-					<?php if(function_exists('coauthors_posts_links')): ?>
-						<? if(coauthors(null, null, null, null, false) === "Staff Reports"): ?>
+					<?php if( function_exists( 'coauthors_posts_links' ) ): ?>
+						<? if( coauthors( null, null, null, null, false ) === "Staff Reports" ): ?>
 							<p class="byline" itemprop="author">Staff Reports</p>
-						<? elseif(coauthors(null, null, null, null, false) === "The Editorial Board"): ?>
+						<? elseif( coauthors( null, null, null, null, false ) === "The Editorial Board" ): ?>
 							<p class="byline" itemprop="author">The Editorial Board</p>
-						<?php elseif(coauthors(null, null, null, null, false) === "archives"): ?>
-							<p class="byline" itemprop="author"><?=$archive['_author'];?></p>
+						<?php elseif( coauthors( null, null, null, null, false ) === "archives" ): ?>
+							<p class="byline" itemprop="author"><?= $archive['_author'];?></p>
 						<?php else: ?>
 							<p class="byline" itemprop="author"><?php coauthors_posts_links(); ?></p>
 						<?php endif;?>

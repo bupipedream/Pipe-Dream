@@ -372,6 +372,27 @@ article {
 
 }
 
+/*---------------------*/
+/*------ Single -------*/
+/*---------------------*/
+
+.single-label {
+	display: inline;
+	font-family: @sans;
+	font-size: .7em;
+	padding: 7px 10px;
+	text-transform: uppercase;
+}
+
+.single-date {
+	background: #f5ffea;
+	color: lighten(@text, 20%);
+}
+
+.single-post {
+	.headline { font-size: 1.7em; }
+}
+
 /*----------------------*/
 /*------ Sidebar -------*/
 /*----------------------*/
@@ -388,16 +409,49 @@ article {
 
 .sidebar-article-list {
 	ol, ul {
+		color: @light-gray;
 		font-size: .87em;
 		margin: 0;
-		padding: 0 0 0 20px;
-		color: @light-gray;
 	}
 	.headline {
-		font-size: 1em;
 		margin: 0;
 	}
+	&.sidebar-article-list-large {
+		ol {
+			list-style: none;
+			padding: 0;
+		}
+		li { margin-bottom: 10px; }
+		.headline, p { display: inline; }
+		.headline { font-size: 1.3em; }
+	}
+	&.sidebar-article-list-small {
+		ol { margin-left: -15px; }
+		.headline { font-size: 1em; }
+	}
 }
+
+// #latest-news ol { // article pages
+// 	color: fadeout(#868686, 25%);
+// 	margin: 10px 0 5px -40px;
+// 	li {
+// 		list-style: none; 
+// 		margin: 0 0 10px 0;
+// 		p { display: inline; }
+// 		h3 {
+// 			a { color: fadeout(@link, 30%); }
+// 			display: inline;
+// 			font-weight: normal;
+			
+// 			margin: 0 1px 0 0;
+// 		}
+// 	}
+// 	&:hover {
+// 		color: #868686;
+// 		h3 a { color: @link; }
+// 	}
+// }
+
 
 /*----------------------*/
 /*------- Icons --------*/
