@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div class="row">
+	<div id="content" class="row">
 		<div class="span17">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
@@ -25,12 +25,12 @@
 				
 				<h2 class="headline" itemprop="headline"><?php the_title(); ?></h2>
 				
-				<p><?= get_post_meta( get_the_ID(), '_pd_article_deck_text', true ); ?></p>
+				<p class="deck"><?= get_post_meta( get_the_ID(), '_pd_article_deck_text', true ); ?></p>
 				
 				<!-- Schema.org markup -->
-				<meta itemprop="wordCount" content="<?php echo str_word_count(get_the_content()); ?>" />
-				<meta itemprop="discussionUrl" content="<?php echo get_permalink(); ?>#comments" />
-				<meta itemprop="copyrightYear" content="<?php the_time('Y'); ?>" />
+				<meta itemprop="wordCount" content="<?= str_word_count( get_the_content() ); ?>" />
+				<meta itemprop="discussionUrl" content="<?= get_permalink(); ?>#comments" />
+				<meta itemprop="copyrightYear" content="<?php the_time( 'Y' ); ?>" />
 				<meta itemprop="inLanguage" content="en-US" />
 				<?php
 					// Display the post's category
@@ -41,49 +41,47 @@
 					}
 		     	?>
 				
-				<div id="meta">
-					<div id="social">
-						<div class="fb-like" data-href="<?= get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-					</div>
+				<div class="single-meta single-meta-above">
+					<div class="social-fb fb-like" data-href="<?= get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 					<?php if( function_exists( 'coauthors_posts_links' ) ): ?>
 						<? if( coauthors( null, null, null, null, false ) === "Staff Reports" ): ?>
-							<p class="byline" itemprop="author">Staff Reports</p>
+							<span class="author" itemprop="author">Staff Reports</span>
 						<? elseif( coauthors( null, null, null, null, false ) === "The Editorial Board" ): ?>
-							<p class="byline" itemprop="author">The Editorial Board</p>
+							<span class="author" itemprop="author">The Editorial Board</span>
 						<?php elseif( coauthors( null, null, null, null, false ) === "archives" ): ?>
-							<p class="byline" itemprop="author"><?= $archive['_author'];?></p>
+							<span class="author" itemprop="author"><?= $archive['_author']; ?></span>
 						<?php else: ?>
-							<p class="byline" itemprop="author"><?php coauthors_posts_links(); ?></p>
+							<span class="author" itemprop="author"><?php coauthors_posts_links(); ?></span>
 						<?php endif;?>
 					<?php endif;?>
 				</div>
 				
-				<section> <!-- article text and images -->
+				<section class="post-body"> <!-- article text and images -->
 				
 					<!-- Grab all of the photos associated with article. -->
-					<?php $attachments = get_photos(get_the_ID(), -1); ?>
+					<?php $attachments = get_photos( get_the_ID(), -1 ); ?>
 					
-					<?php if(isset($attachments['photos'][0]['src']['medium'])): ?>
-					<meta itemprop="thumbnailUrl" content="<?php echo $attachments['photos'][0]['src']['medium']; ?>" />
+					<?php if( isset( $attachments['photos'][0]['src']['medium'] ) ): ?>
+					<meta itemprop="thumbnailUrl" content="<?= $attachments['photos'][0]['src']['medium']; ?>" />
 					<?php endif; ?>
-					
-					<?php // echo "<pre>"; print_r($attachments); echo "</pre>"; ?>
-					
+										
 					<!--
 					// Check if a feature photo exists. If there is a feature photo,
 					// display it and set $paragraphAfter to display any inline photo
 					// after the third paragraph. This ensures that there is enough 
 					// vertical-space between both images.
 					-->
-					<?php if(isset($attachments['display']['feature'])): ?>
+					<?php if( isset( $attachments['display']['feature'] ) ): ?>
 						
 						<?php $photo = $attachments['photos'][$attachments['display']['feature']]; ?>
 						
-						<figure id="single-feature">
-							<a href="<?php echo $photo['src']['large']; ?>" title="<?php echo $photo['caption']; ?> (<?php echo $photo['credit']; ?>)" class="gallery" rel="gallery"><img src="<?php echo $photo['src']['medium']; ?>" /></a>
+						<figure class="single-image single-image-feature">
+							<a href="<?= $photo['src']['large']; ?>" title="<?= $photo['caption']; ?> (<?= $photo['credit']; ?>)" class="gallery" rel="gallery">
+								<img src="<?= $photo['src']['medium']; ?>" />
+							</a>
 							<figcaption>
-								<p class="credit"><?php echo $photo['credit']; ?></p>
-								<p><?php echo $photo['caption']; ?></p>
+								<p><?= $photo['credit']; ?></p>
+								<p><?= $photo['caption']; ?></p>
 							</figcaption>
 						</figure>
 						
@@ -97,9 +95,9 @@
 					
 					
 					<!-- Check if an inline photo exists. -->
-					<?php if((isset($attachments['display']['inline']) || isset($archive['_image1'])) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1): ?>
+					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1 ): ?>
 						<?php
-							if(isset($attachments['display']['inline'])) {
+							if( isset( $attachments['display']['inline'] ) ) {
 								$photo = $attachments['photos'][$attachments['display']['inline']];
 							} else {
 								$photo = $archive['_image1'];
@@ -108,7 +106,7 @@
 						
 						<div itemprop="articleBody">
 						<?php
-							if(!isset($paragraphAfter)) $paragraphAfter = 1; 
+							if( !isset($paragraphAfter) ) $paragraphAfter = 1; 
 							$content = apply_filters('the_content', get_the_content());
 							$content = explode("</p>", $content);
 							for ($i = 0; $i < count($content); $i++ ) {
@@ -123,23 +121,21 @@
 								?>
 								
 								<!-- Display the inline photo -->
-								<figure id="single-inline" class="thumb-right" style="max-width: <?php if($max_width) echo $max_width; ?>;">
-									<?php if(in_category('opinion')): ?>
-										<img src="<?php echo $photo['src']['single-inline']; ?>" class="headshot" />
+								<figure class="single-image single-image-inline" style="max-width: <?= ( $max_width ) ? $max_width : '' ?>;">
+									<?php if( in_category( 'opinion' ) ): ?>
+										<img src="<?= $photo['src']['single-inline']; ?>" />
 									<?php else: ?>
-										<a href="<?php echo $photo['src']['large']; ?>" <?php if($photo['credit']): ?>title="<?php echo $photo['caption']; ?> <?php echo "(".$photo['credit'].")"; ?>" <?php endif; ?> class="gallery" rel="gallery">
-											<img src="<?php echo $photo['src']['single-inline']; ?>" />
-											<?php if(isset($attachments['photos']) && count($attachments['photos']) > '2'): ?>
-												<p class="more-photos">
-													<img src="<?php echo get_template_directory_uri(); ?>/img/slideshow.png">Slide Show</img>
-												</p>
+										<a href="<?= $photo['src']['large']; ?>" <?php if($photo['credit']): ?>title="<?= $photo['caption']; ?> <?= "(".$photo['credit'].")"; ?>" <?php endif; ?> class="gallery" rel="gallery">
+											<img src="<?= $photo['src']['single-inline']; ?>" />
+											<?php if( isset( $attachments['photos'] ) && count( $attachments['photos'] ) > 2): ?>
+												<p><img src="<?= get_template_directory_uri(); ?>/img/slideshow.png">Slide Show</p>
 											<?php endif; ?>
 										</a>
 									<?php endif; ?>
 									
 									<figcaption>
-										<p class="credit"><?php echo $photo['credit']; ?></p>
-										<p><?php echo $photo['caption']; ?></p>
+										<span class="clearfix photo-credit"><?= $photo['credit']; ?></span>
+										<span class=" clearfix photo-caption"><?= $photo['caption']; ?></span>
 									</figcaption>
 								</figure>
 								
@@ -149,16 +145,18 @@
 						</div>
 						
 						<!-- Display the extra images in a slideshow  -->
-						<?php if(isset($attachments['display']['gallery'])): ?>
-						<?php foreach($attachments['display']['gallery'] as $image): ?>
-							<a href="<?php echo $attachments['photos'][$image]['src']['large']; ?>" title="<?php echo $attachments['photos'][$image]['caption']; ?> (<?php echo $attachments['photos'][$image]['credit']; ?>)" class="gallery" rel="gallery"><img src="<?php echo $attachments['photos'][$image]['src']['single-inline']; ?>" style="display:none;" /></a>
-						<?php endforeach; ?>
+						<?php if( isset( $attachments['display']['gallery'] ) ): ?>
+							<?php foreach($attachments['display']['gallery'] as $image): ?>
+								<a href="<?= $attachments['photos'][$image]['src']['large']; ?>" title="<?= $attachments['photos'][$image]['caption']; ?> (<?= $attachments['photos'][$image]['credit']; ?>)" class="gallery" rel="gallery">
+									<img src="<?= $attachments['photos'][$image]['src']['single-inline']; ?>" style="display: none;" />
+								</a>
+							<?php endforeach; ?>
 						<?php endif; ?>
 						
 					<?php else: ?> <!-- There is a feature photo, but no inline photo -->
 						
 						<div itemprop="articleBody">
-						<?php the_content(); ?>
+							<?php the_content(); ?>
 						</div>
 						
 					<?php endif; ?>
@@ -166,16 +164,16 @@
 				</section>
 			</article>
 			
-			<section id="socialbar">
-				<div class="twitter">
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo get_permalink(); ?>" data-text="<?php single_post_title(''); ?>" data-via="bupipedream" data-related="bupipedream">Tweet</a>
+			<section class="single-meta single-meta-below social-bar">
+				<div class="social-twitter">				
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="bupipedream" data-related="bupipedream">Tweet</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
-				
-				<div class="fb-like" data-href="<?php echo get_permalink(); ?>" data-send="true" data-width="600" data-show-faces="true"></div>
+				<div class="fb-like" data-href="<?= get_permalink(); ?>" data-send="true" data-width="600" data-show-faces="true"></div>
 			</section>
 			
-			<section id="comments">
+			
+ 			<section id="comments">
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">
 				    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
