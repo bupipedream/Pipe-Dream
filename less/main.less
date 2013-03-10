@@ -108,8 +108,10 @@ a:focus { outline: thin dotted; }
 }
 
 .page-title {
+	border-bottom: 1px solid @light-border;
 	font-weight: normal;
-	margin-top: 0;
+	margin: 0;
+	padding: 0 @colPaddingLR;
 }
 
 .figure-right {
@@ -132,7 +134,7 @@ a:focus { outline: thin dotted; }
 	display: block;
 	font-family: @sans;
 	font-size: .7em;
-	margin-top: 2px;
+	margin: 3px 0 4px 0;
 	text-align: right;
 }
 
@@ -158,8 +160,6 @@ a:focus { outline: thin dotted; }
 
 .grid-row {
 	border-bottom: 3px solid @light-border;
-	padding-bottom: 15px;
-	margin-bottom: 15px;
 }
 
 .article-list {
@@ -334,9 +334,9 @@ nav[role="navigation"] {
 }
 
 
-/*-----------------------*/
-/*------ Main Page ------*/
-/*-----------------------*/
+/*---------------------*/
+/*------ Common  ------*/
+/*---------------------*/
 
 .home, .archive {
 	.meta {
@@ -391,10 +391,11 @@ nav[role="navigation"] {
 		line-height: 1.22em;
 		margin-top: 0;
 	}
-	.photo-credit {	 }
+	.grid-row {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+	}
 }
-
-.middle-column {}
 
 article {
 	.article-links {
@@ -428,9 +429,7 @@ article {
 	color: lighten(@text, 20%);
 }
 
-.single-image {
-
-}
+.single-image {}
 
 .single-image-feature {}
 
@@ -457,12 +456,11 @@ article {
 }
 
 .single-post {
-	// .photo-credit {	font-size: .7em; }
 	.deck {
 		color: lighten(@text-color, 30);
 		font-size: 1.05em;
 		font-style: italic;
-		margin: 5px 0 0 0;
+		margin: 0 0 20px 0;
 	}
 	.post-body {
 		p {
@@ -474,6 +472,7 @@ article {
 	article[id^="post-"] { // main article
 		.headline {
 			font-size: 2.3em;
+			margin: 20px 0 10px 0;
 		}
 	}
 }
@@ -483,17 +482,28 @@ article {
 /*------ Category -------*/
 /*-----------------------*/
 
-.archive-list {
-	article {
-		border-bottom: 1px solid @light-border;
-		padding: 10px @colPaddingLR;
-		margin-left: -@colPaddingLR;
-		margin-right: -@colPaddingLR;
-	}
+
+.archive {
 	.excerpt {
 		font-size: .9em;
 		margin: 0;
 		padding: 0;
+	}
+}
+
+.archive-grid {
+	article {
+		margin-bottom: 20px;
+	}
+}
+
+.archive-list {
+	padding: 0 @colPaddingLR;
+	article {
+		border-bottom: 1px solid @light-border;
+		padding: 14px @colPaddingLR;
+		margin-left: -@colPaddingLR;
+		margin-right: -@colPaddingLR;
 	}
 }
 
@@ -502,9 +512,7 @@ article {
 		font-size: 1.4em;
 		margin: 0 0 2px 0;
 	}
-	.meta {
-		margin: 3px 0 6px;
-	}
+	.meta { margin: 3px 0 6px; }
 	[data-column="left-column"] {
 		border-right: 1px solid @light-border;
 	}

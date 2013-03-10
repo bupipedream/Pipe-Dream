@@ -37,7 +37,6 @@
 						- 
 						<time datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="<?php the_time('F j, Y \a\t g:i A T'); ?>"><?php the_time('F j, Y'); ?></time>
 					</div>
-
 					
 					<p class="excerpt"><?= get_the_excerpt(); ?></p>
 

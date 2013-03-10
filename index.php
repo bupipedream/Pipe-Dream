@@ -45,7 +45,7 @@
 				</div>
 
 				<!-- Middle Column -->
-				<div class="middle-column span15 last">
+				<div class="span15 last">
 					<section>
 						<!-- Above-the-Fold Article -->
 						<?php foreach( $sections['news']['feature'] as $article ): ?>
@@ -83,7 +83,7 @@
 			</div>
 			<div class="row grid-row">
 				<div class="left-column span9">
-					<section id="daily-photo" class="pad-left">
+					<section id="daily-photo" class="pad-left pad-right">
 
 						<h1 class="section-heading"><a href="">Daily Photo</a></h1>
 						<article>
@@ -137,14 +137,14 @@
 			<div class="row grid-row">
 				<section>
 					<!-- Two column row of sports -->
-					<h1 class="section-heading pad-left"><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
+					<h1 class="section-heading pad-left pad-right"><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
 					
 					<div class="left-column span9">
 						
 						<?php foreach( $sections['sports']['feature'] as $article ): ?>
 							
 							<!-- Featured sports article -->
-							<article class="pad-left text-teaser">
+							<article class="pad-left pad-right text-teaser">
 								
 								<h2 class="headline">
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
@@ -158,7 +158,7 @@
 
 					</div>
 					
-					<div class="middle-column span15 article-list last">
+					<div class="span15 article-list last">
 
 						<!-- List of sports articles -->
 						<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
@@ -198,11 +198,11 @@
 				<!-- Editorial -->
 				<section class="left-column span9">
 				
-					<h2 class="section-heading pad-left"><a href="<?= home_url(); ?>/opinion/editorial/">Editorial</a></h2>
+					<h2 class="section-heading pad-left pad-right"><a href="<?= home_url(); ?>/opinion/editorial/">Editorial</a></h2>
 
 					<?php foreach( $sections['editorial']['feature'] as $article ): ?>
 					
-						<article class="pad-left">
+						<article class="pad-left pad-right">
 							
 							<?php if( $article['photo'] ): ?>
 								<figure class="clearfix">

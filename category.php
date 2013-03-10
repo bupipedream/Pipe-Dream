@@ -1,106 +1,93 @@
 <?php get_header(); ?>
 	<div class="row" id="content">
 		<?php
-			$featured = pd_get_category_posts($cat);
+			$featured = pd_get_category_posts( $cat ); // $cat is a WordPress variable
 			$args = array(
 				'post__not_in' => $featured['exclude'],
 				'cat' => $cat,
-				'paged' => get_query_var('paged'),
+				'paged' => get_query_var( 'paged' ),
 			);
 			query_posts($args);
 		?>
 		
 		<div class="span17">
-			<?php if(!get_query_var('paged') || get_query_var('paged') == '1'): ?>
-			<div class="row">
-				<div id="leftcol" class="span16">
-					<section>
+			<?php if( !get_query_var( 'paged' ) || get_query_var( 'paged' ) === 1 ): ?>
+			<div class="archive-grid row grid-row">
+				<div data-column="left-column" class="span16">
+					<section class="pad-left pad-right">
 						
 						<!-- Featured article -->
-						<article class="feature clearfix thinhrule">
+						<article>
 							
 							<?php 
-								$article = get_post($featured['feature'], 'ARRAY_A');
-								$photos = get_photos($article['ID'], 1);
+								$article = get_post( $featured['feature'], 'ARRAY_A' );
+								$photos = get_photos( $article['ID'], 1 );
 							?>
 							
-							<figure class="center">
-								<a href="<?php echo get_permalink( $article['ID'] ); ?>">
-									<img src="<?php echo $photos['src']['custom-495']; ?>" />
+							<figure>
+								<a href="<?= get_permalink( $article['ID'] ); ?>">
+									<img src="<?= $photos['src']['custom-495']; ?>" />
 								</a>
-								<figcaption><p><?php echo $photos['credit']; ?></p></figcaption>
+								<figcaption>
+									<span class="photo-credit"><?= $photos['credit']; ?></span>
+								</figcaption>
 							</figure>
 							
-							<h2><a href="<?php echo get_permalink( $article['ID'] ); ?>"><?php echo $article['post_title']; ?></a></h2>
-							
-							<p class="byline below"><p class="byline below">
-								<?php if($article['post_author'] === '2'): ?>
-									<span><?php echo is_archived($article['ID'], '_author') ?></span>
-								<?php else: ?>
-									<span><?php $author = get_userdata($article['post_author']); echo $author->display_name; ?></span>
-								<?php endif;?>
-								
-								 - <time datetime="<?php echo date('Y-m-j\TH:i:sT', strtotime($article['post_date'])); ?>" title="<?php echo date('F j, Y \a\t g:i A T', strtotime($article['post_date'])); ?>"><?php echo get_time_since($article['post_date']); ?></time></p>
-							
-							<p>
-								<?php 
-									if($article['post_excerpt']) echo $article['post_excerpt']; 
-									else echo get_custom_excerpt($article['post_content'], '25'); 
-								?>
+							<h2 class="headline">
+								<a href="<?= get_permalink( $article['ID'] ); ?>">
+									<?= $article['post_title']; ?>
+								</a>
+							</h2>
+														
+							<div class="meta">By <span class="author"><?= get_userdata($article['post_author'])->display_name; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time></div>
+
+							<p class="excerpt">
+								<?= ( $article['post_excerpt'] ) ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 25 ); ?>
 							</p>
-							
-							<ul class="article-links">
-								<li><a href="<?php echo get_permalink($article['ID']) ?>#comments" class="comments-label" title="Responses to &quot;<?php echo esc_attr($article['post_title']); ?>&quot;">Comments</a></li>
-							</ul>
-							
+
 						</article>
 					</section>
 				</div>
 				
 				<!-- Secondary featured articles -->
-				<div id="middlecol" class="span8 last">
+				<div class="span8 last">
 					<section>
-						<?php foreach($featured['secondary'] as $post_id): ?>
+						<?php foreach( $featured['secondary'] as $post_id ): ?>
 							
 							<?php 
 								// Some of the zones on the homepage display
 								// more than two posts so this will make sure
 								// that the post isn't posted twice.
-								if($post_id):
+								if( $post_id ):
 							?>
 							
 								<?php
 									$article = get_post( $post_id, 'ARRAY_A' );
-									$photos = get_photos($article['ID'], 1);
+									$photos = get_photos( $article['ID'], 1 );
 								?>
 								
 								<article class="clearfix">
 									
-									<h2><a href="<?php echo get_permalink( $article['ID'] ); ?>"><?php echo $article['post_title']; ?></a></h2>
+									<h2 class="headline">
+										<a href="<?= get_permalink( $article['ID'] ); ?>">
+											<?= $article['post_title']; ?>
+										</a>
+									</h2>
 									
-									<?php if($photos): ?>
-										<figure class="float-right">
-											<a href="<?php echo get_permalink($article['ID']) ?>">
-												<img src="<?php echo $photos['src']['custom-75x75-crop']; ?>" width="75px" height="75px" />
+									<div class="meta">By <span class="author"><?= get_userdata($article['post_author'])->display_name; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time></div>
+
+									<?php if( $photos ): ?>
+										
+										<figure class="figure-right figure-border">
+											<a href="<?= get_permalink( $article['ID'] ) ?>">
+												<img src="<?= $photos['src']['custom-75x75-crop']; ?>" width="75px" height="75px" />
 											</a>
 										</figure>
 									
 									<?php endif; ?>
-									
-									<p class="byline below"><p class="byline below">
-										<?php if($article['post_author'] === '2'): ?>
-											<span><?php echo is_archived($article['ID'], '_author') ?></span>
-										<?php else: ?>
-											<span><?php $author = get_userdata($article['post_author']); echo $author->display_name; ?></span>
-										<?php endif;?>
-									
-										<?php if($photos) echo "<br />"; else echo " - " ?>  <time datetime="<?php echo date('Y-m-j\TH:i:sT', strtotime($article['post_date'])); ?>" title="<?php echo date('F j, Y \a\t g:i A T', strtotime($article['post_date'])); ?>"><?php echo get_time_since($article['post_date']); ?></time></p>
-	
-									<p>
-										<?php 
-											if($article['post_excerpt']) echo $article['post_excerpt']; 
-											else echo get_custom_excerpt($article['post_content'], '25'); 
-										?>
+																		
+									<p class="excerpt">
+										<?= ( $article['post_excerpt'] ) ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 25 ); ?>
 									</p>
 								</article>
 							
@@ -117,48 +104,48 @@
 			<div class="row">
 				
 				<!-- Show section label when browsing through pages -->
-				<?php if(get_query_var('paged') > '1'): ?>
-					<h2 class="section-label"><?php echo get_the_category_by_ID($cat); ?> &raquo;</h2>
+				<?php if( get_query_var( 'paged' ) > 1 ): ?>
+					<h1 class="page-title">
+						<?= get_the_category_by_ID( $cat ); ?>
+					</h1>
 				<?php endif; ?>
 				
-				<section id="article-list">
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<section class="archive-list">
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						
 						<article class="clearfix">
 							
 							<!-- Grab all of the photos associated with article. -->
-							<?php $photos = get_photos(get_the_ID(), 1, array('alt-thumbnail')); ?>
+							<?php $photos = get_photos( get_the_ID(), 1, array( 'alt-thumbnail' )); ?>
 							
-							<?php if($photos): ?>
-								<figure>
+							<?php if( $photos ): ?>
+								<figure class="figure-right figure-border">
 									<a href="<?php the_permalink() ?>">
-										<img src="<?php if($photos['src']['alt-thumbnail']) echo $photos['src']['alt-thumbnail']; else echo $photos['src']['single-inline']; ?>" />
+										<img src="<?= ($photos['src']['alt-thumbnail']) ? $photos['src']['alt-thumbnail'] : $photos['src']['single-inline']; ?>" />
 									</a>
 								</figure>
 							<?php endif; ?>
 							
-							<?php if(has_tag('blog')): ?><span class="label blog">Blog</span><?php endif; ?>
-							<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+							<h2 class="headline">
+								<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+							</h2>
 							
-							<p class="byline below">By 
-								<?php if(function_exists('coauthors_posts_links')): ?>
-									<?php if(is_coauthor_for_post('Staff Reports')): ?>
-										<span>Staff Reports</a></span>
-									<?php elseif(is_coauthor_for_post('archives')): ?>
-										<span><?php echo pd_is_archived(get_the_ID(), '_author') ?></a></span>
+							<div class="meta">By 
+								<?php if( function_exists( 'coauthors_posts_links' ) ): ?>
+									<?php if( is_coauthor_for_post('Staff Reports' ) ): ?>
+										<span class="author">Staff Reports</span>
+									<?php elseif( is_coauthor_for_post( 'archives' ) ): ?>
+										<span class="author"><?= pd_is_archived( get_the_ID(), '_author' ) ?></span>
 									<?php else: ?>
-										<span><?php coauthors(); ?></span>
+										<span class="author"><?php coauthors(); ?></span>
 									<?php endif;?>
 								<?php endif;?>
-								
-								 - <time datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="<?php the_time('F j, Y \a\t g:i A T'); ?>"><?php the_time('F j, Y'); ?></time></p>
+								- 
+								<time datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="<?php the_time('F j, Y \a\t g:i A T'); ?>"><?php the_time('F j, Y'); ?></time>
+							</div>
 							
-							<p><?php the_excerpt(); ?></p>
-							
-							<ul class="article-links">
-								<li><a href="<?php echo get_permalink($article['ID']) ?>#comments" class="comments-label" title="Responses to &quot;<?php echo esc_attr($article['post_title']); ?>&quot;">Comments</a></li>
-							</ul>
-							
+							<p class="excerpt"><?= get_the_excerpt(); ?></p>
+														
 						</article>
 
 					<?php endwhile; ?>	
@@ -169,7 +156,7 @@
 
 							$big = 999999999; // need an unlikely integer
 							$url = str_replace( $big, '%#%', get_pagenum_link( $big ));
-							$pos = strlen(site_url());
+							$pos = strlen( site_url() );
 
 							if(strpos(curPageURL(), 'browse') === false) {
 								$params = '/browse'.substr($url, $pos);			
@@ -189,18 +176,7 @@
 					</div>
 					
 					<?php else : ?>
-					
-					<article id="post-not-found">
-						<header>
-							<h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
-						</header>
-						<section class="post_content">
-							<p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
-						</section>
-						<footer>
-						</footer>
-					</article>
-					
+						<p>No articles found.</p>					
 					<?php endif; ?>
 				</section>
 			</div>
