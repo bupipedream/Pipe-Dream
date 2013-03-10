@@ -107,6 +107,11 @@ a:focus { outline: thin dotted; }
 	font-weight: normal;
 }
 
+.page-title {
+	font-weight: normal;
+	margin-top: 0;
+}
+
 .figure-right {
 	float: right;
 	margin: 0 0 5px 10px;
@@ -126,6 +131,7 @@ a:focus { outline: thin dotted; }
 	color: #969696;
 	display: block;
 	font-family: @sans;
+	font-size: .7em;
 	margin-top: 2px;
 	text-align: right;
 }
@@ -332,6 +338,28 @@ nav[role="navigation"] {
 /*------ Main Page ------*/
 /*-----------------------*/
 
+.home, .archive {
+	.meta {
+		color: @light-gray;
+		font-family: @sans;
+		font-size: .75em;
+		.author {
+			color: darken(@light-gray, 10);
+			text-transform: uppercase;
+		}
+	}
+}
+
+.single-post article[id^="post-"] .headline, .archive .headline {
+	font-family: @alt-serif;
+	line-height: 1.2em;
+} 
+
+
+/*-----------------------*/
+/*------ Main Page ------*/
+/*-----------------------*/
+
 // labels used to indicate a block of content
 .section-heading {
 	font-family: @sans;
@@ -353,14 +381,7 @@ nav[role="navigation"] {
 		margin: 0 0 .13em 0;
 	}
 	.meta {
-		color: @light-gray;
-		font-family: @sans;
-		font-size: .75em;
 		margin-bottom: .3em;
-		.author {
-			color: darken(@light-gray, 10);
-			text-transform: uppercase;
-		}
 	}
 	article {
 		margin: 0 0 .4em 0;
@@ -370,7 +391,7 @@ nav[role="navigation"] {
 		line-height: 1.22em;
 		margin-top: 0;
 	}
-	.photo-credit {	font-size: .7em; }
+	.photo-credit {	 }
 }
 
 .middle-column {}
@@ -436,7 +457,7 @@ article {
 }
 
 .single-post {
-	.photo-credit {	font-size: .7em; }
+	// .photo-credit {	font-size: .7em; }
 	.deck {
 		color: lighten(@text-color, 30);
 		font-size: 1.05em;
@@ -445,19 +466,49 @@ article {
 	}
 	.post-body {
 		p {
-			font-size: 1.1em;
+			font-size: 1em;
+			line-height: 1.6em;
 			margin-right: 13%;
 		}
 	}
 	article[id^="post-"] { // main article
 		.headline {
 			font-size: 2.3em;
-			line-height: 1.2em;
-			margin: .4em 1em 0 0;
 		}
 	}
 }
 
+
+/*-----------------------*/
+/*------ Category -------*/
+/*-----------------------*/
+
+.archive-list {
+	article {
+		border-bottom: 1px solid @light-border;
+		padding: 10px @colPaddingLR;
+		margin-left: -@colPaddingLR;
+		margin-right: -@colPaddingLR;
+	}
+	.excerpt {
+		font-size: .9em;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.archive {
+	.headline {
+		font-size: 1.4em;
+		margin: 0 0 2px 0;
+	}
+	.meta {
+		margin: 3px 0 6px;
+	}
+	[data-column="left-column"] {
+		border-right: 1px solid @light-border;
+	}
+}
 
 
 
