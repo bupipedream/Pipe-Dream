@@ -4,14 +4,14 @@
 	<?php $sections = get_sections(); ?>
 		
 	<div class="row" id="content">
-		<div class="span17">
+		<div data-column="left-two-columns" class="span17">
 
 			<!-- Left and Middle Columns -->
 			<div class="row grid-row">
 				<h1 class="section-heading visuallyhidden">Top Stories</h1>
 				
 				<!-- Left Column -->
-				<div class="left-column span9">
+				<div data-column="left-column" class="span9">
 					<section class="pad-left article-list">
 						
 						<!-- Two Articles -->
@@ -35,7 +35,7 @@
 								</figure>
 							<?php endif; ?>
 							
-							<p><?= $article['post_excerpt']; ?></p>
+							<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 						
 						</article>
 
@@ -55,7 +55,7 @@
 									<a href="<?= get_permalink( $article['ID'] ) ?>">
 										<img src="<?= $article['photo']['src']['custom-495']; ?>" />
 									</a>
-									<figcaption class="meta">
+									<figcaption>
 										<span class="photo-credit"><?= $article['photo']['credit']; ?></span>
 									</figcaption>
 								</figure>
@@ -68,7 +68,7 @@
 									<span class="author"><?= $article['post_author']['name']; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time>
 								</div>
 								
-								<p><?= $article['post_excerpt']; ?></p>
+								<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 								
 								<footer class="article-links">
 									<a href="<?= get_permalink( $article['ID'] ); ?>#comments" class="icon icon-comment"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
@@ -89,8 +89,8 @@
 						<article>
 							<figure>
 								<img src="https://sphotos-a.xx.fbcdn.net/hphotos-ash4/485851_10150795823137420_908715566_n.jpg">
-								<figcaption class="meta">
-									<time>Jan. 20, 2012</time>
+								<figcaption>
+									<time class="photo-date">Jan. 20, 2012</time>
 									<span class="photo-credit">Daniel O'Connor</span>
 								</figcaption>
 							</figure>
@@ -124,7 +124,7 @@
 									</h2>
 
 									<? if($index === 0): ?>
-										<p><?= $article['post_excerpt']; ?></p>
+										<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 									<? endif; ?>
 								
 							</article>
@@ -150,7 +150,7 @@
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
 
-								<p><?= $article['post_excerpt']; ?></p>
+								<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 
 							</article>
 							
@@ -180,7 +180,7 @@
 									</h2>
 
 									<? if($index === 0): ?>
-										<p><?= $article['post_excerpt']; ?></p>
+										<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 									<? endif; ?>
 								
 							</article>
@@ -209,7 +209,7 @@
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['single-inline']; ?>" />
 									</a>
-									<figcaption class="meta">
+									<figcaption>
 										<span class="photo-credit"><?= $article['photo']['credit']; ?></span>
 									</figcaption>
 								</figure>
@@ -219,7 +219,7 @@
 								<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 							</h2>
 
-							<p><?= $article['post_excerpt']; ?></p>
+							<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 
 							<footer class="article-links">
 								<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
@@ -252,7 +252,7 @@
 								</a>
 							</h2>
 							
-							<p>
+							<p class="excerpt">
 								<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], '50' ); ?>
 							</p>
 							
@@ -289,7 +289,7 @@
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
 
-								<p><?= $article['post_excerpt']; ?></p>
+								<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 
 							</article>
 							
@@ -318,7 +318,7 @@
 									</h2>
 
 									<? if($index === 0): ?>
-										<p><?= $article['post_excerpt']; ?></p>
+										<p class="excerpt"><?= $article['post_excerpt']; ?></p>
 									<? endif; ?>
 								
 							</article>

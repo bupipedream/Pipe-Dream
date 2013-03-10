@@ -122,21 +122,16 @@ a:focus { outline: thin dotted; }
 	padding: 1px;
 }
 
-figcaption.meta { // photo captions
-	margin-top: 5px;
-} 
-
 .photo-credit {
 	color: #969696;
 	display: block;
 	font-family: @sans;
-	font-size: .6em;
 	margin-top: 2px;
 	text-align: right;
 }
 
 .photo-caption {
-	color: lighten(@text, 10);
+	color: lighten(@text, 15);
 	display: block;
 	font-family: @sans;
 	font-size: .7em;
@@ -352,16 +347,15 @@ nav[role="navigation"] {
 	}
 }
 
-.home {
+.home [data-column="left-two-columns"] {
 	.headline {
-		font-size: 1.4em;
 		line-height: 1.1;
 		margin: 0 0 .13em 0;
 	}
 	.meta {
 		color: @light-gray;
 		font-family: @sans;
-		font-size: .7em;
+		font-size: .75em;
 		margin-bottom: .3em;
 		.author {
 			color: darken(@light-gray, 10);
@@ -369,11 +363,14 @@ nav[role="navigation"] {
 		}
 	}
 	article {
-		font-size: .90em;
-		line-height: 1.22em;
 		margin: 0 0 .4em 0;
 	}
-
+	.excerpt {
+		font-size: .9em;
+		line-height: 1.22em;
+		margin-top: 0;
+	}
+	.photo-credit {	font-size: .7em; }
 }
 
 .middle-column {}
@@ -418,7 +415,7 @@ article {
 
 .single-image-inline {
 	float: right;
-	margin-left: 2%;
+	margin: 0 0 10px 2%;
 }
 
 .single-meta {
@@ -439,22 +436,24 @@ article {
 }
 
 .single-post {
+	.photo-credit {	font-size: .7em; }
+	.deck {
+		color: lighten(@text-color, 30);
+		font-size: 1.05em;
+		font-style: italic;
+		margin: 5px 0 0 0;
+	}
+	.post-body {
+		p {
+			font-size: 1.1em;
+			margin-right: 13%;
+		}
+	}
 	article[id^="post-"] { // main article
 		.headline {
-			font-size: 2.2em;
-			margin: .5em 1em .5em 0;
-		}
-		.deck {
-			color: lighten(@text-color, 40);
-			font-size: 1.1em;
-			font-style: italic;
-			margin-top: 5px;
-		}
-		.post-body {
-			p {
-				font-size: 1.1em;
-				margin-right: 13%;
-			}
+			font-size: 2.3em;
+			line-height: 1.2em;
+			margin: .4em 1em 0 0;
 		}
 	}
 }

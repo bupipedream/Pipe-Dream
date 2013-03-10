@@ -80,8 +80,8 @@
 								<img src="<?= $photo['src']['medium']; ?>" />
 							</a>
 							<figcaption>
-								<p><?= $photo['credit']; ?></p>
-								<p><?= $photo['caption']; ?></p>
+								<span class="clearfix photo-credit"><?= $photo['credit']; ?></span>
+								<span class="clearfix photo-caption"><?= $photo['caption']; ?></span>
 							</figcaption>
 						</figure>
 						
@@ -106,11 +106,11 @@
 						
 						<div itemprop="articleBody">
 						<?php
-							if( !isset($paragraphAfter) ) $paragraphAfter = 1; 
-							$content = apply_filters('the_content', get_the_content());
-							$content = explode("</p>", $content);
-							for ($i = 0; $i < count($content); $i++ ) {
-							if ($i == $paragraphAfter) { ?>
+							if( !isset( $paragraphAfter ) ) $paragraphAfter = 1; 
+							$content = apply_filters( 'the_content', get_the_content() );
+							$content = explode( "</p>", $content );
+							for ( $i = 0; $i < count( $content ); $i++ ) {
+							if ( $i == $paragraphAfter ) { ?>
 								
 								<?php // ensures that vertical photos 
 									$subject = $photo['src']['single-inline'];
@@ -135,7 +135,7 @@
 									
 									<figcaption>
 										<span class="clearfix photo-credit"><?= $photo['credit']; ?></span>
-										<span class=" clearfix photo-caption"><?= $photo['caption']; ?></span>
+										<span class="clearfix photo-caption"><?= $photo['caption']; ?></span>
 									</figcaption>
 								</figure>
 								
@@ -146,7 +146,7 @@
 						
 						<!-- Display the extra images in a slideshow  -->
 						<?php if( isset( $attachments['display']['gallery'] ) ): ?>
-							<?php foreach($attachments['display']['gallery'] as $image): ?>
+							<?php foreach( $attachments['display']['gallery'] as $image ): ?>
 								<a href="<?= $attachments['photos'][$image]['src']['large']; ?>" title="<?= $attachments['photos'][$image]['caption']; ?> (<?= $attachments['photos'][$image]['credit']; ?>)" class="gallery" rel="gallery">
 									<img src="<?= $attachments['photos'][$image]['src']['single-inline']; ?>" style="display: none;" />
 								</a>
