@@ -993,45 +993,90 @@ a img.aligncenter {
 /*------- Footer --------*/
 /*-----------------------*/
 
-footer[role="contentinfo"] {
-	background: #fafafa;
-	border-top: 3px solid @greenborder;
-	padding: 16px 0;
-	#footer-logo { 
-		border-right: @thinborder;
-		img { max-width: 198px; }
-	}
-	#footer-links {
-		text-align: center;
-		ul {
-			margin: 5px 0 5px 0;
-			padding: 0;
-			li {
-				display: inline;
-				a { padding: 5px 3px; }
+footer#footer {
+	background: #fdfdfd;
+	border-top: 3px solid @light-border;
+	padding: 10px 0;
+}
+
+#footer-navigation {
+	> ul {
+		display: inline-block;
+		font-family: @sans;
+		margin: 0;
+		padding: 0 2%;
+		width: 96%;
+		> li {
+			float: left;
+			padding-left: 4%;
+			width: 16%;
+			&:first-child {
+				padding-left: 0;
+				width: 20%;
 			}
-			&:last-child { // second line of links
-				a { color: fadeout(@link, 30%); }
+			> ul {
+				border-top: 1px solid @light-border;
+				display: block;
+				padding: 5px 0;
+				margin-top: 7px;
+				> li {
+					float: none;
+					font-size: .8em;
+					// width: 100%;
+				}
 			}
-		}
-	}
-	#stabalizing {
-		color: #e8e8e8;
-		
-		text-align: right;
-		margin-top: -6px;
-		p { margin: 0; }
-	}
-	#wordpress {
-		border-left: @thinborder;
-		text-align: center;
-		img { 
-			opacity:0.80;
-			.transition(all 0.15s ease-in-out);
-			&:hover { opacity: 1; }
 		}
 	}
 }
+
+.footer-category {
+	font-size: .95em;
+	font-weight: bold;
+}
+
+.footer-subcategories {
+	margin: 0;
+}
+
+// footer[role="contentinfo"] {
+// 	background: #fafafa;
+// 	border-top: 3px solid @greenborder;
+// 	padding: 16px 0;
+// 	#footer-logo { 
+// 		border-right: @thinborder;
+// 		img { max-width: 198px; }
+// 	}
+// 	#footer-links {
+// 		text-align: center;
+// 		ul {
+// 			margin: 5px 0 5px 0;
+// 			padding: 0;
+// 			li {
+// 				display: inline;
+// 				a { padding: 5px 3px; }
+// 			}
+// 			&:last-child { // second line of links
+// 				a { color: fadeout(@link, 30%); }
+// 			}
+// 		}
+// 	}
+// 	#stabalizing {
+// 		color: #e8e8e8;
+		
+// 		text-align: right;
+// 		margin-top: -6px;
+// 		p { margin: 0; }
+// 	}
+// 	#wordpress {
+// 		border-left: @thinborder;
+// 		text-align: center;
+// 		img { 
+// 			opacity:0.80;
+// 			.transition(all 0.15s ease-in-out);
+// 			&:hover { opacity: 1; }
+// 		}
+// 	}
+// }
 
 
 /*-----------------------*/
