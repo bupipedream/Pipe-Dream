@@ -338,7 +338,7 @@ nav[role="navigation"] {
 /*------ Common  ------*/
 /*---------------------*/
 
-.home, .archive {
+.home, .archive, .search-results {
 	.meta {
 		color: @light-gray;
 		font-family: @sans;
@@ -348,9 +348,12 @@ nav[role="navigation"] {
 			text-transform: uppercase;
 		}
 	}
+	[data-column="left-column"] {
+		border-right: 1px solid @light-border;
+	}
 }
 
-.single-post article[id^="post-"] .headline, .archive .headline {
+.single-post article[id^="post-"] .headline, .archive .headline, .search-results .headline {
 	font-family: @alt-serif;
 	line-height: 1.2em;
 } 
@@ -483,7 +486,7 @@ article {
 /*-----------------------*/
 
 
-.archive {
+.archive, .search-results {
 	.excerpt {
 		font-size: .9em;
 		margin: 0;
@@ -507,15 +510,12 @@ article {
 	}
 }
 
-.archive {
+.archive, .search-results {
 	.headline {
 		font-size: 1.4em;
 		margin: 0 0 2px 0;
 	}
 	.meta { margin: 3px 0 6px; }
-	[data-column="left-column"] {
-		border-right: 1px solid @light-border;
-	}
 }
 
 

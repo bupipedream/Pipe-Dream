@@ -12,7 +12,7 @@
 				
 				<!-- Left Column -->
 				<div data-column="left-column" class="span9">
-					<section class="pad-left article-list">
+					<section class="pad-left pad-right article-list">
 						
 						<!-- Two Articles -->
 						
@@ -82,7 +82,7 @@
 
 			</div>
 			<div class="row grid-row">
-				<div class="left-column span9">
+				<div data-column="left-column" class="span9">
 					<section id="daily-photo" class="pad-left pad-right">
 
 						<h1 class="section-heading"><a href="">Daily Photo</a></h1>
@@ -139,7 +139,7 @@
 					<!-- Two column row of sports -->
 					<h1 class="section-heading pad-left pad-right"><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
 					
-					<div class="left-column span9">
+					<div data-column="left-column" class="span9">
 						
 						<?php foreach( $sections['sports']['feature'] as $article ): ?>
 							
@@ -196,7 +196,7 @@
 				<h1 class="visuallyhidden"><a href="<?= home_url(); ?>/opinion/">Opinion</a></h1>
 					
 				<!-- Editorial -->
-				<section class="left-column span9">
+				<section data-column="left-column" class="span9">
 				
 					<h2 class="section-heading pad-left pad-right"><a href="<?= home_url(); ?>/opinion/editorial/">Editorial</a></h2>
 
@@ -271,12 +271,12 @@
 					<!-- Two column row of release -->
 					<h1 class="section-heading pad-left"><a href="<?= home_url(); ?>/release/">Release</a></h2>
 					
-					<div class="left-column span9">
+					<div data-column="left-column" class="span9">
 						
 						<?php foreach( $sections['release']['feature'] as $article ): ?>
 
 							<!-- Featured release article -->
-							<article class="pad-left text-teaser">
+							<article class="pad-left pad-right text-teaser">
 								<?php if( isset( $article['photo']['src'] ) ): ?>
 									<figure>
 										<a href="<?= get_permalink( $article['ID'] ); ?>">
