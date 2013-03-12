@@ -50,7 +50,7 @@
 				</div>
 				
 				<!-- Secondary featured articles -->
-				<div class="span8 last">
+				<div data-column="middle-column" class="span8 last">
 					<section>
 						<?php foreach( $featured['secondary'] as $post_id ): ?>
 							
