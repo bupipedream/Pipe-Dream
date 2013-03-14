@@ -28,7 +28,7 @@
 
 	<!-- scripts concatenated and minified via build script -->
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
-	<script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<!-- end scripts -->
   
 	<!-- Used by WP plugins -->
