@@ -1066,48 +1066,50 @@ a img.aligncenter {
 /*-----------------------*/
 
 footer#footer {
-	background: #fdfdfd;
-	border-top: 3px solid @light-border;
-	padding: 10px 0;
+	background: #fff;
+	font-family: @sans;
+	padding-top: 10px;
+}
+
+#stabilizing-destabilizing {
+	background: #f2f1f1;
+	border-bottom: 1px solid #d5d5d5;
+	color: #c4c4c4;
+	display: block;
+	font-size: .65em;
+	padding: 4px inherit;
+	#stabilizing {
+
+	}
+	#destabilizing {
+		float: right;
+	}
 }
 
 #footer-navigation {
 	> ul {
-		display: inline-block;
-		font-family: @sans;
-		margin: 0;
-		padding: 0 2%;
-		width: 96%;
+		font-size: .8em;
+		font-weight: bold;
+		margin-top: 10px;
+		padding: 0 @colPaddingLR;
+		text-transform: uppercase;
 		> li {
-			float: left;
-			padding-left: 4%;
-			width: 16%;
-			&:first-child {
-				padding-left: 0;
-				width: 20%;
-			}
-			> ul {
-				border-top: 1px solid @light-border;
-				display: block;
-				padding: 5px 0;
-				margin-top: 7px;
-				> li {
-					float: none;
-					font-size: .8em;
-					// width: 100%;
-				}
+			a { color: #616161; }
+			display: inline-block;
+			padding-right: 25px;
+			margin: 0;
+			&.footer-navigation-light {
+				a { color: lighten(#616161, 20) }
+				font-weight: normal;
 			}
 		}
 	}
 }
 
-.footer-category {
-	font-size: .95em;
-	font-weight: bold;
-}
-
-.footer-subcategories {
-	margin: 0;
+#footer-logo {
+	float: right;
+	margin: 5px @colPaddingLR 0 0;
+	width: 120px;
 }
 
 // footer[role="contentinfo"] {

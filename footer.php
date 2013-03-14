@@ -1,52 +1,27 @@
 </div>
-	<footer id="footer" class="row">
-		<nav id="footer-navigation">
+	<footer id="footer">
+		<section id="stabilizing-destabilizing">
+			<div class="row">
+				<span id="stabilizing" class="pad-left">#stabilizing: have a good night, sir</span>
+				<span id="destabilizing" class="pad-right">#destabilizing: no salad dressing</span>
+			</div>
+		</section>
+		<nav id="footer-navigation" class="row">
+			<div id="footer-logo">
+				<a href="<? bloginfo( 'url' ); ?>/" title="<? bloginfo('name'); ?>">
+					<img src="<? bloginfo('template_url'); ?>/img/bupipedream.png" alt="<? bloginfo( 'name' ); ?> - <? bloginfo( 'description' ); ?>" />
+				</a>
+			</div>
 			<ul>
-				<li><span class="footer-category">News</span>
-					<ul class="footer-subcategories">
-						<li><a href="">Administration</a></li>
-						<li><a href="">Student Groups</a></li>
-						<li><a href="">Student Association</a></li>
-						<li><a href="">Police Watch</a></li>
-					</ul>
-				</li>
-				<li><span class="footer-category">Sports</span>
-					<ul class="footer-subcategories">
-						<li><a href="">Basketball</a></li>
-						<li><a href="">Basketball</a></li>
-						<li><a href="">Soccer</a></li>
-						<li><a href="">Baseball</a></li>
-						<li><a href="">Wrestling</a></li>
-						<li><a href="">Lacrosse</a></li>
-					</ul>
-				</li>
-				<li><span class="footer-category">Opinion</span>
-					<ul class="footer-subcategories">
-						<li><a href="">Columns</a></li>
-						<li><a href="">Editorial</a></li>
-						<li><a href="">Letters to the editor</a></li>
-						<li><a href="">Letters from the editor</a></li>
-					</ul>
-				</li>
-				<li><span class="footer-category">Release</span>
-					<ul class="footer-subcategories">
-						<li><a href="">Food</a></li>
-						<li><a href="">Movies</a></li>
-						<li><a href="">Music</a></li>
-						<li><a href="">Theatre</a></li>
-					</ul>
-				</li>
-				<li><span class="footer-category">Tools</span>
-					<ul class="footer-subcategories">
-						<li><a href="">About</a></li>
-						<li><a href="">Advertise</a></li>
-						<li><a href="">Contact</a></li>
-						<li><a href="">RSS</a></li>
-					</ul>
-				</li>
+				<li><a href="">News</a></li>
+				<li><a href="">Sports</a></li>
+				<li><a href="">Opinion</a></li>
+				<li><a href="">Release</a></li>
+				<li class="footer-navigation-light"><a href="">About</a></li>
+				<li class="footer-navigation-light"><a href="">Advertise</a></li>
+				<li class="footer-navigation-light"><a href="">Contact</a></li>
 			</ul>
 		</nav>
-
 	</footer>
 
 	<!-- JavaScript at the bottom for fast page loading -->
