@@ -277,9 +277,8 @@
 					echo date( 'l, M. j, Y' );
 				?>
 			</div>
-			<div class="weather">
-				<img src="<? bloginfo('template_url'); ?>/img/weather/partly-sunny.png" alt="Party Sunny" />
-				32&deg;
+			<div id="weather" class="weather" data-template-url="<? bloginfo('template_url'); ?>">
+				<!-- Weather loaded by JavaScript -->
 			</div>
 		</section>
 		<h1 class="span12">
