@@ -17,9 +17,10 @@
 				<li><a href="">Sports</a></li>
 				<li><a href="">Opinion</a></li>
 				<li><a href="">Release</a></li>
-				<li class="footer-navigation-light"><a href="">About</a></li>
-				<li class="footer-navigation-light"><a href="">Advertise</a></li>
-				<li class="footer-navigation-light"><a href="">Contact</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/join/" title="Join Pipe Dream">Join</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 			</ul>
 		</nav>
 	</footer>

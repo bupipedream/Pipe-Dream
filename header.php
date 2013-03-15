@@ -328,8 +328,9 @@
 			</li><li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
 		</ul>
 		<ul class="secondary">
-			<li><a href="">About</a></li>
-			<li><a href="">Advertise</a></li>
-			<li><a href="">Contact</a></li>
+			<li><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
+			<li><a href="<? bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
+			<li><a href="<? bloginfo('wpurl'); ?>/join/" title="Join Pipe Dream">Join</a></li>
+			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 		</ul>
 	</nav>
