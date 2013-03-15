@@ -239,7 +239,7 @@
 						<article class="clearfix">
 						
 							<?php if( isset( $article['photo']['src'] ) ): ?>
-								<figure class="figure-left  figure-border">
+								<figure class="figure-right figure-border">
 									<a href="<?= get_permalink( $article['ID'] ); ?>">
 										<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" title="<?= $article['post_author']['name']; ?>" />
 									</a>
