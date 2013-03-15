@@ -202,7 +202,7 @@
 
 					<?php foreach( $sections['editorial']['feature'] as $article ): ?>
 					
-						<article class="pad-left pad-right">
+						<article class="pad-left pad-right <?= ( !isset( $article['photo']['src'] ) ) ? 'text-teaser' :''?>">
 							
 							<?php if( $article['photo'] ): ?>
 								<figure class="clearfix">
@@ -276,7 +276,7 @@
 						<?php foreach( $sections['release']['feature'] as $article ): ?>
 
 							<!-- Featured release article -->
-							<article class="pad-left pad-right text-teaser">
+							<article class="pad-left pad-right <?= ( !isset( $article['photo']['src'] ) ) ? 'text-teaser' :''?>">
 								<?php if( isset( $article['photo']['src'] ) ): ?>
 									<figure>
 										<a href="<?= get_permalink( $article['ID'] ); ?>">
