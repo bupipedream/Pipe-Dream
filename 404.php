@@ -1,12 +1,29 @@
 <?php get_header(); ?>
 	<div class="row" id="content">
-		<div class="span17">			
-			<h2>Page Not Found <small>... but thanks for coming in!</small></h2>
-			<section id="posts">
-				<p>We just launched a new website and are working hard to fix any issues. Feel free to browse around and contact <a href="mailto:developer@bupipedream.com">Daniel O'Connor</a> <em>(Lead Web Developer)</em> with any questions, issues, or comments!</p>
-				<p>Thanks for your patience!</p>
-			</section>
-		</div>
-		<?php get_sidebar(); ?>
+		<article class="pad-left pad-right">
+			<h2 class="headline">Whoops! Page not found...</h2>
+			<figure id="four-oh-four-art">
+				<img src="<? bloginfo('template_url'); ?>/img/404art.png">
+			</figure>
+			<p>Here are some popular articles you may wish to check out:</p>
+			<ol>
+				<?php
+					$posts = wmp_get_popular( array( 'limit' => 5, 'post_type' => 'post', 'range' => 'weekly' ) );
+					if ( count( $posts ) > 0 ): foreach ( $posts as $post ):
+						setup_postdata( $post );
+				?>
+					<li>
+						<article>
+							<h2 class="headline">
+								<a href="<? the_permalink() ?>" title="<?= esc_attr( get_the_title() ? get_the_title() : get_the_ID() ); ?>">
+									<?php if ( get_the_title() ) the_title(); else the_ID(); ?>
+								</a>
+							</h2>
+							<? the_excerpt() ?>
+						</article>
+					</li>
+				<?php endforeach; endif; ?>
+			</ol>
+		</article>
 	</div>
 	<?php get_footer(); ?>
