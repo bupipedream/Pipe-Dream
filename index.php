@@ -211,13 +211,14 @@
 								
 								<p class="byline below">By <?php echo $article['post_author']['name']; ?> - <time datetime="<?php echo date('Y-m-j\TH:i:sT', strtotime($article['post_date'])); ?>" title="<?php echo date('F j, Y \a\t g:i A T', strtotime($article['post_date'])); ?>"><?php echo get_time_since($article['post_date']); ?></time></p>
 																
-								<figure class="center">
-									<a href="<?php echo get_permalink($article['ID']) ?>">
-										<img src="<?php echo $article['photo']['src']['custom-260']; ?>" />
-									</a>
-									<figcaption><p><?php echo $article['photo']['credit']; ?></p></figcaption>
-								</figure>
-								
+								<?php if( isset( $article['photo']['src'] ) ): ?>
+									<figure class="center">
+										<a href="<?php echo get_permalink($article['ID']) ?>">
+											<img src="<?php echo $article['photo']['src']['custom-260']; ?>" />
+										</a>
+										<figcaption><p><?php echo $article['photo']['credit']; ?></p></figcaption>
+									</figure>
+								<? endif; ?>
 								<p><?php echo $article['post_excerpt']; ?></p>
 								
 								<ul class="article-links">
