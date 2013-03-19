@@ -1,6 +1,10 @@
 <div id="rightcol" class="span7 last">
 	<!-- Right Column -->
 	<section class="ad">
+
+		<a href="http://www.jpmorganchase.com/corporate/Corporate-Responsibility/technology-for-social-good.htm">
+			<img src="http://www.bupipedream.com/openx/www/images/7f4d1e3307b81c304e5bd81855094084.jpg">
+		</a>
 		<!--/* OpenX Javascript Tag v2.8.10 */-->
 
 		<!--/*
