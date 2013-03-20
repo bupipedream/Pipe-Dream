@@ -5,6 +5,14 @@
 			<h1 class="page-title pad-left">
 				Search results for: <span class="highlight"><?= esc_attr( get_search_query() ); ?></span> <small>(<?= $posts_count.' result'.($posts_count === 1 ? '' : 's').' found' ?>)</small>
 			</h1>
+			<?php 
+				$topic = pd_search_topics( get_search_query() );
+				if( isset( $topic ) ):
+			?>
+				<div class="notice">
+					<?= $topic; ?>
+				</div>
+			<? endif; ?>
 			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<section class="archive-list pad-left">
