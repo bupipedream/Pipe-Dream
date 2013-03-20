@@ -42,7 +42,7 @@
 							<div class="meta">By <span class="author"><?= get_userdata($article['post_author'])->display_name; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time></div>
 
 							<p class="excerpt">
-								<?= ( $article['post_excerpt'] ) ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 25 ); ?>
+								<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 25 ); ?>
 							</p>
 
 						</article>
@@ -87,7 +87,7 @@
 									<?php endif; ?>
 																		
 									<p class="excerpt">
-										<?= ( $article['post_excerpt'] ) ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 25 ); ?>
+										<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 18 ); ?>
 									</p>
 								</article>
 							
@@ -144,7 +144,8 @@
 								<time datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="<?php the_time('F j, Y \a\t g:i A T'); ?>"><?php the_time('F j, Y'); ?></time>
 							</div>
 							
-							<p class="excerpt"><?= get_the_excerpt(); ?></p>
+
+							<p class="excerpt"><?= get_the_excerpt() ? get_the_excerpt() : get_custom_excerpt( the_content(), 16 ); ?></p>
 														
 						</article>
 

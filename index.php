@@ -35,7 +35,7 @@
 								</figure>
 							<?php endif; ?>
 							
-							<p class="excerpt"><?= $article['post_excerpt']; ?></p>
+							<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
 						
 						</article>
 
@@ -68,7 +68,7 @@
 									<span class="author"><?= $article['post_author']['name']; ?></span> - <time datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>"><?= get_time_since( $article['post_date'] ); ?></time>
 								</div>
 								
-								<p class="excerpt"><?= $article['post_excerpt']; ?></p>
+								<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 20 ); ?></p>
 								
 								<footer class="article-links">
 									<a href="<?= get_permalink( $article['ID'] ); ?>#comments" class="icon icon-comment"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
@@ -180,7 +180,7 @@
 									</h2>
 
 									<? if($index === 0): ?>
-										<p class="excerpt"><?= $article['post_excerpt']; ?></p>
+										<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
 									<? endif; ?>
 								
 							</article>
@@ -253,7 +253,7 @@
 							</h2>
 							
 							<p class="excerpt">
-								<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], '50' ); ?>
+								<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 20 ); ?>
 							</p>
 							
 							<footer class="article-links">
@@ -318,7 +318,7 @@
 									</h2>
 
 									<? if($index === 0): ?>
-										<p class="excerpt"><?= $article['post_excerpt']; ?></p>
+										<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
 									<? endif; ?>
 								
 							</article>
