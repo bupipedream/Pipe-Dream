@@ -1,38 +1,61 @@
 <?php
 
-// Add custom meta-fields to file uploads. 
-// http://wordpress.org/support/topic/addcustomize-meta-fields-to-edit-media-attachment-screen#post-2304586
-
-function add_image_attachment_fields_to_edit($form_fields, $post) {
-	// $form_fields is a an array of fields to include in the attachment form
-	// $post is nothing but attachment record in the database
+/**
+ * Adding our custom fields to the $form_fields array
+ * 
+ * @param array $form_fields
+ * @param object $post
+ * @return array
+ */
+function my_image_attachment_fields_to_edit($form_fields, $post) {
+	// $form_fields is a special array of fields to include in the attachment form
+	// $post is the attachment record in the database
 	//     $post->post_type == 'attachment'
-	// attachments are considered as posts in WordPress. So value of post_type in wp_posts table will be attachment
-	// now add our custom field to the $form_fields array
-	// input type="text" name/id="attachments[$attachment->ID][custom1]"
-	$form_fields["credit"] = array(
-	  "label" => __("Credit"),
-	  "input" => "text", // this is default if "input" is omitted
-	  "value" => get_post_meta($post->ID, "_credit", true),
-	              "helps" => __("Name/Position"),
-	);
-	unset($form_fields['post_content']);
-	$form_fields['post_excerpt']['input'] = 'textarea';
+	// (attachments are treated as posts in WordPress)
+	
+	// add our custom field to the $form_fields array
+	$form_fields["credit"]["label"] = __("Credit");
+	$form_fields["credit"]["input"] = "text";
+	$form_fields["credit"]["value"] = get_post_meta($post->ID, "_credit", true);
+	$form_fields["credit"]["helps"] = _("Name/Position");
 
-   return $form_fields;
+	$form_fields["position"]["label"] = __("Position");  
+	$form_fields["position"]["input"] = "html";  
+	$form_fields["position"]["value"] = get_post_meta($post->ID, "_position", true);
+	if($form_fields["position"]["value"] === "feature") {
+		// photo display is feature
+		$form_fields["position"]["html"] = "<select name='attachments[{$post->ID}][position]' id='attachments[{$post->ID}][position]'> 
+												<option value='inline'>Inline</option>
+												<option value='feature' selected>Feature</option>
+											</select>";
+	} else {
+		// photo display is inline by default
+		$form_fields["position"]["html"] = "<select name='attachments[{$post->ID}][position]' id='attachments[{$post->ID}][position]'> 
+												<option value='inline' selected>Inline</option>
+												<option value='feature'>Feature</option>
+											</select>";
+	}
+	return $form_fields;
 }
+// attach our function to the correct hook
+add_filter("attachment_fields_to_edit", "my_image_attachment_fields_to_edit", null, 2);
 
-// now attach our function to the hook
-add_filter("attachment_fields_to_edit", "add_image_attachment_fields_to_edit", null, 2);
 
-function add_image_attachment_fields_to_save($post, $attachment) {
-  // $attachment part of the form $_POST ($_POST[attachments][postID])
-        // $post['post_type'] == 'attachment'
-  if( isset($attachment['credit']) ){
-    // update_post_meta(postID, meta_key, meta_value);
-    update_post_meta($post['ID'], '_credit', $attachment['credit']);
-  }
-  return $post;
+/** 
+ * @param array $post 
+ * @param array $attachment 
+ * @return array 
+ */  
+function add_image_attachment_fields_to_save($post, $attachment) {  
+	// $attachment part of the form $_POST ($_POST[attachments][postID])  
+	// $post attachments wp post array - will be saved after returned  
+	//     $post['post_type'] == 'attachment'
+	if( isset($attachment['position']) ){  
+		update_post_meta($post['ID'], '_position', $attachment['position']);  
+	}
+	if( isset($attachment['credit']) ){  
+		update_post_meta($post['ID'], '_credit', $attachment['credit']);  
+	}
+	return $post;
 }
-// now attach our function to the hook.
 add_filter("attachment_fields_to_save", "add_image_attachment_fields_to_save", null , 2);
