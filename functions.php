@@ -88,7 +88,7 @@ if($test_url !== false) { // test if the URL exists
 
 require_once('functions/image-sizes.php'); // set custom image sizes
 require_once('functions/get-photos.php'); // retreive photos for a post
-// require_once('functions/performance.php'); // display site performance
+require_once('functions/performance.php'); // display site performance
 require_once('functions/is-archived.php'); // get custom fields
 require_once('functions/time-since.php'); // display the time since something
 require_once('functions/get-sections.php'); // arrange the home page
