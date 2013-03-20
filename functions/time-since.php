@@ -1,7 +1,12 @@
 <?php
 
-function get_time_since($time) {
-	
+/**
+ * Return a "human-readable" time such as 8 hours ago.
+ *
+ * @param string $time such as: 2013-03-18 21:13:59
+*/
+
+function get_time_since($time) {	
 	$date = new \DateTime();
 	$date->setTimestamp(strtotime($time));
 	
