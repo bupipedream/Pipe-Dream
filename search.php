@@ -7,7 +7,7 @@
 			</h1>
 			<?php 
 				$topic = pd_search_topics( get_search_query() );
-				if( isset( $topic ) ):
+				if( $topic ):
 			?>
 				<div class="notice">
 					<?= $topic; ?>
