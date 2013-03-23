@@ -49,7 +49,7 @@
 					<section>
 						<!-- Above-the-Fold Article -->
 						<?php foreach( $sections['news']['feature'] as $article ): ?>
-							<article>
+							<article class="home-feature">
 								
 								<figure class="clearfix">
 									<a href="<?= get_permalink( $article['ID'] ) ?>">
@@ -99,7 +99,7 @@
 					</section>
 
 				</div>
-				<div class="middle-column span15 last">
+				<div data-column="middle-column" class="span15 last">
 					<section class="article-list">
 						
 						<!-- Four News Articles -->
@@ -158,7 +158,7 @@
 
 					</div>
 					
-					<div class="span15 article-list last">
+					<div data-column="middle-column" class="span15 article-list last">
 
 						<!-- List of sports articles -->
 						<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
@@ -202,7 +202,7 @@
 
 					<?php foreach( $sections['editorial']['feature'] as $article ): ?>
 					
-						<article class="pad-left pad-right <?= ( !isset( $article['photo']['src'] ) ) ? 'text-teaser' :''?>">
+						<article class="home-feature pad-left pad-right <?= ( !isset( $article['photo']['src'] ) ) ? 'text-teaser' :''?>">
 							
 							<?php if( $article['photo'] ): ?>
 								<figure class="clearfix">
@@ -231,7 +231,7 @@
 				</section>
 
 				<!-- Columns -->
-				<section class="article-list middle-column span15 last">
+				<section data-column="middle-column" class="article-list span15 last">
 					<h2 class="section-heading"><a href="<?= home_url(); ?>/opinion/">Columns</a></h2>
 					
 					<?php foreach( $sections['opinion']['article-list'] as $article ): ?>
@@ -296,7 +296,7 @@
 						<?php endforeach; ?>
 					</div>
 					
-					<div class="article-list middle-column span15 last">
+					<div data-column="middle-column" class="article-list span15 last">
 
 						<!-- List of release articles -->
 						<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>

@@ -1910,7 +1910,6 @@ footer#footer {
 	#search input[type="search"] { width: 120px !important; }
 }
 
-
 @media only screen and (max-width : 760px) {
 	#date-weather { margin-top: 30px !important; }
 	#search-social { margin-top: 2px !important; }
@@ -1955,6 +1954,27 @@ footer#footer {
 	#date-weather { margin-bottom: 10px !important; }
 	#search-social {
 		margin-top: 6px !important;
+	}
+}
+
+@media only screen and (max-width : 615px) { // switch to one column
+	.home [data-column="left-column"] {
+		.span24;
+		border-right: none !important;
+	}
+	.home [data-column="middle-column"] {
+		.span24;
+		article, .section-heading {
+			.pad-left;
+			.pad-right;
+		}
+	}
+	.home-feature {
+		figure {
+			float: left;
+			margin-right: 20px;
+			width: 45%;
+		}
 	}
 }
 
@@ -2031,6 +2051,17 @@ footer#footer {
 		&:last-child { border-right: none; }
 		a { padding: 10px 0; }
 	}
+}
+
+@media only screen and (max-width : 435px) {
+	.home-feature {
+		figure {
+			float: left;
+			margin-right: 20px;
+			width: 100%;
+		}
+	}
+
 }
 
 
