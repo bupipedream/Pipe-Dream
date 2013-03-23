@@ -1976,6 +1976,11 @@ footer#footer {
 			width: 45%;
 		}
 	}
+	#daily-photo, #editorial {
+		.grid-row;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+	}
 }
 
 @media only screen and (max-width : 590px) {
@@ -2046,8 +2051,10 @@ footer#footer {
 @media only screen and (max-width : 438px) {
 	#logo { padding-bottom: 10px !important; }
 	nav[role="navigation"] > ul.primary > li {
-		.box-sizing(border-box);
-		width: 25% !important;
+		width: ~"-webkit-calc(25% - 1px)" !important;
+		width: ~"-moz-calc(25% - 1px)" !important;
+		width: ~"-o-calc(25% - 1px)" !important;
+		width: ~"calc(25% - 1px)" !important;
 		&:last-child { border-right: none; }
 		a { padding: 10px 0; }
 	}

@@ -12,7 +12,7 @@
 				
 				<!-- Left Column -->
 				<div data-column="left-column" class="span9">
-					<section class="pad-left pad-right article-list">
+					<section id="atf-list" class="pad-left pad-right article-list">
 						
 						<!-- Two Articles -->
 						
@@ -46,7 +46,7 @@
 
 				<!-- Middle Column -->
 				<div data-column="middle-column" class="span15 last">
-					<section>
+					<section id="atf-feature">
 						<!-- Above-the-Fold Article -->
 						<?php foreach( $sections['news']['feature'] as $article ): ?>
 							<article class="home-feature">
@@ -100,7 +100,7 @@
 
 				</div>
 				<div data-column="middle-column" class="span15 last">
-					<section class="article-list">
+					<section id="news-list" class="article-list">
 						
 						<!-- Four News Articles -->
 						<h1 class="section-heading"><a href="<?= home_url(); ?>/news/">News</a></h1>
@@ -139,7 +139,7 @@
 					<!-- Two column row of sports -->
 					<h1 class="section-heading pad-left pad-right"><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
 					
-					<div data-column="left-column" class="span9">
+					<div id="sports-feature" data-column="left-column" class="span9">
 						
 						<?php foreach( $sections['sports']['feature'] as $article ): ?>
 							
@@ -158,7 +158,7 @@
 
 					</div>
 					
-					<div data-column="middle-column" class="span15 article-list last">
+					<div id="sports-list" data-column="middle-column" class="span15 article-list last">
 
 						<!-- List of sports articles -->
 						<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
@@ -196,7 +196,7 @@
 				<h1 class="visuallyhidden"><a href="<?= home_url(); ?>/opinion/">Opinion</a></h1>
 					
 				<!-- Editorial -->
-				<section data-column="left-column" class="span9">
+				<section id="editorial" data-column="left-column" class="span9">
 				
 					<h2 class="section-heading pad-left pad-right"><a href="<?= home_url(); ?>/opinion/editorial/">Editorial</a></h2>
 
@@ -231,7 +231,7 @@
 				</section>
 
 				<!-- Columns -->
-				<section data-column="middle-column" class="article-list span15 last">
+				<section id="opinion-list" data-column="middle-column" class="article-list span15 last">
 					<h2 class="section-heading"><a href="<?= home_url(); ?>/opinion/">Columns</a></h2>
 					
 					<?php foreach( $sections['opinion']['article-list'] as $article ): ?>
@@ -271,7 +271,7 @@
 					<!-- Two column row of release -->
 					<h1 class="section-heading pad-left"><a href="<?= home_url(); ?>/release/">Release</a></h2>
 					
-					<div data-column="left-column" class="span9">
+					<div id="release-feature" data-column="left-column" class="span9">
 						
 						<?php foreach( $sections['release']['feature'] as $article ): ?>
 
@@ -296,7 +296,7 @@
 						<?php endforeach; ?>
 					</div>
 					
-					<div data-column="middle-column" class="article-list span15 last">
+					<div id="release-list" data-column="middle-column" class="article-list span15 last">
 
 						<!-- List of release articles -->
 						<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>
