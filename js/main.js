@@ -1,5 +1,18 @@
 /* Author: Daniel O'Connor / www.danoc.me */
 
+$(window).resize(function() {
+	console.log(document.documentElement.clientWidth);
+	// if(document.documentElement.clientWidth < 840) {
+	// 	$('#date-weather').removeClass().addClass('span7');
+	// 	$('#logo').removeClass().addClass('span10');
+	// 	$('#search-social').removeClass().addClass('span7');
+	// } else {
+	// 	$('#date-weather').removeClass().addClass('span6');
+	// 	$('#logo').removeClass().addClass('span12');
+	// 	$('#search-social').removeClass().addClass('span6');
+	// }
+});
+
 $(document).ready(function() {
 	
 	$(".gallery").fancybox({
@@ -16,6 +29,16 @@ $(document).ready(function() {
 			$("#weather").html(html);
 		},
 		error: function(error) {}
+	});
+
+	$('#mobile-search-link').click(function(e) {
+		e.preventDefault();
+		
+		var search = $('#mobile-search');
+
+		$(this).hide();
+		search.slideDown();
+		search.find("input[type='search']").focus();
 	});
 
 });

@@ -264,6 +264,50 @@ header[role="banner"] {
 	}
 }
 
+#mobile-search-link {
+	display: none;
+	float: right;
+	margin: 6px 15px 0 0;
+	opacity: .5;
+	.transition(opacity .300s);
+	&:hover {
+		opacity: .8;
+		.transition(opacity .300s);
+	}
+}
+
+#mobile-search {
+	background: #f3fbf2;
+	border-bottom: 1px solid #e4e6b5;
+	display: none;
+	font-size: .8em;
+	padding: 8px 0;
+	text-align: center;
+	width: 100%;
+	input[type="search"] {
+		border: 1px solid #ddd;
+		height: 18px;
+		font-family: @sans;
+		padding: 9px 14px;
+		vertical-align: bottom;
+		width: 70%;
+		.border-radius(3px 0 0 3px);
+		&:focus {
+			.box-shadow(0 0 5px rgba(202, 235, 197, 1));
+			outline: none;
+			+ input { .box-shadow(0 0 5px rgba(202, 235, 197, 1)); } // shadow on submit
+		}
+	}
+	input[type="submit"] {
+		// background: #fff url(wp-content/themes/bupipedream/img/search.png) no-repeat 50%;
+		background: #fff ~"url(@{baseurl}/img/search.png) no-repeat 50%";
+		border: 1px solid #ddd;
+		line-height: 31px;
+		margin-left: -6px;
+		width: 48px;
+		.border-radius(0 3px 3px 0);
+	}
+}
 
 /*-----------------------*/
 /*--- Navigation Menu ---*/
@@ -1789,20 +1833,167 @@ footer#footer {
 // }
 
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
 /*-----------------------*/
 /*---- Media Queries ----*/
 /*-----------------------*/
 
-// @media only screen
-// and (max-width : 1075px) { // hide facebook like box
-// 	#fb-like-box { display: none; }
-// }
+@media only screen and (max-width : 955px) {
+	#search input[type="search"] {
+		width: 120px !important;
+	}
+}
+
+@media only screen and (max-width : 940px) {
+	#date-weather .day-of-week {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width : 840px) {
+	#date-weather {
+		.span7;
+		margin-top: 40px !important;
+	}
+	#logo {
+		.span10;
+	}
+	#search input[type="search"] {
+		width: 140px !important;
+	}
+	#search-social {
+		.span7;
+		.last;
+		margin-top: 10px !important;
+	}
+}
+
+@media only screen and (max-width : 840px) {
+	#date-weather { margin-top: 35px !important; }
+	#search-social { margin-top: 9px !important; }
+}
+
+@media only screen and (max-width : 785px) {
+	#search input[type="search"] { width: 120px !important; }
+}
+
+
+@media only screen and (max-width : 760px) {
+	#date-weather { margin-top: 30px !important; }
+	#search-social { margin-top: 2px !important; }
+}
+
+@media only screen and (max-width : 705px) {
+	#container {
+		margin-top: 10px !important;
+	}
+	#date-weather {
+		.day-of-week { display: inline !important; }
+		.span24;
+		.last;
+		margin-top: 0 !important;
+	}
+	#logo { .span12; }
+	#search-social {
+		.span12;
+		.last;
+		margin-top: 10px !important;
+	}
+	#search input[type="search"] {
+		width: 180px !important;
+	}
+	#logo img { margin-left: @colPaddingLR !important; }
+	#search-social .social, #search {
+		margin-right: @colPaddingLR !important;
+	}
+	header[role="banner"] {
+		margin-bottom: 20px;
+	}
+}
+
+@media only screen and (max-width : 630px) {
+	#search-social { margin-top: 6px !important; }
+	#search input[type="search"] {
+		width: 140px !important;
+	}
+}
+
+@media only screen and (max-width : 620px) {
+	#date-weather { margin-bottom: 10px !important; }
+	#search-social {
+		margin-top: 6px !important;
+	}
+}
+
+@media only screen and (max-width : 590px) {
+	#date-weather { margin-bottom: 0 !important; }
+	#search-social {
+		margin-top: 25px !important;
+		.social { display: none !important; }
+	}
+}
+
+@media only screen and (max-width : 565px) {
+	#search-social {
+		margin-top: 20px !important;
+	}
+	#search input[type="search"] {
+		width: 110px !important;
+	}
+}
+
+
+@media only screen and (max-width : 565px) {
+	#date-weather { margin-bottom: 10px !important; }
+}
+
+@media only screen and (max-width : 485px) {
+	#search-social { margin-top: 15px !important; }
+	#search input[type="search"] { width: 100px !important; }
+}
+
+@media only screen and (max-width : 558px) {
+	nav[role="navigation"] > ul.primary > li {
+		width: 100px !important;
+	}
+}
+
+@media only screen and (max-width : 485px) {
+	#logo {
+		.span24;
+		.last;
+		border-top: 1px solid @light-border;
+		padding: 20px 0;
+		img {
+			margin-left: 0 !important;
+			width: 90%;
+		}
+	}
+	#search-social { display: none; }
+	#mobile-search-link {
+		display: block;
+	}
+}
+
+@media only screen and (max-width : 398px) {
+}
+
+@media only screen and (max-width : 438px) {
+	#logo { padding-bottom: 10px !important; }
+	nav[role="navigation"] > ul.primary > li {
+		.box-sizing(border-box);
+		width: 25% !important;
+		&:last-child { border-right: none; }
+		a { padding: 10px 0; }
+	}
+
+	// nav[role="navigation"] > ul.primary > li {
+	// 	width: -moz-calc(25% - 1px) !important;
+	// 	width: -webkit-calc(25% - 1px) !important;
+	// 	width: calc(25% - 1px) !important;
+	// }
+}
+
+
 
 // @media only screen
 // and (max-width : 980px) { // shorten search bar
@@ -2200,6 +2391,12 @@ footer#footer {
 	-moz-transition: @arguments; /* Firefox 4 */
 	-webkit-transition: @arguments; /* Safari and Chrome */
 	-o-transition: @arguments; /* Opera */
+}
+
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing: @type;
+	box-sizing: @type;
 }
 
 // .label {

@@ -274,14 +274,15 @@
 			<div class="date">
 				<?
 					date_default_timezone_set( 'America/New_York' );
-					echo date( 'l, M. j, Y' );
+					echo '<span class="day-of-week">' . date( 'l, ' ) . "</span>";
+					echo date( 'M. j, Y' );
 				?>
 			</div>
 			<div id="weather" class="weather" data-template-url="<? bloginfo('template_url'); ?>">
 				<!-- Weather loaded by JavaScript -->
 			</div>
 		</section>
-		<h1 class="span12">
+		<h1 id="logo" class="span12">
 			<a href="<? bloginfo( 'url' ); ?>/" title="<? bloginfo('name'); ?>">
 				<img src="<? bloginfo( 'template_url' ); ?>/img/bupipedream.png" alt="<? bloginfo( 'name' ); ?> - <? bloginfo( 'description' ); ?>" />
 			</a>
@@ -326,6 +327,9 @@
 			</li><li><a href="<? bloginfo('wpurl'); ?>/opinion/" <? if(is_category('4')) echo 'class="active"'; ?>>Opinion</a>
 			</li><li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
 		</ul>
+		<section id="mobile-search-link">
+			<a href="" title="Show search form"><img src="<? bloginfo( 'template_url' ); ?>/img/search.png" alt="Search" /></a>
+		</section>
 		<ul class="secondary">
 			<li><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
 			<li><a href="<? bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
@@ -333,3 +337,9 @@
 			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 		</ul>
 	</nav>
+	<section id="mobile-search" class="row">
+		<form role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
+			<input type="search" autocomplete="on" placeholder="Search..." />
+			<input type="submit" value="" />
+		</form>
+	</section>
