@@ -42,7 +42,7 @@
 		</section>
 		
  -->		
- 		<section class="sidebar-block sidebar-article-list sidebar-article-list-small">
+ 		<section id="sidebar-most-read" class="sidebar-block sidebar-article-list sidebar-article-list-small">
 			<h1 class="section-heading">Most Read</h1>
 			<ol>
 				<?php
@@ -98,7 +98,7 @@
 			$issuu_id = $issuu['issuu_id'];
 		?>
 		<? if( $issuu_id ): ?>
-			<section id="issuu" class="sidebar-block">
+			<section id="sidebar-issuu" class="sidebar-block">
 				<h1 class="section-heading">
 					<a href="<?= $issuu_link; ?>">Current Issue</a>
 				</h1>

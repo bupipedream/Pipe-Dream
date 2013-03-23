@@ -45,7 +45,7 @@
 				</div>
 
 				<!-- Middle Column -->
-				<div class="span15 last">
+				<div data-column="middle-column" class="span15 last">
 					<section>
 						<!-- Above-the-Fold Article -->
 						<?php foreach( $sections['news']['feature'] as $article ): ?>
@@ -266,7 +266,7 @@
 				</section>
 			</div>
 
-			<div class="row">
+			<div id="row-release" class="row">
 				<section>
 					<!-- Two column row of release -->
 					<h1 class="section-heading pad-left"><a href="<?= home_url(); ?>/release/">Release</a></h2>

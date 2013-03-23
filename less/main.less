@@ -850,6 +850,10 @@ article {
 	}
 }
 
+.issuuembed > div > div:last-child { // hide the issuu embed links
+	display: none;
+}
+
 // #latest-news ol { // article pages
 // 	color: fadeout(#868686, 25%);
 // 	margin: 10px 0 5px -40px;
@@ -1849,6 +1853,36 @@ footer#footer {
 	}
 }
 
+@media only screen and (max-width : 890px) { // switch to two column
+	#content > div[data-column="left-two-columns"] {
+		.span24;
+		.last;
+	}
+	#sidebar {
+		.span24;
+		.last;
+	}
+	.sidebar-block {
+		.box-sizing(border-box);
+		border-bottom: none !important;
+		padding: 0 @colPaddingLR !important;
+		margin: 0 !important;
+	}
+	#sidebar-issuu {
+		border-left: 1px solid @light-border;
+		.span13;
+		.last;
+	}
+	#sidebar-most-read {
+		.span11;
+	}
+	#row-release {
+		.grid-row;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+	}
+}
+
 @media only screen and (max-width : 840px) {
 	#date-weather {
 		.span7;
@@ -1930,6 +1964,25 @@ footer#footer {
 		margin-top: 25px !important;
 		.social { display: none !important; }
 	}
+	.sidebar-block {
+		border-bottom: 1px solid @light-border !important;
+		padding: 0 @colPaddingLR 20px !important;
+		margin-bottom: 20px !important;
+		&:last-child {
+			border-bottom: none !important;
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+		}
+	}
+	#sidebar-issuu {
+		border-left: none !important;
+		.span24;
+		.last;
+	}
+	#sidebar-most-read {
+		.span24;
+		.last;
+	}
 }
 
 @media only screen and (max-width : 565px) {
@@ -1939,10 +1992,6 @@ footer#footer {
 	#search input[type="search"] {
 		width: 110px !important;
 	}
-}
-
-
-@media only screen and (max-width : 565px) {
 	#date-weather { margin-bottom: 10px !important; }
 }
 
@@ -1974,9 +2023,6 @@ footer#footer {
 	}
 }
 
-@media only screen and (max-width : 398px) {
-}
-
 @media only screen and (max-width : 438px) {
 	#logo { padding-bottom: 10px !important; }
 	nav[role="navigation"] > ul.primary > li {
@@ -1985,12 +2031,6 @@ footer#footer {
 		&:last-child { border-right: none; }
 		a { padding: 10px 0; }
 	}
-
-	// nav[role="navigation"] > ul.primary > li {
-	// 	width: -moz-calc(25% - 1px) !important;
-	// 	width: -webkit-calc(25% - 1px) !important;
-	// 	width: calc(25% - 1px) !important;
-	// }
 }
 
 
