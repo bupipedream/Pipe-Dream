@@ -97,7 +97,7 @@
 			$issuu_link = $issuu['issuu_link'];
 			$issuu_id = $issuu['issuu_id'];
 		?>
-		<? if( $issuu_link && $issuu_id ): ?>
+		<? if( $issuu_id ): ?>
 			<section class="sidebar-block">
 				<h1 class="section-heading">
 					<a href="<?= $issuu_link; ?>">Current Issue</a>
