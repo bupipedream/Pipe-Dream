@@ -339,7 +339,7 @@
 	</nav>
 	<section id="mobile-search" class="row">
 		<form role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
-			<input type="search" autocomplete="on" placeholder="Search..." />
+			<input type="search" name="s" autocomplete="on" placeholder="Search..." />
 			<input type="submit" value="" />
 		</form>
 	</section>
