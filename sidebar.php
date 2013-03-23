@@ -98,15 +98,12 @@
 			$issuu_id = $issuu['issuu_id'];
 		?>
 		<? if( $issuu_id ): ?>
-			<section class="sidebar-block">
+			<section id="issuu" class="sidebar-block">
 				<h1 class="section-heading">
 					<a href="<?= $issuu_link; ?>">Current Issue</a>
 				</h1>
-				<object style="width: 420px; height: 271px; ">
-					<param name="movie" value="http://static.issuu.com/webembed/viewers/style1/v2/IssuuReader.swf?mode=mini&amp;embedBackground=%23ffffff&amp;backgroundColor=%23222222&amp;documentId=<?=$issuu_id?>" /><param name="allowfullscreen" value="true"/>
-					<param name="menu" value="false"/><param name="wmode" value="transparent"/>
-					<embed src="http://static.issuu.com/webembed/viewers/style1/v2/IssuuReader.swf" type="application/x-shockwave-flash" allowfullscreen="true" menu="false" wmode="transparent" style="width:420px;height:271px" flashvars="mode=mini&amp;embedBackground=%23000000&amp;backgroundColor=%23222222&amp;documentId=<?=$issuu_id?>" />
-				</object>
+				<div data-configid="<?= $issuu['issuu_id']; ?>" style="width: 100%; height: 271px;" class="issuuembed"></div>
+				<script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
 			</section>
 		<? endif; ?>
 		
