@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div id="content" class="row">
-		<div class="span17">
+		<div data-column="left-column" class="span17">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!-- Check if the article is part of the archives -->
