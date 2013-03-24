@@ -10,7 +10,7 @@
 			query_posts($args);
 		?>
 		
-		<div class="span17">
+		<div data-column="left-two-columns" class="span17">
 			<?php if( !get_query_var( 'paged' ) || get_query_var( 'paged' ) === 1 ): ?>
 			<div class="archive-grid row grid-row">
 				<div data-column="left-column" class="span16">
@@ -51,7 +51,7 @@
 				
 				<!-- Secondary featured articles -->
 				<div data-column="middle-column" class="span8 last">
-					<section>
+					<section id="category-secondary">
 						<?php foreach( $featured['secondary'] as $post_id ): ?>
 							
 							<?php 
