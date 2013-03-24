@@ -107,6 +107,7 @@
 				<?php if( get_query_var( 'paged' ) > 1 ): ?>
 					<h1 class="page-title">
 						<?= get_the_category_by_ID( $cat ); ?>
+						<small>(Page <?= get_query_var( 'paged' ) ?>)</small>
 					</h1>
 				<?php endif; ?>
 				
