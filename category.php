@@ -145,8 +145,8 @@
 							</div>
 							
 
-							<p class="excerpt"><?= get_the_excerpt() ? get_the_excerpt() : get_custom_excerpt( the_content(), 16 ); ?></p>
-														
+							<p class="excerpt"><?= get_custom_excerpt( get_the_excerpt(), 40 ); ?></p>
+							
 						</article>
 
 					<?php endwhile; ?>	
