@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div class="row" id="content">
-		<div class="span17">
+		<div data-column="left-column" class="span17">
 			<?php global $wp_query; $posts_count = $wp_query->found_posts; ?>
 			<h1 class="page-title pad-left">
 				Search results for: <span class="highlight"><?= esc_attr( get_search_query() ); ?></span> <small>(<?= $posts_count.' result'.($posts_count === 1 ? '' : 's').' found' ?>)</small>

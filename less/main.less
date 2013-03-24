@@ -1874,9 +1874,17 @@ footer#footer {
 			.pad-right;
 		}
 	}
-	.category #sidebar {
+	.category #sidebar, .search-results [data-columns="left-column"] {
 		display: none !important;
 	}
+	.search-results [data-column="left-column"] {
+		border-right: none !important;
+		.span24;
+		article {
+			.pad-right;
+		}
+	}
+
 	#sidebar {
 		.span24;
 		.last;
