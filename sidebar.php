@@ -4,11 +4,12 @@
 
 	<!--/* OpenX Javascript Tag v2.8.10 */-->
 
+<section class="sidebar-ad sidebar-block">
 	<script type='text/javascript'><!--//<![CDATA[
 		var m3_u = (location.protocol=='https:'?'https://www.bupipedream.com/openx/www/delivery/ajs.php':'http://www.bupipedream.com/openx/www/delivery/ajs.php');
 		var m3_r = Math.floor(Math.random()*99999999999);
 		if (!document.MAX_used) document.MAX_used = ',';
-		document.write ('<section class="sidebar-block">' + "<scr"+"ipt type='text/javascript' src='"+m3_u);
+		document.write ('' + "<scr"+"ipt type='text/javascript' src='"+m3_u);
 		document.write ("?zoneid=1");
 		document.write ('&amp;cb=' + m3_r);
 		if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
@@ -17,9 +18,9 @@
 		if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
 		if (document.context) document.write ("&context=" + escape(document.context));
 		if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-		document.write ("'><\/scr"+"ipt>"+'</section>');
+		document.write ("'><\/scr"+"ipt>"+'');
 	//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=a2194157&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=1&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a2194157' border='0' alt='' /></a></noscript>
-
+</section>
 	<?php if( is_single() ): ?>
 		<section id="fb-settings" class="doublehrule">
 			<img id="fb-profile-img" />
@@ -50,7 +51,7 @@
 		
 	<?php if( is_home() || is_category() ): ?>
 <!-- 		
-		<section class="sidebar-block">
+		<section class="">
 			<div class="fb-like-box" data-href="http://www.facebook.com/bupipedream" data-width="292" data-height="185" data-show-faces="true" data-border-color="#cccccc" data-stream="false" data-header="false"></div>
 		</section>
 -->
