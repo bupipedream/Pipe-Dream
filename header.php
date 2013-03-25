@@ -266,6 +266,8 @@
 			d.getElementsByTagName('head')[0].appendChild(js);
 		}(document));
 
+
+
 </script>
 <div id="container">
 		
@@ -337,6 +339,9 @@
 			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 		</ul>
 	</nav>
+<div id="rave" class="rave">
+	<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
+</div>
 	<section id="mobile-search" class="row">
 		<form role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
 			<input type="search" name="s" autocomplete="on" placeholder="Search..." />

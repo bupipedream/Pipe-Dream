@@ -106,3 +106,12 @@ $(document).ready(function() {
 	});
 
 });
+
+// parseRSS plugin to pull info for the 'RAVE' alerts 
+parseRSS('http://www.getrave.com/rss/binghamton/channel3?r=12345', function(e) {
+	console.log(e)
+	var title = e.title
+	var description = e.description
+		$('#rave').html(e['entries'][0]['content'] + " " + e['entries'][0]['title'] );
+	}
+);
