@@ -97,7 +97,9 @@ a.button {
 .page-section {
 	padding: 0 20px;
 	border-bottom: 1px solid @light-border;
-	.photo-grid
+	&:last-child {
+		border-bottom: 0 !important;
+	}
 }
 
 .photo-grid {
