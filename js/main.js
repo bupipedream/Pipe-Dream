@@ -87,10 +87,10 @@ $(document).ready(function() {
 				default: iconSrc = false; break;
 			}
 
-			html = '<span title="' + weather.currently + ' and ' + weather.temp + ' degrees in '+ weather.city +', '+weather.region+'">'
-			if(iconSrc) html += '<img src="' + iconSrc + '" alt="' + weather.currently + '">';
-			html += weather.temp + '&deg</span>';		
-			$("#weather").html(html);
+			var weatherHTML = '<span title="' + weather.currently + ' and ' + weather.temp + ' degrees in '+ weather.city +', '+weather.region+'">'
+			if(iconSrc) weatherHTML += '<img src="' + iconSrc + '" alt="' + weather.currently + '">';
+			weatherHTML += weather.temp + '&deg</span>';
+			$("#weather").html(weatherHTML);
 		},
 		error: function(error) {}
 	});
