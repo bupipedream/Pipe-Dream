@@ -300,47 +300,23 @@
 			</form>
 		</section>
 	</header>
-
+	
 	<nav class="row" role="navigation">
 		<ul class="primary">
-			<li><a href="<? bloginfo('wpurl'); ?>/news/" <? if( is_category('1') ) echo 'class="active"'; ?>>News</a>
+			<?php
+				// categories in the navigation must be whitelisted
+				$categories = get_categories( array('include' => '1,3,4,5') );
+			?>
+			
+			<? foreach($categories as $category): ?>
+				<li><a href="<? bloginfo( 'wpurl' ); ?>/<?= $category->slug ?>/" <?= is_category( $category->term_id ) ? 'class="active"' : ''; ?> title="Posts categorized as &quot;<?= $category->name; ?>&quot;"><?= $category->name; ?></a>
 				<ul>
-					<li><a href="">Administration</a></li>
-					<li><a href="">Student Groups</a></li>
-					<li><a href="">Student Association</a></li>
-					<li><a href="">Police Watch</a></li>
+					<?php $sub_categories = get_categories( array('parent' => $category->term_id) ); ?>
+					<? foreach($sub_categories as $sub_category): ?>
+						<li><a href="<? bloginfo( 'wpurl' ); ?>/news/<?= $category->slug ?>/"><?= $sub_category->name; ?></a></li>
+					<? endforeach; ?>
 				</ul>
-			</li><li><a href="<? bloginfo('wpurl'); ?>/sports/" <? if(is_category('3')) echo 'class="active"'; ?>>Sports</a>
-				<ul>
-					<li><a href="">Men's Basketball</a></li>
-					<li><a href="">Women's Basketball</a></li>
-					<li><a href="">Men's Soccer</a></li>
-					<li><a href="">Women's Soccer</a></li>
-					<li><a href="">Baseball</a></li>
-					<li><a href="">Softball</a></li>
-					<li><a href="">Wrestling</a></li>
-					<li><a href="">Track &amp; Field</a></li>
-					<li><a href="">Men's Lacrosse</a></li>
-					<li><a href="">Women's Lacrosse</a></li>
-					<li><a href="">Golf</a></li>
-					<li><a href="">Swimming &amp; Diving</a></li>
-					<li><a href="">Tennis</a></li>
-				</ul>
-			</li><li><a href="<? bloginfo('wpurl'); ?>/opinion/" <? if(is_category('4')) echo 'class="active"'; ?>>Opinion</a>
-				<ul>
-					<li><a href="">Columns</a></li>
-					<li><a href="">Staff Editorial</a></li>
-					<li><a href="">Letter from the Editor</a></li>
-					<li><a href="">Letter to the Editor</a></li>
-				</ul>
-			</li><li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a>
-				<ul>
-					<li><a href="">Food</a></li>
-					<li><a href="">Music</a></li>
-					<li><a href="">Movies</a></li>
-					<li><a href="">Sex</a></li>
-				</ul>
-			</li>
+			<? endforeach; ?>
 
 		</ul>
 		<section id="mobile-search-link">
