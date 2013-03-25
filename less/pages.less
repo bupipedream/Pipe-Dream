@@ -6,6 +6,29 @@
 	padding: 0 @colPaddingLR + 5;
 }
 
+#page-navigation {
+	font-family: @sans;
+	font-size: .8em;
+	float: right;
+	ul {
+		margin: 17px 20px 0 0;
+		li {
+			display: inline-block;
+			margin-left: 10px;
+			&.active a {
+				color: #535353;
+				font-weight: bold;
+			}
+		}
+	}
+	a {
+		color: #a1a1a1;
+		&:hover {
+			color: #535353;
+		}
+	}
+}
+
 a.button {
 	background-color: #7fbf4d;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
