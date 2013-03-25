@@ -311,7 +311,7 @@
 					<li><a href="">Police Watch</a></li>
 				</ul>
 			</li><li><a href="<? bloginfo('wpurl'); ?>/sports/" <? if(is_category('3')) echo 'class="active"'; ?>>Sports</a>
-					<ul>
+				<ul>
 					<li><a href="">Men's Basketball</a></li>
 					<li><a href="">Women's Basketball</a></li>
 					<li><a href="">Men's Soccer</a></li>
@@ -327,7 +327,21 @@
 					<li><a href="">Tennis</a></li>
 				</ul>
 			</li><li><a href="<? bloginfo('wpurl'); ?>/opinion/" <? if(is_category('4')) echo 'class="active"'; ?>>Opinion</a>
-			</li><li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a></li>
+				<ul>
+					<li><a href="">Columns</a></li>
+					<li><a href="">Staff Editorial</a></li>
+					<li><a href="">Letter from the Editor</a></li>
+					<li><a href="">Letter to the Editor</a></li>
+				</ul>
+			</li><li><a href="<? bloginfo('wpurl'); ?>/release/" <? if(is_category('5')) echo 'class="active"'; ?>>Release</a>
+				<ul>
+					<li><a href="">Food</a></li>
+					<li><a href="">Music</a></li>
+					<li><a href="">Movies</a></li>
+					<li><a href="">Sex</a></li>
+				</ul>
+			</li>
+
 		</ul>
 		<section id="mobile-search-link">
 			<a href="" title="Show search form"><img src="<? bloginfo( 'template_url' ); ?>/img/search.png" alt="Search" /></a>
