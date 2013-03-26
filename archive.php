@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div class="row" id="content">
+	<div class="content row">
 		<div class="span17">
 			<h1 class="page-title pad-left"><?php single_cat_title(); ?></h1>
 			

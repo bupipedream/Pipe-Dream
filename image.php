@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<!-- Image Attachment -->
-	<div class="row" id="content">
+	<div class="content row">
 		<div class="span17">
 			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

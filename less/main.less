@@ -101,7 +101,7 @@ a:hover { color: darken(@link, 5%); }
 a:focus { outline: thin dotted; }
 
 #container { margin: 33px @colPaddingLR 20px @colPaddingLR; }
-#content { margin: 18px auto 25px auto; }
+.content { margin: 18px auto 25px auto; }
 
 .headline {
 	font-weight: normal;
@@ -1855,7 +1855,7 @@ footer#footer {
 }
 
 @media only screen and (max-width : 890px) { // switch to two columns
-	.home #content > div[data-column="left-two-columns"] {
+	.home .content > div[data-column="left-two-columns"] {
 		.span24;
 		.last;
 	}
