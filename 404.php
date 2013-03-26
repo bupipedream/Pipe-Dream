@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div class="row" id="content">
+	<div class="content row">
 		<article class="pad-left pad-right">
 			<h2 class="headline">Whoops! Page not found...</h2>
 			<figure id="four-oh-four-art">

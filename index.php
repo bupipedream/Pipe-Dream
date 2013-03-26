@@ -3,7 +3,7 @@
 	<!-- Get all of content on the homepage -->
 	<?php $sections = get_sections(); ?>
 		
-	<div class="row" id="content">
+	<div class="content row">
 		<div data-column="left-two-columns" class="span17">
 
 			<!-- Left and Middle Columns -->

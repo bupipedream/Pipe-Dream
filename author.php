@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div class="row" id="content">
+	<div class="content row">
 		<div data-column="left-column" class="span17" itemscope itemtype="http://schema.org/Person">
 
 			<!-- Get information about the current author -->

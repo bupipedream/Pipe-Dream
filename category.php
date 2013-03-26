@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div class="row" id="content">
+	<div class="content row">
 		<?php
 			$featured = pd_get_category_posts( $cat ); // $cat is a WordPress variable
 			$args = array(
