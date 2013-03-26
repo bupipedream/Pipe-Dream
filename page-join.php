@@ -3,7 +3,7 @@
 	<!-- Get all of content on the homepage -->
 	<?php $sections = get_sections(); ?>
 		
-	<div class="content row">
+	<div id="page-join" class="content row">
 		<nav id="page-navigation">
 			<ul>
 				<li><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
