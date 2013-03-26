@@ -105,6 +105,19 @@ $(document).ready(function() {
 		search.find("input[type='search']").focus();
 	});
 
+	$('.page-id-19482 .section-category a').click(function(e) {
+		e.preventDefault();
+		var section = $(this).parentsUntil('.page-section').parent();
+		var old = section.find('.active');
+		// remove the active class from the currently active button
+		old.removeClass('active');
+		
+		$(this).parent().addClass('active');
+		section.find('.section-description[data-section="'+ old.children('a').data('section') +'"]').hide();
+
+		section.find('.section-description[data-section="'+ $(this).data('section') +'"]').show();
+	});
+
 });
 
 // parseRSS plugin to pull info for the 'RAVE' alerts 
