@@ -245,7 +245,6 @@
 }
 
 #media-kit {
-	color: @light-gray;
 	font-family: @sans;
 	font-size: .75em;
 	text-align: center;
@@ -254,5 +253,9 @@
 		color: @light-gray;
 		display: block;
 		padding: 5px 0;
+	}
+	&:hover {
+		img { border: 3px solid darken(#dddddd, 10%); }
+		figcaption a { color: darken(@light-gray, 10%); }
 	}
 }
