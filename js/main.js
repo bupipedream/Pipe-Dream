@@ -107,11 +107,17 @@ $(document).ready(function() {
 
 });
 
+
 // parseRSS plugin to pull info for the 'RAVE' alerts 
-parseRSS('http://www.getrave.com/rss/binghamton/channel3?r=12345', function(e) {
-	console.log(e)
-	var title = e.title
-	var description = e.description
-		$('#rave').html(e['entries'][0]['content'] + " " + e['entries'][0]['title'] );
-	}
-);
+parseRSS('http://www.getrave.com/rss/binghamton/channel1?r=' + Math.floor(Math.random()*90000) + 10000 , function(e) {
+
+var n = e['entries'][0]['title'];
+if(n.indexOf("Alert--ALL CLEAR") === -1) {
+
+
+
+	var title = e['entries'][0]['title'];
+	var content = e['entries'][0]['content'];
+		$('#rave').html(title + " " + content );
+}	
+});

@@ -339,7 +339,7 @@
 			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 		</ul>
 	</nav>
-<div id="rave" class="rave">
+<div id="rave" class="row">
 	<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
 </div>
 	<section id="mobile-search" class="row">
