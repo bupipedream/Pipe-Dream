@@ -1,4 +1,4 @@
-.page-id-19482 .row, .page-id-7911 .row { // thinner pages for join, advertise
+.page-id-19482 .row, .page-id-7911 .row, .page-id-19483 .row { // thinner pages for join, advertise, staff pages
 	max-width: 980px;
 }
 
@@ -262,5 +262,106 @@
 	&:hover {
 		img { border: 3px solid darken(#dddddd, 10%); }
 		figcaption a { color: darken(@light-gray, 10%); }
+	}
+}
+
+
+/*--------------------*/
+/*------ Staff -------*/
+/*--------------------*/
+
+#page-staff {
+	figure {
+		float: left;
+		position: relative;
+		width: 25%;
+		overflow: hidden;
+		&:hover figcaption {
+			display: block;
+			visibility: visible;
+			opacity: 1;
+			background: rgba(0, 0, 0, 0.6);
+			-webkit-transition: background-color 250ms linear, opacity 250ms linear;
+		}
+	}
+	figcaption {
+		-webkit-transition: background-color 250ms linear, opacity 250ms linear;
+		visibility: none;
+		opacity: 0;
+		height: 100%;
+		left: 0;
+		padding: 72% 0 0 15px;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	#staff-grid {
+		position: relative;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		figure { cursor: pointer; }
+		.staff-name {
+			color: #fff;
+			font-family: @alt-serif;
+			font-size: 1.6em;
+			font-weight: normal;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+			margin: 0 0 -5px 0;
+		}
+		.staff-position {
+			color: darken(#ffffff, 15%);
+			font-style: italic;
+			font-family: @sans;
+			font-size: .90em;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+		}
+		p { display: none; }
+		.staff-links {
+			font-family: @sans;
+			font-size: .75em;
+			font-weight: bold;
+			padding: 0;
+			li {
+				display: inline-block;
+				padding-right: 10px;
+				a { color: #666; }
+			}
+		}
+		.active {
+			// display: none;
+			.staff-name, .staff-position {
+				text-shadow: none;
+			}
+			.staff-name {
+				color: rgb(44, 44, 44);
+				font-size: 1.8em;
+			}
+			.staff-position {
+				font-size: .95em;
+				color: rgb(146, 146, 146);
+			}
+			.staff-bio {
+				display: block;
+				font-family: @sans;
+				font-size: .8em;
+				width: 60%;
+			}
+			width: 100%;
+			figcaption, &:hover figcaption {
+				-webkit-transition: none;
+				background: #f8f8f8;
+			}
+			figcaption {
+				display: block;
+				opacity: 1;
+				visibility: visible;
+				left: 25%;
+				padding: 12px 0 0 3%;
+			}
+			&:hover figcaption {
+				display: block;
+			}
+			img { width: 25%; }
+		}
 	}
 }

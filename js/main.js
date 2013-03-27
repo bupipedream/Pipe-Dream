@@ -118,6 +118,36 @@ $(document).ready(function() {
 		section.find('.section-description[data-section="'+ $(this).data('section') +'"]').show();
 	});
 
+	// randomize the staff on the staff page
+	// http://stackoverflow.com/a/7237495
+	var staffArray = $('#staff-grid').children().get().sort(function() {
+		return 0.5 - Math.random();
+	});
+	$('#staff-grid').append(staffArray);
+
+	// show staff bio on staff page
+	$('#staff-grid figure').click(function(e) {
+		e.preventDefault();
+		var old = $('#staff-grid figure.active');
+		if($(this).hasClass('active')) { // new one is same as old active
+			// just close the extra info
+			$(this).removeClass('active');
+		} else {
+			old.removeClass('active'); // hide old bio
+			$(this).addClass('active'); // show the bio
+
+			$('#staff-grid figure').each(function( index ) {
+				if(((index % 4) !== 0) && $(this).hasClass('active')) {
+					// if not first in row and is new active figure, then
+					// move new photo to beginning of row
+					var newFirst = $(this);
+					var firstInRow = $('#staff-grid figure:nth-child('+ (index - (index%4) + 1) +')');
+					$(firstInRow).before(this);
+				}
+			});
+		}
+	});
+
 });
 
 
