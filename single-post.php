@@ -42,7 +42,7 @@
 		     	?>
 				
 				<div class="single-meta single-meta-above">
-					<div class="social-fb fb-like" data-href="<?= get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+					<div class="social-fb fb-like" data-href="<?= get_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" data-action="recommend"></div>
 					<?php if( function_exists( 'coauthors_posts_links' ) ): ?>
 						<? if( coauthors( null, null, null, null, false ) === "Staff Reports" ): ?>
 							<span class="author" itemprop="author">Staff Reports</span>
@@ -169,7 +169,7 @@
 					<a href="https://twitter.com/share" class="twitter-share-button" data-via="bupipedream" data-related="bupipedream">Tweet</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
-				<div class="fb-like" data-href="<?= get_permalink(); ?>" data-send="true" data-width="600" data-show-faces="true"></div>
+				<div class="fb-like" data-href="<?= get_permalink(); ?>" data-send="true" data-width="600" data-show-faces="true" data-action="recommend"></div>
 			</section>
 			
 			
