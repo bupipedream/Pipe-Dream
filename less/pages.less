@@ -1,16 +1,46 @@
-.page-id-19482 .row, .page-id-7911 .row, .page-id-19483 .row { // thinner pages for join, advertise, staff pages
+// thinner pages for join, advertise, staff, about  pages
+.page-id-19482 .row, .page-id-7911 .row, .page-id-19483 .row, .page-id-8039 .row {
 	max-width: 980px;
 }
 
 // underline links within main page content 
-.page .post a { text-decoration: underline; }
+.page .post {
+	padding: 0 (@colPaddingLR + 5);
+	a { text-decoration: underline; }
+	h2 {
+		font-weight: normal;
+		margin-top: 1.3em;
+		margin-bottom: 0;
+	}
+	#masthead {
+		font-size: .95em;
+		text-align: center;
+		margin: 1em 0; 
+		ul {
+			margin: 0 0 15px 0;
+			padding: 0;
+			li {
+				color: lighten(@text, 20%);
+				list-style: none;
+				em { color: lighten(@text, 30%); }
+				.board {
+					color: @text;
+					display: block;
+					font-weight: bold;
+					margin-bottom: 3px;
+					text-transform: uppercase;
+				}
+			}
+		}
+	} 
+}
 
 .page-title {
 	border-bottom: 1px solid @light-border;
 	font-weight: normal;
 	font-size: 1.9em;
 	margin: 0;
-	padding: 0 @colPaddingLR + 5;
+	padding: 0 (@colPaddingLR + 5);
 }
 
 #page-navigation {
