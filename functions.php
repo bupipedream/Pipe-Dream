@@ -1,5 +1,8 @@
 <?php 
 
+/* 
+	Return the full URL of the current page.
+*/
 function curPageURL() {
 	$pageURL = 'http';
 	$pageURL .= "://";
@@ -11,7 +14,10 @@ function curPageURL() {
 	return $pageURL;
 }
 
-
+/* 
+	Converts an object into an array in PHP.
+	@todo: There really shouldn't be a need to do this.
+*/
 function objectToArray($d) {
 	if (is_object($d)) {
 		// Gets the properties of the given object
@@ -33,56 +39,37 @@ function objectToArray($d) {
 	}
 }
 
+/* 
+	Very useful function for debugging.
+*/
 function debug($var = null) {
 	echo "<pre>";
 		print_r($var);
 	echo "</pre>";
 }
 
-
-/*  written by Cezar Cocu - cezar@cezarcocu.com
-	Twitter Api call, looking for "#BREAKING" since today's date from user: bupipedream
-	returns the string of the most recent twitter post, if it is set
-	-tested on cnnbrk (CNN Breaking)-
-	
+/* 
+	Place RSS feed links in <head>.
 */
-// function twitterApiCall()
-// {
-// 	//date_default_timezone_set('UTC'); //api call needs UTC time
-// 	$sixHoursAgo = time()-(6*60*60);
-// 	$today_formatted = date('Y-m-d:H', $sixHoursAgo);
-// 	$search = "Paterno since:".$today_formatted." from:cnnbrk";
-// 	$url = "http://search.twitter.com/search.json?q=" . urlencode($search);
-// 	
-// 	$curl = curl_init();
-// 	curl_setopt( $curl, CURLOPT_URL, $url );
-// 	curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
-// 	$JSON_result = curl_exec( $curl );
-// 	curl_close( $curl );
-// 	$decoded  = json_decode( $JSON_result, true );
-// 	$text =$decoded['results']['0']['text'];
-// 	debug($decoded);
-// 	if (isset($text))
-// 	{
-// 		echo $text;
-// 	}	
-// }
-
-# Support RSS Feeds
 add_theme_support('automatic-feed-links');
 
-# Small security fix
+/* 
+	Remove WordPress version from head.
+*/
 remove_action ('wp_head', 'wp_generator');
 
-# Enqueue jQuery from Google's servers
-$url = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'; // the URL to check against
+/* 
+	Load jQuery from the Google servers.
+	@todo: There really shouldn't be a need to do this.
+*/
+$url = 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'; // the URL to check against
 $test_url = @fopen($url,'r'); // test parameters
 if($test_url !== false) { // test if the URL exists
-    function load_external_jQuery() { // load external file
-        wp_deregister_script('jquery'); // deregisters the default WordPress jQuery
-        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'); // register the external file
-        wp_enqueue_script('jquery'); // enqueue the external file
-    }
+	function load_external_jQuery() { // load external file
+		wp_deregister_script('jquery'); // deregisters the default WordPress jQuery
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'); // register the external file
+		wp_enqueue_script('jquery'); // enqueue the external file
+	}
 	add_action('wp_enqueue_scripts', 'load_external_jQuery'); // initiate the function
 }
 
