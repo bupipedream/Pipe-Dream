@@ -6,7 +6,7 @@
 	Tags: section, query, zone
 	Requires at least: 3.3.1
 	Tested up to: 3.5.1
-	Version: 0.2
+	Version: 0.3
 */
 
 /*
@@ -18,6 +18,10 @@ function pd_get_category_posts($category_id) {
 	// num posts allowed to show up alongside
 	// featured. depends on the current category.
 	$max_secondary = 0;
+
+	// subcategories don't have featured posts
+	// so just return.
+	if(get_category($category_id)->parent) return false;
 
 	// if category page is news
 	if(get_category_by_slug('news')->term_id === $category_id) { // news
@@ -46,7 +50,7 @@ function pd_get_category_posts($category_id) {
 		$secondary = objectToArray(z_get_posts_in_zone('zone-release-list'));
 		$max_secondary = 2;
 	}
-	
+
 	// determine the featured post in category and
 	// exclude it from article list
 	$posts['feature'] = $featured[0]['ID'];

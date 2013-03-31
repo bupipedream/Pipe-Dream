@@ -11,9 +11,9 @@
 			);
 			query_posts($args);
 		?>
-		
+			
 		<div data-column="left-two-columns" class="span17">
-			<?php if( !get_query_var( 'paged' ) || get_query_var( 'paged' ) === 1 ): ?>
+			<?php if( $featured && !get_query_var( 'paged' ) || get_query_var( 'paged' ) === 1 ): ?>
 			<div class="archive-grid row grid-row">
 				<div data-column="left-column" class="span16">
 					<section class="pad-left pad-right">
@@ -105,14 +105,19 @@
 			
 			<div class="row">
 				
-				<!-- Show section label when browsing through pages -->
 				<?php if( get_query_var( 'paged' ) > 1 ): ?>
+					<!-- show section label when browsing through pages-->
 					<h1 class="page-title">
 						<?= get_the_category_by_ID( $cat ); ?>
 						<small>(Page <?= get_query_var( 'paged' ) ?>)</small>
 					</h1>
+				<?php elseif( !$featured ) : ?>
+					<!-- viewing a subcategory -->
+					<h1 class="page-title">
+						<?= get_the_category_by_ID( $cat ); ?>
+					</h1>
 				<?php endif; ?>
-				
+
 				<section class="archive-list">
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						
