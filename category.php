@@ -133,17 +133,18 @@
 								<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 							</h2>
 							
-							<div class="meta">By 
+							<div class="meta"> 
 								<?php if( function_exists( 'coauthors_posts_links' ) ): ?>
 									<?php if( is_coauthor_for_post('Staff Reports' ) ): ?>
-										<span class="author">Staff Reports</span>
-									<?php elseif( is_coauthor_for_post( 'archives' ) ): ?>
-										<span class="author"><?= pd_is_archived( get_the_ID(), '_author' ) ?></span>
+										By <span class="author">Staff Reports</span> - 
+									<?php elseif( is_coauthor_for_post( 'archives' ) || is_coauthor_for_post( 'guestauthor' ) ): ?>
+										<span class="author">
+											<?= pd_is_archived( get_the_ID(), '_author' ) ? 'By ' . pd_is_archived( get_the_ID(), '_author' ) . ' - ' : '' ?>
+										</span>
 									<?php else: ?>
-										<span class="author"><?php coauthors(); ?></span>
+										By <span class="author"><?php coauthors(); ?></span> - 
 									<?php endif;?>
 								<?php endif;?>
-								- 
 								<time datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="<?php the_time('F j, Y \a\t g:i A T'); ?>"><?php the_time('F j, Y'); ?></time>
 							</div>
 							
