@@ -136,7 +136,7 @@
 							<div class="meta"> 
 								<?php if( function_exists( 'coauthors_posts_links' ) ): ?>
 									<?php if( is_coauthor_for_post('Staff Reports' ) ): ?>
-										By <span class="author">Staff Reports</span> - 
+										<span class="author">Staff Reports</span> - 
 									<?php elseif( is_coauthor_for_post( 'archives' ) || is_coauthor_for_post( 'guestauthor' ) ): ?>
 										<span class="author">
 											<?= pd_is_archived( get_the_ID(), '_author' ) ? 'By ' . pd_is_archived( get_the_ID(), '_author' ) . ' - ' : '' ?>
