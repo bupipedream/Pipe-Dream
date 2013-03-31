@@ -49,7 +49,17 @@
 						<? elseif( coauthors( null, null, null, null, false ) === "The Editorial Board" ): ?>
 							<span class="author" itemprop="author">The Editorial Board</span>
 						<?php elseif( coauthors( null, null, null, null, false ) === "archives" ): ?>
-							<span class="author" itemprop="author"><?= $archive['_author']; ?></span>
+							<span class="author" itemprop="author">
+								<?php 
+									if( isset( $archive['_author'] ) ) {
+										echo $archive['_author'];
+									} else if( strpos( get_the_title() , 'to the editor' ) !== 0 ) {
+										// new posts are often misattributed to "archives"
+										// causing all sorts of issues.
+										echo "Guest Author";
+									}
+								?>
+							</span>
 						<?php else: ?>
 							<span class="author" itemprop="author"><?php coauthors_posts_links(); ?></span>
 						<?php endif;?>
