@@ -91,7 +91,7 @@ require_once('functions/get-photos.php'); // retreive photos for a post
 require_once('functions/performance.php'); // display site performance
 require_once('functions/is-archived.php'); // get custom fields
 require_once('functions/time-since.php'); // display the time since something
-require_once('functions/get-sections.php'); // arrange the home page
+require_once('functions/get-homepage.php'); // arrange the home page
 require_once('functions/get-category-posts.php'); // get the top posts for category pages
 require_once('functions/custom-excerpt.php'); // get excerpt of custom length
 require_once('functions/extend-search.php'); // extend the search bar

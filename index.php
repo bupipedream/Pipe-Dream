@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	
 	<!-- Get all of content on the homepage -->
-	<?php $sections = get_sections(); ?>
+	<?php $sections = pd_get_homepage(); ?>
 		
 	<div class="content row">
 		<div data-column="left-two-columns" class="span17">
