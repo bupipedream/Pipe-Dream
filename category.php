@@ -65,7 +65,7 @@
 							
 								<?php
 									$article = get_post( $post_id, 'ARRAY_A' );
-									$photos = get_photos( $article['ID'], 1 );
+									$photos = get_photos( $article['ID'], 1, array('alt-thumbnail'));
 								?>
 								
 								<article class="clearfix">
