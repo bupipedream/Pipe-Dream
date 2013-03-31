@@ -47,7 +47,9 @@
 						<? if( coauthors( null, null, null, null, false ) === "Staff Reports" ): ?>
 							<span class="author" itemprop="author">Staff Reports</span>
 						<? elseif( coauthors( null, null, null, null, false ) === "The Editorial Board" ): ?>
-							<span class="author" itemprop="author">The Editorial Board</span>
+							<a href="<? bloginfo( 'wpurl' ); ?>/opinion/editorial/" title="More Pipe Dream editorials">
+								<span class="author" itemprop="author">The Editorial Board</span>
+							</a>
 						<?php elseif( coauthors( null, null, null, null, false ) === "archives" ): ?>
 							<span class="author" itemprop="author">
 								<?php 
