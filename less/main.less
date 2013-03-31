@@ -582,6 +582,21 @@ article {
 	}
 }
 
+// posts in the "photo" category
+.post-photo-gallery {
+	.row { max-width: 1024px; }
+	article[id^="post"] {
+		.pad-right;
+		figure {
+			border-bottom: 1px solid @light-border;
+			margin-bottom: 50px;
+			padding-bottom: 30px;
+			.photo-caption {
+				font-size: .75em;
+			}
+		}
+	}
+}
 
 /*-----------------------*/
 /*------ Category -------*/

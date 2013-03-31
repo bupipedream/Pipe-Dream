@@ -13,6 +13,10 @@
 /*---- Get Functions ----*/
 /*-----------------------*/
 
+function get_id($image) {
+	return $image->ID;
+}
+
 function get_caption($image) {
 	return $image->post_excerpt;
 }
@@ -188,6 +192,7 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 			else $i = 0;
 
 			// store image information
+			$photo['photos'][$i]['id'] = get_id($image);
 			$photo['photos'][$i]['caption'] = get_caption($image);
 			$photo['photos'][$i]['credit'] = get_credit($image);
 			$photo['photos'][$i]['priority'] = get_priority($image);

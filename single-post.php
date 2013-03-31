@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div id="content" class="row">
-		<div data-column="left-column" class="span17">
+		<div data-column="left-column" class="<?= !in_category( 'photo' ) ? 'span17' : 'span24' ?>">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!-- Check if the article is part of the archives -->
@@ -71,19 +71,19 @@
 				<section class="post-body"> <!-- article text and images -->
 				
 					<!-- Grab all of the photos associated with article. -->
-					<?php $attachments = get_photos( get_the_ID(), -1 ); ?>
+					<?php $attachments = get_photos( get_the_ID() ); ?>
 					
 					<?php if( isset( $attachments['photos'][0]['src']['medium'] ) ): ?>
 					<meta itemprop="thumbnailUrl" content="<?= $attachments['photos'][0]['src']['medium']; ?>" />
 					<?php endif; ?>
-										
+					
 					<!--
 					// Check if a feature photo exists. If there is a feature photo,
 					// display it and set $paragraphAfter to display any inline photo
 					// after the third paragraph. This ensures that there is enough 
 					// vertical-space between both images.
 					-->
-					<?php if( isset( $attachments['display']['feature'] ) ): ?>
+					<?php if( isset( $attachments['display']['feature'] ) && !in_category('photo') ): ?>
 						
 						<?php $photo = $attachments['photos'][$attachments['display']['feature']]; ?>
 						
@@ -107,7 +107,7 @@
 					
 					
 					<!-- Check if an inline photo exists. -->
-					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1 ): ?>
+					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1  && !in_category('photo')): ?>
 						<?php
 							if( isset( $attachments['display']['inline'] ) ) {
 								$photo = $attachments['photos'][$attachments['display']['inline']];
@@ -157,7 +157,7 @@
 						</div>
 						
 						<!-- Display the extra images in a slideshow  -->
-						<?php if( isset( $attachments['display']['gallery'] ) ): ?>
+						<?php if( isset( $attachments['display']['gallery'] ) && !in_category('photo') ): ?>
 							<?php foreach( $attachments['display']['gallery'] as $image ): ?>
 								<a href="<?= $attachments['photos'][$image]['src']['large']; ?>" title="<?= $attachments['photos'][$image]['caption']; ?> (<?= $attachments['photos'][$image]['credit']; ?>)" class="gallery" rel="gallery">
 									<img src="<?= $attachments['photos'][$image]['src']['single-inline']; ?>" style="display: none;" />
@@ -169,6 +169,20 @@
 						
 						<div itemprop="articleBody">
 							<?php the_content(); ?>
+
+							<?php if( in_category('photo') ): ?>
+
+								<?php foreach ($attachments['photos'] as $index => $photo): ?>
+									<figure id="photo-<?= $photo['id'] ?>">
+										<img src="<?= $photo['src']['large'] ?>">
+										<figcaption>
+											<span class="clearfix photo-credit"><?= $photo['credit']; ?></span>
+											<span class="clearfix photo-caption"><?= $photo['caption']; ?> <a href="<?= the_permalink(); ?>#photo-<?= $photo['id'] ?>">#</a></span>
+										</figcaption>
+									</figure>
+								<?php endforeach; ?>
+
+							<?php endif; ?>
 						</div>
 						
 					<?php endif; ?>
@@ -220,6 +234,6 @@
 			<?php endif; ?>
 			
 		</div>
-		<?php get_sidebar(); ?>
+		<?php if( !in_category( 'photo' ) ) get_sidebar(); ?>
 	</div>
 	<?php get_footer(); ?>

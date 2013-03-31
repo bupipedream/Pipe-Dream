@@ -269,7 +269,7 @@
 
 
 </script>
-<div id="container">
+<div id="container" <?= in_category( 'photo' ) ? 'class="post-photo-gallery"' : '' ?>>
 		
 	<header class="row" role="banner">
 		<section id="date-weather" class="span6">
