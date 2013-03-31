@@ -18,6 +18,7 @@ function pd_get_author_name($article) {
 function pd_set_sections() {
 	
 	// grab all of the articles
+	// requires the WP Zoninator Plugin.
 	$sections['news']['feature'] = objectToArray(z_get_posts_in_zone('zone-news-feature'));
 	$sections['news']['secondary'] = objectToArray(z_get_posts_in_zone('zone-news-secondary'));
 	$sections['news']['article-list'] = objectToArray(z_get_posts_in_zone('zone-news-list'));
