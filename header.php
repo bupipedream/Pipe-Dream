@@ -270,7 +270,7 @@
 
 </script>
 
-<div id="container" <?= in_category( 'photo' ) ? 'class="post-photo-gallery"' : '' ?>>
+<div id="container" <?= (is_single() && in_category( 'photo' )) ? 'class="post-photo-gallery"' : '' ?>>
 	<!--
 	// WordPress doesn't add post categories in the
 	// <body> classes, so we do it on the #container
