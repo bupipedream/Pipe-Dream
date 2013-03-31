@@ -81,7 +81,8 @@
 					// Check if a feature photo exists. If there is a feature photo,
 					// display it and set $paragraphAfter to display any inline photo
 					// after the third paragraph. This ensures that there is enough 
-					// vertical-space between both images.
+					// vertical-space between both images. We also make ensure that
+					// this post is not a photo gallery.
 					-->
 					<?php if( isset( $attachments['display']['feature'] ) && !in_category('photo') ): ?>
 						
@@ -106,7 +107,10 @@
 					<?php endif; ?>
 					
 					
-					<!-- Check if an inline photo exists. -->
+					<!-- 
+					// Check if an inline photo exists and ensure
+					// the post is not a photo gallery.
+					-->
 					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1  && !in_category('photo')): ?>
 						<?php
 							if( isset( $attachments['display']['inline'] ) ) {
@@ -177,7 +181,7 @@
 										<img src="<?= $photo['src']['large'] ?>">
 										<figcaption>
 											<span class="clearfix photo-credit"><?= $photo['credit']; ?></span>
-											<span class="clearfix photo-caption"><?= $photo['caption']; ?> <a href="<?= the_permalink(); ?>#photo-<?= $photo['id'] ?>">#</a></span>
+											<span class="clearfix photo-caption"><?= $photo['caption']; ?> <a href="<?= the_permalink(); ?>#photo-<?= $photo['id'] ?>" title="Permanant link to photo">#</a></span>
 										</figcaption>
 									</figure>
 								<?php endforeach; ?>

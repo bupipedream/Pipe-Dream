@@ -269,7 +269,13 @@
 
 
 </script>
+
 <div id="container" <?= in_category( 'photo' ) ? 'class="post-photo-gallery"' : '' ?>>
+	<!--
+	// WordPress doesn't add post categories in the
+	// <body> classes, so we do it on the #container
+	// for special posts such as photo galleries.
+	-->
 		
 	<header class="row" role="banner">
 		<section id="date-weather" class="span6">
