@@ -14,24 +14,10 @@
 				<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 			</ul>
 		</nav>
-		<h1 class="page-title">About Pipe Dream</h1>
+		<h1 class="page-title"><?php the_title(); ?></h1>
 		<section class="row post">
 			<div class="span16">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel mauris odio, ut fringilla sapien. Donec porttitor scelerisque orci vitae ullamcorper. Nam vulputate dui sed urna egestas in pulvinar eros.</p>
-				
-				<h2>History</h2>
-				<p>Founded in 1946 as The Colonial News, Pipe Dream is Binghamton University’s oldest and largest student newspaper. Pipe Dream is published independently by an Executive Board composed entirely of undergraduate students, without the supervision or assistance of an adviser.</p>
-				<p>Pipe Dream publishes on Tuesdays and Fridays during the semester while the website is constantly updated with new content and breaking news.</p>
-				
-				<h2>Join Pipe Dream</h2>
-				<p>Aenean eget tortor ante, sed eleifend augue. Integer non libero eu arcu mattis faucibus et sed elit. Aliquam et mi vitae tortor mattis ultricies id vel enim. Suspendisse ligula mi, elementum in ullamcorper sit amet, ultrices sed felis.</p>
-				<p>Integer molestie rutrum nisl, mollis aliquam erat lobortis vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin orci quam, tincidunt sed sodales eget, pretium quis velit. Donec lacus erat, porttitor vitae tincidunt sit amet.</p>
-
-				<h2>Advertise</h2>
-				<p>Maliquam erat lobortis vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin orci quam, tincidunt sed sodales eget, pretium quis velit. Donec lacus erat, porttitor vitae tincidunt sit amet.</p>
-
-				<h2>Donations</h2>
-				<p>Maliquam erat lobortis vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin orci quam, tincidunt sed sodales eget, pretium quis velit. Donec lacus erat, porttitor vitae tincidunt sit amet.</p>
+				<?php the_content(); ?>
 			</div>
 
 			<div class="sidebar span8 last">
