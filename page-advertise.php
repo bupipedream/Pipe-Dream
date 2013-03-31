@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-
-	<!-- Get all of content on the homepage -->
-	<?php $sections = get_sections(); ?>
-		
+			
 	<div id="page-advertise" class="content row">
 		<nav id="page-navigation">
 			<ul>
