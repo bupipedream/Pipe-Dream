@@ -72,9 +72,7 @@ function pd_get_category_posts($category_id) {
 			$posts['secondary'][] = get_post( $article['ID'], 'ARRAY_A' );
 			$posts['secondary'][count($posts['secondary']) - 1]['photos'] = get_photos( $article['ID'], 1 );
 			$posts['exclude'][] = $article['ID'];
-			// debug($posts['secondary'][count($posts['secondary'])]['photos']);
 		}
 	}
-	// debug($posts);
 	return $posts;
 }

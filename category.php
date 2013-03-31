@@ -65,8 +65,7 @@
 							
 								<?php
 									$article = $featured['secondary'][$index];
-									// $photos = $article['photos'];
-									// debug($article);
+									$photos = $article['photos'];
 								?>
 								
 								<article class="clearfix">
