@@ -5,8 +5,8 @@
 	Contributors: Daniel O'Connor
 	Tags: images, image, media, photos
 	Requires at least: 3.3.1
-	Tested up to: 3.3.1
-	Version: 0.1
+	Tested up to: 3.5.1
+	Version: 0.2
 */
 
 /*-----------------------*/
@@ -25,7 +25,7 @@ function get_priority($image) {
 	// we used to rank images based on a user-defined priority. images
 	// with priority '1' were featured under the headline in a large
 	// display. the others were shown inline with the article and
-	// in order of priority. in a recent update wordpress (3.3?), wordpress
+	// in order of priority. in a recent update wordpress (3.5?), wordpress
 	// changed how they prioritize photos. photos are now prioritized
 	// based on their order in the menu. therefore it is not possible to
 	// assign priorities and have no images with a priority of 1. the
@@ -124,6 +124,38 @@ function is_landscape($image) {
 /*
 	Returns photos for articles. Supports 
 	archived posts as well.
+
+	Photos can be stored in two ways:
+
+	- Attached to post: The current WordPress
+	implementation.
+	- Custom Field: A custom field attached to a
+	post that contains a filename, caption, credit,
+	etc. These photos were from the pre-WordPress
+	versions of the Pipe Dream website.
+
+	In the current layout, photos are assigned a
+	menu-order that determines the order they appear
+	in. The menu-order depends on the order of the
+	photos in the post edit page. 
+
+	Photos with a custom field set to "feature" will
+	display under the headline as a larger image.
+	The image that isn't featured and has the lowest
+	menu-order (higher priority) will display inline
+	with the article. The remaining photos, if any,
+	will be displayed as a slideshow.
+
+	Before WordPress 3.5 there was no "_position" custom
+	field and menu-order could be custom specified for
+	each image. The new media interface changed that,
+	so the get_priority() function was beefed up a bit.
+
+	If, for some reason, this code is still around 20
+	years from now, make sure the archives are still
+	working. And good luck.
+
+	- Dan
 
 	@param int $post_id: Post ID (REQUIRED)
 	@param int $num: Number of photos to return.
@@ -225,7 +257,10 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 		// return all of the requested photos
 		return $photo;
 	} else {
-		// check if the image is from the archives
+		// check if the image is from the archives. images on our old 
+		// websites (custom CMS for some time then College Publisher)
+		// were not saved as attachments, but were stored as custom
+		// fields.
 		$meta = get_post_custom($post_id);
 		if($meta && isset($meta['_image1'])) {
 			$meta['_image1'] = get_image($meta['_image1']);
