@@ -18,11 +18,38 @@ function get_caption($image) {
 }
 
 function get_credit($image) {
-	return get_post_meta($image->ID, '_credit', 'single');
+	return get_post_meta($image->ID, '_credit', true);
 }
 
 function get_priority($image) {
-	return $image->menu_order;
+	// we used to rank images based on a user-defined priority. images
+	// with priority '1' were featured under the headline in a large
+	// display. the others were shown inline with the article and
+	// in order of priority. in a recent update wordpress (3.3?), wordpress
+	// changed how they prioritize photos. photos are now prioritized
+	// based on their order in the menu. therefore it is not possible to
+	// assign priorities and have no images with a priority of 1. the
+	// conditional below will ensure that old photos display as intended. 
+	if(strtotime($image->post_date) < strtotime('2013-03-30 00:00:00')) {		
+		return $image->menu_order;
+	}
+
+	// check to see if image position was set to 'feature'. if 
+	// so it will display large and under the headline. 
+	if(get_post_meta($image->ID, '_position', true) === 'feature') {
+		return 1;	
+	}
+	
+	// if the image is not featured we don't want it to have a 
+	// priority of 1 so we will add 1 to it. the default
+	// priority for all images is 0, so we only do this
+	// for images that already have a custom priority.
+	if($image->menu_order !== 0) return $image->menu_order + 1;
+
+	// images that were published after the March 30, 2013,
+	// don't have a _position meta value set to 'feature',
+	// and weren't assigned a custom menu order.
+	return 0;
 }
 
 function get_width($image) {
@@ -127,7 +154,7 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 			$image->attachment_metadata = wp_get_attachment_metadata($image->ID);
 			if(isset($photo['photos'])) $i = count($photo['photos']); // counter
 			else $i = 0;
-			
+
 			// store image information
 			$photo['photos'][$i]['caption'] = get_caption($image);
 			$photo['photos'][$i]['credit'] = get_credit($image);
