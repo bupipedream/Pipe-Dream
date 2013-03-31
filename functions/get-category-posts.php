@@ -51,19 +51,30 @@ function pd_get_category_posts($category_id) {
 		$max_secondary = 2;
 	}
 
-	// determine the featured post in category and
-	// exclude it from article list
-	$posts['feature'] = $featured[0]['ID'];
-	$posts['exclude'][0] = $posts['feature'];
+	// determine the featured post in category
+	$posts['feature'] = get_post( $featured[0]['ID'], 'ARRAY_A' );
+	$posts['feature']['photos'] = get_photos( $posts['feature']['ID'], 1 );
+	
+	// if the featured article doesn't have a photo,
+	// return false so category.php will display the
+	// simple article-list layout.
+	if(!$posts['feature']['photos']) return false;
+
+	// since there is a photo, we'll display the featured
+	// post in the dominant position. therefore, we should
+	// exclude it from the article list.
+	$posts['exclude'][0] = $posts['feature']['ID'];
 	
 	$posts['secondary'] = array();
 
 	foreach($secondary as $article) { // sidebar posts
 		if(count($posts['secondary']) < $max_secondary) {
-			$posts['secondary'][] = $article['ID'];
+			$posts['secondary'][] = get_post( $article['ID'], 'ARRAY_A' );
+			$posts['secondary'][count($posts['secondary']) - 1]['photos'] = get_photos( $article['ID'], 1 );
 			$posts['exclude'][] = $article['ID'];
+			// debug($posts['secondary'][count($posts['secondary'])]['photos']);
 		}
 	}
-
+	// debug($posts);
 	return $posts;
 }

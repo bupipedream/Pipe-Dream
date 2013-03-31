@@ -22,8 +22,8 @@
 						<article>
 							
 							<?php 
-								$article = get_post( $featured['feature'], 'ARRAY_A' );
-								$photos = get_photos( $article['ID'], 1 );
+								$article = $featured['feature'];
+								$photos = $article['photos'];
 							?>
 							
 							<figure>
@@ -54,7 +54,7 @@
 				<!-- Secondary featured articles -->
 				<div data-column="middle-column" class="span8 last">
 					<section id="category-secondary">
-						<?php foreach( $featured['secondary'] as $post_id ): ?>
+						<?php foreach( $featured['secondary'] as $index => $post_id ): ?>
 							
 							<?php 
 								// Some of the zones on the homepage display
@@ -64,8 +64,9 @@
 							?>
 							
 								<?php
-									$article = get_post( $post_id, 'ARRAY_A' );
-									$photos = get_photos( $article['ID'], 1, array( 'custom-75x75-crop' ));
+									$article = $featured['secondary'][$index];
+									// $photos = $article['photos'];
+									// debug($article);
 								?>
 								
 								<article class="clearfix">
