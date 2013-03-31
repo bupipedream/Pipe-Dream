@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 	<div class="content row">
 		<?php
+			// get all of the featured posts, then load
+			// everything else.
 			$featured = pd_get_category_posts( $cat ); // $cat is a WordPress variable
 			$args = array(
 				'post__not_in' => $featured['exclude'],
