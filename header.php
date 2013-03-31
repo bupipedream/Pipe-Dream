@@ -313,7 +313,7 @@
 				<ul>
 					<?php $sub_categories = get_categories( array('parent' => $category->term_id) ); ?>
 					<? foreach($sub_categories as $sub_category): ?>
-						<li><a href="<? bloginfo( 'wpurl' ); ?>/news/<?= $category->slug ?>/"><?= $sub_category->name; ?></a></li>
+						<li><a href="<? bloginfo( 'wpurl' ); ?>/<?= $category->slug ?>/<?= $sub_category->slug ?>/"><?= $sub_category->name; ?></a></li>
 					<? endforeach; ?>
 				</ul>
 			<? endforeach; ?>
