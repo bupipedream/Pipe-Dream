@@ -1,8 +1,5 @@
 <?php get_header(); ?>
-	
-	<!-- Get all of content on the homepage -->
-	<?php $sections = get_sections(); ?>
-		
+			
 	<div id="page-staff" class="content row">
 		<nav id="page-navigation">
 			<ul>
