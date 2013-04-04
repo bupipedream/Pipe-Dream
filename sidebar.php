@@ -1,26 +1,8 @@
 <div id="rightcol" class="span7 last">
 	<!-- Right Column -->
-	<section class="ad">
+	<section id="ad-300x250" class="ad">
 
 		<!--/* OpenX Javascript Tag v2.8.10 */-->
-
-		<!--/*
-		  * The backup image section of this tag has been generated for use on a
-		  * non-SSL page. If this tag is to be placed on an SSL page, change the
-		  *   'http://www.bupipedream.com/openx/www/delivery/...'
-		  * to
-		  *   'https://www.bupipedream.com/openx/www/delivery/...'
-		  *
-		  * This noscript section of this tag only shows image banners. There
-		  * is no width or height in these banners, so if you want these tags to
-		  * allocate space for the ad before it shows, you will need to add this
-		  * information to the <img> tag.
-		  *
-		  * If you do not want to deal with the intricities of the noscript
-		  * section, delete the tag (from <noscript>... to </noscript>). On
-		  * average, the noscript tag is called from less than 1% of internet
-		  * users.
-		  */-->
 
 		<script type='text/javascript'><!--//<![CDATA[
 		   var m3_u = (location.protocol=='https:'?'https://www.bupipedream.com/openx/www/delivery/ajs.php':'http://www.bupipedream.com/openx/www/delivery/ajs.php');

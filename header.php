@@ -350,7 +350,21 @@
 		}(document));
 
 </script>
+
+<div id="ad-720x90">
+	<!-- begin ad tag -->
+	<script type="text/javascript">
+		//<![CDATA[
+		ord=Math.random()*10000000000000000;
+		document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/sunybinghamton.afc/;kw=campbaruchaprmay2013ny016m720x90;sz=728x90;ord=' + ord + '?"><\/script>');
+		//]]>
+	</script>
+	<noscript><a href="http://ad.doubleclick.net/jump/sunybinghamton.afc/;kw=campbaruchaprmay2013ny016m720x90;sz=728x90;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/sunybinghamton.afc/;kw=campbaruchaprmay2013ny016m720x90;sz=728x90;ord=123456789?" border="0" alt="" /></a></noscript>
+	<!-- end ad tag -->
+</div>
+
 <div id="container">
+
 	<header class="row">
 		<div id="date-weather">
 			<!-- Date and Weather -->
