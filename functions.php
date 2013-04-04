@@ -73,6 +73,7 @@ if($test_url !== false) { // test if the URL exists
 	add_action('wp_enqueue_scripts', 'load_external_jQuery'); // initiate the function
 }
 
+require_once('functions/archive-redirect.php'); // set custom image sizes
 require_once('functions/image-sizes.php'); // set custom image sizes
 require_once('functions/get-photos.php'); // retreive photos for a post
 require_once('functions/performance.php'); // display site performance
