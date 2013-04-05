@@ -11,7 +11,7 @@
 			);
 			query_posts($args);
 		?>
-			
+		
 		<div data-column="left-two-columns" class="span17">
 			<?php if( $featured && !get_query_var( 'paged' ) || get_query_var( 'paged' ) === 1 ): ?>
 			<div class="archive-grid row grid-row">

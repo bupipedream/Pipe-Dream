@@ -19,9 +19,11 @@ function pd_get_category_posts($category_id) {
 	// featured. depends on the current category.
 	$max_secondary = 0;
 
-	// subcategories don't have featured posts
-	// so just return.
-	if(get_category($category_id)->parent) return false;
+	// whitelisted categories that support the zoninator layout
+	$whitelist = array('news', 'sports', 'opinion', 'release');
+	if(!in_array(get_category($category_id)->slug, $whitelist)) {
+		return false;
+	}
 
 	// if category page is news
 	if(get_category_by_slug('news')->term_id === $category_id) { // news
