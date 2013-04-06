@@ -40,6 +40,19 @@ function objectToArray($d) {
 }
 
 /* 
+	Display post categories in the as classes in <body>.
+	http://codex.wordpress.org/Function_Reference/body_class#Add_Classes_By_Filters
+*/
+function category_id_class($classes) {
+	global $post;
+	foreach((get_the_category($post->ID)) as $category)
+		$classes[] = $category->category_nicename;
+	return $classes;
+}
+add_filter('post_class', 'category_id_class');
+add_filter('body_class', 'category_id_class');
+
+/* 
 	Very useful function for debugging.
 */
 function debug($var = null) {
@@ -84,9 +97,9 @@ require_once('functions/get-category-posts.php'); // get the top posts for categ
 require_once('functions/custom-excerpt.php'); // get excerpt of custom length
 require_once('functions/extend-search.php'); // extend the search bar
 
-if(is_admin()) {
+if( is_admin() ) {
 	require_once('functions/add-deck.php'); // support article decks
 	require_once('functions/theme-options.php'); // support article decks
 	require_once('functions/user-fields.php'); // set custom user profile fields
 	require_once('functions/attachment-fields.php'); // add custom meta-fields to file uploads
-} 
+}

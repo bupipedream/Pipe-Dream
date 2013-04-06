@@ -582,9 +582,18 @@ article {
 	}
 }
 
-// posts in the "photo" category
-.post-photo-gallery {
+/*------------------------*/
+/*--- Multimedia Posts ---*/
+/*------------------------*/
+
+body.multimedia {
 	.row { max-width: 1024px; }
+	article[id^="post"] {
+		.pad-right;
+	}
+}
+
+body.photo {
 	article[id^="post"] {
 		.pad-right;
 		figure {
@@ -597,6 +606,9 @@ article {
 		}
 	}
 }
+
+body.graphic {}
+
 
 /*-----------------------*/
 /*------ Category -------*/

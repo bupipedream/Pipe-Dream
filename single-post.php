@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div id="content" class="row">
-		<div data-column="left-column" class="<?= !in_category( 'photo' ) ? 'span17' : 'span24' ?>">
+		<div data-column="left-column" class="<?= !in_category( array( 'photo', 'graphic' ) ) ? 'span17' : 'span24' ?>">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!-- Check if the article is part of the archives -->
@@ -84,7 +84,7 @@
 					// vertical-space between both images. We also make ensure that
 					// this post is not a photo gallery.
 					-->
-					<?php if( isset( $attachments['display']['feature'] ) && !in_category('photo') ): ?>
+					<?php if( isset( $attachments['display']['feature'] ) && !in_category(array('photo' , 'graphic')) ): ?>
 						
 						<?php $photo = $attachments['photos'][$attachments['display']['feature']]; ?>
 						
@@ -111,7 +111,7 @@
 					// Check if an inline photo exists and ensure
 					// the post is not a photo gallery.
 					-->
-					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1  && !in_category('photo')): ?>
+					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1  && !in_category(array('photo' , 'graphic'))): ?>
 						<?php
 							if( isset( $attachments['display']['inline'] ) ) {
 								$photo = $attachments['photos'][$attachments['display']['inline']];
@@ -172,11 +172,11 @@
 					<?php else: ?> <!-- There is a feature photo, but no inline photo -->
 						
 						<div itemprop="articleBody">
-							<?php the_content(); ?>
 
-							<?php if( in_category('photo') ): ?>
+							<?php if( in_category( 'photo' ) ): ?>
+								<?php the_content(); ?>
 
-								<?php foreach ($attachments['photos'] as $index => $photo): ?>
+								<?php foreach ( $attachments['photos'] as $index => $photo ): ?>
 									<figure id="photo-<?= $photo['id'] ?>">
 										<img src="<?= $photo['src']['large'] ?>">
 										<figcaption>
@@ -186,6 +186,18 @@
 									</figure>
 								<?php endforeach; ?>
 
+							<?php elseif( in_category( 'graphic' ) ): ?>
+	
+								<figure id="graphic-<?= $attachments['photos'][0]['id'] ?>">
+									<img src="<?= $attachments['photos'][0]['src']['large'] ?>">
+									<figcaption>
+										<span class="clearfix photo-credit"><?= $attachments['photos'][0]['credit']; ?></span>
+									</figcaption>
+								</figure>
+								<?php the_content(); ?>
+
+							<?php else : ?>
+								<?php the_content(); ?>
 							<?php endif; ?>
 						</div>
 						
@@ -238,6 +250,6 @@
 			<?php endif; ?>
 			
 		</div>
-		<?php if( !in_category( 'photo' ) ) get_sidebar(); ?>
+		<?php if( !in_category( 'photo', 'graphic' ) ) get_sidebar(); ?>
 	</div>
 	<?php get_footer(); ?>
