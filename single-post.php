@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div id="content" class="row">
-		<div data-column="left-column" class="<?= !in_category( array( 'photo', 'graphic' ) ) ? 'span17' : 'span24' ?>">
+		<div data-column="left-column" class="<?= !in_category( 'multimedia' ) ? 'span17' : 'span24' ?>">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!-- Check if the article is part of the archives -->
@@ -84,7 +84,7 @@
 					// vertical-space between both images. We also make ensure that
 					// this post is not a photo gallery.
 					-->
-					<?php if( isset( $attachments['display']['feature'] ) && !in_category(array('photo' , 'graphic')) ): ?>
+					<?php if( isset( $attachments['display']['feature'] ) && !in_category( 'multimedia' ) ): ?>
 						
 						<?php $photo = $attachments['photos'][$attachments['display']['feature']]; ?>
 						
@@ -111,7 +111,7 @@
 					// Check if an inline photo exists and ensure
 					// the post is not a photo gallery.
 					-->
-					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1  && !in_category(array('photo' , 'graphic'))): ?>
+					<?php if( ( isset( $attachments['display']['inline'] ) || isset( $archive['_image1'] ) ) && $attachments['photos'][$attachments['display']['inline']]['priority'] !== -1  && !in_category( 'multimedia' )): ?>
 						<?php
 							if( isset( $attachments['display']['inline'] ) ) {
 								$photo = $attachments['photos'][$attachments['display']['inline']];
@@ -161,7 +161,7 @@
 						</div>
 						
 						<!-- Display the extra images in a slideshow  -->
-						<?php if( isset( $attachments['display']['gallery'] ) && !in_category('photo') ): ?>
+						<?php if( isset( $attachments['display']['gallery'] ) && !in_category( 'multimedia' ) ): ?>
 							<?php foreach( $attachments['display']['gallery'] as $image ): ?>
 								<a href="<?= $attachments['photos'][$image]['src']['large']; ?>" title="<?= $attachments['photos'][$image]['caption']; ?> (<?= $attachments['photos'][$image]['credit']; ?>)" class="gallery" rel="gallery">
 									<img src="<?= $attachments['photos'][$image]['src']['single-inline']; ?>" style="display: none;" />
@@ -250,6 +250,6 @@
 			<?php endif; ?>
 			
 		</div>
-		<?php if( !in_category( 'photo', 'graphic' ) ) get_sidebar(); ?>
+		<?php if( !in_category( 'multimedia' ) ) get_sidebar(); ?>
 	</div>
 	<?php get_footer(); ?>

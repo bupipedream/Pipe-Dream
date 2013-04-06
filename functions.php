@@ -45,8 +45,11 @@ function objectToArray($d) {
 */
 function category_id_class($classes) {
 	global $post;
-	foreach((get_the_category($post->ID)) as $category)
-		$classes[] = $category->category_nicename;
+	if( is_single() ) {
+		foreach((get_the_category($post->ID)) as $category) {
+			$classes[] = $category->category_nicename;
+		}
+	}
 	return $classes;
 }
 add_filter('post_class', 'category_id_class');
