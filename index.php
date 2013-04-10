@@ -16,7 +16,7 @@
 						
 						<!-- Two Articles -->
 						
-						<?php foreach( $sections['news']['secondary'] as $key => $article ): ?>
+						<?php foreach( $sections['feature']['article-list'] as $key => $article ): ?>
 						
 						<article class="clearfix">
 							
@@ -48,7 +48,8 @@
 				<div data-column="middle-column" class="span15 last">
 					<section id="atf-feature">
 						<!-- Above-the-Fold Article -->
-						<?php foreach( $sections['news']['feature'] as $article ): ?>
+							<?//php debug($sections); ?>
+						<?php foreach( $sections['feature']['feature'] as $article ): ?>
 							<article class="home-feature">
 								
 								<figure class="clearfix">
@@ -85,16 +86,24 @@
 				<div data-column="left-column" class="span9">
 					<section id="daily-photo" class="pad-left pad-right">
 
-						<h1 class="section-heading"><a href="">Daily Photo</a></h1>
-						<article>
-							<figure>
-								<img src="https://sphotos-a.xx.fbcdn.net/hphotos-ash4/485851_10150795823137420_908715566_n.jpg">
-								<figcaption>
-									<time class="photo-date">Jan. 20, 2012</time>
-									<span class="photo-credit">Daniel O'Connor</span>
-								</figcaption>
-							</figure>
-						</article>
+						<h1 class="section-heading">
+							<a href="<?= home_url(); ?>/multimedia/">Multimedia</a>
+						</h1>
+
+						<?php foreach( $sections['multimedia']['feature'] as $index => $article ): ?>
+							<article>
+								<figure>
+									<a href="<?= get_permalink( $article['ID'] ); ?>"><img src="<?= $article['photo']['src']['single-inline'] ?>"></a>
+									<figcaption>
+										<time class="photo-date" datetime="<?= date( 'Y-m-j\TH:i:sT', strtotime( $article['post_date'] ) ); ?>" title="<?= date( 'F j, Y \a\t g:i A T', strtotime( $article['post_date'] ) ); ?>">
+											<?= date( 'M. m, Y', strtotime( $article['post_date'] ) ); ?>
+										</time>
+										<span class="photo-credit"><?= $article['post_author']['name']; ?></span>
+									</figcaption>
+								</figure>
+							</article>
+						<?php endforeach; ?>
+
 
 					</section>
 

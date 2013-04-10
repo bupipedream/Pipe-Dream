@@ -19,8 +19,9 @@ function pd_set_sections() {
 	
 	// grab all of the articles
 	// requires the WP Zoninator Plugin.
-	$sections['news']['feature'] = objectToArray(z_get_posts_in_zone('zone-news-feature'));
-	$sections['news']['secondary'] = objectToArray(z_get_posts_in_zone('zone-news-secondary'));
+	$sections['feature']['feature'] = objectToArray(z_get_posts_in_zone('feature-feature'));
+	$sections['feature']['article-list'] = objectToArray(z_get_posts_in_zone('feature-list'));
+
 	$sections['news']['article-list'] = objectToArray(z_get_posts_in_zone('zone-news-list'));
 	
 	$sections['sports']['feature'] = objectToArray(z_get_posts_in_zone('zone-sports-feature'));
@@ -29,11 +30,12 @@ function pd_set_sections() {
 	$sections['release']['feature'] = objectToArray(z_get_posts_in_zone('zone-release-feature'));
 	$sections['release']['article-list'] = objectToArray(z_get_posts_in_zone('zone-release-list'));
 	
-	$sections['editorial']['feature'] = wp_get_recent_posts(array('numberposts' => 1, 'category' => 10));
+	$sections['editorial']['feature'] = wp_get_recent_posts(array('numberposts' => 1, 'category' => get_category_by_slug('editorial')->cat_ID));
 	$sections['opinion']['article-list'] = objectToArray(z_get_posts_in_zone('zone-opinion-list'));
+	$sections['multimedia']['feature'] = wp_get_recent_posts(array('numberposts' => 1, 'category' => get_category_by_slug('photo')->cat_ID));
 	
 	// used for concert announcements
-	$sections['feature']['concert'] = objectToArray(z_get_posts_in_zone('zone-feature-concert'));
+	// $sections['feature']['concert'] = objectToArray(z_get_posts_in_zone('zone-feature-concert'));
 	return $sections;
 }
 
