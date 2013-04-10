@@ -48,18 +48,16 @@
 	<?php endif; ?>
 		
 	<?php if( is_home() || is_category() ): ?>
-<!-- 		
-		<section class="">
+ 		
+		<section class="sidebar-block sidebar-block-center">
 			<div class="fb-like-box" data-href="http://www.facebook.com/bupipedream" data-width="292" data-height="185" data-show-faces="true" data-border-color="#cccccc" data-stream="false" data-header="false"></div>
 		</section>
--->
- <!-- 		
-		<section>
+
+		<section class="sidebar-block sidebar-block-center">
 			<a href="https://twitter.com/bupipedream" class="twitter-follow-button" data-show-count="true">Follow @bupipedream</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</section>
 		
- -->		
  		<section id="sidebar-most-read" class="sidebar-block sidebar-article-list sidebar-article-list-small">
 			<h1 class="section-heading">Most Read</h1>
 			<ol>
