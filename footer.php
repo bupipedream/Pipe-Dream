@@ -2,8 +2,17 @@
 	<footer id="footer">
 		<section id="stabilizing-destabilizing">
 			<div class="row">
-				<span id="stabilizing" class="pad-left">#stabilizing: have a good night, sir</span>
-				<span id="destabilizing" class="pad-right">#destabilizing: no salad dressing</span>
+				<?php
+					$options = get_option( 'pd_theme_options' );
+					$stabilizing = $options['stabilizing'];
+					$destabilizing = $options['destabilizing'];
+				?>
+				<span id="stabilizing" class="pad-left">
+					<?= $stabilizing ? '#stabilizing: ' . $stabilizing : ''; ?>
+				</span>
+				<span id="destabilizing" class="pad-right">
+					<?= $destabilizing ? '#destabilizing: ' . $destabilizing : ''; ?>
+				</span>
 			</div>
 		</section>
 		<nav id="footer-navigation" class="row">
