@@ -48,7 +48,6 @@
 				<div data-column="middle-column" class="span15 last">
 					<section id="atf-feature">
 						<!-- Above-the-Fold Article -->
-							<?//php debug($sections); ?>
 						<?php foreach( $sections['feature']['feature'] as $article ): ?>
 							<article class="home-feature">
 								

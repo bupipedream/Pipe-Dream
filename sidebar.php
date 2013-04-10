@@ -1,6 +1,5 @@
 <div id="sidebar" class="span7 last">
-	<!-- Right Column -->
-	
+	<!-- Right Column -->	
 
 	<!--/* OpenX Javascript Tag v2.8.10 */-->
 

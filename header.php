@@ -335,12 +335,29 @@
 			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 		</ul>
 	</nav>
-<div id="rave" class="row">
-	<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
-</div>
 	<section id="mobile-search" class="row">
 		<form role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
 			<input type="search" name="s" autocomplete="on" placeholder="Search..." />
 			<input type="submit" value="" />
 		</form>
 	</section>
+	<div id="rave" class="row">
+		<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
+	</div>
+	<?
+		$options = get_option('pd_theme_options');
+		$message = $options['message'];
+		$time = $options['time'];
+		$theme = $options['theme'];
+		$label = $options['label'];
+		$notice_status = $options['radioinput'];
+		if( $notice_status ):
+	?>
+	<div id="notice-bar" class="row <?= $theme; ?>">
+		<span class="notice-bar-label"><?= $label; ?></span>
+		<span class="notice-bar-time">
+			<?= $time ? '<time>' . $time . '</time>' : '' ?>
+		</span>
+		<span class="notice-bar-message"><?= $message; ?></span>
+	</div>
+	<? endif; ?>

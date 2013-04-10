@@ -278,10 +278,6 @@ header[role="banner"] {
 			}
 		}
 	}
-	/* RAVE emergency alerts */
-	#rave {
-	}
-
 }
 
 #mobile-search-link {
@@ -326,6 +322,35 @@ header[role="banner"] {
 		margin-left: -6px;
 		width: 48px;
 		.border-radius(0 3px 3px 0);
+	}
+}
+
+#notice-bar {
+	border-top: 1px solid #B8B8B8;
+	font-family: @sans;
+	font-size: .8em;
+	padding: 8px @colPaddingLR;
+	.box-sizing(border-box);
+	a { text-decoration: underline; }
+	&.breaking {
+		background: #fff;
+		border-bottom: 3px solid #BB3838;	
+		color: #444444;
+	}
+	&.message {
+		background: #fefef5;
+		border-bottom: 2px solid #aeaeae;
+		color: #333;
+	}
+	.notice-bar-time {
+		font-size: .9em;
+		margin-left: 5px;
+		margin-right: 2%;
+		text-transform: uppercase;
+	}
+	.notice-bar-label {
+		font-weight: bold;
+		text-transform: uppercase;
 	}
 }
 
