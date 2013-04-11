@@ -442,12 +442,12 @@ nav[role="navigation"] {
 			&.secondary-hidden {
 				display: none;
 			}
+			&:first-child { padding-left: 15px; }
 		}
 		a {
 			color: lighten(@text-color, 40%);
 			padding: 7px 5px;
 			.transition(color .500s);
-			&:first-child { padding-left: 15px; }
 			&:hover {
 				color: @text-color;
 				.transition(color .500s);
@@ -923,11 +923,12 @@ body.graphic {}
 #ad-720x90 {
 	background: #f0f0f0;
 	border-bottom: 1px solid #e3e3e3;
-	padding: 15px 0;
+	padding: 15px;
 	margin-bottom: 33px;
 }
 
 #ad-468x60 {
+	img { max-width: 95%; }
 	padding-bottom: 15px;
 }
 

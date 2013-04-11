@@ -453,17 +453,19 @@
 }
 
 @media only screen and (max-width : 730px) {
-	nav[role="navigation"] {
-		.secondary-hidden {
-			display: inline-block !important;
+	.page {
+		nav[role="navigation"] {
+			.secondary-hidden {
+				display: inline-block !important;
+			}
+		}
+		#page-navigation { display: none; }
+		.post {
+			padding: 0 !important;
 		}
 	}
-	#page-navigation { display: none; }
 	.page-title {
 		padding-left: 13px;
-	}
-	.page .post {
-		padding: 0 !important;
 	}
 	#page-advertise {
 		.hero { padding: 20px 0 15px 0; }
