@@ -29,9 +29,9 @@
 						<p>Local advertisers are classified as all those companies either headquartered within Broome County or whose Broome County local branch is placing an advertisement.</p>
 						<p>The best way to contact an advertising representative is to <a href="mailto:advertising@bupipedream.com">e-mail the advertising manager</a>. For information on rates and our publication schedule, please see the advertising forms below.</p>
 						<ul>
-							<li><a href="#">Display Ad Form (2012 - 2013)</a></li>
-							<li><a href="#">Classified Ad Form (2012 - 2013)</a></li>
-							<li><a href="#">Web Ad Form (2012 - 2013)</a></li>
+							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Display-Ad-Form-Spring-2013.pdf">Display Ad Form (2012 - 2013)</a></li>
+							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Classified-Ad-Form-Spring-2013.pdf">Classified Ad Form (2012 - 2013)</a></li>
+							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Web-Ad-Form-2012.pdf">Web Ad Form (2012 - 2013)</a></li>
 						</ul>
 					</li>
 					<li id="national-advertising">
@@ -39,9 +39,9 @@
 						<p>Please direct all national advertising orders and questions to our partners at MediaMate:</p>
 						<dl class="address inline">
 							<dt>Phone:</dt>
-								<dd>(888) 897-7711</dd>
+								<dd>888-897-7711</dd>
 							<dt>Fax:</dt>
-								<dd>(978) 231-0300</dd>
+								<dd>978-231-0300</dd>
 							<dt>Email:</dt>
 								<dd><a href="mailto:orders@mymediamate.com">orders@mymediamate.com</a></dd>
 						</dl>
@@ -75,16 +75,16 @@
 							<dt>Manager:</dt>
 								<dd>Kimberly Bower</dd>
 							<dt>Phone:</dt>
-								<dd>(888) 897-7711</dd>
+								<dd>607-777-2516</dd>
 							<dt>Fax:</dt>
-								<dd>(978) 231-0300</dd>
+								<dd>607-777-2600</dd>
 							<dt>Email:</dt>
-								<dd><a href="mailto:orders@mymediamate.com">orders@mymediamate.com</a></dd>
+								<dd><a href="mailto:business@bupipedream.com">business@bupipedream.com</a></dd>
 							<dt>Address:</dt>
 								<dd>University Union WB03<br>P.O. Box 6000<br>Binghamton, N.Y. 13902</dd>
 						</dl>
 				</div>
-			</div>			
+			</div>
 		</section>
 	</div>
 	<?php get_footer(); ?>
