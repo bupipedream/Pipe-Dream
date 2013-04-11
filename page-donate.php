@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="content row">
+	<div id="page-donate" class="content row">
 		<nav id="page-navigation">
 			<ul>
 				<li><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>

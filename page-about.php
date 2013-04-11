@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 			
-	<div id="page-advertise" class="content row">
+	<div id="page-about" class="content row">
 		<nav id="page-navigation">
 			<ul>
 				<li class="active"><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
@@ -13,7 +13,7 @@
 		</nav>
 		<h1 class="page-title"><?php the_title(); ?></h1>
 		<section class="row post">
-			<div class="span16">
+			<div data-column="left-column" class="span16">
 				<?php the_content(); ?>
 			</div>
 
