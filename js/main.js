@@ -87,7 +87,7 @@ $(document).ready(function() {
 				default: iconSrc = false; break;
 			}
 
-			var weatherHTML = '<span title="' + weather.currently + ' and ' + weather.temp + ' degrees in '+ weather.city +', '+weather.region+'">'
+			var weatherHTML = '<span title="' + weather.currently + ', ' + weather.temp + ' degrees in '+ weather.city +', '+weather.region+'">'
 			if(iconSrc) weatherHTML += '<img src="' + iconSrc + '" alt="' + weather.currently + '">';
 			weatherHTML += weather.temp + '&deg</span>';
 			$("#weather").html(weatherHTML);
