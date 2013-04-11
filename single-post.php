@@ -15,7 +15,7 @@
 				<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
 			</section>
  -->
-			<article id="post-<?php the_ID(); ?>" class="pad-left" itemscope itemtype="http://schema.org/Article">
+			<article id="post-<?php the_ID(); ?>" class="pad-left clearfix" itemscope itemtype="http://schema.org/Article">
 				
 				<div class="single-label single-date">
 					<time itemprop="dateCreated" datetime="<?php the_time('Y-m-j\TH:i:sT'); ?>" title="Published on <?php the_time('F j, Y \a\t g:i A T'); ?>">
