@@ -71,18 +71,18 @@
 				</figure>
 				<div id="contact-business" class="sidebar-block">
 					<h2 class="section-heading">Contact Business</h2>
-						<dl class="address inline">
-							<dt>Manager:</dt>
-								<dd>Kimberly Bower</dd>
-							<dt>Phone:</dt>
-								<dd>607-777-2516</dd>
-							<dt>Fax:</dt>
-								<dd>607-777-2600</dd>
-							<dt>Email:</dt>
-								<dd><a href="mailto:business@bupipedream.com">business@bupipedream.com</a></dd>
-							<dt>Address:</dt>
-								<dd>University Union WB03<br>P.O. Box 6000<br>Binghamton, N.Y. 13902</dd>
-						</dl>
+					<dl class="address inline">
+						<dt>Manager:</dt>
+							<dd>Kimberly Bower</dd>
+						<dt>Phone:</dt>
+							<dd>607-777-2516</dd>
+						<dt>Fax:</dt>
+							<dd>607-777-2600</dd>
+						<dt>Email:</dt>
+							<dd><a href="mailto:business@bupipedream.com">business@bupipedream.com</a></dd>
+						<dt>Address:</dt>
+							<dd>University Union WB03<br>P.O. Box 6000<br>Binghamton, N.Y. 13902</dd>
+					</dl>
 				</div>
 			</div>
 		</section>

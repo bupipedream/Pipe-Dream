@@ -19,7 +19,6 @@
 
 			<div class="sidebar span8 last">
 				<section id="masthead">
-					<!-- <h1>Pipe Dream Staff</h1> -->
 					<ul>
 						<li>
 							<span class="board">Editor-in-Chief</span>
