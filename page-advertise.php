@@ -21,7 +21,7 @@
 			</ul>
 		</section>
 		<section class="row post">
-			<div class="span16">
+			<div data-column="left-column" class="span16">
 				<p class="page-deck">Pipe Dream is Binghamton University’s largest student publication, publishing 3,500 copies twice a week throughout the school year.</p>
 				<ul id="advertising-types">
 					<li id="local-advertising">

@@ -71,35 +71,6 @@
 	}
 }
 
-.hero {
-	&.stats {
-		color: #535151;
-		font-family: 'Droid Sans', @sans; // custom font loaded in the page's .php file
-		ul {
-			font-size: 1.8em;
-			margin: 0;
-			padding: 0;
-			li {
-				border-right: 1px solid #d8d8d8;
-				display: inline-block;
-				padding: 7px 0 7px 5%;
-				margin: 0;
-				width: 27%;
-				.number { font-weight: bold; }
-				small {
-					color: #bab5b5;
-					display: block;
-					font-size: .5em;
-					font-weight: normal;
-				}
-				&:last-child {
-					border-right: none;
-				}
-			}
-		}
-	}
-}
-
 .page-deck {
 	font-family: @alt-serif;
 	font-size: 1.2em;
@@ -224,6 +195,33 @@
 			padding: 3px;
 			margin-left: 40px;
 		}
+		&.stats {
+			color: #535151;
+			font-family: 'Droid Sans', @sans; // custom font loaded in the page's .php file
+			ul {
+				font-size: 1.8em;
+				margin: 0;
+				padding: 0;
+				li {
+					border-right: 1px solid #d8d8d8;
+					display: inline-block;
+					padding: 7px 0 7px 5%;
+					margin: 0;
+					width: 27%;
+					.number { font-weight: bold; }
+					small {
+						color: #bab5b5;
+						display: block;
+						font-size: .5em;
+						font-weight: normal;
+					}
+					&:last-child {
+						border-right: none;
+					}
+				}
+			}
+		}
+
 	}
 	.page-deck {
 		text-align: center;
@@ -409,4 +407,101 @@
 
 .page-id-19902 .post iframe {
 	border: 1px solid #ddd;
+}
+
+
+/*--------------------------*/
+/*----- Media Queries ------*/
+/*--------------------------*/
+
+@media only screen and (max-width : 970px) {
+	#page-advertise {
+		.hero.stats ul li{
+			padding-left: 4%;
+			width: 28%;
+		}
+	}
+}
+
+@media only screen and (max-width : 900px) {
+	#page-advertise {
+		.hero.stats {
+			font-size: .9em;
+		}
+	}
+}
+
+@media only screen and (max-width : 820px) {
+	#page-advertise {
+		.hero.stats ul li {
+			padding-left: 3%;
+			width: 29%;
+		}
+	}
+}
+
+@media only screen and (max-width : 765px) {
+	#page-advertise {
+		.hero.stats {
+			font-size: .8em;
+			ul li {
+				padding-left: 2%;
+				width: 30%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 730px) {
+	nav[role="navigation"] {
+		.secondary-hidden {
+			display: inline-block !important;
+		}
+	}
+	#page-navigation { display: none; }
+	.page-title {
+		padding-left: 13px;
+	}
+	.page .post {
+		padding: 0 !important;
+	}
+	#page-advertise {
+		.hero { padding: 20px 0 15px 0; }
+		.sidebar { display: none; }
+		[data-column='left-column'] {
+			.span24;
+		}
+		#advertising-types > li {
+			padding-right: 80px;
+		}
+	}
+}
+
+@media only screen and (max-width : 645px) {
+	#page-advertise {
+		#advertising-types {
+			padding-left: 0px;
+			> li {
+				background: none;
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 635px) {
+	#page-advertise {
+		.hero.stats {
+			font-size: .7em;
+		}
+	}
+}
+
+@media only screen and (max-width : 560px) {
+	#page-advertise {
+		.hero.stats {
+			font-size: .7em;
+		}
+	}
 }
