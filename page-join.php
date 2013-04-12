@@ -16,7 +16,8 @@
 			<figure class="hero-image">
 				<img src="<? bloginfo( 'template_url' ); ?>/img/pages/gim.png">
 			</figure>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In neque odio, semper vitae sagittis vitae, vestibulum nec ligula. In pretium venenatis purus, congue fermentum quam adipiscing vitae. Quisque malesuada felis id nisi egestas blandit.</p>
+				<p>
+					As an entirely student-run publication, Pipe Dream is unique among college newspapers. Without financial assistance or the help of an advisor, Pipe Dream staff consistently produces quality work that gains national recognition.  Ask any staffer and they will tell you: joining Pipe Dream was one of the best decisions of their college career. Click through the sections below to find out which department is the right fit for you.</p>
 			<!-- <a href="#" class="button">View Openings</a> -->
 		</section>
 		<section class="page-section">
