@@ -4,17 +4,18 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!-- Check if the article is part of the archives -->
-			<?php $archive = pd_is_archived(get_the_ID(), null); ?>
+			<?php $archive = pd_is_archived( get_the_ID(), null ); ?>
 
-<!-- 
 			<section id="fb-signup">
 				<div id="login-button">
-					<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">Connect with Facebook</a>
+					<a href="#" id="fb-login-link" onClick="_gaq.push(['_trackEvent', 'Open Graph', 'Account', 'Login']);" class="connect">
+						Connect with Facebook
+					</a>
 				</div>
 				<h3>Discover Pipe Dream With Your Friends</h3>
 				<p>Explore the news that your friends find interesting. Connect with Facebook to share your reading activity.</p>
 			</section>
- -->
+
 			<article id="post-<?php the_ID(); ?>" class="pad-left clearfix" itemscope itemtype="http://schema.org/Article">
 				
 				<div class="single-label single-date">

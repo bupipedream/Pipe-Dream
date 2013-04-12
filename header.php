@@ -184,7 +184,7 @@
 			});
 			
 			// respond to clicks on the login and logout links
-			document.getElementById('fb-login-link').addEventListener('click', function(){
+			$('#fb-login-link').click(function(e) {
 				FB.login(function(response) {
 					if(response.authResponse && $.cookie('fb-share') == null) {
 						setSharing('on');
@@ -192,7 +192,7 @@
 				}, {scope: 'publish_actions'});
 			});
 
-			document.getElementById('fb-logout-link').addEventListener('click', function(e){
+			$('#fb-logout-link').click(function(e) {
 				FB.logout();
 				e.preventDefault();
 			});
@@ -209,7 +209,7 @@
 				_gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
 			});
 			
-			document.getElementById('fb-message-developer').addEventListener('click', function(e){
+			$('#fb-message-developer').click(function(e){
 				FB.ui({
 					method: 'send',
 					display: 'popup',

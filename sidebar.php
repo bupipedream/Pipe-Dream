@@ -19,7 +19,7 @@
 	//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=a5e11ab5&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=1&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5e11ab5' border='0' alt='' /></a></noscript>
 
 	<?php if( is_single() ): ?>
-		<section id="fb-settings" class="doublehrule">
+		<section id="fb-settings" class="sidebar-block">
 			<img id="fb-profile-img" />
 			<div id="fb-profile-details" class="clearfix">
 				<p id="fb-name"></p>

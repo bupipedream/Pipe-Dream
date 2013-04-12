@@ -1517,16 +1517,16 @@ footer#footer {
 	border: 1px solid #e8e3e3;
 	display: none;
 	font-family: @sans;
-	padding: 15px 20px;
+	padding: 15px 20px 13px 20px;
 	margin: 0 @colPaddingLR;
 	-webkit-font-smoothing: antialiased;
 	-webkit-box-shadow: 1px 2px 0px rgba(245, 245, 245, 1);
 	-moz-box-shadow:    1px 2px 0px rgba(245, 245, 245, 1);
 	box-shadow:         1px 2px 0px rgba(245, 245, 245, 1);
 	.border-radius(0 0 3px 3px);
+	font-size: .8em;
 	p {
 		color: #666666;
-		
 		margin: 3px 0 0 0;
 		width: 400px;
 	}
@@ -1593,8 +1593,9 @@ footer#footer {
 }
 
 #fb-settings {
-	font-family: @sans;
 	display: none;
+	font-family: @sans;
+	font-size: .8em;
 	margin-bottom: 12px;
 	padding-bottom: 12px !important;
 	p { margin: 0; }
@@ -1602,17 +1603,14 @@ footer#footer {
 		float: left;
 	}
 	#fb-profile-details {
+		font-size: .9em;
 		margin-left: 58px;
-		#fb-name {
-			font-weight: bold;
-		}
+		#fb-name { font-weight: bold; }
 		#fb-login-status {
 			color: #7a7a7a;
-			
-			margin: -3px 0 2px 0;
+			font-size: .95em;
 		}
 		ul {
-			
 			margin: 0;
 			padding: 0;
 			li {
@@ -1620,6 +1618,7 @@ footer#footer {
 				a { color: #494646; }
 				display: inline;
 				font-weight: bold;
+				font-size: 11px;
 				margin-right: 7px;
 				padding-right: 7px;
 				&:last-child {
@@ -1636,11 +1635,9 @@ footer#footer {
 		ul { margin: 0; padding: 0; }
 		li {
 			color: #666;
-			
 			list-style: none;
 			margin: 0 0 5px 0;
 			.fb-remove {
-				
 				font-weight: bold;
 				img {
 					margin: -3px 0 0 5px;
@@ -1656,19 +1653,16 @@ footer#footer {
 		ul { margin: 0; padding: 0; }
 		li {
 			color: #666;
-			
 			list-style: none;
 			margin: 0 0 5px 0;
 			.fb-remove {
-				
 				font-weight: bold;
 				img {
 					margin: -3px 0 0 5px;
 				}
 			}
 		}
-	}
-	
+	}	
 }
 
 
