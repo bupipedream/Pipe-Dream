@@ -27,7 +27,7 @@
 					<li id="local-advertising">
 						<h2 class="advertising-type">Local Advertising</h2>
 						<p>Local advertisers are classified as all those companies either headquartered within Broome County or whose Broome County local branch is placing an advertisement.</p>
-						<p>The best way to contact an advertising representative is to <a href="mailto:advertising@bupipedream.com">e-mail the advertising manager</a>. For information on rates and our publication schedule, please see the advertising forms below.</p>
+						<p>The best way to contact an advertising representative is to <a href="mailto:business@bupipedream.com">e-mail the business manager</a>. For information on rates and our publication schedule, please see the advertising forms below.</p>
 						<ul>
 							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Display-Ad-Form-Spring-2013.pdf">Display Ad Form (2012 - 2013)</a></li>
 							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Classified-Ad-Form-Spring-2013.pdf">Classified Ad Form (2012 - 2013)</a></li>
