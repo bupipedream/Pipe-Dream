@@ -306,11 +306,12 @@
 						<?php foreach( $sections['release']['feature'] as $article ): ?>
 
 							<!-- Featured release article -->
-							<article class="pad-left pad-right <?= ( !isset( $article['photo']['src'] ) ) ? 'text-teaser' :''?>">
-								<?php if( isset( $article['photo']['src'] ) ): ?>
+							<article class="pad-left pad-right <?= ( true || !isset( $article['photo']['src'] ) ) ? 'text-teaser' :''?>">
+								<?//php if( isset( $article['photo']['src'] ) ): ?>
+								<?php if( !isset( $article['photo']['src'] ) ): ?>
 									<figure>
 										<a href="<?= get_permalink( $article['ID'] ); ?>">
-											<img src="<?= $article['photo']['src']['single-inline']; ?>" title="<?= $article['post_author']['name']; ?>" />
+											<img src="<?= $article['photo']['src']['single-inline']; ?>" title="<?= $article['post_author']['name']; ?>">
 										</a>
 									</figure>
 								<?php endif; ?>
@@ -337,7 +338,7 @@
 
 											<figure class="figure-right figure-border">
 												<a href="<?= get_permalink( $article['ID'] ); ?>">
-													<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
+													<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>">
 												</a>
 											</figure>
 										
