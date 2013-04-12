@@ -24,7 +24,6 @@
 	<link rel="stylesheet" href="<? bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="<? bloginfo('template_url'); ?>/css/print.css" media="print">
 
-
 	<link rel="pingback" href="<? bloginfo('pingback_url'); ?>">
 	
 	<!-- Open Graph Meta  -->
@@ -186,7 +185,7 @@
 			});
 			
 			// respond to clicks on the login and logout links
-			document.getElementById('fb-login-link').addEventListener('click', function(){
+			$('#fb-login-link').click(function(e) {
 				FB.login(function(response) {
 					if(response.authResponse && $.cookie('fb-share') == null) {
 						setSharing('on');
@@ -194,7 +193,7 @@
 				}, {scope: 'publish_actions'});
 			});
 
-			document.getElementById('fb-logout-link').addEventListener('click', function(e){
+			$('#fb-logout-link').click(function(e) {
 				FB.logout();
 				e.preventDefault();
 			});
@@ -211,7 +210,7 @@
 				_gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
 			});
 			
-			document.getElementById('fb-message-developer').addEventListener('click', function(e){
+			$('#fb-message-developer').click(function(e){
 				FB.ui({
 					method: 'send',
 					display: 'popup',
@@ -271,13 +270,26 @@
 
 
 </script>
+	
+<!--/* OpenX Javascript Tag v2.8.10 */-->
+<script type='text/javascript'><!--//<![CDATA[
+	var m3_u = (location.protocol=='https:'?'https://www.bupipedream.com/openx/www/delivery/ajs.php':'http://www.bupipedream.com/openx/www/delivery/ajs.php');
+	var m3_r = Math.floor(Math.random()*99999999999);
+	if (!document.MAX_used) document.MAX_used = ',';
+	document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+	document.write ("?zoneid=3");
+	document.write ('&amp;cb=' + m3_r);
+	if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+	document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+	document.write ("&amp;loc=" + escape(window.location));
+	if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+	if (document.context) document.write ("&context=" + escape(document.context));
+	if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+	document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=a35d6069&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=3&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a35d6069' border='0' alt='' /></a></noscript>
 
-<div id="container" <?= (is_single() && in_category( 'photo' )) ? 'class="post-photo-gallery"' : '' ?>>
-	<!--
-	// WordPress doesn't add post categories in the
-	// <body> classes, so we do it on the #container
-	// for special posts such as photo galleries.
-	-->
+
+<div id="container">
 		
 	<header class="row" role="banner">
 		<section id="date-weather" class="span6">
@@ -333,16 +345,35 @@
 		<ul class="secondary">
 			<li><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
 			<li><a href="<? bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
+			<li class="secondary-hidden"><a href="<? bloginfo('wpurl'); ?>/donate/" title="Donate to Pipe Dream">Donate</a></li>
 			<li><a href="<? bloginfo('wpurl'); ?>/join/" title="Join Pipe Dream">Join</a></li>
+			<li class="secondary-hidden"><a href="<? bloginfo('wpurl'); ?>/staff/" title="Pipe Dream Staff">Staff</a></li>
 			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 		</ul>
 	</nav>
-<div id="rave" class="row">
-	<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
-</div>
 	<section id="mobile-search" class="row">
 		<form role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
 			<input type="search" name="s" autocomplete="on" placeholder="Search..." />
 			<input type="submit" value="" />
 		</form>
 	</section>
+	<div id="rave" class="row">
+		<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
+	</div>
+	<?
+		$options = get_option('pd_theme_options');
+		$message = $options['message'];
+		$time = $options['time'];
+		$theme = $options['theme'];
+		$label = $options['label'];
+		$notice_status = $options['radioinput'];
+		if( $notice_status ):
+	?>
+	<div id="notice-bar" class="row <?= $theme; ?>">
+		<span class="notice-bar-label"><?= $label; ?></span>
+		<span class="notice-bar-time">
+			<?= $time ? '<time>' . $time . '</time>' : '' ?>
+		</span>
+		<span class="notice-bar-message"><?= $message; ?></span>
+	</div>
+	<? endif; ?>

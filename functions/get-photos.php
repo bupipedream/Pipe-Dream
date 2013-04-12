@@ -5,24 +5,55 @@
 	Contributors: Daniel O'Connor
 	Tags: images, image, media, photos
 	Requires at least: 3.3.1
-	Tested up to: 3.3.1
-	Version: 0.1
+	Tested up to: 3.5.1
+	Version: 0.2
 */
 
 /*-----------------------*/
 /*---- Get Functions ----*/
 /*-----------------------*/
 
+function get_id($image) {
+	return $image->ID;
+}
+
 function get_caption($image) {
 	return $image->post_excerpt;
 }
 
 function get_credit($image) {
-	return get_post_meta($image->ID, '_credit', 'single');
+	return get_post_meta($image->ID, '_credit', true);
 }
 
 function get_priority($image) {
-	return $image->menu_order;
+	// we used to rank images based on a user-defined priority. images
+	// with priority '1' were featured under the headline in a large
+	// display. the others were shown inline with the article and
+	// in order of priority. in a recent update wordpress (3.5?), wordpress
+	// changed how they prioritize photos. photos are now prioritized
+	// based on their order in the menu. therefore it is not possible to
+	// assign priorities and have no images with a priority of 1. the
+	// conditional below will ensure that old photos display as intended. 
+	if(strtotime($image->post_date) < strtotime('2013-03-30 00:00:00')) {		
+		return $image->menu_order;
+	}
+
+	// check to see if image position was set to 'feature'. if 
+	// so it will display large and under the headline. 
+	if(get_post_meta($image->ID, '_position', true) === 'feature') {
+		return 1;	
+	}
+	
+	// if the image is not featured we don't want it to have a 
+	// priority of 1 so we will add 1 to it. the default
+	// priority for all images is 0, so we only do this
+	// for images that already have a custom priority.
+	if($image->menu_order !== 0) return $image->menu_order + 1;
+
+	// images that were published after the March 30, 2013,
+	// don't have a _position meta value set to 'feature',
+	// and weren't assigned a custom menu order.
+	return 0;
 }
 
 function get_width($image) {
@@ -98,6 +129,38 @@ function is_landscape($image) {
 	Returns photos for articles. Supports 
 	archived posts as well.
 
+	Photos can be stored in two ways:
+
+	- Attached to post: The current WordPress
+	implementation.
+	- Custom Field: A custom field attached to a
+	post that contains a filename, caption, credit,
+	etc. These photos were from the pre-WordPress
+	versions of the Pipe Dream website.
+
+	In the current layout, photos are assigned a
+	menu-order that determines the order they appear
+	in. The menu-order depends on the order of the
+	photos in the post edit page. 
+
+	Photos with a custom field set to "feature" will
+	display under the headline as a larger image.
+	The image that isn't featured and has the lowest
+	menu-order (higher priority) will display inline
+	with the article. The remaining photos, if any,
+	will be displayed as a slideshow.
+
+	Before WordPress 3.5 there was no "_position" custom
+	field and menu-order could be custom specified for
+	each image. The new media interface changed that,
+	so the get_priority() function was beefed up a bit.
+
+	If, for some reason, this code is still around 20
+	years from now, make sure the archives are still
+	working. And good luck.
+
+	- Dan
+
 	@param int $post_id: Post ID (REQUIRED)
 	@param int $num: Number of photos to return.
 		Defaults to all photos.
@@ -127,8 +190,9 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 			$image->attachment_metadata = wp_get_attachment_metadata($image->ID);
 			if(isset($photo['photos'])) $i = count($photo['photos']); // counter
 			else $i = 0;
-			
+
 			// store image information
+			$photo['photos'][$i]['id'] = get_id($image);
 			$photo['photos'][$i]['caption'] = get_caption($image);
 			$photo['photos'][$i]['credit'] = get_credit($image);
 			$photo['photos'][$i]['priority'] = get_priority($image);
@@ -155,7 +219,7 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 			// store the photo with the highest priority in wordpress.
 			// photos with high priorities are given low numbers.
 			// photos with priority of -1 are ignored.
-			if($num === 1 && $photo['photos'][$i]['priority'] !== 0 && $photo['photos'][$i]['priority'] < $top_priority['priority'] && $photo['photos'][$i]['priority'] >= 0) {
+			if($num === 1 && $photo['photos'][$i]['priority'] < $top_priority['priority'] && $photo['photos'][$i]['priority'] >= 0) {
 				$top_priority = $photo['photos'][$i];
 			}
 			
@@ -198,7 +262,10 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 		// return all of the requested photos
 		return $photo;
 	} else {
-		// check if the image is from the archives
+		// check if the image is from the archives. images on our old 
+		// websites (custom CMS for some time then College Publisher)
+		// were not saved as attachments, but were stored as custom
+		// fields.
 		$meta = get_post_custom($post_id);
 		if($meta && isset($meta['_image1'])) {
 			$meta['_image1'] = get_image($meta['_image1']);

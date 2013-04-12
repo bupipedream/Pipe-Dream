@@ -1,47 +1,44 @@
-	<footer class="row">
-		<div id="footer-logo" class="span6">
-			<!-- Pipe Dream -->
-			<a href="<?php bloginfo('wpurl'); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/footerlogo.png" alt="<?php bloginfo('name'); ?>" /></a>
-		</div>
-
-		<nav id="footer-links" class="span12">
+</div>
+	<footer id="footer">
+		<section id="stabilizing-destabilizing">
+			<div class="row">
+				<?php
+					$options = get_option( 'pd_theme_options' );
+					$stabilizing = $options['stabilizing'];
+					$destabilizing = $options['destabilizing'];
+				?>
+				<span id="stabilizing" class="pad-left">
+					<?= $stabilizing ? '#stabilizing: ' . $stabilizing : ''; ?>
+				</span>
+				<span id="destabilizing" class="pad-right">
+					<?= $destabilizing ? '#destabilizing: ' . $destabilizing : ''; ?>
+				</span>
+			</div>
+		</section>
+		<nav id="footer-navigation" class="row">
+			<div id="footer-logo">
+				<a href="<? bloginfo( 'url' ); ?>/" title="<? bloginfo('name'); ?>">
+					<img src="<? bloginfo('template_url'); ?>/img/bupipedream.png" alt="<? bloginfo( 'name' ); ?> - <? bloginfo( 'description' ); ?>" />
+				</a>
+			</div>
 			<ul>
-				<li><a href="<?php bloginfo('wpurl'); ?>/news/">News</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/sports/">Sports</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/opinion/">Opinion</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/release/">Release</a></li>
-			</ul>
-			<ul>
-				<li>Established 1946</li>
-				<!-- <li><a href="<?php bloginfo('wpurl'); ?>/about/">About</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/contact/">Contact</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/contribute/">Contribute</a></li>
-				<li><a href="<?php bloginfo('wpurl'); ?>/staff/">Staff</a></li> -->
+				<li><a href="<? bloginfo( 'wpurl' ); ?>/news/" title="News Articles">News</a></li>
+				<li><a href="<? bloginfo( 'wpurl' ); ?>/sports/" title="Sports Articles">Sports</a></li>
+				<li><a href="<? bloginfo( 'wpurl' ); ?>/opinion/" title="Opinion Columns">Opinion</a></li>
+				<li><a href="<? bloginfo( 'wpurl' ); ?>/release/" title="Release Articles">Release</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/join/" title="Join Pipe Dream">Join</a></li>
+				<li class="footer-navigation-light"><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 			</ul>
 		</nav>
-		<div id="stabalizing" class="span4">
-			<!-- the most important part of the new website -->
-			<?php
-				$options = get_option('pd_theme_options');
-				$stabilizing = $options['stabilizing'];
-				$destabilizing = $options['destabilizing'];
-			?>
-			<p>#stabilizing: <?php echo $stabilizing; ?><br />#destabilizing: <?php echo $destabilizing; ?></p>
-		</div>
-		<div id="wordpress" class="span2 last">
-			<!-- Powered by WordPress -->
-			<a href="http://wordpress.org/">
-				<img src="<?php bloginfo('template_url'); ?>/img/wordpress.png" alt="WordPress" title="Proudly Powered by WordPress" />
-			</a>
-		</div>
 	</footer>
-</div>
 
 	<!-- JavaScript at the bottom for fast page loading -->
 
 	<!-- scripts concatenated and minified via build script -->
 	<script src="<?php bloginfo('template_url'); ?>/js/plugins.js"></script>
-	<script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<!-- end scripts -->
   
 	<!-- Used by WP plugins -->
