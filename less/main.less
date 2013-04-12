@@ -2061,7 +2061,9 @@ a.button {
 		article { .pad-right; }
 	}
 
-	#sidebar { .span24; }
+	#sidebar {
+		.span24;
+	}
 
 	#row-release {
 		.grid-row;
@@ -2246,9 +2248,9 @@ a.button {
 		.social { display: none !important; }
 	}
 	.sidebar-block {
+		.box-sizing(border-box);
 		border-bottom: 1px solid @light-border !important;
-		padding: 0 @colPaddingLR 20px !important;
-		margin-bottom: 20px !important;
+		padding: 0 @colPaddingLR 15px @colPaddingLR !important;
 		&:last-child {
 			border-bottom: none !important;
 			margin-bottom: 0 !important;
