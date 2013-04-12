@@ -192,7 +192,7 @@
 								
 								<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
 
-										<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+										<?php if( $index === 0 && isset( $article['photo']['src'] ) ): ?>
 
 											<figure class="figure-right figure-border">
 												<a href="<?= get_permalink( $article['ID'] ); ?>">
