@@ -16,7 +16,7 @@
  * (ran on a custom CMS) are stored in a field called "_legacy_id." 
  */
 
-function cp_redirect () {
+function archive_redirect () {
 	
 	global $wpdb;
 	
@@ -56,6 +56,6 @@ function cp_redirect () {
 }
 
 // WordPress hooks and actions
-add_action('template_redirect', 'cp_redirect');
+add_action('template_redirect', 'archive_redirect');
 
 ?>
