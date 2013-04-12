@@ -1,0 +1,55 @@
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+h2 {
+	text-align: center;
+}
+
+a {
+text-decoration: none;
+color: #120e0f;
+}
+
+#sidebar{
+	display: none !important;
+}
+
+[data-column="left-column"] {
+	width: 100%;	
+}
+
+nav[role="navigation"] {
+	display: none !important;
+}
+
+header[role="banner"] {
+	display: none !important;
+}
+
+.author {
+	display: block;
+}
+
+
+#mobile-search{
+	display: none;
+}
+
+#footer{
+	display: none;
+}
+
+.social{
+	display: none;
+}
+
+#disqus_thread {
+	display: none;
+}
+
+.social-bar {
+	display: none;
+}
