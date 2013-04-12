@@ -17,7 +17,7 @@
 				<img src="<? bloginfo( 'template_url' ); ?>/img/pages/gim.png">
 			</figure>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In neque odio, semper vitae sagittis vitae, vestibulum nec ligula. In pretium venenatis purus, congue fermentum quam adipiscing vitae. Quisque malesuada felis id nisi egestas blandit.</p>
-			<a href="#" class="button">View Openings</a>
+			<!-- <a href="#" class="button">View Openings</a> -->
 		</section>
 		<section class="page-section">
 			<h2 class="page-section-title">Sections<small>Click on a section to learn more</small></h2>
@@ -25,73 +25,73 @@
 			<!-- Writing Sections -->
 			<div data-section="news" class="section-description" style="display: block;">
 				<h3 class="section-title">News</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
-				<a href="mailto:news@bupipedream.com" class="section-email">news@bupipedream.com</a>
+				<p>The news section is responsible for covering news and events for both Binghamton University and the greater Binghamton area. News reporters have the opportunity to interview community leaders and gain a deeper understanding of the University’s inner workings.
+					<a href="mailto:news@bupipedream.com" class="section-email">news@bupipedream.com</a>
 			</div>
 			<div data-section="sports" class="section-description">
 				<h3 class="section-title">Sports</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The sports section focuses on Bearcat coverage, writing game recaps and previews, features on players and coaches, and breaking news stories on the teams when the occasions arise. Sports writers occasionally comment on professional sporting news as well.</p>
 				<span href="mailto:sports@bupipedream.com" class="section-email">sports@bupipedream.com</span>
 			</div>
 			<div data-section="opinion" class="section-description">
 				<h3 class="section-title">Opinion</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The opinion section publishes student columns and staff editorials that offer thought-provoking commentary on topics relevant to the campus community. While some columns are free form, other authors choose a theme, such as humor or politics, to focus on from issue to issue.</p>
 				<span href="mailto:opinion@bupipedream.com" class="section-email">opinion@bupipedream.com</span>
 			</div>
 			<div data-section="release" class="section-description">
 				<h3 class="section-title">Release</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>Release, Pipe Dream’s arts & entertainment section, covers all things cultural: from student productions, to Binghamton restaurants, to reviews of the latest movies and TV shows. Release writers often get behind-the-scenes access to concerts and events.</p>
 				<span href="mailto:release@bupipedream.com" class="section-email">release@bupipedream.com</span>
 			</div>
 			<div data-section="copy" class="section-description">
 				<h3 class="section-title">Copy</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The copy department is responsible for making sure every Pipe Dream article and caption is grammatically correct and factually accurate. Copy editors hone their language skills as they clean up spelling mistakes, redundancies and ambiguities throughout the paper.</p>
 				<span href="mailto:copy@bupipedream.com" class="section-email">copy@bupipedream.com</span>
 			</div>
 
 			<!-- Tech Sections -->
 			<div data-section="web" class="section-description">
 				<h3 class="section-title">Web Development</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The web section is responsible for all things bupipedream.com. Developers get hands on experience using software, tools and service such as Git, GitHub, LESS and WordPress.</p>
 				<span href="mailto:developer@bupipedream.com" class="section-email">developer@bupipedream.com</span>
 			</div>
 			<div data-section="social" class="section-description">
 				<h3 class="section-title">Social Media</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The social media section manages Pipe Dream’s presence on Facebook and Twitter. Social media contributors get real-world experience working on the most active social media accounts on campus.</p>
 				<span href="mailto:social@bupipedream.com" class="section-email">social@bupipedream.com</span>
 			</div>
 			<div data-section="tech" class="section-description">
-				<h3 class="section-title">Newsroom Tech</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<h3 class="section-title">Technology</h3>
+				<p>The technology section lays the groundwork for an efficient working environment for the rest of the staff. Tackling challenges that range from modifying user accounts to wrestling with the printer, the tech department ensures Pipe Dream’s hardware and software is functioning properly.</p>
 				<span href="mailto:tech@bupipedream.com" class="section-email">tech@bupipedream.com</span>
 			</div>
 
 			<!-- Creative Sections -->
 			<div data-section="design" class="section-description">
 				<h3 class="section-title">Design</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The design team is responsible for compiling stories, headlines, photos, captions and credits into neat and creative layouts for each page of the issue. Designers collaborate with the design manager and section heads to effectively display information and graphics that appeal to a college audience.</p>
 				<span href="mailto:design@bupipedream.com" class="section-email">design@bupipedream.com</span>
 			</div>
 			<div data-section="photo" class="section-description">
 				<h3 class="section-title">Photo</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The photo section is responsible for photographing assignments when any news, sports or Release story needs accompanying art. Photographers get to work with a broad range of subject matter and can undertake independent assignments to be featured in special spreads or on Pipe Dream’s Facebook page.</p>
 				<span href="mailto:photo@bupipedream.com" class="section-email">photo@bupipedream.com</span>
 			</div>
 			<div data-section="fun" class="section-description">
 				<h3 class="section-title">Fun</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>Fun page is a catch-all page that aims to cure students of their in-class boredom with comics, crosswords and Soduko. Fun page contributors enjoy broad exposure and are encouraged to regularly submit original comics.</p>
 				<span href="mailto:fun@bupipedream.com" class="section-email">fun@bupipedream.com</span>
 			</div>
 
 			<!-- Business Sections -->
 			<div data-section="business" class="section-description">
 				<h3 class="section-title">Business</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>The business department is in charge of all of Pipe Dream’s finances. As the managers one of the Student Association’s largest student-run businesses, they handle things such as accounts receivable, bookkeeping and budgeting.</p>
 				<span href="mailto:business@bupipedream.com" class="section-email">business@bupipedream.com</span>
 			</div>
 			<div data-section="advertising" class="section-description">
 				<h3 class="section-title">Advertising</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
+				<p>As a branch of the business department, the advertising department makes cold calls to potential clients, processes existing account orders and acts as a liaison between clients and the rest of the paper.</p>
 				<span href="mailto:advertising@bupipedream.com" class="section-email">advertising@bupipedream.com</span>
 			</div>
 

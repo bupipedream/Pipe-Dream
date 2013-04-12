@@ -114,6 +114,9 @@
 							<ul>
 								<li>Derek Parry '13, <em>Newsroom Tech Manager</em></li>
 							</ul>
+							<ul>
+								<li>Will Sanders '16, <em>Assistant Newsroom Tech Manager</em></li>
+							</ul>
 						</li>
 					</ul>
 				</section>
