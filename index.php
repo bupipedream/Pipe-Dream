@@ -12,7 +12,7 @@
 				
 				<!-- Left Column -->
 				<div data-column="left-column" class="span9">
-					<section id="atf-list" class="pad-left pad-right article-list">
+					<section id="atf-list" class="pad-left pad-right">
 						
 						<!-- Two Articles -->
 						
@@ -126,7 +126,7 @@
 
 				</div>
 				<div data-column="middle-column" class="span15 last">
-					<section id="news-list" class="article-list">
+					<section id="news-list" class="article-list pad-right">
 						
 						<!-- Four News Articles -->
 						<h1 class="section-heading"><a href="<?= home_url(); ?>/news/">News</a></h1>
@@ -184,35 +184,37 @@
 
 					</div>
 					
-					<div id="sports-list" data-column="middle-column" class="span15 article-list last">
+					<div data-column="middle-column" class="span15 last">
+						<div id="sports-list" class="article-list pad-right">
 
-						<!-- List of sports articles -->
-						<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
-							
-							<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
-
-									<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
-
-										<figure class="figure-right figure-border">
-											<a href="<?= get_permalink( $article['ID'] ); ?>">
-												<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
-											</a>
-										</figure>
-									
-									<?php endif; ?>
-									
-									<h2 class="headline">
-										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
-									</h2>
-
-									<? if($index === 0): ?>
-										<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
-									<? endif; ?>
+							<!-- List of sports articles -->
+							<?php foreach( $sections['sports']['article-list'] as $index => $article ): ?>
 								
-							</article>
-							
-						<?php endforeach; ?>
+								<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
 
+										<?php if( $index === 0 && isset( $article['photo'] ) ): ?>
+
+											<figure class="figure-right figure-border">
+												<a href="<?= get_permalink( $article['ID'] ); ?>">
+													<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
+												</a>
+											</figure>
+										
+										<?php endif; ?>
+										
+										<h2 class="headline">
+											<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
+										</h2>
+
+										<? if($index === 0): ?>
+											<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
+										<? endif; ?>
+									
+								</article>
+								
+							<?php endforeach; ?>
+
+						</div>
 					</div>
 				</section>
 			</div>
@@ -257,38 +259,40 @@
 				</section>
 
 				<!-- Columns -->
-				<section id="opinion-list" data-column="middle-column" class="article-list span15 last">
-					<h2 class="section-heading"><a href="<?= home_url(); ?>/opinion/">Columns</a></h2>
-					
-					<?php foreach( $sections['opinion']['article-list'] as $article ): ?>
+				<section data-column="middle-column" class="span15 last">
+					<div id="opinion-list" class="article-list pad-right">
+						<h2 class="section-heading"><a href="<?= home_url(); ?>/opinion/">Columns</a></h2>
 						
-						<article class="clearfix">
-						
-							<?php if( isset( $article['photo']['src'] ) ): ?>
-								<figure class="figure-right figure-border">
-									<a href="<?= get_permalink( $article['ID'] ); ?>">
-										<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" title="<?= $article['post_author']['name']; ?>" />
+						<?php foreach( $sections['opinion']['article-list'] as $article ): ?>
+							
+							<article class="clearfix">
+							
+								<?php if( isset( $article['photo']['src'] ) ): ?>
+									<figure class="figure-right figure-border">
+										<a href="<?= get_permalink( $article['ID'] ); ?>">
+											<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" title="<?= $article['post_author']['name']; ?>" />
+										</a>
+									</figure>
+								<?php endif; ?>
+								
+								<h2 class="headline">
+									<a href="<?= get_permalink($article['ID']); ?>">
+										<?= $article['post_title']; ?>
 									</a>
-								</figure>
-							<?php endif; ?>
-							
-							<h2 class="headline">
-								<a href="<?= get_permalink($article['ID']); ?>">
-									<?= $article['post_title']; ?>
-								</a>
-							</h2>
-							
-							<p class="excerpt">
-								<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 20 ); ?>
-							</p>
-							
-							<footer class="article-links">
-								<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
-							</footer>
+								</h2>
+								
+								<p class="excerpt">
+									<?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 20 ); ?>
+								</p>
+								
+								<footer class="article-links">
+									<a href="<?= get_permalink( $article['ID'] ); ?>#comments"><img src="<? bloginfo( 'template_url' ); ?>/img/comment.png" alt="Conversation" /> Comments</a>
+								</footer>
 
-						</article>
-						
-					<?php endforeach; ?>
+							</article>
+							
+						<?php endforeach; ?>
+					</div>
 				</section>
 			</div>
 
@@ -322,35 +326,35 @@
 						<?php endforeach; ?>
 					</div>
 					
-					<div id="release-list" data-column="middle-column" class="article-list span15 last">
-
-						<!-- List of release articles -->
-						<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>
-							
-							<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
-
-									<?php if( $index === 0 && $article['photo']['src'] ): ?>
-
-										<figure class="figure-right figure-border">
-											<a href="<?= get_permalink( $article['ID'] ); ?>">
-												<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
-											</a>
-										</figure>
-									
-									<?php endif; ?>
-									
-									<h2 class="headline">
-										<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
-									</h2>
-
-									<? if($index === 0): ?>
-										<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
-									<? endif; ?>
+					<div data-column="middle-column" class="span15 last">
+						<div id="release-list" class="article-list pad-right">
+							<!-- List of release articles -->
+							<?php foreach( $sections['release']['article-list'] as $index => $article ): ?>
 								
-							</article>
-							
-						<?php endforeach; ?>
+								<article class="clearfix <?= ($index !== 0) ? 'faded' : '' ?>">
 
+										<?php if( $index === 0 && $article['photo']['src'] ): ?>
+
+											<figure class="figure-right figure-border">
+												<a href="<?= get_permalink( $article['ID'] ); ?>">
+													<img src="<?= $article['photo']['src']['custom-75x75-crop']; ?>" />
+												</a>
+											</figure>
+										
+										<?php endif; ?>
+										
+										<h2 class="headline">
+											<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
+										</h2>
+
+										<? if($index === 0): ?>
+											<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
+										<? endif; ?>
+									
+								</article>
+								
+							<?php endforeach; ?>
+						</div>
 					</div>
 				</section>
 			</div>

@@ -151,29 +151,6 @@ a:focus { outline: thin dotted; }
 	margin-top: 3px;
 }
 
-.text-teaser { // tease to an article with no image
-	.headline {
-		display: inline;
-		font-size: 1.5em;
-	}
-	p {
-		color: lighten(@text, 40);
-		display: inline;
-		font-size: 1em;
-	}
-}
-
-.grid-row {
-	border-bottom: 3px solid @light-border;
-}
-
-.article-list {
-	article {
-		margin-bottom: 15px;
-		&.faded { margin-bottom: 10px; }
-	}
-}
-
 .highlight {
 	background: #fffdcb;
 	padding: 0 5px;
@@ -505,39 +482,73 @@ nav[role="navigation"] {
 
 .home [data-column="left-two-columns"] {
 	.headline {
-		line-height: 1.1;
-		margin: 0 0 .13em 0;
+		font-size: 1.45em;
+		line-height: 1.1em;
+		margin: 0 0 4px 0;
 	}
 	.meta {
-		margin-bottom: .3em;
+		margin: 0 0 4px 0;
 	}
 	article {
-		margin: 0 0 .4em 0;
+		&.faded {
+			.headline {
+				font-size: 1em;
+			}
+		}
 	}
 	.excerpt {
-		font-size: .9em;
-		line-height: 1.22em;
-		margin-top: 0;
+		font-family: @serif;
+		font-size: .8em;
+		line-height: 1.4em;
+		margin: 0 0 6px 0;
 	}
 	.grid-row {
 		padding-bottom: 15px;
 		margin-bottom: 15px;
 	}
-}
-
-article {
 	.article-links {
 		font-family: @sans;
 		font-size: .7em;
 		a { color: @light-gray; }
 	}
-	&.faded {
-		.headline {
-			font-size: 1em;
-			a { color: #888888; }
-		}
+
+	#atf-list article { // secondary featured articles
+		margin-bottom: 15px;
 	}
 
+	#opinion-list article {
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+	}
+
+	#daily-photo article {
+		text-align: center;
+	}
+}
+
+.text-teaser { // tease to an article with no image
+	.headline {
+		display: inline;
+		font-size: 1.5em;
+	}
+	p {
+		color: lighten(@text, 40);
+		display: inline;
+		font-size: 1em;
+	}
+}
+
+.grid-row {
+	border-bottom: 3px solid @light-border;
+}
+
+.article-list {
+	article {
+		border-bottom: 1px solid @light-border;
+		&:last-child { border-bottom: none; }
+		margin-bottom: 7px;
+		padding-bottom: 7px;
+	}
 }
 
 /*---------------------*/
@@ -625,9 +636,8 @@ article {
 
 address {
 	font-style: normal;
-	font-size: .8em;	
+	font-size: .8em;
 }
-
 
 /*------------------------*/
 /*--- Multimedia Posts ---*/
@@ -664,9 +674,10 @@ body.graphic {}
 
 .archive, .search-results {
 	.excerpt {
+		font-family: @serif;
 		font-size: .9em;
-		margin: 0;
-		padding: 0;
+		line-height: 1.4em;
+		margin: 0 0 6px 0;
 	}
 }
 
@@ -2216,6 +2227,15 @@ a.button {
 		article[id^="post"] {
 			padding: 0 !important;
 		}
+	}
+	#sports-feature, #release-feature {
+		border-bottom: 1px solid #eee;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		.excerpt {
+			color: @text;
+			display: block;
+		} 
 	}
 }
 
