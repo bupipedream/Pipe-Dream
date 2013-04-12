@@ -22,11 +22,6 @@
 	<!-- End LESS -->
 
 	<link rel="stylesheet" href="<? bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
-<<<<<<< HEAD
-	<link rel="stylesheet" type="text/css" href="<? bloginfo('template_url'); ?>/css/print.css" media="print">
-
-=======
->>>>>>> origin/redesign
 
 	<link rel="pingback" href="<? bloginfo('pingback_url'); ?>">
 	
@@ -274,15 +269,6 @@
 
 
 </script>
-
-<<<<<<< HEAD
-<div id="container" <?= (is_single() && in_category( 'photo' )) ? 'class="post-photo-gallery"' : '' ?>>
-	<!--
-	// WordPress doesn't add post categories in the
-	// <body> classes, so we do it on the #container
-	// for special posts such as photo galleries.
-	-->
-=======
 	
 <!--/* OpenX Javascript Tag v2.8.10 */-->
 <script type='text/javascript'><!--//<![CDATA[
@@ -303,7 +289,6 @@
 
 
 <div id="container">
->>>>>>> origin/redesign
 		
 	<header class="row" role="banner">
 		<section id="date-weather" class="span6">
@@ -359,30 +344,17 @@
 		<ul class="secondary">
 			<li><a href="<? bloginfo('wpurl'); ?>/about/" title="About Pipe Dream">About</a></li>
 			<li><a href="<? bloginfo('wpurl'); ?>/advertise/" title="Advertise in Pipe Dream">Advertise</a></li>
-<<<<<<< HEAD
-			<li><a href="<? bloginfo('wpurl'); ?>/join/" title="Join Pipe Dream">Join</a></li>
-			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
-		</ul>
-	</nav>
-<div id="rave" class="row">
-	<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
-</div>
-=======
 			<li class="secondary-hidden"><a href="<? bloginfo('wpurl'); ?>/donate/" title="Donate to Pipe Dream">Donate</a></li>
 			<li><a href="<? bloginfo('wpurl'); ?>/join/" title="Join Pipe Dream">Join</a></li>
 			<li class="secondary-hidden"><a href="<? bloginfo('wpurl'); ?>/staff/" title="Pipe Dream Staff">Staff</a></li>
 			<li><a href="<? bloginfo('wpurl'); ?>/contact/" title="Contact Pipe Dream">Contact</a></li>
 		</ul>
 	</nav>
->>>>>>> origin/redesign
 	<section id="mobile-search" class="row">
 		<form role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
 			<input type="search" name="s" autocomplete="on" placeholder="Search..." />
 			<input type="submit" value="" />
 		</form>
-<<<<<<< HEAD
-	</section>
-=======
 	</section>
 	<div id="rave" class="row">
 		<!--Rave alerts are loaded by javascript from BU's official 'RAVE' alert RSS feed. -->
@@ -404,4 +376,3 @@
 		<span class="notice-bar-message"><?= $message; ?></span>
 	</div>
 	<? endif; ?>
->>>>>>> origin/redesign
