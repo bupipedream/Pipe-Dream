@@ -82,11 +82,6 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
 				<span href="mailto:fun@bupipedream.com" class="section-email">fun@bupipedream.com</span>
 			</div>
-			<div data-section="cartoon" class="section-description">
-				<h3 class="section-title">Editorial Cartoonist</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam vulputate est gravida tempor ac a erat. Maecenas et urna dui. Etiam elementum hendrerit nisl, vel gravida massa mattis el. Sed euismod commodo ipsum, id mollis mi dignissim in.</p>
-				<span href="mailto:cartoon@bupipedream.com" class="section-email">cartoon@bupipedream.com</span>
-			</div>
 
 			<!-- Business Sections -->
 			<div data-section="business" class="section-description">
@@ -116,7 +111,6 @@
 				<li><a href="mailto:design@bupipedream.com" title="Learn more about the design section" data-section="design">Design</a></li>
 				<li><a href="mailto:photo@bupipedream.com" title="Learn more about the photo section" data-section="photo">Photo</a></li>
 				<li><a href="mailto:fun@bupipedream.com" title="Learn more about the fun section" data-section="fun">Fun</a></li>
-				<li><a href="mailto:cartoon@bupipedream.com" title="Learn more about the editorial cartoonist section" data-section="cartoon">Editorial Cartoonist</a></li>
 			</ul>
 			<ul id="section-business" class="section-category">
 				<li><a href="mailto:business@bupipedream.com" title="Learn more about the business section" data-section="business">Business</a></li>
