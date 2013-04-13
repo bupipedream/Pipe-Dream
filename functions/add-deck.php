@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Article Deck
-Plugin URI: http://www.bupipedream.com/
-Description: Add a deck to an article published in WordPress. Code modified from a Tuts+ tutorial: http://bit.ly/oHVeaT.
-Version: 1.0
-Author: Modified by Daniel O'Connor, original by Christopher Davis of wp.tutsplus.com.
-License: Public Domain
+	Plugin Name: Article Deck
+	Plugin URI: http://www.bupipedream.com/
+	Description: Add a deck to an article published in WordPress. Code modified from a Tuts+ tutorial: http://bit.ly/oHVeaT.
+	Version: 1.0
+	Author: Modified by Daniel O'Connor, original by Christopher Davis of wp.tutsplus.com.
+	License: Public Domain
 */
 
 add_action( 'add_meta_boxes', 'pd_article_deck_add' );
@@ -23,7 +23,7 @@ function pd_article_deck( $post )
 
 	?>
 	<p>
-		<textarea rows="3" cols="40" name="pd_article_deck_text" id="pd_article_deck_text" tabindex="12" style="width: 100% !important;"><?php echo $values['_pd_article_deck_text'][0]; ?></textarea>
+		<textarea rows="3" cols="40" name="pd_article_deck_text" id="pd_article_deck_text" tabindex="12" style="width: 100% !important;"><?= isset( $values['_pd_article_deck_text'][0] ) ? $values['_pd_article_deck_text'][0] : ''; ?></textarea>
 	</p>
 	<!-- Description from Wikipedia -->
 	<p>A deck is a phrase, sentence or several sentences near the title of an article or story, a quick blurb or article teaser.</p>
@@ -41,7 +41,7 @@ function pd_article_deck_save( $post_id )
 	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
 	
 	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
+	if( !current_user_can( 'edit_post', $post_id ) ) return;
 	
 	// now we can actually save the data
 	$allowed = array( 
