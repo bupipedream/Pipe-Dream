@@ -79,14 +79,14 @@
 			</div>
 			<div data-section="fun" class="section-description">
 				<h3 class="section-title">Fun</h3>
-				<p>Fun page is a catch-all page that aims to cure students of their in-class boredom with comics, crosswords and Soduko. Fun page contributors enjoy broad exposure and are encouraged to regularly submit original comics.</p>
+				<p>Fun page is a catch-all page that aims to cure students of their in-class boredom with comics, crosswords and Sudoku. Fun page contributors enjoy broad exposure and are encouraged to regularly submit original comics.</p>
 				<a href="mailto:fun@bupipedream.com" class="section-email">fun@bupipedream.com</a>
 			</div>
 
 			<!-- Business Sections -->
 			<div data-section="business" class="section-description">
 				<h3 class="section-title">Business</h3>
-				<p>The business department is in charge of all of Pipe Dream’s finances. As the managers one of the Student Association’s largest student-run businesses, they handle things such as accounts receivable, bookkeeping and budgeting.</p>
+				<p>The business department is in charge of all of Pipe Dream’s finances. As the managers of one of the Student Association’s largest student-run businesses, they handle things such as accounts receivable, bookkeeping and budgeting.</p>
 				<a href="mailto:business@bupipedream.com" class="section-email">business@bupipedream.com</a>
 			</div>
 			<div data-section="advertising" class="section-description">
