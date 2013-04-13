@@ -181,8 +181,8 @@
 									<figure id="photo-<?= $photo['id'] ?>">
 										<img src="<?= $photo['src']['large'] ?>">
 										<figcaption>
-											<span class="clearfix photo-credit"><?= $photo['credit']; ?></span>
-											<span class="clearfix photo-caption"><?= $photo['caption']; ?> <a href="<?= the_permalink(); ?>#photo-<?= $photo['id'] ?>" title="Permanant link to photo">#</a></span>
+											<span class="clearfix photo-credit"><?= $photo['credit']; ?> (<a href="<?= the_permalink(); ?>#photo-<?= $photo['id'] ?>" title="Permanant link to photo">#</a>)</span>
+											<span class="clearfix photo-caption"><?= $photo['caption']; ?></span>
 										</figcaption>
 									</figure>
 								<?php endforeach; ?>
