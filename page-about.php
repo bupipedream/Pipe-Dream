@@ -98,7 +98,7 @@
 						<li>
 							<span class="board">Editorial Artist</span>
 							<ul>
-								<li>Mariam Geiger '13, <em>Editorial Artist</em></li>
+								<li>Miriam Geiger '13, <em>Editorial Artist</em></li>
 							</ul>
 						</li>
 						<li>
