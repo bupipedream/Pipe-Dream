@@ -598,6 +598,10 @@ nav[role="navigation"] {
 }
 
 .single-post {
+	.single-image-feature {
+		padding-top: 10px;
+		text-align: center;
+	}
 	.deck {
 		color: lighten(@text-color, 30);
 		font-size: 1.05em;
@@ -641,7 +645,7 @@ address {
 	font-size: .8em;
 }
 
-figure[id^="photo-"] {
+.multimedia.photo figure[id^="photo-"] { // photo galleries
 	text-align: center;
 }
 
@@ -651,6 +655,9 @@ figure[id^="photo-"] {
 
 body.multimedia {
 	.row { max-width: 1024px; }
+	.post-body {
+		padding-top: 20px;
+	}
 	article[id^="post"] {
 		.pad-right;
 	}
