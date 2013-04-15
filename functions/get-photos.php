@@ -57,10 +57,12 @@ function get_priority($image) {
 }
 
 function get_width($image) {
+	if( is_array( $image ) ) return $image['width'];
 	return $image->attachment_metadata['width'];
 }
 
 function get_height($image) {
+	if( is_array( $image ) ) return $image['height'];
 	return $image->attachment_metadata['height'];
 }
 
@@ -170,9 +172,11 @@ function is_landscape($image) {
 	@param array $ret: Photo attributes to return.
 		Attributes include src, width, height, credit,
 		amd caption. Returns all by default.
+	@param array $landscape: Ensure that image with
+		highest priority is landscape.
 */
 
-function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
+function get_photos($post_id, $num = 0, $sizes = null, $ret = null, $landscape = null) {
 	// save the image with the highest priority
 	// to use when returing only one image
 	$top_priority['priority'] = 9999;
@@ -219,12 +223,17 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 			// store the photo with the highest priority in wordpress.
 			// photos with high priorities are given low numbers.
 			// photos with priority of -1 are ignored.
-			if($num === 1 && $photo['photos'][$i]['priority'] < $top_priority['priority'] && $photo['photos'][$i]['priority'] >= 0) {
+			if( $num === 1 && $photo['photos'][$i]['priority'] < $top_priority['priority'] && $photo['photos'][$i]['priority'] >= 0 ) {
+				// if user wants a landscape photo, check
+				// to make sure it is landscape
+				if( $landscape && !is_landscape( $image ) ) {
+					continue;
+				}
 				$top_priority = $photo['photos'][$i];
 			}
 			
 			// determine image position based on priority
-			if(!isset($photo['display']['feature']) && get_priority($image) === 1 && is_landscape($image)) {
+			if( !isset($photo['display']['feature']) && get_priority($image) === 1 ) {
 			
 				// feature photo - below headline
 				$photo['display']['feature'] = $i;
@@ -256,8 +265,16 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null) {
 			// return first photo when one is requested and there is only one
 			if($num === 1 && count($images) == 1) return $photo['photos'][$i];
 		}
-		// returns top photo when one is requested
-		if($num === 1) return $top_priority;
+		// returns top photo when one is requested.
+		// if user only wants one landscape photo,
+		// but the top_priority is not landscape, don't
+		// return anything.
+		if( $num === 1 ) {
+			if( $landscape && !is_landscape( $image ) ) {
+				return false;
+			}
+			return $top_priority;
+		}
 		
 		// return all of the requested photos
 		return $photo;
