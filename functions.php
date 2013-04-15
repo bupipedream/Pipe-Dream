@@ -74,6 +74,27 @@ add_theme_support('automatic-feed-links');
 */
 remove_action ('wp_head', 'wp_generator');
 
+
+/* 
+	Update slug when saving a post. This is
+	needed because slugs generated from Pipe Line
+	are long since they contain the title and deck.
+
+	Prevents posts that are published from automatically
+	having their slugs changed since it's bad practice
+	to modify existing URLs.
+
+	http://wordpress.stackexchange.com/a/52897
+*/
+function pd_update_slug( $data, $postarr ) {
+    if ( !in_array( $data['post_status'], array( 'publish' ) ) ) {
+        $data['post_name'] = sanitize_title( $data['post_title'] );
+    }
+    return $data;
+}
+add_filter( 'wp_insert_post_data', 'pd_update_slug', 99, 2 );
+
+
 /* 
 	Load jQuery from the Google servers.
 	@todo: There really shouldn't be a need to do this.
