@@ -164,11 +164,10 @@
 				<section>
 					<!-- Two column row of sports -->
 					<h1 class="section-heading pad-left pad-right"><a href="<?= home_url(); ?>/sports/">Sports</a></h2>
-					
+
 					<div id="sports-feature" data-column="left-column" class="span9">
-						
 						<?php foreach( $sections['sports']['feature'] as $article ): ?>
-							
+
 							<!-- Featured sports article -->
 							<article class="pad-left pad-right text-teaser">
 								
@@ -181,7 +180,7 @@
 							</article>
 							
 						<?php endforeach; ?>
-
+						
 					</div>
 					
 					<div data-column="middle-column" class="span15 last">
@@ -306,16 +305,8 @@
 						<?php foreach( $sections['release']['feature'] as $article ): ?>
 
 							<!-- Featured release article -->
-							<article class="pad-left pad-right <?= ( true || !isset( $article['photo']['src'] ) ) ? 'text-teaser' :''?>">
-								<?//php if( isset( $article['photo']['src'] ) ): ?>
-								<?php if( !isset( $article['photo']['src'] ) ): ?>
-									<figure>
-										<a href="<?= get_permalink( $article['ID'] ); ?>">
-											<img src="<?= $article['photo']['src']['single-inline']; ?>" title="<?= $article['post_author']['name']; ?>">
-										</a>
-									</figure>
-								<?php endif; ?>
-								
+							<article class="pad-left pad-right text-teaser">
+
 								<h2 class="headline">
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
