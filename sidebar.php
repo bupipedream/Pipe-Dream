@@ -117,7 +117,7 @@
 				<h1 class="section-heading">
 					<a href="<?= $issuu_link; ?>">Current Issue</a>
 				</h1>
-				<div data-configid="<?= $issuu['issuu_id']; ?>" style="width: 100%; height: 271px;" class="issuuembed"></div>
+				<div data-configid="2248292/<?= $issuu['issuu_id']; ?>" style="width: 100%; height: 271px;" class="issuuembed"></div>
 				<script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
 			</section>
 		<? endif; ?>
