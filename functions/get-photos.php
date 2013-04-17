@@ -209,6 +209,7 @@ function get_photos($post_id, $num = 0, $sizes = null, $ret = null, $landscape =
 					$photo['photos'][$i]['src'][$size] = get_src($image, $size);
 				}
 			} else { // return all sizes when none are specified
+				$photo['photos'][$i]['src']['full'] = get_src($image, 'full');
 				$photo['photos'][$i]['src']['large'] = get_src($image, 'large');
 				$photo['photos'][$i]['src']['thumbnail'] = get_src($image, 'thumbnail');
 				$photo['photos'][$i]['src']['medium'] = get_src($image, 'medium');
