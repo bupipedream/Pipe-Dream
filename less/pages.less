@@ -57,7 +57,7 @@
 				padding-bottom: 7px;
 			}
 			&.active a {
-				background: url('http://i.imgur.com/EoohFfP.png') 50% 100% no-repeat;
+				background: ~"url(@{baseurl}/img/pages/nav-arrow.png) 50% 100% no-repeat";
 				color: #535353;
 				font-weight: bold;
 			}
@@ -168,10 +168,12 @@
 			}
 		}
 	}
-	&#section-writing { background: url('http://i.imgur.com/nZqsFvk.png') no-repeat; }
-	&#section-tech { background: url('http://i.imgur.com/1sbmooY.png') no-repeat; }
-	&#section-creative { background: url('http://i.imgur.com/MCKxDsD.png') no-repeat; }
-	&#section-business { background: url('http://i.imgur.com/3QusgrZ.png') no-repeat; }
+
+
+	&#section-writing { background: ~"url(@{baseurl}/img/pages/icons/writing.png) no-repeat"; }
+	&#section-tech { background: ~"url(@{baseurl}/img/pages/icons/computer.png) no-repeat"; }
+	&#section-creative { background: ~"url(@{baseurl}/img/pages/icons/newspaper.png) no-repeat"; }
+	&#section-business { background: ~"url(@{baseurl}/img/pages/icons/briefcase.png) no-repeat"; }
 }
 
 /*---------------------*/
@@ -180,7 +182,7 @@
 
 #page-advertise {
 	.hero {
-		background: url('http://i.imgur.com/XjtkzBE.jpg');
+		background: ~"url(@{baseurl}/img/pages/advertise/background.jpg)";
 		border-top: 1px solid #ededed;
 		border-bottom: 1px solid #d5d5d5;
 		padding: 80px 0 5px 0;
@@ -250,13 +252,13 @@
 		padding: 0 20px 0 80px;
 		margin-bottom: 30px;
 		&#local-advertising {
-			background-image: url('http://i.imgur.com/sqFTwPu.png');
+			background-image: ~"url(@{baseurl}/img/pages/icons/city.png)";
 		}
 		&#national-advertising {
-			background-image: url('http://i.imgur.com/LISaDFp.png');
+			background-image: ~"url(@{baseurl}/img/pages/icons/globe.png)";
 		}
 		&#sa-group {
-			background-image: url('http://i.imgur.com/KmASnNL.png');
+			background-image: ~"url(@{baseurl}/img/pages/icons/school.png)";
 		}
 	}
 }
