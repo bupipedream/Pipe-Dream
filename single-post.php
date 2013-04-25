@@ -138,7 +138,7 @@
 										<a href="<?= $photo['src']['large']; ?>" <?php if($photo['credit']): ?>title="<?= $photo['caption']; ?> <?= "(".$photo['credit'].")"; ?>" <?php endif; ?> class="gallery" rel="gallery">
 											<img src="<?= $photo['src']['single-inline']; ?>" />
 											<?php if( isset( $attachments['photos'] ) && count( $attachments['photos'] ) > 2): ?>
-												<p><img src="<?= get_template_directory_uri(); ?>/img/slideshow.png">Slide Show</p>
+												<span class="more-photos"><img src="<?= get_template_directory_uri(); ?>/img/slideshow.png">Slide Show</span>
 											<?php endif; ?>
 										</a>
 									<?php endif; ?>
