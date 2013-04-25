@@ -175,7 +175,7 @@
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
 
-								<p class="excerpt"><?= $article['post_excerpt']; ?></p>
+								<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
 
 							</article>
 							
@@ -311,7 +311,7 @@
 									<a href="<?= get_permalink( $article['ID'] ) ?>"><?= $article['post_title']; ?></a>
 								</h2>
 
-								<p class="excerpt"><?= $article['post_excerpt']; ?></p>
+								<p class="excerpt"><?= $article['post_excerpt'] ? $article['post_excerpt'] : get_custom_excerpt( $article['post_content'], 16 ); ?></p>
 
 							</article>
 							
