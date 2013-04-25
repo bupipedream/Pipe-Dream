@@ -14,6 +14,9 @@
 					</time>
 				</div>
 				
+				<?if(in_category('opinion') && !in_category('editorial')):?>
+					<span class="opinion-label" title="Views expressed in this column represent the opinion of the columnist.">Opinion</span>
+				<?endif?>
 				<h2 class="headline" itemprop="headline"><?php the_title(); ?></h2>
 				
 				<p class="deck"><?= get_post_meta( get_the_ID(), '_pd_article_deck_text', true ); ?></p>
