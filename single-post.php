@@ -130,7 +130,7 @@
 								<!-- Display the inline photo -->
 								<figure class="single-image single-image-inline" style="max-width: <?= ( $max_width ) ? $max_width : '' ?>;">
 									<?php if( in_category( 'opinion' ) ): ?>
-										<img src="<?= $photo['src']['single-inline']; ?>" />
+										<img src="<?= $photo['src']['single-inline']; ?>" class="single-image-headshot" />
 									<?php else: ?>
 										<a href="<?= $photo['src']['large']; ?>" <?php if($photo['credit']): ?>title="<?= $photo['caption']; ?> <?= "(".$photo['credit'].")"; ?>" <?php endif; ?> class="gallery" rel="gallery">
 											<img src="<?= $photo['src']['single-inline']; ?>" />
