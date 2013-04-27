@@ -18,7 +18,7 @@
 	
 	<?php $photos = get_photos( get_the_ID() ); if( $photos ): ?>
 		<?foreach( $photos['photos'] as $photo ): ?>
-			<meta property="og:image" content="<?= $photo['src']['large']; ?>" />
+			<meta property="og:image" content="<?= $photo['src']['full']; ?>" />
 		<?endforeach;?>
 	<?php else: ?>
 		<meta property="og:image" content="<? bloginfo('template_url'); ?>/img/og-image.png" />
