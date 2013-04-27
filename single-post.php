@@ -183,7 +183,7 @@
 							<?php elseif( in_category( 'graphic' ) ): ?>
 	
 								<figure id="graphic-<?= $attachments['photos'][0]['id'] ?>">
-									<img src="<?= $attachments['photos'][0]['src']['large'] ?>">
+									<img src="<?= $attachments['photos'][0]['src']['full'] ?>">
 									<figcaption>
 										<span class="clearfix photo-credit"><?= $attachments['photos'][0]['credit']; ?></span>
 									</figcaption>
