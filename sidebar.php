@@ -61,7 +61,7 @@
 			<h1 class="section-heading">Most Read</h1>
 			<ol>
 				<?php
-					$posts = wmp_get_popular( array( 'limit' => 5, 'post_type' => 'post', 'range' => 'daily' ) );
+					$posts = wmp_get_popular( array( 'limit' => 5, 'post_type' => 'post', 'range' => 'weekly' ) );
 					global $post;
 					if ( count( $posts ) > 0 ): foreach ( $posts as $post ):
 						setup_postdata( $post );
