@@ -3,6 +3,7 @@
 
 <?php if( is_single() ): ?>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta property="article:publisher" content="https://www.facebook.com/bupipedream" />
 <?php elseif( is_author() ): ?>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# profile: http://ogp.me/ns/profile#">
 <?php else: ?>
