@@ -13,11 +13,11 @@
 		</nav>
 		<h1 class="page-title"><?php the_title(); ?></h1>
 		<section class="row post">
-			<div data-column="left-column" class="span16">
+			<div data-column="left-column" class="span15">
 				<?php the_content(); ?>
 			</div>
 
-			<div class="sidebar span8 last">
+			<div class="sidebar span9 last">
 				<section id="masthead">
 					<ul>
 						<li>
@@ -104,8 +104,8 @@
 						<li>
 							<span class="board">Web</span>
 							<ul>
-								<li>Daniel O'Connor '14, <em>Server Administrator</em></li>
 								<li>Willie Demaniow '16, <em>Lead Web Developer</em></li>
+								<li>Daniel O'Connor '14, <em>Server Administrator</em></li>
 								<li>Melissa Edelblum '15, <em>Social Media Manager</em></li>
 							</ul>
 						</li>
