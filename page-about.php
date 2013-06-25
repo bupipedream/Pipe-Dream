@@ -104,8 +104,8 @@
 						<li>
 							<span class="board">Web</span>
 							<ul>
-								<li>Daniel O'Connor '14, <em>Lead Web Developer</em></li>
-								<li>Willie Demaniow '16, <em>Asst. Web Developer</em></li>
+								<li>Daniel O'Connor '14, <em>Server Administrator</em></li>
+								<li>Willie Demaniow '16, <em>Lead Web Developer</em></li>
 								<li>Melissa Edelblum '15, <em>Social Media Manager</em></li>
 							</ul>
 						</li>
