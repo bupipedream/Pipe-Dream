@@ -23,48 +23,47 @@
 						<li>
 							<span class="board">Editor-in-Chief</span>
 							<ul>
-								<li>Daniel Weintraub '13</li>
+								<li>Christina Pullano '14</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Managing Editor</span>
 							<ul>
-								<li>Jules Forrest '14</li>
+								<li>Paige Nazinitsky '14</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Business</span>
 							<ul>
-								<li>Kimberly Bower '13, <em>Business Manager</em></li>
+								<li>Zachary Hindin '14, <em>Business Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">News</span>
 							<ul>
-								<li>James Galloway '13, <em>News Editor</em></li>
-								<li>Geoff Wilson '14, <em>Assistant News Editor</em></li>
-								<li>Christina Pullano '14, <em>Assistant News Editor</em></li>
+								<li>Rachel Bluth '16, <em>News Editor</em></li>
+								<li>Davina Bhandari '14, <em>Assistant News Editor</em></li>
+								<li>Nicholas Vega ‘16<em>Assistant News Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Sports</span>
 							<ul>
-								<li>Megan Brockett '13, <em>Sports Editor</em></li>
-								<li>Ari Kramer '14, <em>Assistant Sports Editor</em></li>
+								<li>Ari Kramer '14, <em>Sports Editor</em></li>
 								<li>Erik Bacharach '14, <em>Assistant Sports Editor</em></li>
+								<li>Ashley Purdy '15, <em>Assistant Sports Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Photo</span>
 							<ul>
-								<li>Jonathan Heisler '13, <em>Photo Editor</em></li>
-								<li>Kendall Loh '14, <em>Assistant Photo Editor</em></li>
+								<li>Kendall Loh '14, <em>Photo Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Opinion</span>
 							<ul>
-								<li>Kaitlin Busser '13, <em>Opinion Editor</em></li>
+								<li>Michael Snow ‘14, <em>Opinion Editor</em></li>
 							</ul>
 						</li>
 						<li>
@@ -77,22 +76,22 @@
 						<li>
 							<span class="board">Design</span>
 							<ul>
-								<li>Paige Nazinitsky '14, <em>Design Manager</em></li>
-								<li>Zack Feldman '15, <em>Design Assistant</em></li>
+								<li>Zack Feldman '15, <em>Design Manager</em></li>
 								<li>Rebecca Forney '14, <em>Design Assistant</em></li>
+								<li>Cari Snider '14, <em>Design Assistant</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Copy Desk</span>
 							<ul>
-								<li>Kaitlin Busser '13, <em>Copy Desk Chief</em></li>
-								<li>Tina Ritter '13, <em>Assistant Copy Desk Chief</em></li>
+								<li>Victoria Chow '14, <em>Copy Desk Chief</em></li>
+								<li>Sammie Ruthenberg '14, <em>Assistant Copy Desk Chief</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Fun Page</span>
 							<ul>
-								<li>Mike Manzi '13, <em>Fun Page Editor</em></li>
+								<li>Kris Casey '14, <em>Fun Page Editor</em></li>
 							</ul>
 						</li>
 						<li>
@@ -106,16 +105,15 @@
 							<ul>
 								<li>Willie Demaniow '16, <em>Lead Web Developer</em></li>
 								<li>Daniel O'Connor '14, <em>Server Administrator</em></li>
-								<li>Melissa Edelblum '15, <em>Social Media Manager</em></li>
+								<li>Shavonna Q. Hinton ‘14, <em>Social Media Manager</em></li>
+								<li>Ides Leoht '14, <em>Social Media Manager</em></li>
+								<li>Keara Hill ' 16, <em>Social Media Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Technology</span>
 							<ul>
-								<li>Derek Parry '13, <em>Newsroom Tech Manager</em></li>
-							</ul>
-							<ul>
-								<li>Will Sanders '16, <em>Assistant Newsroom Tech</em></li>
+								<li>Will Sanders '16, <em>Newsroom Tech Manager</em></li>
 							</ul>
 						</li>
 					</ul>
