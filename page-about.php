@@ -43,7 +43,7 @@
 							<ul>
 								<li>Rachel Bluth '16, <em>News Editor</em></li>
 								<li>Davina Bhandari '14, <em>Assistant News Editor</em></li>
-								<li>Nicholas Vega ‘16<em>Assistant News Editor</em></li>
+								<li>Nicholas Vega ‘16, <em>Assistant News Editor</em></li>
 							</ul>
 						</li>
 						<li>
@@ -70,7 +70,7 @@
 							<span class="board">Release</span>
 							<ul>
 								<li>Darian Lusk '14, <em>Release Editor</em></li>
-								<li>Jacob Shamsian '15 <em>Assistant Release Editor</em><li>
+								<li>Jacob Shamsian '15, <em>Assistant Release Editor</em><li>
 							</ul>
 						</li>
 						<li>
