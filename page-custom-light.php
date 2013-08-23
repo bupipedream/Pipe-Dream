@@ -11,14 +11,14 @@
 	<meta charset="utf-8">
 
 	<title><?wp_title(''); ?></title>
-	<meta name="description" content="The HTML5 Herald">
 	<meta name="viewport" content="width=device-width">
-
-	<!-- Open Graph Meta  -->
-	<? get_template_part("open-graph"); ?>
+	<meta property="og:title" content="<?php the_title(); ?>" />
 
 	<!-- Used by WP Plugins -->
 	<?php wp_head(); ?>
+
+	<!-- Open Graph Meta  -->
+	<? get_template_part("open-graph"); ?>
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<style type="text/css">
@@ -38,7 +38,7 @@
 	
 		.container {
 			margin: 0 auto;
-			max-width: 800px;
+			max-width: 750px;
 		}
 
 		.logo {
