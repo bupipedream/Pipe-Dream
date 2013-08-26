@@ -29,9 +29,9 @@
 						<p>Local advertisers are classified as all those companies either headquartered within Broome County or whose Broome County local branch is placing an advertisement.</p>
 						<p>The best way to contact an advertising representative is to <a href="mailto:business@bupipedream.com">e-mail the business manager</a>. For information on rates and our publication schedule, please see the advertising forms below.</p>
 						<ul>
-							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Display-Ad-Form-Spring-2013.pdf">Display Ad Form (2012 - 2013)</a></li>
-							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Classified-Ad-Form-Spring-2013.pdf">Classified Ad Form (2012 - 2013)</a></li>
-							<li><a href="http://bupipedream.com/wp-content/uploads/2012/02/Web-Ad-Form-2012.pdf">Web Ad Form (2012 - 2013)</a></li>
+							<li><a href="http://www.bupipedream.com/wp-content/uploads/2012/02/Display-Ad-Form-Fall-2013.pdf">Display Ad Form (2013 - 2014)</a></li>
+							<li><a href="http://www.bupipedream.com/wp-content/uploads/2012/02/Classified-Ad-Form-Fall-2013.pdf">Classified Ad Form (2013 - 2014)</a></li>
+							<li><a href="http://www.bupipedream.com/wp-content/uploads/2012/02/Web-Ad-Form-Fall-2013.pdf">Web Ad Form (2013 - 2014)</a></li>
 						</ul>
 					</li>
 					<li id="national-advertising">
