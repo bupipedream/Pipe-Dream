@@ -42,8 +42,9 @@
 							<span class="board">News</span>
 							<ul>
 								<li>Rachel Bluth '16, <em>News Editor</em></li>
-								<li>Davina Bhandari '14, <em>Assistant News Editor</em></li>
 								<li>Nicholas Vega ‘16, <em>Assistant News Editor</em></li>
+								<li>Davina Bhandari '15, <em>Assistant News Editor</em></li>
+								<li>Geoffrey Wilson '14, <em>Assistant News Editor</em></li>
 							</ul>
 						</li>
 						<li>
@@ -58,6 +59,7 @@
 							<span class="board">Photo</span>
 							<ul>
 								<li>Kendall Loh '14, <em>Photo Editor</em></li>
+								<li>Janine Furtado '14, <em>Photo Editor</em></li>
 							</ul>
 						</li>
 						<li>
