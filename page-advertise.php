@@ -49,7 +49,7 @@
 					<li id="sa-group">
 						<h2 class="advertising-type">Student Association Groups</h2>
 						<p>All SA groups are permitted one standard size (3.65 × 3.175) ad space per week.</p>
-						<p>In order to place an ad the SA group representative must email <a href="mailto:business@bupipedream.com">business@bupipeeam.com</a> with the following three things:</p>
+						<p>In order to place an ad the SA group representative must email <a href="mailto:business@bupipedream.com">business@bupipedream.com</a> with the following three things:</p>
 						<ul>
 							<li>SA Group name and account number</li>
 							<li>The date they would like the advertisement to appear</li>
