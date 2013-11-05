@@ -312,8 +312,9 @@
 		</h1>
 		<section id="search-social" class="span6 last">
 			<div class="social">
-				<a href="https://www.facebook.com/BUPipeDream" title="Follow Pipe Dream on Facebook"><img src="<? bloginfo( 'template_url' ); ?>/img/social/facebook.png" alt="Facebook Page" /> Facebook</a>
-				<a href="https://twitter.com/bupipedream" title="Follow Pipe Dream on Twitter"><img src="<? bloginfo( 'template_url' ); ?>/img/social/twitter.png" alt="Twitter Account" /> Twitter</a>
+				<a href="https://www.facebook.com/BUPipeDream" title="Follow Pipe Dream on Facebook"><img src="<? bloginfo( 'template_url' ); ?>/img/social/facebook.png" alt="Facebook Page" /></a>
+				<a href="https://twitter.com/bupipedream" title="Follow Pipe Dream on Twitter"><img src="<? bloginfo( 'template_url' ); ?>/img/social/twitter.png" alt="Twitter Account" /></a>
+				<a href="https://instagram.com/bupipedream" title="Follow Pipe Dream on Instagram"><img src="<? bloginfo( 'template_url' ); ?>/img/social/instagram.png" alt="Instagram Blog" /></a>
 			</div>
 			<form id="search" role="search" method="get" action="<? bloginfo( 'wpurl' ); ?>/">
 				<input type="search" name="s" autocomplete="on" placeholder="Search Pipe Dream" value="<? get_search_query(); ?>" />
