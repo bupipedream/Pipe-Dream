@@ -1,4 +1,3 @@
-
 <!-- Facebook Open Graph -->
 <meta property="og:site_name" content="<?= bloginfo('name'); ?>" />
 
@@ -18,7 +17,7 @@
 	
 	<?php $photos = get_photos( get_the_ID() ); if( $photos ): ?>
 		<?foreach( $photos['photos'] as $photo ): ?>
-			<meta property="og:image" content="<?= $photo['src']['full']; ?>" />
+			<meta property="og:image" content="<?= $photo['src']['large']; ?>" />
 		<?endforeach;?>
 	<?php else: ?>
 		<meta property="og:image" content="<? bloginfo('template_url'); ?>/img/og-image.png" />
@@ -75,7 +74,7 @@
 	?>
 	<?php $photos = get_photos( get_the_ID() ); if( $photos ): ?>
 		<?foreach( $photos['photos'] as $photo ): ?>
-			<meta property="og:image" content="<?= $photo['src']['full']; ?>" />
+			<meta property="og:image" content="<?= $photo['src']['large']; ?>" />
 		<?endforeach;?>
 	<?php else: ?>
 		<meta property="og:image" content="<? bloginfo('template_url'); ?>/img/og-image.png" />
