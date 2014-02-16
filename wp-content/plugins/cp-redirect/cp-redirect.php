@@ -43,7 +43,7 @@ function cp_redirect () {
 		}
 
 		$wp_id = $wpdb->get_results("SELECT post_id FROM $wpdb->postmeta WHERE meta_key='$custom_field' AND meta_value='$article_id'", 'ARRAY_N');
-		$wp_id = $wp_id[0][0]; // Catch if there are duplicate results in the database
+		$wp_id = isset($wp_id[0][0]) ? $wp_id[0][0] : null; // Catch if there are duplicate results in the database
 
 		// If we have a WordPress ID to work with and it's legit, then make the redirect
 		if ($wp_id != null && get_post($wp_id) != null && is_numeric($article_id)) {
