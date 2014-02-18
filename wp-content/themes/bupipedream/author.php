@@ -73,15 +73,9 @@
 						$big = 999999999; // need an unlikely integer
 						$url = str_replace( $big, '%#%', get_pagenum_link( $big ));
 						$pos = strlen( site_url() );
-
-						if(strpos(curPageURL(), 'browse') === false) {
-							$params = '/browse'.substr($url, $pos);			
-						} else {
-							$params = substr($url, $pos);
-						}
-
+						$params = substr($url, $pos);
 						$url = substr($url, '0', $pos).$params;
-									
+
 						echo paginate_links( array(
 							'base' => $url,
 							'format' => '?paged=%#%',
@@ -91,11 +85,11 @@
 					?>
 				</div>
 
-
 				<?php else: ?>
 					<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 				<?php endif; ?>
-								</section>
+
+			</section>
 
 
 		</div>
