@@ -198,15 +198,10 @@
 					<?php endif; ?>
 				</section>
 			</article>
-<? if(in_category('opinion') && !in_category('editorial')):?>
-<p style="
-    font-style: italic;
-    font-size: 0.90em;
-    border-bottom: 1px solid #eee;
-    border-top: 1px solid #eee;
-    padding: 1em;
-">Views expressed in the opinion pages represent the opinions of the columnists.</p>
-<? endif; ?>
+
+			<? if(in_category('opinion') && !in_category('editorial')):?>
+				<p style="font-style: italic; font-size: 0.90em; border-bottom: 1px solid #eee; border-top: 1px solid #eee; padding: 1em;">Views expressed in the opinion pages represent the opinions of the columnists.</p>
+			<? endif; ?>
 
 			<section class="single-meta single-meta-below social-bar">
 				<div class="social-twitter">				
