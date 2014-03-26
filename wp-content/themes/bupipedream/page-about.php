@@ -93,7 +93,7 @@
 						<li>
 							<span class="board">Fun Page</span>
 							<ul>
-								<li>Kris Casey, '15, <em>Fun Page Editor</em></li>
+								<li>Ben Moosher, '16, <em>Fun Page Editor</em></li>
 							</ul>
 						</li>
 						<li>
