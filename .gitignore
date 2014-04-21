@@ -8,7 +8,9 @@ Desktop.ini
 
 # Capistrano
 Capfile
-/config
+config/deploy.rb
+config/deploy/production.rb
+
 
 # WordPress
 .htaccess
