@@ -66,7 +66,7 @@
 						<img src="<? bloginfo( 'template_url' ); ?>/img/pages/advertise/media-kit.jpg" alt="Pipe Dream 2012-2013 Media Kit">
 					</a>
 					<figcaption>
-						<a href="#">Download the Pipe Dream Media Kit</a>
+						<a href="http://www.bupipedream.com/?attachment_id=34790">Download the Pipe Dream Media Kit</a>
 					</figcaption>
 				</figure>
 				<div id="contact-business" class="sidebar-block">
