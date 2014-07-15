@@ -23,71 +23,71 @@
 						<li>
 							<span class="board">Editor-in-Chief</span>
 							<ul>
-								<li>Christina Pullano, '14</li>
+								<li>Rachel Bluth, '16</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Managing Editor</span>
 							<ul>
-								<li>Paige Nazinitsky, '14</li>
+								<li>Zachary Feldman, '15</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Business</span>
 							<ul>
-								<li>Zachary Hindin, '14, <em>Business Manager</em></li>
+								<li>Erin Stolz, '16, <em>Business Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">News</span>
 							<ul>
-								<li>Rachel Bluth, '16, <em>News Editor</em></li>
-								<li>Nicholas Vega, '16, <em>Assistant News Editor</em></li>
-								<li>Davina Bhandari, '15, <em>Assistant News Editor</em></li>
-								<li>Geoffrey Wilson, '14, <em>Assistant News Editor</em></li>
+								<li>Nicolas Vega, '16, <em>News Editor</em></li>
+								<li>Joseph Hawthorne, '16, <em>Assistant News Editor</em></li>
+								<li>Carla Sinclair, '16, <em>Assistant News Editor</em></li>
+								<li>Alex Mackof, '17, <em>Assistant News Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Sports</span>
 							<ul>
-								<li>Ari Kramer, '14, <em>Sports Editor</em></li>
-								<li>Erik Bacharach, '14, <em>Assistant Sports Editor</em></li>
-								<li>Ashley Purdy, '15, <em>Assistant Sports Editor</em></li>
+								<li>Ashley Purdy, '15, <em>Sports Editor</em></li>
+								<li>Jeff Twitty, '17, <em>Assistant Sports Editor</em></li>
+								<li>E. Jay Zarett, '15, <em>Assistant Sports Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Photo</span>
 							<ul>
-								<li>Kendall Loh, '14, <em>Photo Editor</em></li>
-								<li>Janine Furtado, '14, <em>Assistant Photo Editor</em></li>
+								<li>Franz Lino, '16, <em>Photo Editor</em></li>
+								<li>Tycho McManus, '15, <em>Assistant Photo Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Opinion</span>
 							<ul>
-								<li>Michael Snow, '14, <em>Opinion Editor</em></li>
+								<li>Molly McGrath, '15, <em>Opinion Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Release</span>
 							<ul>
-								<li>Darian Lusk, '14, <em>Release Editor</em></li>
-								<li>Jacob Shamsian, '15, <em>Assistant Release Editor</em><li>
+								<li>Jacob Shamsian, '15, <em>Release Editor</em></li>
+								<li>Odeya Pinkus, '17, <em>Assistant Release Editor</em><li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Design</span>
 							<ul>
-								<li>Zack Feldman, '15, <em>Design Manager</em></li>
-								<li>Rebecca Forney, '14, <em>Design Assistant</em></li>
-								<li>Cari Snider, '14, <em>Design Assistant</em></li>
+								<li>Emma Siegel, '17, <em>Design Manager</em></li>
+								<li>Corey Futterman, '15, <em>Design Assistant</em></li>
+								<li>John Linitz, '15, <em>Design Assistant</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Copy Desk</span>
 							<ul>
-								<li>Victoria Chow, '14, <em>Copy Desk Chief</em></li>
-								<li>Sammie Ruthenberg, '14, <em>Assistant Copy Desk Chief</em></li>
+								<li>Emily Howard, '15, <em>Copy Desk Chief</em></li>
+								<li>Paul Palumbo, '15, <em>Assistant Copy Desk Chief</em></li>
 							</ul>
 						</li>
 						<li>
@@ -100,21 +100,21 @@
 							<span class="board">Editorial Artist</span>
 							<ul>
 								<li>Miriam Geiger, '15, <em>Editorial Artist</em></li>
+								<li>Paige Gittelman, '16, <em>Editorial Artist</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Web</span>
 							<ul>
-								<li>Willie Demaniow, '16, <em>Lead Web Developer</em></li>
-								<li>Daniel O'Connor, '14, <em>Server Administrator</em></li>
-								<li>Shavonna Q. Hinton, '15, <em>Social Media Manager</em></li>
+								<li>William Sanders, '16, <em>Lead Web Developer</em></li>
+								<li>Zachary Feuerstein, '15, <em>Web Developer</em></li>
 								<li>Keara Hill, '16, <em>Social Media Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Technology</span>
 							<ul>
-								<li>Will Sanders, '16, <em>Newsroom Tech Manager</em></li>
+								<li>William Sanders, '16, <em>Newsroom Tech Manager</em></li>
 							</ul>
 						</li>
 					</ul>
