@@ -23,7 +23,7 @@
 						<li>
 							<span class="board">Editor-in-Chief</span>
 							<ul>
-								<li>Rachel Bluth, '16</li>
+								<li>Rachel Bluth, '15</li>
 							</ul>
 						</li>
 						<li>
@@ -52,7 +52,7 @@
 							<ul>
 								<li>Ashley Purdy, '15, <em>Sports Editor</em></li>
 								<li>Jeff Twitty, '17, <em>Assistant Sports Editor</em></li>
-								<li>E. Jay Zarett, '15, <em>Assistant Sports Editor</em></li>
+								<li>E. Jay Zarett, '16, <em>Assistant Sports Editor</em></li>
 							</ul>
 						</li>
 						<li>
@@ -108,7 +108,7 @@
 							<ul>
 								<li>William Sanders, '16, <em>Lead Web Developer</em></li>
 								<li>Zachary Feuerstein, '15, <em>Web Developer</em></li>
-								<li>Keara Hill, '16, <em>Social Media Manager</em></li>
+								<li>Katie Shafsky, '16, <em>Social Media Manager</em></li>
 							</ul>
 						</li>
 						<li>
