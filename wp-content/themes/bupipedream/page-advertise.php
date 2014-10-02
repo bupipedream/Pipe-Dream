@@ -73,7 +73,7 @@
 					<h2 class="section-heading">Contact Business</h2>
 					<dl class="address inline">
 						<dt>Manager:</dt>
-							<dd>Zachary Hindin</dd>
+							<dd>Erin Stolz</dd>
 						<dt>Phone:</dt>
 							<dd>607-777-2516</dd>
 						<dt>Fax:</dt>
