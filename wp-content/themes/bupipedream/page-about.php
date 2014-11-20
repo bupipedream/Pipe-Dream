@@ -97,7 +97,7 @@
 							</ul>
 						</li>
 						<li>
-							<span class="board">Editorial Artist</span>
+							<span class="board">Editorial Artists</span>
 							<ul>
 								<li>Miriam Geiger, '15, <em>Editorial Artist</em></li>
 								<li>Paige Gittelman, '16, <em>Editorial Artist</em></li>
@@ -107,14 +107,13 @@
 							<span class="board">Web</span>
 							<ul>
 								<li>William Sanders, '16, <em>Lead Web Developer</em></li>
-								<li>Zachary Feuerstein, '15, <em>Web Developer</em></li>
 								<li>Katie Shafsky, '16, <em>Social Media Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Technology</span>
 							<ul>
-								<li>William Sanders, '16, <em>Newsroom Tech Manager</em></li>
+								<li>William Sanders, '16, <em>Newsroom Technology Manager</em></li>
 							</ul>
 						</li>
 					</ul>
