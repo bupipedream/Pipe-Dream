@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+
+
 			
 	<div id="page-about" class="content row">
 		<nav id="page-navigation">
@@ -29,7 +31,7 @@
 						<li>
 							<span class="board">Managing Editor</span>
 							<ul>
-								<li>Zachary Feldman, '15</li>
+								<li>Tycho McManus, '15</li>
 							</ul>
 						</li>
 						<li>
@@ -59,7 +61,7 @@
 							<span class="board">Photo</span>
 							<ul>
 								<li>Franz Lino, '16, <em>Photo Editor</em></li>
-								<li>Tycho McManus, '15, <em>Assistant Photo Editor</em></li>
+								<li>Klara Rusinko, '18, <em>Assistant Photo Editor</em></li>
 							</ul>
 						</li>
 						<li>
