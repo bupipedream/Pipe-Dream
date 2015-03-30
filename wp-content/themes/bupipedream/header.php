@@ -23,7 +23,7 @@
 
 	<link rel="stylesheet" href="<? bloginfo('template_url'); ?>/style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="<? bloginfo('template_url'); ?>/css/print.css" media="print">
-
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 	<link rel="pingback" href="<? bloginfo('pingback_url'); ?>">
 	
 	<!-- Open Graph Meta  -->
