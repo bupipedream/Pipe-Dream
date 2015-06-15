@@ -25,71 +25,71 @@
 						<li>
 							<span class="board">Editor-in-Chief</span>
 							<ul>
-								<li>Rachel Bluth, '15</li>
+								<li>Nicolas Vega, '16</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Managing Editor</span>
 							<ul>
-								<li>Tycho McManus, '15</li>
+								<li>Emma C Siegel, '17</li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Business</span>
 							<ul>
-								<li>Erin Stolz, '16, <em>Business Manager</em></li>
+								<li>Michael Contegni, '16, <em>Business Manager</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">News</span>
 							<ul>
-								<li>Nicolas Vega, '16, <em>News Editor</em></li>
-								<li>Joseph Hawthorne, '16, <em>Assistant News Editor</em></li>
+								<li>Alexandra K. Mackof, '16, <em>News Editor</em></li>
 								<li>Carla Sinclair, '16, <em>Assistant News Editor</em></li>
-								<li>Alex Mackof, '17, <em>Assistant News Editor</em></li>
+								<li>Pelle Waldron, '17, <em>Assistant News Editor</em></li>
+								<li>Gabriella Weick, '18, <em>Assistant News Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Sports</span>
 							<ul>
-								<li>Ashley Purdy, '15, <em>Sports Editor</em></li>
-								<li>Jeff Twitty, '17, <em>Assistant Sports Editor</em></li>
-								<li>E. Jay Zarett, '16, <em>Assistant Sports Editor</em></li>
+								<li>E. Jay Zarett, '16, <em>Sports Editor</em></li>
+								<li>Jeffrey Twitty, '17, <em>Assistant Sports Editor</em></li>
+								<li>Orlaith McCaffrey, '18, <em>Assistant Sports Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Photo</span>
 							<ul>
 								<li>Franz Lino, '16, <em>Photo Editor</em></li>
-								<li>Klara Rusinko, '18, <em>Assistant Photo Editor</em></li>
+								<li>Emily Earl, '17, <em>Assistant Photo Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Opinion</span>
 							<ul>
-								<li>Molly McGrath, '15, <em>Opinion Editor</em></li>
+								<li>Esmeralda Murray, '17, <em>Opinion Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Release</span>
 							<ul>
-								<li>Jacob Shamsian, '15, <em>Release Editor</em></li>
-								<li>Odeya Pinkus, '17, <em>Assistant Release Editor</em><li>
+								<li>Odeya Pinkus, '17, <em>Release Editor</em></li>
+								<li>Kathryn Shafsky, '16, <em>Assistant Release Editor</em><li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Design</span>
 							<ul>
-								<li>Emma Siegel, '17, <em>Design Manager</em></li>
-								<li>Corey Futterman, '15, <em>Design Assistant</em></li>
-								<li>John Linitz, '15, <em>Design Assistant</em></li>
+								<li>Samantha P. Webb, '16, <em>Design Manager</em></li>
+								<li>Aleza Leinwand, '16, <em>Design Assistant</em></li>
+								<li>Sihang Li, '16, <em>Design Assistant</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Copy Desk</span>
 							<ul>
-								<li>Emily Howard, '15, <em>Copy Desk Chief</em></li>
-								<li>Paul Palumbo, '15, <em>Assistant Copy Desk Chief</em></li>
+								<li>Katherine H. Dowd, '16, <em>Copy Desk Chief</em></li>
+								<li>Rachel Greenspan, '18, <em>Assistant Copy Desk Chief</em></li>
 							</ul>
 						</li>
 						<li>
@@ -115,7 +115,7 @@
 						<li>
 							<span class="board">Technology</span>
 							<ul>
-								<li>William Sanders, '16, <em>Newsroom Technology Manager</em></li>
+								<li>Rohit Kapur, '17, <em>Newsroom Technology Manager</em></li>
 							</ul>
 						</li>
 					</ul>
