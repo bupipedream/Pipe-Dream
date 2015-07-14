@@ -43,7 +43,7 @@
 						<li>
 							<span class="board">News</span>
 							<ul>
-								<li>Alexandra K. Mackof, '16, <em>News Editor</em></li>
+								<li>Alexandra K. Mackof, '17, <em>News Editor</em></li>
 								<li>Carla Sinclair, '16, <em>Assistant News Editor</em></li>
 								<li>Pelle Waldron, '17, <em>Assistant News Editor</em></li>
 								<li>Gabriella Weick, '18, <em>Assistant News Editor</em></li>
@@ -60,8 +60,8 @@
 						<li>
 							<span class="board">Photo</span>
 							<ul>
-								<li>Franz Lino, '16, <em>Photo Editor</em></li>
-								<li>Emily Earl, '17, <em>Assistant Photo Editor</em></li>
+								<li>Franz K. Lino, '16, <em>Photography Editor</em></li>
+								<li>Emily Earl, '17, <em>Assistant Photography Editor</em></li>
 							</ul>
 						</li>
 						<li>
@@ -80,7 +80,7 @@
 						<li>
 							<span class="board">Design</span>
 							<ul>
-								<li>Samantha P. Webb, '16, <em>Design Manager</em></li>
+								<li>Samantha Webb, '16, <em>Design Manager</em></li>
 								<li>Aleza Leinwand, '16, <em>Design Assistant</em></li>
 								<li>Sihang Li, '16, <em>Design Assistant</em></li>
 							</ul>
