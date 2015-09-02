@@ -1,22 +1,12 @@
 <div id="sidebar" class="span7 last">
 	<!-- Right Column -->	
 
-	<!--/* OpenX Javascript Tag v2.8.10 */-->
-	<script type='text/javascript'><!--//<![CDATA[
-		var m3_u = (location.protocol=='https:'?'https://www.bupipedream.com/openx/www/delivery/ajs.php':'http://www.bupipedream.com/openx/www/delivery/ajs.php');
-		var m3_r = Math.floor(Math.random()*99999999999);
-		if (!document.MAX_used) document.MAX_used = ',';
-		document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-		document.write ("?zoneid=1&amp;block=1");
-		document.write ('&amp;cb=' + m3_r);
-		if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-		document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-		document.write ("&amp;loc=" + escape(window.location));
-		if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-		if (document.context) document.write ("&context=" + escape(document.context));
-		if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-		document.write ("'><\/scr"+"ipt>");
-	//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=a5e11ab5&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=1&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a5e11ab5' border='0' alt='' /></a></noscript>
+<!-- /106249879/top_rectangle -->
+<div id='div-gpt-ad-1441168082068-1' style='height:250px; width:300px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-1'); });
+</script>
+</div>
 
 	<?php if( is_single() ): ?>
 		<section id="fb-settings" class="sidebar-block">
@@ -124,125 +114,31 @@
 		
 	<?php endif; ?>
 
-	<!--/* OpenX Javascript Tag v2.8.11 */-->
-
-	<!--/*
-	  * The backup image section of this tag has been generated for use on a
-	  * non-SSL page. If this tag is to be placed on an SSL page, change the
-	  *   'http://www.bupipedream.com/openx/www/delivery/...'
-	  * to
-	  *   'https://www.bupipedream.com/openx/www/delivery/...'
-	  *
-	  * This noscript section of this tag only shows image banners. There
-	  * is no width or height in these banners, so if you want these tags to
-	  * allocate space for the ad before it shows, you will need to add this
-	  * information to the <img> tag.
-	  *
-	  * If you do not want to deal with the intricities of the noscript
-	  * section, delete the tag (from <noscript>... to </noscript>). On
-	  * average, the noscript tag is called from less than 1% of internet
-	  * users.
-	  */-->
-
-	<script type='text/javascript'><!--//<![CDATA[
-	   var m3_u = (location.protocol=='https:'?'https://www.bupipedream.com/openx/www/delivery/ajs.php':'http://www.bupipedream.com/openx/www/delivery/ajs.php');
-	   var m3_r = Math.floor(Math.random()*99999999999);
-	   if (!document.MAX_used) document.MAX_used = ',';
-	   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-	   document.write ("?zoneid=5&amp;block=1");
-	   document.write ('&amp;cb=' + m3_r);
-	   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-	   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-	   document.write ("&amp;loc=" + escape(window.location));
-	   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-	   if (document.context) document.write ("&context=" + escape(document.context));
-	   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-	   document.write ("'><\/scr"+"ipt>");
-	//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=aae0889b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=5&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aae0889b' border='0' alt='' /></a></noscript>
+<!-- /106249879/rectangle_one -->
+<div id='div-gpt-ad-1441168082068-2' style='height:250px; width:300px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-2'); });
+</script>
+</div>
 
 
-	<!-- Innvocation code for 120x600 ad banner -->
-	<!--/* OpenX Javascript Tag v2.8.11 */-->
-
-	<!--/*
-	  * The backup image section of this tag has been generated for use on a
-	  * non-SSL page. If this tag is to be placed on an SSL page, change the
-	  *   'http://www.bupipedream.com/openx/www/delivery/...'
-	  * to
-	  *   'https://www.bupipedream.com/openx/www/delivery/...'
-	  *
-	  * This noscript section of this tag only shows image banners. There
-	  * is no width or height in these banners, so if you want these tags to
-	  * allocate space for the ad before it shows, you will need to add this
-	  * information to the <img> tag.
-	  *
-	  * If you do not want to deal with the intricities of the noscript
-	  * section, delete the tag (from <noscript>... to </noscript>). On
-	  * average, the noscript tag is called from less than 1% of internet
-	  * users.
-	  */-->
-
-	<script type='text/javascript'><!--//<![CDATA[
-	   var m3_u = (location.protocol=='https:'?'https://www.bupipedream.com/openx/www/delivery/ajs.php':'http://www.bupipedream.com/openx/www/delivery/ajs.php');
-	   var m3_r = Math.floor(Math.random()*99999999999);
-	   if (!document.MAX_used) document.MAX_used = ',';
-	   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-	   document.write ("?zoneid=4&amp;block=1");
-	   document.write ('&amp;cb=' + m3_r);
-	   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-	   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-	   document.write ("&amp;loc=" + escape(window.location));
-	   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-	   if (document.context) document.write ("&context=" + escape(document.context));
-	   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-	   document.write ("'><\/scr"+"ipt>");
-	//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=ac82518f&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=4&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=ac82518f' border='0' alt='' /></a></noscript>
-
-	<!-- Innvocation code for 120x600 ad banner -->
-
+<!-- /106249879/skyscraper -->
+<div id='div-gpt-ad-1441168082068-4'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-4'); });
+</script>
+</div>
 
 
 <?php if (is_home()): ?>
 
-		<!-- code for 250 x 300 ad -->
 
-		<!--/* OpenX Javascript Tag v2.8.11 */-->
-
-		<!--/*
-		  * The backup image section of this tag has been generated for use on a
-		  * non-SSL page. If this tag is to be placed on an SSL page, change the
-		  *   'http://www.bupipedream.com/openx/www/delivery/...'
-		  * to
-		  *   'https://www.bupipedream.com/openx/www/delivery/...'
-		  *
-		  * This noscript section of this tag only shows image banners. There
-		  * is no width or height in these banners, so if you want these tags to
-		  * allocate space for the ad before it shows, you will need to add this
-		  * information to the <img> tag.
-		  *
-		  * If you do not want to deal with the intricities of the noscript
-		  * section, delete the tag (from <noscript>... to </noscript>). On
-		  * average, the noscript tag is called from less than 1% of internet
-		  * users.
-		  */-->
-
-		<script type='text/javascript'><!--//<![CDATA[
-		   var m3_u = (location.protocol=='https:'?'https://www.bupipedream.com/openx/www/delivery/ajs.php':'http://www.bupipedream.com/openx/www/delivery/ajs.php');
-		   var m3_r = Math.floor(Math.random()*99999999999);
-		   if (!document.MAX_used) document.MAX_used = ',';
-		   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-		   document.write ("?zoneid=6&amp;block=1");
-		   document.write ('&amp;cb=' + m3_r);
-		   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-		   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-		   document.write ("&amp;loc=" + escape(window.location));
-		   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-		   if (document.context) document.write ("&context=" + escape(document.context));
-		   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-		   document.write ("'><\/scr"+"ipt>");
-		//]]>--></script><noscript><a href='http://www.bupipedream.com/openx/www/delivery/ck.php?n=a9f30dc1&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://www.bupipedream.com/openx/www/delivery/avw.php?zoneid=6&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a9f30dc1' border='0' alt='' /></a></noscript>
-
-		<!-- end code for 250 x 300 ad -->
+<!-- /106249879/rectangle_two -->
+<div id='div-gpt-ad-1441168082068-3' style='height:250px; width:300px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-3'); });
+</script>
+</div>
 
 <?php endif ?>
 
