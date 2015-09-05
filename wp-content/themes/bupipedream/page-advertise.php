@@ -29,8 +29,7 @@
 						<p>Local advertisers are classified as all those companies either headquartered within Broome County or whose Broome County local branch is placing an advertisement.</p>
 						<p>The best way to contact an advertising representative is to <a href="mailto:business@bupipedream.com">e-mail the business manager</a>. For information on rates and our publication schedule, please see the advertising forms below.</p>
 						<ul>
-							<li><a href="http://www.bupipedream.com/wp-content/uploads/2015/01/Display-Ad-Form.pdf">Display Ad Form (Spring 2015)</a></li>
-							<li><a href="http://www.bupipedream.com/wp-content/uploads/2015/01/Classified-Ad-Form.pdf">Classified Ad Form (Spring 2015)</a></li>
+							<li><a href="http://www.bupipedream.com/wp-content/uploads/2015/09/Pipe-Dream-Display-Ad-Form-Fall-2015.pdf">Display Ad Form (Fall 2015)</a></li>
 						</ul>
 					</li>
 					<li id="national-advertising">
@@ -72,7 +71,7 @@
 					<h2 class="section-heading">Contact Business</h2>
 					<dl class="address inline">
 						<dt>Manager:</dt>
-							<dd>Erin Stolz</dd>
+							<dd>Michael Contegni</dd>
 						<dt>Phone:</dt>
 							<dd>607-777-2516</dd>
 						<dt>Fax:</dt>
