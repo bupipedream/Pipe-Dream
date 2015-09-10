@@ -101,8 +101,7 @@
 						<li>
 							<span class="board">Editorial Artists</span>
 							<ul>
-								<li>Miriam Geiger, '15, <em>Editorial Artist</em></li>
-								<li>Paige Gittelman, '16, <em>Editorial Artist</em></li>
+								<li>Elizabeth Manning, '17, <em>Editorial Artist</em></li>
 							</ul>
 						</li>
 						<li>
