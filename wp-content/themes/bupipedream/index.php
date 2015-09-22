@@ -81,12 +81,13 @@
 				</div>
 
 			</div>
-
-<!-- /106249879/news_banner -->
-<div id='div-gpt-ad-1441168082068-0' style='height:90px; width:728px;'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-0'); });
-</script>
+<div class="ad" id="news-banner">
+	<!-- /106249879/news_banner -->
+	<div id='div-gpt-ad-1442879409804-0'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-0'); });
+	</script>
+	</div>
 </div>
 			<div class="row grid-row">
 				<div data-column="left-column" class="span9">

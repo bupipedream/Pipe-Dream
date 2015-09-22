@@ -1,13 +1,13 @@
 <div id="sidebar" class="span7 last">
 	<!-- Right Column -->	
-
-<!-- /106249879/top_rectangle -->
-<div id='div-gpt-ad-1441168082068-1' style='height:250px; width:300px;'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-1'); });
-</script>
+<div class="ad" id="top_rectangle">
+	<!-- /106249879/top_rectangle -->
+	<div id='div-gpt-ad-1441168082068-1' style='height:250px; width:300px;'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-1'); });
+	</script>
+	</div>
 </div>
-
 	<?php if( is_single() ): ?>
 		<section id="fb-settings" class="sidebar-block">
 			<img id="fb-profile-img" />
@@ -113,33 +113,34 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-1');
 		<? endif; ?>
 		
 	<?php endif; ?>
-
-<!-- /106249879/rectangle_one -->
-<div id='div-gpt-ad-1441168082068-2' style='height:250px; width:300px;'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-2'); });
-</script>
+<div class="ad" id="rectangle_one">
+	<!-- /106249879/rectangle_one -->
+	<div id='div-gpt-ad-1442879409804-2' style='height:250px; width:300px;'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-2'); });
+	</script>
+	</div>
 </div>
 
-
-<!-- /106249879/skyscraper -->
-<div id='div-gpt-ad-1441168082068-4'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-4'); });
-</script>
+<div class="ad" id="skyscraper">
+	<!-- /106249879/skyscraper -->
+	<div id='div-gpt-ad-1442879409804-4'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-4'); });
+	</script>
+	</div>
 </div>
-
 
 <?php if (is_home()): ?>
 
-
-<!-- /106249879/rectangle_two -->
-<div id='div-gpt-ad-1441168082068-3' style='height:250px; width:300px;'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-3'); });
-</script>
+<div class="ad" id="rectangle_two">
+	<!-- /106249879/rectangle_two -->
+	<div id='div-gpt-ad-1442879409804-3' style='height:250px; width:300px;'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-3'); });
+	</script>
+	</div>
 </div>
-
 <?php endif ?>
 
 </div>

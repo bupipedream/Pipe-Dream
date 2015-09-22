@@ -81,13 +81,19 @@
 </script>
 
 <script type='text/javascript'>
+
+  	
   googletag.cmd.push(function() {
-    googletag.defineSlot('/106249879/news_banner', [728, 90], 'div-gpt-ad-1441168082068-0').addService(googletag.pubads());
-    googletag.defineSlot('/106249879/top_rectangle', [300, 250], 'div-gpt-ad-1441168082068-1').addService(googletag.pubads());
-    googletag.defineSlot('/106249879/rectangle_one', [300, 250], 'div-gpt-ad-1441168082068-2').addService(googletag.pubads());
-    googletag.defineSlot('/106249879/rectangle_two', [300, 250], 'div-gpt-ad-1441168082068-3').addService(googletag.pubads());
-    googletag.defineSlot('/106249879/skyscraper', [[120, 600], [160, 600]], 'div-gpt-ad-1441168082068-4').addService(googletag.pubads());
-    googletag.defineSlot('/106249879/top_banner', [728, 90], 'div-gpt-ad-1441168082068-5').addService(googletag.pubads());
+    var banner_mapping = googletag.sizeMapping().
+    addSize([728, 90], [728,90]).
+  	addSize([0,0], [320,50]).
+  	build();
+    googletag.defineSlot('/106249879/news_banner', [[320, 50], [728, 90]], 'div-gpt-ad-1442879409804-0').defineSizeMapping(banner_mapping).addService(googletag.pubads());
+    googletag.defineSlot('/106249879/top_rectangle', [300, 250], 'div-gpt-ad-1442879409804-1').addService(googletag.pubads());
+    googletag.defineSlot('/106249879/rectangle_one', [300, 250], 'div-gpt-ad-1442879409804-2').addService(googletag.pubads());
+    googletag.defineSlot('/106249879/rectangle_two', [300, 250], 'div-gpt-ad-1442879409804-3').addService(googletag.pubads());
+    googletag.defineSlot('/106249879/skyscraper', [[120, 600], [160, 600]], 'div-gpt-ad-1442879409804-4').addService(googletag.pubads());
+    googletag.defineSlot('/106249879/top_banner', [[320, 50], [728, 90]], 'div-gpt-ad-1442879409804-5').defineSizeMapping(banner_mapping).addService(googletag.pubads());
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
@@ -313,12 +319,13 @@
 
 
 </script>
-	
-<!-- /106249879/top_banner -->
-<div id='div-gpt-ad-1441168082068-5' style='height:90px; width:728px;'>
-<script type='text/javascript'>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-5'); });
-</script>
+<div class="ad" id="top_banner">	
+	<!-- /106249879/top_banner -->
+	<div id='div-gpt-ad-1442879409804-5'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-5'); });
+	</script>
+	</div>
 </div>
 
 <div id="container">
