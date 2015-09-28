@@ -67,7 +67,7 @@
 						<li>
 							<span class="board">Opinion</span>
 							<ul>
-								<li>Esmeralda Murray, '17, <em>Opinion Editor</em></li>
+								<li>Katherine H. Dowd, '16, <em>Interim Opinion Editor</em></li>
 							</ul>
 						</li>
 						<li>
