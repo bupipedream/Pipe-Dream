@@ -377,7 +377,7 @@
 					<? endforeach; ?>
 				</ul>
 			<? endforeach; ?>
-
+			<li><a href="http://funpage.tumblr.com/">Fun</a></li>
 		</ul>
 		<section id="mobile-search-link">
 			<a href="" title="Show search form"><img src="<? bloginfo( 'template_url' ); ?>/img/search.png" alt="Search" /></a>
