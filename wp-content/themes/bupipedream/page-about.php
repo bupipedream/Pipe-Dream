@@ -61,13 +61,13 @@
 							<span class="board">Photo</span>
 							<ul>
 								<li>Franz K. Lino, '16, <em>Photography Editor</em></li>
-								<li>Emily Earl, '17, <em>Assistant Photography Editor</em></li>
+								<li>John S. Babich, '16, <em>Assistant Photography Editor</em></li>
 							</ul>
 						</li>
 						<li>
 							<span class="board">Opinion</span>
 							<ul>
-								<li>Katherine H. Dowd, '16, <em>Interim Opinion Editor</em></li>
+								<li>Lawrence Ciulla, '16, <em>Opinion Editor</em></li>
 							</ul>
 						</li>
 						<li>
