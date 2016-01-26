@@ -89,7 +89,8 @@
   	addSize([0,0], [320,50]).
   	build();
     googletag.defineSlot('/106249879/news_banner', [[320, 50], [728, 90]], 'div-gpt-ad-1442879409804-0').defineSizeMapping(banner_mapping).addService(googletag.pubads());
-    googletag.defineSlot('/106249879/top_rectangle', [300, 250], 'div-gpt-ad-1442879409804-1').addService(googletag.pubads());
+    googletag.defineSlot('/106249879/top_rectangle', [300, 388], 'div-gpt-ad-1453841674269-0').addService(googletag.pubads());  
+    //googletag.defineSlot('/106249879/top_rectangle', [300, 250], 'div-gpt-ad-1442879409804-1').addService(googletag.pubads());
     googletag.defineSlot('/106249879/rectangle_one', [300, 250], 'div-gpt-ad-1442879409804-2').addService(googletag.pubads());
     googletag.defineSlot('/106249879/rectangle_two', [300, 250], 'div-gpt-ad-1442879409804-3').addService(googletag.pubads());
     googletag.defineSlot('/106249879/skyscraper', [[120, 600], [160, 600]], 'div-gpt-ad-1442879409804-4').addService(googletag.pubads());

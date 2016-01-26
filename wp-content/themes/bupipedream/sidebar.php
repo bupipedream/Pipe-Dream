@@ -1,13 +1,13 @@
 <div id="sidebar" class="span7 last">
 	<!-- Right Column -->	
 <div class="ad" id="top_rectangle">
-	<!-- /106249879/top_rectangle -->
-	<div id='div-gpt-ad-1441168082068-1' style='height:250px; width:300px;'>
-	<script type='text/javascript'>
-	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441168082068-1'); });
-	</script>
-	</div>
-</div>
+    <!-- /106249879/top_rectangle -->
+    <div id='div-gpt-ad-1453841674269-0' style='height:388px; width:300px;'>
+        <script type='text/javascript'>
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1453841674269-0'); });
+        </script>
+    </div>   
+</div> 
 	<?php if( is_single() ): ?>
 		<section id="fb-settings" class="sidebar-block">
 			<img id="fb-profile-img" />
