@@ -115,18 +115,18 @@
 	<?php endif; ?>
 <div class="ad" id="rectangle_one">
 	<!-- /106249879/rectangle_one -->
-	<div id='div-gpt-ad-1442879409804-2' style='height:250px; width:300px;'>
+	<div id='div-gpt-ad-1455314561803-2' style='height:250px; width:300px;'>
 	<script type='text/javascript'>
-	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-2'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1455314561803-2'); });
 	</script>
 	</div>
 </div>
 
 <div class="ad" id="skyscraper">
 	<!-- /106249879/skyscraper -->
-	<div id='div-gpt-ad-1442879409804-4'>
+	<div id='div-gpt-ad-1455314561803-4'>
 	<script type='text/javascript'>
-	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-4'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1455314561803-4'); });
 	</script>
 	</div>
 </div>
@@ -135,9 +135,9 @@
 
 <div class="ad" id="rectangle_two">
 	<!-- /106249879/rectangle_two -->
-	<div id='div-gpt-ad-1442879409804-3' style='height:250px; width:300px;'>
+	<div id='div-gpt-ad-1455314561803-3' style='height:250px; width:300px;'>
 	<script type='text/javascript'>
-	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-3'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1455314561803-3'); });
 	</script>
 	</div>
 </div>

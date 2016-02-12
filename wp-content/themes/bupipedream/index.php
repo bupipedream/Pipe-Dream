@@ -83,9 +83,9 @@
 			</div>
 <div class="ad" id="news-banner">
 	<!-- /106249879/news_banner -->
-	<div id='div-gpt-ad-1442879409804-0'>
+	<div id='div-gpt-ad-1455314561803-0'>
 	<script type='text/javascript'>
-	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1442879409804-0'); });
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1455314561803-0'); });
 	</script>
 	</div>
 </div>
